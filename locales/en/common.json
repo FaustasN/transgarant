@@ -1,0 +1,119 @@
+{
+  "headline": "To get started, edit the page.tsx file.",
+  "intro": "Looking for a starting point or more instructions? Head over to",
+  "templates": "Templates",
+  "orThe": "or the",
+  "learning": "Learning",
+  "center": "center.",
+  "deployNow": "Deploy Now",
+  "documentation": "Documentation",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "destinations": "Destinations",
+    "about": "About Us",
+    "careers": "Careers",
+    "contact": "Contacts",
+    "quote": "Request a quote"
+  },
+  "header": {
+    "homeLabel": "TRANSGARANT GROUP home",
+    "navigationLabel": "Main navigation",
+    "mobile": {
+      "open": "Open menu",
+      "close": "Close menu",
+      "navigation": "Content"
+    }
+  },
+  "hero": {
+    "eyebrow": "TRANSPORT AND LOGISTICS",
+    "titlePrimary": "Your cargo.",
+    "titleSecondary": "Our responsibility.",
+    "description": "We organize full, partial and specialized cargo transportation by road, sea and air routes.",
+    "primaryCta": "Get a quote",
+    "secondaryCta": "Our services",
+    "imageAlt": "TRANSGARANT GROUP truck on an international route",
+    "highlights": [
+      "Door-to-door delivery",
+      "Europe, the Baltics and Scandinavia",
+      "FTL, partial and specialized cargo"
+    ]
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "title": "Cargo transport and logistics",
+    "intro": "We take care of your cargo from collection to final delivery.",
+    "cta": "More about our services",
+    "items": [
+      {
+        "title": "Full-load transport",
+        "description": "We deliver full loads door to door across Lithuania, Europe, the Baltic states and Scandinavia.",
+        "tags": ["FTL", "LTL", "ADR", "Temperature controlled"]
+      },
+      {
+        "title": "Partial and small-load transport",
+        "description": "We transport smaller shipments by road and air, selecting an economical route to the recipient.",
+        "tags": ["Sea", "Air", "Multimodal"]
+      },
+      {
+        "title": "Warehousing and logistics",
+        "description": "We provide storage, handling, transshipment and customs services in ambient and refrigerated facilities.",
+        "tags": ["Warehousing", "Transshipment", "Customs"]
+      }
+    ],
+    "capabilitiesTitle": "When cargo is not standard",
+    "capabilitiesText": "We assess every shipment and select the appropriate transport, documentation and control solution.",
+    "capabilities": [
+      "Temperature-controlled cargo",
+      "Dangerous goods – ADR",
+      "Oversized cargo",
+      "Small and partial loads"
+    ]
+  },
+  "destinations": {
+    "eyebrow": "DESTINATIONS",
+    "title": "Routes across Europe",
+    "intro": "From Vilnius, we organize cargo transport to the Baltic states, Scandinavia, Western, Central and Eastern Europe.",
+    "origin": "Vilnius",
+    "mapLabel": "Interactive map of TRANSGARANT GROUP routes across Europe",
+    "selectorLabel": "Select a region",
+    "countriesLabel": "Main destinations",
+    "regions": [
+      { "title": "Baltic states", "countries": ["Lithuania", "Latvia", "Estonia"] },
+      { "title": "Scandinavia", "countries": ["Denmark", "Sweden", "Norway", "Finland"] },
+      { "title": "Western and Central Europe", "countries": ["Poland", "Germany", "France", "Benelux", "United Kingdom", "Switzerland", "Austria", "Hungary", "Czechia", "Slovakia", "Spain", "Italy", "Greece"] },
+      { "title": "Eastern Europe and CIS", "countries": ["Ukraine", "Kazakhstan", "Belarus", "Russia"] }
+    ]
+  },
+  "about": {
+    "eyebrow": "ABOUT US",
+    "title": "A long-term partnership, not just one shipment",
+    "paragraphs": [
+      "UAB TRANSGARANT GROUP is a transport and logistics company specializing in cargo transportation and freight forwarding. We organize international and domestic transport using our own vehicles and a trusted partner network.",
+      "Our goal is safe, on-time delivery, responsive communication and lasting cooperation."
+    ],
+    "cta": "More about us",
+    "imageAlt": "Logistics and transport infrastructure"
+  },
+  "finalCta": {
+    "title": "Need to transport cargo?",
+    "description": "Send us the route and cargo details – we will select the right transport solution.",
+    "button": "Submit an inquiry"
+  },
+  "footer": {
+    "description": "A transport and logistics partner for full, partial and specialized cargo across Europe and the CIS.",
+    "navigationTitle": "Navigation",
+    "links": {
+      "services": "Services",
+      "destinations": "Destinations",
+      "about": "About us",
+      "careers": "Careers",
+      "contact": "Contacts"
+    },
+    "contactsTitle": "Contacts",
+    "emailLabel": "Email",
+    "hours": "Working hours: Mon–Fri 08:00–17:00",
+    "companyDetails": "Company details",
+    "copyright": "UAB TRANSGARANT GROUP. All rights reserved."
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "headline": "Norėdami pradėti, redaguokite page.tsx failą.",
+  "intro": "Ieškote pradinio taško ar daugiau instrukcijų? Eikite į",
+  "templates": "Šablonus",
+  "orThe": "ar",
+  "learning": "Mokymosi",
+  "center": "centrą.",
+  "deployNow": "Diegti dabar",
+  "documentation": "Dokumentacija",
+  "nav": {
+    "home": "Pagrindinis",
+    "services": "Paslaugos",
+    "destinations": "Kryptys",
+    "about": "Apie mus",
+    "careers": "Karjera",
+    "contact": "Kontaktai",
+    "quote": "Užklausa"
+  },
+  "header": {
+    "homeLabel": "TRANSGARANT GROUP pradžia",
+    "navigationLabel": "Pagrindinė navigacija",
+    "mobile": {
+      "open": "Atidaryti meniu",
+      "close": "Uždaryti meniu",
+      "navigation": "Turinys"
+    }
+  },
+  "hero": {
+    "eyebrow": "TRANSPORTAS IR LOGISTIKA",
+    "titlePrimary": "Jūsų krovinys.",
+    "titleSecondary": "Mūsų atsakomybė.",
+    "description": "Organizuojame pilnų, dalinių ir specializuotų krovinių gabenimą keliais, jūra ir oru maršrutais.",
+    "primaryCta": "Gauti pasiūlymą",
+    "secondaryCta": "Mūsų paslaugos",
+    "imageAlt": "TRANSGARANT GROUP sunkvežimis tarptautiniame maršrute",
+    "highlights": [
+      "Pristatymas nuo durų iki durų",
+      "Europa, Baltija ir Skandinavija",
+      "FTL, daliniai ir specializuoti kroviniai"
+    ]
+  },
+  "services": {
+    "eyebrow": "MŪSŲ PASLAUGOS",
+    "title": "Krovinių gabenimas ir logistika",
+    "intro": "Pasirinkę TRANSGARANT GROUP paslaugas galite būti tikri, kad puiki mūsų profesionalų komanda pasirūpins Jūsų prekėmis pagal aukščiausius standartus.",
+    "cta": "Plačiau",
+    "items": [
+      {
+        "title": "Pilnų krovinių gabenimas",
+        "description": "Pilnus krovinius pristatome nuo durų iki durų Lietuvoje, Europoje, Baltijos ir Skandinavijos šalyse.",
+        "tags": ["FTL", "LTL", "ADR", "Temperatūriniai"]
+      },
+      {
+        "title": "Dalinių ir smulkių krovinių gabenimas",
+        "description": "Gabename mažesnes siuntas sausumos ir oro transportu, parinkdami ekonomišką maršrutą iki gavėjo.",
+        "tags": ["Jūra", "Oras", "Multimodalinis"]
+      },
+      {
+        "title": "Sandėliavimas ir logistika",
+        "description": "Teikiame sandėliavimo, krovos, perkrovimo ir muitinės paslaugas įprastose bei šaldomose patalpose.",
+        "tags": ["Sandėliavimas", "Perkrovimas", "Muitinė"]
+      }
+    ],
+    "capabilitiesTitle": "Kai krovinys nėra standartinis",
+    "capabilitiesText": "Įvertiname krovinio specifiką ir parenkame jam tinkamą transportavimo, dokumentų bei kontrolės sprendimą.",
+    "capabilities": [
+      "Temperatūriniai kroviniai",
+      "Pavojingi kroviniai – ADR",
+      "Negabaritiniai kroviniai",
+      "Smulkūs ir daliniai kroviniai"
+    ]
+  },
+  "destinations": {
+    "eyebrow": "KRYPTYS",
+    "title": "Maršrutai visoje Europoje",
+    "intro": "Iš Vilniaus organizuojame krovinių pervežimus į Baltijos, Skandinavijos, Vakarų, Centrinės ir Rytų Europos šalis.",
+    "origin": "Vilnius",
+    "mapLabel": "Interaktyvus TRANSGARANT GROUP maršrutų Europoje žemėlapis",
+    "selectorLabel": "Pasirinkite regioną",
+    "countriesLabel": "Pagrindinės kryptys",
+    "regions": [
+      { "title": "Baltijos šalys", "countries": ["Lietuva", "Latvija", "Estija"] },
+      { "title": "Skandinavija", "countries": ["Danija", "Švedija", "Norvegija", "Suomija"] },
+      { "title": "Vakarų ir Centrinė Europa", "countries": ["Lenkija", "Vokietija", "Prancūzija", "Beneliukso šalys", "Didžioji Britanija", "Šveicarija", "Austrija", "Vengrija", "Čekija", "Slovakija", "Ispanija", "Italija", "Graikija"] },
+      { "title": "Rytų Europa ir NVS", "countries": ["Ukraina", "Kazachstanas", "Baltarusija", "Rusija"] }
+    ]
+  },
+  "about": {
+    "eyebrow": "APIE MUS",
+    "title": "Ilgalaikė partnerystė, o ne vienas pervežimas",
+    "paragraphs": [
+      "UAB „TRANSGARANT GROUP“ – transporto ir logistikos kompanija, besispecializuojanti krovinių gabenimo ir ekspedijavimo srityse. Tarptautinius ir vietinius pervežimus organizuojame nuosavomis bei patikimų partnerių transporto priemonėmis.",
+      "Mūsų tikslas – saugus, laiku įvykdytas pristatymas, operatyvi komunikacija ir ilgalaikis bendradarbiavimas."
+    ],
+    "cta": "Daugiau apie mus",
+    "imageAlt": "Logistikos ir transporto infrastruktūra"
+  },
+  "finalCta": {
+    "title": "Reikia pervežti krovinį?",
+    "description": "Pateikite maršrutą ir krovinio informaciją – parinksime tinkamą transportavimo sprendimą.",
+    "button": "Pateikti užklausą"
+  },
+  "footer": {
+    "description": "Transporto ir logistikos partneris pilniems, daliniams ir specializuotiems kroviniams Europoje ir NVS šalyse.",
+    "navigationTitle": "Navigacija",
+    "links": {
+      "services": "Paslaugos",
+      "destinations": "Kryptys",
+      "about": "Apie mus",
+      "careers": "Karjera",
+      "contact": "Kontaktai"
+    },
+    "contactsTitle": "Kontaktai",
+    "emailLabel": "El. paštas",
+    "hours": "Darbo laikas: I–V 08:00–17:00",
+    "companyDetails": "Įmonės rekvizitai",
+    "copyright": "UAB „TRANSGARANT GROUP“. Visos teisės saugomos."
+  }
+}

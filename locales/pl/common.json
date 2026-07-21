@@ -1,0 +1,119 @@
+{
+  "headline": "Aby rozpocząć, edytuj plik page.tsx.",
+  "intro": "Szukasz punktu wyjścia lub więcej instrukcji? Przejdź do",
+  "templates": "Szablony",
+  "orThe": "lub",
+  "learning": "Nauki",
+  "center": "centrum.",
+  "deployNow": "Wdróż teraz",
+  "documentation": "Dokumentacja",
+  "nav": {
+    "home": "Strona główna",
+    "services": "Usługi",
+    "destinations": "Kierunki",
+    "about": "O nas",
+    "careers": "Kariera",
+    "contact": "Kontakt",
+    "quote": "Zapytanie"
+  },
+  "header": {
+    "homeLabel": "Strona główna TRANSGARANT GROUP",
+    "navigationLabel": "Główna nawigacja",
+    "mobile": {
+      "open": "Otwórz menu",
+      "close": "Zamknij menu",
+      "navigation": "Zawartość"
+    }
+  },
+  "hero": {
+    "eyebrow": "TRANSPORT I LOGISTYKA",
+    "titlePrimary": "Twój ładunek.",
+    "titleSecondary": "Nasza odpowiedzialność.",
+    "description": "Organizujemy transport ładunków całopojazdowych, częściowych i specjalistycznych trasami lądowymi, morskimi i lotniczymi.",
+    "primaryCta": "Otrzymaj ofertę",
+    "secondaryCta": "Nasze usługi",
+    "imageAlt": "Ciężarówka TRANSGARANT GROUP na trasie międzynarodowej",
+    "highlights": [
+      "Dostawa od drzwi do drzwi",
+      "Europa, kraje bałtyckie i Skandynawia",
+      "FTL, ładunki częściowe i specjalistyczne"
+    ]
+  },
+  "services": {
+    "eyebrow": "NASZE USŁUGI",
+    "title": "Transport ładunków i logistyka",
+    "intro": "Dbamy o Twój ładunek od odbioru aż po dostawę.",
+    "cta": "Więcej o usługach",
+    "items": [
+      {
+        "title": "Transport całopojazdowy",
+        "description": "Dostarczamy pełne ładunki od drzwi do drzwi na Litwie, w Europie, krajach bałtyckich i Skandynawii.",
+        "tags": ["FTL", "LTL", "ADR", "Kontrola temperatury"]
+      },
+      {
+        "title": "Transport ładunków częściowych i drobnych",
+        "description": "Przewozimy mniejsze przesyłki transportem drogowym i lotniczym, wybierając ekonomiczną trasę do odbiorcy.",
+        "tags": ["Morze", "Powietrze", "Multimodalny"]
+      },
+      {
+        "title": "Magazynowanie i logistyka",
+        "description": "Zapewniamy magazynowanie, obsługę, przeładunek i usługi celne w obiektach zwykłych oraz chłodniczych.",
+        "tags": ["Magazynowanie", "Przeładunek", "Cło"]
+      }
+    ],
+    "capabilitiesTitle": "Gdy ładunek nie jest standardowy",
+    "capabilitiesText": "Oceniamy specyfikę ładunku i dobieramy odpowiednie rozwiązanie transportowe, dokumentacyjne oraz kontrolne.",
+    "capabilities": [
+      "Ładunki temperaturowe",
+      "Towary niebezpieczne – ADR",
+      "Ładunki ponadgabarytowe",
+      "Małe i częściowe ładunki"
+    ]
+  },
+  "destinations": {
+    "eyebrow": "KIERUNKI",
+    "title": "Trasy w całej Europie",
+    "intro": "Z Wilna organizujemy transport ładunków do krajów bałtyckich, Skandynawii oraz Europy Zachodniej, Środkowej i Wschodniej.",
+    "origin": "Wilno",
+    "mapLabel": "Interaktywna mapa tras TRANSGARANT GROUP w Europie",
+    "selectorLabel": "Wybierz region",
+    "countriesLabel": "Główne kierunki",
+    "regions": [
+      { "title": "Kraje bałtyckie", "countries": ["Litwa", "Łotwa", "Estonia"] },
+      { "title": "Skandynawia", "countries": ["Dania", "Szwecja", "Norwegia", "Finlandia"] },
+      { "title": "Europa Zachodnia i Środkowa", "countries": ["Polska", "Niemcy", "Francja", "Beneluks", "Wielka Brytania", "Szwajcaria", "Austria", "Węgry", "Czechy", "Słowacja", "Hiszpania", "Włochy", "Grecja"] },
+      { "title": "Europa Wschodnia i WNP", "countries": ["Ukraina", "Kazachstan", "Białoruś", "Rosja"] }
+    ]
+  },
+  "about": {
+    "eyebrow": "O NAS",
+    "title": "Długoterminowe partnerstwo, nie tylko jeden transport",
+    "paragraphs": [
+      "UAB TRANSGARANT GROUP to firma transportowo-logistyczna specjalizująca się w przewozie i spedycji ładunków. Transport międzynarodowy i krajowy organizujemy własnymi pojazdami oraz zaufaną siecią partnerów.",
+      "Naszym celem jest bezpieczna i terminowa dostawa, sprawna komunikacja oraz długotrwała współpraca."
+    ],
+    "cta": "Więcej o nas",
+    "imageAlt": "Infrastruktura logistyczna i transportowa"
+  },
+  "finalCta": {
+    "title": "Potrzebujesz przewieźć ładunek?",
+    "description": "Prześlij trasę i informacje o ładunku – dobierzemy odpowiednie rozwiązanie transportowe.",
+    "button": "Wyślij zapytanie"
+  },
+  "footer": {
+    "description": "Partner transportowo-logistyczny dla ładunków całopojazdowych, częściowych i specjalistycznych w Europie i krajach WNP.",
+    "navigationTitle": "Nawigacja",
+    "links": {
+      "services": "Usługi",
+      "destinations": "Kierunki",
+      "about": "O nas",
+      "careers": "Kariera",
+      "contact": "Kontakt"
+    },
+    "contactsTitle": "Kontakt",
+    "emailLabel": "E-mail",
+    "hours": "Godziny pracy: pon.–pt. 08:00–17:00",
+    "companyDetails": "Dane firmy",
+    "copyright": "UAB TRANSGARANT GROUP. Wszelkie prawa zastrzeżone."
+  }
+}
