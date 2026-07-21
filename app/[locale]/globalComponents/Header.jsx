@@ -23,9 +23,24 @@ export default function Header({ locale = "lt" }) {
   const navItems = navDestinations.map((destination) => ({
     href: `/${locale}${destination.path}${destination.hash ? `#${destination.hash}` : ""}`,
     label: dictionary.nav[destination.key],
+    hash: destination.hash,
   }));
 
+  function handleAnchorClick(event, item) {
+    if (!item.hash) return;
+    const section = document.getElementById(item.hash);
+    if (!section) return;
+
+    event.preventDefault();
+    section.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start",
+    });
+    window.history.replaceState(null, "", `/${locale}#${item.hash}`);
+  }
+
   useLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const context = gsap.context(() => {
       const timeline = gsap.timeline({ defaults: { ease: "power2.out" } });
 
@@ -59,7 +74,7 @@ export default function Header({ locale = "lt" }) {
             width={1182}
             height={330}
             priority
-            className="h-auto w-[190px] sm:w-[235px]"
+            className="h-auto w-[150px] sm:w-[190px] lg:w-[235px]"
           />
         </Link>
 
@@ -69,6 +84,7 @@ export default function Header({ locale = "lt" }) {
               data-header-nav-item
               key={item.href}
               href={item.href}
+              onClick={(event) => handleAnchorClick(event, item)}
               className="relative inline-flex items-center gap-1 py-2 text-[15px] font-semibold text-[#313152] transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-[#AE2422] after:transition-transform after:duration-200 hover:text-[#AE2422] hover:after:scale-x-100"
             >
               {item.label}
@@ -77,11 +93,11 @@ export default function Header({ locale = "lt" }) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <div data-header-action>
+          <div data-header-action className="hidden lg:block">
             <LanguageDropdown locale={locale} />
           </div>
           <div>
-            <MobileNav navItems={navItems} labels={dictionary.header.mobile} />
+            <MobileNav navItems={navItems} labels={dictionary.header.mobile} locale={locale} />
           </div>
         </div>
       </div>

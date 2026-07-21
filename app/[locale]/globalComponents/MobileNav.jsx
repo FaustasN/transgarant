@@ -1,15 +1,41 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ArrowRight, Menu } from "lucide-react";
+import gsap from "gsap";
+import LanguageDropdown from "./LanguageDropdown";
 
-export default function MobileNav({ navItems, labels }) {
+export default function MobileNav({ navItems, labels, locale }) {
   const [open, setOpen] = useState(false);
   const closeButtonRef = useRef(null);
+  const overlayRef = useRef(null);
+  const backdropRef = useRef(null);
+  const drawerRef = useRef(null);
+  const navRef = useRef(null);
+
+  useLayoutEffect(() => {
+    gsap.set(overlayRef.current, { visibility: "hidden", pointerEvents: "none" });
+    gsap.set(backdropRef.current, { autoAlpha: 0 });
+    gsap.set(drawerRef.current, { xPercent: 100 });
+  }, []);
 
   useEffect(() => {
-    if (!open) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const duration = reducedMotion ? 0 : 0.24;
+    const timeline = gsap.timeline({ defaults: { overwrite: true } });
+    if (open) {
+      timeline.set(overlayRef.current, { visibility: "visible", pointerEvents: "auto" })
+        .to(backdropRef.current, { autoAlpha: 1, duration: duration * 0.45 })
+        .to(drawerRef.current, { xPercent: 0, duration, ease: "power3.out" }, 0)
+        .fromTo(navRef.current?.children ?? [], { x: 14, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: duration * 0.7, stagger: 0.025, ease: "power2.out" }, duration * 0.2);
+    } else {
+      timeline.set(overlayRef.current, { pointerEvents: "none" })
+        .to(backdropRef.current, { autoAlpha: 0, duration: 0.06 })
+        .to(drawerRef.current, { xPercent: 100, duration: duration * 0.75, ease: "power2.in" }, 0)
+        .set(overlayRef.current, { visibility: "hidden" });
+    }
+    if (!open) return () => timeline.kill();
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -22,10 +48,30 @@ export default function MobileNav({ navItems, labels }) {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
+      timeline.kill();
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [open]);
+
+  function handleNavClick(event, item) {
+    const section = item.hash ? document.getElementById(item.hash) : null;
+    setOpen(false);
+    if (!section) return;
+
+    event.preventDefault();
+    window.history.replaceState(null, "", `/${locale}#${item.hash}`);
+    window.requestAnimationFrame(() => {
+      section.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+  }
+
+  function closeDrawer() {
+    setOpen(false);
+  }
 
   return (
     <div className="lg:hidden">
@@ -41,52 +87,52 @@ export default function MobileNav({ navItems, labels }) {
       </button>
 
       <div
-        className={`fixed inset-0 z-[60] transition-[visibility] duration-300 ${
-          open ? "visible" : "invisible delay-300"
-        }`}
+        ref={overlayRef}
+        className="invisible fixed inset-0 z-[60]"
         aria-hidden={!open}
       >
         <button
+          ref={backdropRef}
           type="button"
           aria-label={labels.close}
           tabIndex={open ? 0 : -1}
-          onClick={() => setOpen(false)}
-          className={`absolute inset-0 bg-[#191925]/55 transition-opacity duration-300 ${
-            open ? "opacity-100" : "opacity-0"
-          }`}
+          onClick={closeDrawer}
+          className="absolute inset-0 bg-[#191925]/50"
         />
 
         <div
+          ref={drawerRef}
           id="mobile-navigation-drawer"
           role="dialog"
           aria-modal="true"
           aria-label={labels.navigation}
-          className={`absolute right-0 top-0 flex h-full w-[min(86vw,380px)] flex-col bg-white shadow-2xl transition-transform duration-300 ease-out ${
-            open ? "translate-x-0" : "translate-x-full"
-          }`}
+          className="absolute right-0 top-0 flex h-full w-[min(88vw,390px)] flex-col bg-white shadow-2xl"
         >
           <div className="flex h-20 shrink-0 items-center justify-between border-b border-[#E3E2E7] px-5">
             <span className="ml-4 text-sm font-extrabold uppercase tracking-[0.12em] text-[#313152]">
               {labels.navigation}
             </span>
-            <button
-              ref={closeButtonRef}
-              type="button"
-              aria-label={labels.close}
-              onClick={() => setOpen(false)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[#E3E2E7] bg-white text-[#313152] hover:border-[#313152]"
-            >
-              <ArrowRight aria-hidden="true" size={22} />
-            </button>
+            <div className="flex items-center gap-2">
+              <LanguageDropdown locale={locale} />
+              <button
+                ref={closeButtonRef}
+                type="button"
+                aria-label={labels.close}
+                onClick={closeDrawer}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[#E3E2E7] bg-white text-[#313152] transition-colors hover:border-[#313152]"
+              >
+                <ArrowRight aria-hidden="true" size={22} />
+              </button>
+            </div>
           </div>
 
-          <nav aria-label={labels.navigation} className="flex flex-1 flex-col gap-1 overflow-y-auto px-5 py-6">
+          <nav ref={navRef} aria-label={labels.navigation} className="flex flex-1 flex-col gap-1 overflow-y-auto px-5 py-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 tabIndex={open ? 0 : -1}
-                onClick={() => setOpen(false)}
+                onClick={(event) => handleNavClick(event, item)}
                 className="rounded-md px-4 py-4 text-lg font-semibold text-[#313152] transition-colors hover:bg-[#E9E9F0]"
               >
                 {item.label}

@@ -12,6 +12,7 @@ export default function Hero({ locale = "lt" }) {
   const hero = (resources[locale] ?? resources.lt).common.hero;
 
   useLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const context = gsap.context(() => {
       const timeline = gsap.timeline({ defaults: { ease: "power2.out" } });
 
@@ -38,12 +39,12 @@ export default function Hero({ locale = "lt" }) {
         fill
         priority
         sizes="100vw"
-        className="-z-20 object-cover object-[62%_center] sm:object-[58%_center] lg:object-center"
+        className="-z-20 scale-[1.02] object-cover object-[66%_center] sm:object-[58%_center] lg:object-center"
       />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(18,18,31,0.96)_0%,rgba(24,24,38,0.84)_38%,rgba(24,24,38,0.34)_68%,rgba(24,24,38,0.14)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(18,18,31,0.97)_0%,rgba(24,24,38,0.88)_42%,rgba(24,24,38,0.38)_72%,rgba(24,24,38,0.18)_100%)]" />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(0deg,rgba(18,18,31,0.68)_0%,transparent_45%)]" />
 
-      <div className="mx-auto flex min-h-[calc(100svh-5rem)] max-w-[1280px] flex-col justify-between px-5 py-14 sm:px-8 sm:py-18 lg:min-h-[720px] lg:px-10 lg:py-20">
+      <div className="mx-auto flex min-h-[calc(100svh-5rem)] max-w-[1280px] flex-col justify-between px-5 py-10 sm:px-8 sm:py-16 lg:min-h-[720px] lg:px-10 lg:py-20">
         <div className="my-auto max-w-[680px] py-8">
           <h1 className="max-w-[700px] font-extrabold leading-[0.94] tracking-[-0.04em] text-balance">
             <span data-hero-title-primary className="block text-[clamp(46px,6.2vw,82px)]">
@@ -82,12 +83,12 @@ export default function Hero({ locale = "lt" }) {
           </div>
         </div>
 
-        <div className="translate-y-5 grid gap-3 border-t border-white/20 pt-6 text-sm font-semibold text-white/80 sm:translate-y-6 sm:grid-cols-3 sm:gap-6">
+        <div className="translate-y-4 grid gap-2 border-t border-white/20 pt-5 text-[13px] font-semibold text-white/80 md:translate-y-6 md:grid-cols-3 md:gap-6 md:pt-6 md:text-sm">
           {hero.highlights.map((highlight) => (
             <div
               data-hero-highlight
               key={highlight}
-              className="grid w-full grid-cols-[20px_minmax(0,1fr)] items-center gap-3 text-left sm:flex sm:justify-center sm:gap-2.5 sm:text-center"
+              className="grid w-full grid-cols-[20px_minmax(0,1fr)] items-center gap-2.5 text-left md:flex md:justify-center md:text-center"
             >
               <Check aria-hidden="true" size={17} className="shrink-0 text-[#E24A46]" strokeWidth={2.5} />
               <span>{highlight}</span>

@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { resources } from "@/lib/i18n";
+import RevealSection from "@/components/RevealSection";
 
 export default function FinalCta({ locale = "lt" }) {
   const cta = (resources[locale] ?? resources.lt).common.finalCta;
 
   return (
-    <section className="px-5 pb-20 sm:px-8 lg:px-10 lg:pb-28">
-      <div className="mx-auto max-w-[1100px] rounded-xl bg-[#313152] px-6 py-14 text-white sm:px-10 lg:px-14">
+    <RevealSection className="px-5 pb-20 sm:px-8 lg:px-10 lg:pb-28">
+      <div data-reveal className="relative mx-auto max-w-[1100px] overflow-hidden rounded-xl bg-[#313152] px-6 py-14 text-white shadow-[0_24px_60px_rgba(49,49,82,0.18)] sm:px-10 lg:px-14">
+        <div className="pointer-events-none absolute -right-20 -top-28 h-64 w-64 rounded-full border-[45px] border-white/[0.04]" />
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <h2 className="text-[clamp(36px,4vw,52px)] font-bold leading-[1.04] tracking-[-0.02em]">
@@ -25,6 +27,6 @@ export default function FinalCta({ locale = "lt" }) {
           </Link>
         </div>
       </div>
-    </section>
+    </RevealSection>
   );
 }

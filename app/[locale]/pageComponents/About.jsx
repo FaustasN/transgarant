@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { resources } from "@/lib/i18n";
+import RevealSection from "@/components/RevealSection";
 
 const aboutImage =
   "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?auto=format&fit=crop&w=1400&q=85";
@@ -10,9 +11,9 @@ export default function About({ locale = "lt" }) {
   const about = (resources[locale] ?? resources.lt).common.about;
 
   return (
-    <section className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+    <RevealSection className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-[1280px]">
-        <div className="mx-auto max-w-3xl text-center">
+        <div data-reveal className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#AE2422]">{about.eyebrow}</p>
           <h2 className="mt-5 text-[clamp(38px,4.5vw,58px)] font-extrabold leading-[1] tracking-[-0.035em] text-[#191925] text-balance">
             {about.title}
@@ -20,17 +21,18 @@ export default function About({ locale = "lt" }) {
         </div>
 
         <div className="mx-auto mt-12 grid max-w-[1100px] gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-12">
-          <div className="relative min-h-[300px] overflow-hidden rounded-xl sm:min-h-[340px] lg:min-h-0">
+          <div data-reveal-item className="relative min-h-[300px] overflow-hidden rounded-xl sm:min-h-[340px] lg:min-h-0">
             <Image
               src={aboutImage}
               alt={about.imageAlt}
               fill
               sizes="(min-width: 1024px) 520px, 100vw"
+              data-parallax
               className="object-cover"
             />
           </div>
 
-          <div className="flex flex-col justify-center py-1">
+          <div data-reveal-item className="flex flex-col justify-center py-1">
             {about.paragraphs.map((paragraph, index) => (
               <p
                 key={paragraph}
@@ -49,6 +51,6 @@ export default function About({ locale = "lt" }) {
           </div>
         </div>
       </div>
-    </section>
+    </RevealSection>
   );
 }

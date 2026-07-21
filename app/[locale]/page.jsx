@@ -5,6 +5,7 @@ import Services from "./pageComponents/Services";
 import Destinations from "./pageComponents/Destinations";
 import About from "./pageComponents/About";
 import FinalCta from "./pageComponents/FinalCta";
+import ScrollToTop from "./globalComponents/ScrollToTop";
 
 export function generateStaticParams() {
   return [{ locale: "lt" }, { locale: "en" }, { locale: "pl" }, { locale: "ru" }];
@@ -30,6 +31,7 @@ export default async function Home({ params }) {
       </main>
 
       <Footer locale={locale} />
+      <ScrollToTop />
     </div>
   );
 }

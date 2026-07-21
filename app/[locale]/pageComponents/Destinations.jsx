@@ -1,8 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { MapPin } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { resources } from "@/lib/i18n";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const routeGeometry = [
   { path: "M405 265 C385 258 386 239 405 232", x: 405, y: 232 },
@@ -14,11 +17,6 @@ const routeGeometry = [
 function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
   return (
     <div className="relative h-[340px] overflow-hidden bg-[#282843] sm:aspect-[29/15] sm:h-auto">
-      <div className="absolute left-5 top-5 z-10 inline-flex items-center gap-2 rounded-full border border-white/14 bg-[#191925]/80 px-3 py-2 text-xs font-bold text-white/78 backdrop-blur-sm sm:left-7 sm:top-7">
-        <MapPin aria-hidden="true" size={14} className="text-[#E24A46]" />
-        {origin}
-      </div>
-
       <svg
         role="img"
         aria-label={mapLabel}
@@ -92,10 +90,11 @@ function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
         <circle key={`route-marker-${activeIndex}`} r="4.5" fill="#FFFFFF">
           <animateMotion
             path={routeGeometry[activeIndex].path}
-            dur="2.8s"
+            dur="5.6s"
             repeatCount="indefinite"
-            keySplines="0.42 0 0.58 1"
-            calcMode="spline"
+            keyPoints="0;1;0"
+            keyTimes="0;0.5;1"
+            calcMode="linear"
           />
         </circle>
 
@@ -122,6 +121,9 @@ function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
 export default function Destinations({ locale = "lt" }) {
   const destinations = (resources[locale] ?? resources.lt).common.destinations;
   const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRef = useRef(null);
+  const mapRef = useRef(null);
+  const detailsRef = useRef(null);
   const activeRegion = destinations.regions[activeIndex];
 
   useEffect(() => {
@@ -132,8 +134,26 @@ export default function Destinations({ locale = "lt" }) {
     return () => window.clearTimeout(timer);
   }, [activeIndex, destinations.regions.length]);
 
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const context = gsap.context(() => {
+      gsap.from([mapRef.current, detailsRef.current], {
+        y: 36, autoAlpha: 0, duration: 0.75, stagger: 0.12, ease: "power3.out",
+        scrollTrigger: { trigger: mapRef.current, start: "top 84%", once: true },
+      });
+    }, sectionRef);
+    return () => context.revert();
+  }, []);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.fromTo(detailsRef.current?.children ?? [], { y: 8, autoAlpha: 0 }, {
+      y: 0, autoAlpha: 1, duration: 0.35, stagger: 0.04, ease: "power2.out", overwrite: true,
+    });
+  }, [activeIndex]);
+
   return (
-    <section id="kryptys" className="bg-white px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+    <section ref={sectionRef} id="kryptys" className="bg-white px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-[1280px]">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#AE2422]">
@@ -148,15 +168,12 @@ export default function Destinations({ locale = "lt" }) {
         </div>
 
         <div className="mx-auto mt-12 max-w-[1050px] overflow-hidden rounded-2xl border border-[#D9D8E0] bg-[#313152] shadow-[0_20px_55px_rgba(25,25,37,0.12)]">
-          <EuropeMap
-            activeIndex={activeIndex}
-            regions={destinations.regions}
-            origin={destinations.origin}
-            mapLabel={destinations.mapLabel}
-          />
+          <div ref={mapRef}>
+            <EuropeMap activeIndex={activeIndex} regions={destinations.regions} origin={destinations.origin} mapLabel={destinations.mapLabel} />
+          </div>
 
           <div className="border-t border-white/14 px-7 py-7 text-center text-white sm:px-10 sm:py-8">
-            <div className="mx-auto max-w-3xl" aria-live="polite">
+            <div ref={detailsRef} className="mx-auto max-w-3xl" aria-live="polite">
               <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-white/48">
                 {destinations.countriesLabel}
               </p>

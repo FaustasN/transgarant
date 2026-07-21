@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { resources } from "@/lib/i18n";
 
 export default function Footer({ locale = "lt" }) {
@@ -6,9 +7,15 @@ export default function Footer({ locale = "lt" }) {
 
   return (
     <footer className="bg-[#313152] px-5 py-12 text-white sm:px-8 lg:px-10">
-      <div className="mx-auto grid max-w-[1280px] gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr]">
+      <div className="mx-auto grid max-w-[1200px] gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr]">
         <div>
-          <p className="text-xl font-extrabold tracking-[0.04em]">TRANSGARANT GROUP</p>
+          <Image
+            src="/logo_footer.png"
+            alt="TRANSGARANT GROUP"
+            width={157}
+            height={54}
+            className="h-auto w-[150px] sm:w-[200px]"
+          />
           <p className="mt-4 max-w-sm text-sm leading-7 text-white/70">
             {footer.description}
           </p>
@@ -43,7 +50,7 @@ export default function Footer({ locale = "lt" }) {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-[1280px] justify-center border-t border-white/14 pt-6 text-center text-sm text-white/58">
+      <div className="mx-auto mt-10 flex max-w-[1200px] justify-center border-t border-white/14 pt-6 text-center text-sm text-white/58">
         <p>© {new Date().getFullYear()} {footer.copyright}</p>
       </div>
     </footer>
