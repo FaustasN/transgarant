@@ -38,6 +38,7 @@ export default function ScrollToTop() {
   }, []);
 
   function scrollToTop() {
+    window.history.replaceState(null, "", window.location.pathname);
     window.scrollTo({
       top: 0,
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { ArrowRight, Menu } from "lucide-react";
 import gsap from "gsap";
 import LanguageDropdown from "./LanguageDropdown";
@@ -20,19 +20,19 @@ export default function MobileNav({ navItems, labels, locale }) {
     gsap.set(drawerRef.current, { xPercent: 100 });
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const duration = reducedMotion ? 0 : 0.24;
     const timeline = gsap.timeline({ defaults: { overwrite: true } });
     if (open) {
       timeline.set(overlayRef.current, { visibility: "visible", pointerEvents: "auto" })
         .to(backdropRef.current, { autoAlpha: 1, duration: duration * 0.45 })
-        .to(drawerRef.current, { xPercent: 0, duration, ease: "power3.out" }, 0)
+        .to(drawerRef.current, { xPercent: 0, duration, ease: "power3.out", force3D: true }, 0)
         .fromTo(navRef.current?.children ?? [], { x: 14, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: duration * 0.7, stagger: 0.025, ease: "power2.out" }, duration * 0.2);
     } else {
       timeline.set(overlayRef.current, { pointerEvents: "none" })
         .to(backdropRef.current, { autoAlpha: 0, duration: 0.06 })
-        .to(drawerRef.current, { xPercent: 100, duration: duration * 0.75, ease: "power2.in" }, 0)
+        .to(drawerRef.current, { xPercent: 100, duration: duration * 0.75, ease: "power2.in", force3D: true }, 0)
         .set(overlayRef.current, { visibility: "hidden" });
     }
     if (!open) return () => timeline.kill();
@@ -97,7 +97,7 @@ export default function MobileNav({ navItems, labels, locale }) {
           aria-label={labels.close}
           tabIndex={open ? 0 : -1}
           onClick={closeDrawer}
-          className="absolute inset-0 bg-[#191925]/50"
+          className="absolute inset-0 bg-[#191925]/50 will-change-opacity"
         />
 
         <div
@@ -106,7 +106,7 @@ export default function MobileNav({ navItems, labels, locale }) {
           role="dialog"
           aria-modal="true"
           aria-label={labels.navigation}
-          className="absolute right-0 top-0 flex h-full w-[min(88vw,390px)] flex-col bg-white shadow-2xl"
+          className="absolute right-0 top-0 flex h-dvh w-[min(88vw,390px)] transform-gpu flex-col bg-white shadow-2xl will-change-transform"
         >
           <div className="flex h-20 shrink-0 items-center justify-between border-b border-[#E3E2E7] px-5">
             <span className="ml-4 text-sm font-extrabold uppercase tracking-[0.12em] text-[#313152]">

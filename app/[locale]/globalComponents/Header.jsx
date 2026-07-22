@@ -39,6 +39,18 @@ export default function Header({ locale = "lt" }) {
     window.history.replaceState(null, "", `/${locale}#${item.hash}`);
   }
 
+  function handleLogoClick(event) {
+    const homePath = `/${locale}`;
+    if (window.location.pathname.replace(/\/$/, "") !== homePath) return;
+
+    event.preventDefault();
+    window.history.replaceState(null, "", homePath);
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  }
+
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const context = gsap.context(() => {
@@ -65,6 +77,7 @@ export default function Header({ locale = "lt" }) {
       <div className="relative mx-auto flex h-20 max-w-[1280px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-10">
         <Link
           href={`/${locale}`}
+          onClick={handleLogoClick}
           aria-label={dictionary.header.homeLabel}
           className="flex shrink-0 items-center"
         >

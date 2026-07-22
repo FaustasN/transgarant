@@ -8,7 +8,7 @@ import { resources } from "@/lib/i18n";
 gsap.registerPlugin(ScrollTrigger);
 
 const routeGeometry = [
-  { path: "M405 265 C385 258 386 239 405 232", x: 405, y: 232 },
+  { path: "M405 265 C425 258 424 239 405 232", x: 405, y: 232 },
   { path: "M405 265 C404 231 395 203 385 185", x: 385, y: 185 },
   { path: "M405 265 C374 269 344 282 320 295", x: 320, y: 295 },
   { path: "M405 265 C435 270 465 290 490 315", x: 490, y: 315 },
@@ -21,7 +21,7 @@ function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
         role="img"
         aria-label={mapLabel}
         viewBox="100 100 580 300"
-        preserveAspectRatio="xMidYMid meet"
+        preserveAspectRatio="xMidYMid slice"
         className="absolute inset-0 h-full w-full"
       >
         <defs>
@@ -102,11 +102,11 @@ function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
         <circle cx="405" cy="265" r="7" fill="#E24A46" stroke="#FFFFFF" strokeWidth="3" />
 
         <g fontFamily="Manrope, Arial, sans-serif" fontSize="13" fontWeight="700" fill="#FFFFFF">
-          <text x="419" y="258">{origin}</text>
+          <text x="425" y="265">{origin}</text>
           <text
-            x={routeGeometry[activeIndex].x + (routeGeometry[activeIndex].x > 600 ? -12 : 12)}
-            y={routeGeometry[activeIndex].y - 11}
-            textAnchor={routeGeometry[activeIndex].x > 600 ? "end" : "start"}
+            x={routeGeometry[activeIndex].x + (activeIndex === 2 ? 70 : activeIndex === 3 ? -15 : 12)}
+            y={routeGeometry[activeIndex].y + (activeIndex >= 2 ? 21 : -11)}
+            textAnchor={activeIndex >= 2 ? "end" : "start"}
             fill="#FFFFFF"
             fillOpacity="0.86"
           >

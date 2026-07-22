@@ -6,8 +6,8 @@ export default function Footer({ locale = "lt" }) {
   const footer = (resources[locale] ?? resources.lt).common.footer;
 
   return (
-    <footer className="bg-[#313152] px-5 py-12 text-white sm:px-8 lg:px-10">
-      <div className="mx-auto grid max-w-[1200px] gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr]">
+    <footer className="bg-[#313152] px-5 py-7 text-white sm:px-8 sm:py-8 lg:px-10">
+      <div className="mx-auto grid max-w-[1200px] gap-7 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr]">
         <div>
           <Image
             src="/logo_footer.png"
@@ -50,7 +50,7 @@ export default function Footer({ locale = "lt" }) {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-[1200px] justify-center border-t border-white/14 pt-6 text-center text-sm text-white/58">
+      <div className="mx-auto mt-5 flex max-w-[1200px] justify-center border-t border-white/14 pt-4 text-center text-sm text-white/58">
         <p>© {new Date().getFullYear()} {footer.copyright}</p>
       </div>
     </footer>
