@@ -125,6 +125,8 @@ export default function Destinations({ locale = "lt" }) {
   const mapRef = useRef(null);
   const detailsRef = useRef(null);
   const activeRegion = destinations.regions[activeIndex];
+  const countriesText = activeRegion.countries.join(", ");
+  const hasLongCountryList = countriesText.length > 85;
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -172,13 +174,21 @@ export default function Destinations({ locale = "lt" }) {
             <EuropeMap activeIndex={activeIndex} regions={destinations.regions} origin={destinations.origin} mapLabel={destinations.mapLabel} />
           </div>
 
-          <div className="border-t border-white/14 px-7 py-7 text-center text-white sm:px-10 sm:py-8">
-            <div ref={detailsRef} className="mx-auto max-w-3xl" aria-live="polite">
+          <div className="flex h-[190px] items-center overflow-hidden border-t border-white/14 px-7 py-6 text-center text-white sm:h-[170px] sm:px-10 sm:py-7">
+            <div ref={detailsRef} className="mx-auto w-full max-w-3xl" aria-live="polite">
               <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-white/48">
                 {destinations.countriesLabel}
               </p>
               <h3 className="mt-3 text-xl font-bold">{activeRegion.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-white/68">{activeRegion.countries.join(", ")}</p>
+              <p
+                className={`mt-3 text-white/68 ${
+                  hasLongCountryList
+                    ? "text-[11px] leading-5 sm:text-xs sm:leading-6"
+                    : "text-xs leading-6 sm:text-sm sm:leading-7"
+                }`}
+              >
+                {countriesText}
+              </p>
             </div>
           </div>
         </div>
