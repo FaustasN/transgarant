@@ -26,7 +26,7 @@ export default function Footer({ locale = "lt" }) {
             {footer.navigationTitle}
           </h3>
           <div className="mt-4 grid gap-3 text-sm text-white/76">
-            <Link href={`/${locale}#paslaugos`}>{footer.links.services}</Link>
+            <Link href={`/${locale}/paslaugos`}>{footer.links.services}</Link>
             <Link href={`/${locale}#kryptys`}>{footer.links.destinations}</Link>
             <Link href={`/${locale}/apie-mus`}>{footer.links.about}</Link>
             <Link href={`/${locale}/karjera`}>{footer.links.careers}</Link>

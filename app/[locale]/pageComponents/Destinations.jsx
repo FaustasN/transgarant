@@ -11,7 +11,6 @@ const routeGeometry = [
   { path: "M405 265 C425 258 424 239 405 232", x: 405, y: 232 },
   { path: "M405 265 C404 231 395 203 385 185", x: 385, y: 185 },
   { path: "M405 265 C374 269 344 282 320 295", x: 320, y: 295 },
-  { path: "M405 265 C435 270 465 290 490 315", x: 490, y: 315 },
 ];
 
 function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
@@ -122,6 +121,7 @@ export default function Destinations({ locale = "lt" }) {
   const destinations = (resources[locale] ?? resources.lt).common.destinations;
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
+  const headingRef = useRef(null);
   const mapRef = useRef(null);
   const detailsRef = useRef(null);
   const activeRegion = destinations.regions[activeIndex];
@@ -139,6 +139,12 @@ export default function Destinations({ locale = "lt" }) {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const context = gsap.context(() => {
+      gsap.from(headingRef.current, {
+        autoAlpha: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: { trigger: headingRef.current, start: "top 88%", once: true },
+      });
       gsap.from([mapRef.current, detailsRef.current], {
         y: 36, autoAlpha: 0, duration: 0.75, stagger: 0.12, ease: "power3.out",
         scrollTrigger: { trigger: mapRef.current, start: "top 84%", once: true },
@@ -157,7 +163,7 @@ export default function Destinations({ locale = "lt" }) {
   return (
     <section ref={sectionRef} id="kryptys" className="bg-white px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-[1280px]">
-        <div className="mx-auto max-w-3xl text-center">
+        <div ref={headingRef} className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#AE2422]">
             {destinations.eyebrow}
           </p>

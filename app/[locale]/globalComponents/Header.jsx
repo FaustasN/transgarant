@@ -9,7 +9,7 @@ import LanguageDropdown from "./LanguageDropdown";
 import MobileNav from "./MobileNav";
 
 const navDestinations = [
-  { key: "services", path: "", hash: "paslaugos" },
+  { key: "services", path: "/paslaugos" },
   { key: "destinations", path: "", hash: "kryptys" },
   { key: "about", path: "/apie-mus" },
   { key: "careers", path: "/karjera" },

@@ -81,8 +81,7 @@
     "regions": [
       { "title": "Baltic states", "countries": ["Lithuania", "Latvia", "Estonia"] },
       { "title": "Scandinavia", "countries": ["Denmark", "Sweden", "Norway", "Finland"] },
-      { "title": "Western and Central Europe", "countries": ["Poland", "Germany", "France", "Benelux", "United Kingdom", "Switzerland", "Austria", "Hungary", "Czechia", "Slovakia", "Spain", "Italy", "Greece"] },
-      { "title": "Eastern Europe and CIS", "countries": ["Ukraine", "Kazakhstan", "Belarus", "Russia"] }
+      { "title": "Western and Central Europe", "countries": ["Poland", "Germany", "France", "Benelux", "United Kingdom", "Switzerland", "Austria", "Hungary", "Czechia", "Slovakia", "Spain", "Italy", "Greece"] }
     ]
   },
   "about": {
@@ -101,7 +100,7 @@
     "button": "Submit an inquiry"
   },
   "footer": {
-    "description": "A transport and logistics partner for full, partial and specialized cargo across Europe and the CIS.",
+    "description": "A transport and logistics partner for full, partial and specialized cargo across Europe.",
     "navigationTitle": "Navigation",
     "links": {
       "services": "Services",

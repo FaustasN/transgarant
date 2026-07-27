@@ -81,8 +81,7 @@
     "regions": [
       { "title": "Kraje bałtyckie", "countries": ["Litwa", "Łotwa", "Estonia"] },
       { "title": "Skandynawia", "countries": ["Dania", "Szwecja", "Norwegia", "Finlandia"] },
-      { "title": "Europa Zachodnia i Środkowa", "countries": ["Polska", "Niemcy", "Francja", "Beneluks", "Wielka Brytania", "Szwajcaria", "Austria", "Węgry", "Czechy", "Słowacja", "Hiszpania", "Włochy", "Grecja"] },
-      { "title": "Europa Wschodnia i WNP", "countries": ["Ukraina", "Kazachstan", "Białoruś", "Rosja"] }
+      { "title": "Europa Zachodnia i Środkowa", "countries": ["Polska", "Niemcy", "Francja", "Beneluks", "Wielka Brytania", "Szwajcaria", "Austria", "Węgry", "Czechy", "Słowacja", "Hiszpania", "Włochy", "Grecja"] }
     ]
   },
   "about": {
@@ -101,7 +100,7 @@
     "button": "Wyślij zapytanie"
   },
   "footer": {
-    "description": "Partner transportowo-logistyczny dla ładunków całopojazdowych, częściowych i specjalistycznych w Europie i krajach WNP.",
+    "description": "Partner transportowo-logistyczny dla ładunków całopojazdowych, częściowych i specjalistycznych w Europie.",
     "navigationTitle": "Nawigacja",
     "links": {
       "services": "Usługi",

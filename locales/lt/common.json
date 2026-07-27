@@ -81,8 +81,7 @@
     "regions": [
       { "title": "Baltijos šalys", "countries": ["Lietuva", "Latvija", "Estija"] },
       { "title": "Skandinavija", "countries": ["Danija", "Švedija", "Norvegija", "Suomija"] },
-      { "title": "Vakarų ir Centrinė Europa", "countries": ["Lenkija", "Vokietija", "Prancūzija", "Beneliukso šalys", "Didžioji Britanija", "Šveicarija", "Austrija", "Vengrija", "Čekija", "Slovakija", "Ispanija", "Italija", "Graikija"] },
-      { "title": "Rytų Europa ir NVS", "countries": ["Ukraina", "Kazachstanas", "Baltarusija", "Rusija"] }
+      { "title": "Vakarų ir Centrinė Europa", "countries": ["Lenkija", "Vokietija", "Prancūzija", "Beneliukso šalys", "Didžioji Britanija", "Šveicarija", "Austrija", "Vengrija", "Čekija", "Slovakija", "Ispanija", "Italija", "Graikija"] }
     ]
   },
   "about": {
@@ -101,7 +100,7 @@
     "button": "Pateikti užklausą"
   },
   "footer": {
-    "description": "Transporto ir logistikos partneris pilniems, daliniams ir specializuotiems kroviniams Europoje ir NVS šalyse.",
+    "description": "Transporto ir logistikos partneris pilniems, daliniams ir specializuotiems kroviniams Europoje.",
     "navigationTitle": "Navigacija",
     "links": {
       "services": "Paslaugos",
