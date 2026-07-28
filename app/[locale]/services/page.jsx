@@ -1,8 +1,9 @@
 import Header from "../globalComponents/Header";
 import Footer from "../globalComponents/Footer";
 import ScrollToTop from "../globalComponents/ScrollToTop";
-import ServicesExperience from "../pageComponents/ServicesExperience";
-import { servicesPageContent } from "@/lib/servicesPageContent";
+import ServicesExperience from "@/components/ServicesExperience";
+import { resources } from "@/lib/i18n";
+import { getServicesPath } from "@/lib/routes.mjs";
 
 const siteUrl = "https://www.transgarant.lt";
 const locales = ["lt", "en", "pl", "ru"];
@@ -13,15 +14,15 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const content = servicesPageContent[locale] ?? servicesPageContent.lt;
-  const canonical = `${siteUrl}/${locale}/paslaugos`;
+  const content = (resources[locale] ?? resources.lt).services;
+  const canonical = `${siteUrl}${getServicesPath(locale)}`;
 
   return {
     title: content.meta.title,
     description: content.meta.description,
     alternates: {
       canonical,
-      languages: Object.fromEntries(locales.map((language) => [language, `${siteUrl}/${language}/paslaugos`])),
+      languages: Object.fromEntries(locales.map((language) => [language, `${siteUrl}${getServicesPath(language)}`])),
     },
     openGraph: {
       title: content.meta.title,
@@ -37,8 +38,8 @@ export async function generateMetadata({ params }) {
 
 export default async function ServicesPage({ params }) {
   const { locale } = await params;
-  const content = servicesPageContent[locale] ?? servicesPageContent.lt;
-  const pageUrl = `${siteUrl}/${locale}/paslaugos`;
+  const content = (resources[locale] ?? resources.lt).services;
+  const pageUrl = `${siteUrl}${getServicesPath(locale)}`;
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [

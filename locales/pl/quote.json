@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Zapytanie o transport ładunku | Transgarant",
+    "description": "Prześlij trasę, wagę ładunku i dane kontaktowe. TRANSGARANT GROUP dobierze odpowiednie rozwiązanie transportowe."
+  },
+  "hero": {
+    "title": "Poproś o ofertę transportową",
+    "description": "Podaj najważniejsze informacje o ładunku i trasie. Przeanalizujemy zapytanie i skontaktujemy się w sprawie najlepszego rozwiązania.",
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbCurrent": "Zapytanie"
+  },
+  "form": {
+    "contactEyebrow": "DANE KONTAKTOWE",
+    "contactTitle": "Jak możemy się z Tobą skontaktować?",
+    "company": "Nazwa firmy",
+    "companyPlaceholder": "Nazwa firmy",
+    "contactPerson": "Osoba kontaktowa",
+    "contactPersonPlaceholder": "Imię i nazwisko",
+    "phone": "Numer telefonu",
+    "phonePlaceholder": "+370",
+    "email": "E-mail",
+    "emailPlaceholder": "imie@email.pl",
+    "routeEyebrow": "TRASA",
+    "routeTitle": "Skąd i dokąd ma zostać przewieziony ładunek?",
+    "loadingLabel": "Miejsce załadunku",
+    "loadingCountry": "Kraj",
+    "loadingCountryPlaceholder": "Litwa",
+    "loadingCity": "Miasto",
+    "loadingCityPlaceholder": "Wilno",
+    "unloadingLabel": "Miejsce dostawy",
+    "unloadingCountry": "Kraj",
+    "unloadingCountryPlaceholder": "Niemcy",
+    "unloadingCity": "Miasto",
+    "unloadingCityPlaceholder": "Berlin",
+    "cargoEyebrow": "ŁADUNEK",
+    "cargoTitle": "Co mamy przewieźć?",
+    "cargoType": "Rodzaj ładunku",
+    "cargoTypePlaceholder": "Na przykład palety lub urządzenia",
+    "weight": "Waga",
+    "weightPlaceholder": "Na przykład 1 500 kg",
+    "pickupDate": "Preferowana data załadunku",
+    "additionalInfo": "Dodatkowe informacje",
+    "additionalInfoPlaceholder": "Wymiary, ilość, specjalne warunki lub inne ważne informacje",
+    "submit": "Wyślij zapytanie",
+    "submitNote": "Po kliknięciu „Wyślij zapytanie” otworzy się Twój program pocztowy.",
+    "subject": "Nowe zapytanie transportowe"
+  }
+}

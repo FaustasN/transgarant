@@ -6,13 +6,31 @@ import { useLayoutEffect, useRef } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import gsap from "gsap";
 import { resources } from "@/lib/i18n";
+import { getQuotePath } from "@/lib/routes.mjs";
 
 export default function Hero({ locale = "lt" }) {
   const sectionRef = useRef(null);
   const hero = (resources[locale] ?? resources.lt).common.hero;
 
+  function handleServicesClick(event) {
+    const servicesSection = document.getElementById("paslaugos");
+    if (!servicesSection) return;
+
+    event.preventDefault();
+    servicesSection.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+      block: "start",
+    });
+    window.history.replaceState(null, "", `/${locale}#paslaugos`);
+  }
+
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const section = sectionRef.current;
+    if (!section) return;
+
     const context = gsap.context(() => {
       const timeline = gsap.timeline({ defaults: { ease: "power2.out" } });
 
@@ -26,7 +44,7 @@ export default function Hero({ locale = "lt" }) {
           { y: 10, autoAlpha: 0, duration: 0.3, stagger: 0.06 },
           "-=0.15",
         );
-    }, sectionRef);
+    }, section);
 
     return () => context.revert();
   }, []);
@@ -67,7 +85,7 @@ export default function Hero({ locale = "lt" }) {
           <div className="mt-9 flex flex-row items-center gap-2.5 sm:gap-3">
             <Link
               data-hero-button
-              href={`/${locale}/uzklausa`}
+              href={getQuotePath(locale)}
               className="inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-[#AE2422] px-3.5 py-3 text-sm font-bold text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#92201E] hover:shadow-lg active:translate-y-0 sm:min-h-13 sm:gap-3 sm:px-7 sm:py-3.5 sm:text-base"
             >
               {hero.primaryCta}
@@ -76,6 +94,7 @@ export default function Hero({ locale = "lt" }) {
             <Link
               data-hero-button
               href={`/${locale}#paslaugos`}
+              onClick={handleServicesClick}
               className="inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-lg border border-white/38 bg-white/[0.06] px-3.5 py-3 text-sm font-bold text-white backdrop-blur-sm transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-white/15 hover:shadow-lg active:translate-y-0 sm:min-h-13 sm:px-7 sm:py-3.5 sm:text-base"
             >
               {hero.secondaryCta}

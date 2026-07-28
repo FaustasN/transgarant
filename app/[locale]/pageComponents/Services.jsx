@@ -6,6 +6,7 @@ import { ArrowRight, Boxes, ChevronDown, Truck, Warehouse } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { resources } from "@/lib/i18n";
+import { getServicesPath } from "@/lib/routes.mjs";
 import RevealSection from "@/components/RevealSection";
 
 const serviceIcons = [Truck, Boxes, Warehouse];
@@ -103,7 +104,7 @@ export default function Services({ locale = "lt" }) {
 
         <div data-reveal className="mt-14 flex justify-center lg:mt-16">
           <Link
-            href={`/${locale}/paslaugos`}
+            href={getServicesPath(locale)}
             className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#AE2422] px-6 py-3 font-bold !text-white transition-colors hover:bg-[#92201E]"
           >
             {services.cta}

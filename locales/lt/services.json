@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "Krovinių gabenimas ir logistikos paslaugos | Transgarant",
+    "description": "Pilnų, dalinių ir specializuotų krovinių gabenimas Lietuvoje ir Europoje. FTL, LTL, ADR, oro, jūrų, sandėliavimo ir muitinės sprendimai."
+  },
+  "hero": {
+    "eyebrow": "TRANSPORTO IR LOGISTIKOS SPRENDIMAI",
+    "title": "Paslaugos kiekvienam krovinio etapui",
+    "description": "Nuo kelių palečių iki pilno ar specialių sąlygų reikalaujančio krovinio – parenkame transportą, suplanuojame maršrutą ir koordinuojame pristatymą iki gavėjo.",
+    "primaryCta": "Gauti pasiūlymą",
+    "secondaryCta": "Peržiūrėti paslaugas",
+    "breadcrumbHome": "Pradžia",
+    "breadcrumbCurrent": "Paslaugos"
+  },
+  "explorer": {
+    "eyebrow": "KĄ GALIME PADARYTI",
+    "title": "Pasirinkite paslaugą",
+    "intro": "Kiekvieną pervežimą vertiname individualiai. Pasirinkite paslaugą ir sužinokite, kaip galime suplanuoti jūsų krovinio kelią.",
+    "navigationLabel": "Transporto ir logistikos paslaugos",
+    "suitableLabel": "Paslauga apima",
+    "cta": "Aptarti krovinį"
+  },
+  "services": [
+    {
+      "key": "road",
+      "title": "Kelių transportas",
+      "kicker": "FTL · LTL · SMULKŪS KROVINIAI",
+      "heading": "Pilnų, dalinių ir smulkių krovinių gabenimas",
+      "intro": "Organizuojame vietinius ir tarptautinius pervežimus kelių transportu – nuo vienos paletės iki visos transporto priemonės.",
+      "paragraphs": [
+        "Pilniems kroviniams parenkame transporto priemonę pagal krovinio matmenis, svorį ir pristatymo terminą. Tiesioginis maršrutas padeda sumažinti papildomą perkrovimą ir užtikrinti aiškią pristatymo kontrolę.",
+        "Dalinius ir smulkius krovinius konsoliduojame taip, kad klientas mokėtų už krovinio užimamą vietą, o ne visą transporto priemonę. Koordinuojame paėmimą, dokumentus ir pristatymą nuo durų iki durų."
+      ],
+      "features": [
+        "Pilni kroviniai (FTL)",
+        "Daliniai kroviniai (LTL)",
+        "Smulkios siuntos ir paletės",
+        "Vietiniai ir tarptautiniai maršrutai"
+      ],
+      "imageAlt": "Tarptautiniam krovinių gabenimui paruoštas sunkvežimis"
+    },
+    {
+      "key": "special",
+      "title": "Specializuoti kroviniai",
+      "kicker": "ADR · TEMPERATŪRINIAI · NEGABARITINIAI",
+      "heading": "Kai standartinio transportavimo nepakanka",
+      "intro": "Kroviniams, kuriems taikomi papildomi saugos, temperatūros ar matmenų reikalavimai, parengiame individualų transportavimo sprendimą.",
+      "paragraphs": [
+        "Pavojingų ir temperatūrai jautrių krovinių gabenimą planuojame atsižvelgdami į krovinio klasę, reikiamą temperatūros režimą, dokumentus ir transporto priemonės specifikaciją.",
+        "Negabaritiniam kroviniui įvertiname matmenis, svorį, maršruto apribojimus, reikalingus leidimus ir tinkamą techniką. Kiekvienas toks pervežimas derinamas atskirai."
+      ],
+      "features": [
+        "Pavojingi kroviniai (ADR)",
+        "Temperatūros režimo kontrolė",
+        "Negabaritiniai ir sunkiasvoriai kroviniai",
+        "Maršruto ir dokumentų koordinavimas"
+      ],
+      "imageAlt": "Specializuotam kroviniui pritaikyta transporto priemonė"
+    },
+    {
+      "key": "global",
+      "title": "Oro ir jūrų transportas",
+      "kicker": "ORAS · JŪRA · MULTIMODALINIAI MARŠRUTAI",
+      "heading": "Sprendimai skubiems ir tarptautiniams kroviniams",
+      "intro": "Kai kelių transportas nėra tinkamiausias, organizuojame krovinio gabenimą oro, jūrų arba kelias transporto rūšis jungiančiu maršrutu.",
+      "paragraphs": [
+        "Oro transportą siūlome skubiems, vertingiems ir nedideliems kroviniams, kai svarbiausias yra pristatymo laikas. Koordinuojame paėmimą, skrydžio maršrutą ir galutinį pristatymą.",
+        "Jūrų transportas tinka didesniems kroviniams ir tarptautinėms tiekimo grandinėms. Parenkame tinkamą gabenimo būdą ir sujungiame uosto bei sausumos transporto etapus."
+      ],
+      "features": [
+        "Skubūs kroviniai oro transportu",
+        "Jūrų ir konteinerių gabenimas",
+        "Importo ir eksporto koordinavimas",
+        "Pristatymas nuo durų iki durų"
+      ],
+      "imageAlt": "Jūrų konteineriai ir krovininis transportas terminale"
+    },
+    {
+      "key": "warehouse",
+      "title": "Sandėliavimas ir muitinė",
+      "kicker": "SANDĖLIAVIMAS · KROVA · FORMALUMAI",
+      "heading": "Krovinio saugojimas ir paruošimas kitam etapui",
+      "intro": "Organizuojame sandėliavimo, krovos, perkrovimo ir muitinės paslaugas, kad krovinio judėjimas tarp transportavimo etapų būtų sklandus.",
+      "paragraphs": [
+        "Pagal krovinio savybes parenkame įprastas arba šaldomas patalpas. Galime koordinuoti laikiną saugojimą, konsolidavimą, perkrovimą ir krovinio paruošimą išsiuntimui.",
+        "Kai maršrutui taikomi muitinės formalumai, pasirūpiname reikalingų paslaugų koordinavimu ir informacijos perdavimu tarp susijusių šalių."
+      ],
+      "features": [
+        "Įprastos ir šaldomos patalpos",
+        "Krovos ir perkrovimo darbai",
+        "Krovinių konsolidavimas",
+        "Muitinės paslaugų koordinavimas"
+      ],
+      "imageAlt": "Modernus logistikos sandėlis su paruoštais kroviniais"
+    },
+    {
+      "key": "moving",
+      "title": "Tarptautinis perkraustymas",
+      "kicker": "PLANAVIMAS · TRANSPORTAS · PRISTATYMAS",
+      "heading": "Daiktų ir turto perkraustymas tarp šalių",
+      "intro": "Organizuojame tarptautinį įmonių ir privačių klientų turto pervežimą, suderindami paėmimą, transportą ir pristatymo laiką.",
+      "paragraphs": [
+        "Prieš pervežimą įvertiname krovinio apimtį, pakavimo poreikį, pakrovimo sąlygas ir pristatymo adresą. Pagal tai parenkame tinkamą transporto priemonę bei maršrutą.",
+        "Vienas atsakingas koordinatorius prižiūri informaciją ir pervežimo eigą, kad skirtingi etapai būtų suderinti ir klientas žinotų, kas vyksta."
+      ],
+      "features": [
+        "Įmonių ir asmeninio turto pervežimas",
+        "Paėmimo ir pristatymo planavimas",
+        "Tinkamos transporto priemonės parinkimas",
+        "Tarptautinio maršruto koordinavimas"
+      ],
+      "imageAlt": "Tarptautiniam perkraustymui paruoštas krovinys"
+    },
+    {
+      "key": "forwarding",
+      "title": "Ekspedijavimas",
+      "kicker": "MARŠRUTAS · PARTNERIAI · KONTROLĖ",
+      "heading": "Vienas kontaktas visai krovinio kelionei",
+      "intro": "Sujungiame transportą, maršrutą, dokumentus ir komunikaciją į vieną aiškiai valdomą pervežimo procesą.",
+      "paragraphs": [
+        "Atsižvelgdami į krovinį, terminą ir biudžetą, atrenkame tinkamus vežėjus bei transportavimo būdą. Patikimų partnerių tinklas leidžia lanksčiai planuoti maršrutus Lietuvoje ir užsienyje.",
+        "Prižiūrime užsakymo eigą nuo užklausos iki pristatymo, sprendžiame operacinius klausimus ir teikiame klientui aktualią informaciją apie krovinio judėjimą."
+      ],
+      "features": [
+        "Vežėjo ir transporto parinkimas",
+        "Kainos ir maršruto skaičiavimas",
+        "Dokumentų bei etapų koordinavimas",
+        "Konsultacijos logistikos klausimais"
+      ],
+      "imageAlt": "Logistikos specialistas koordinuoja tarptautinį krovinį"
+    }
+  ]
+}

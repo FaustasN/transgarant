@@ -103,7 +103,7 @@ function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
         <g fontFamily="Manrope, Arial, sans-serif" fontSize="13" fontWeight="700" fill="#FFFFFF">
           <text x="425" y="265">{origin}</text>
           <text
-            x={routeGeometry[activeIndex].x + (activeIndex === 2 ? 70 : activeIndex === 3 ? -15 : 12)}
+            x={routeGeometry[activeIndex].x + (activeIndex === 2 ? 84 : activeIndex === 3 ? -15 : 12)}
             y={routeGeometry[activeIndex].y + (activeIndex >= 2 ? 21 : -11)}
             textAnchor={activeIndex >= 2 ? "end" : "start"}
             fill="#FFFFFF"
@@ -138,26 +138,38 @@ export default function Destinations({ locale = "lt" }) {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const section = sectionRef.current;
+    const heading = headingRef.current;
+    const map = mapRef.current;
+    const details = detailsRef.current;
+    if (!section || !heading || !map || !details) return;
+
     const context = gsap.context(() => {
-      gsap.from(headingRef.current, {
+      gsap.from(heading, {
         autoAlpha: 0,
         duration: 1,
         ease: "power2.out",
-        scrollTrigger: { trigger: headingRef.current, start: "top 88%", once: true },
+        scrollTrigger: { trigger: heading, start: "top 88%", once: true },
       });
-      gsap.from([mapRef.current, detailsRef.current], {
+      gsap.from([map, details], {
         y: 36, autoAlpha: 0, duration: 0.75, stagger: 0.12, ease: "power3.out",
-        scrollTrigger: { trigger: mapRef.current, start: "top 84%", once: true },
+        scrollTrigger: { trigger: map, start: "top 84%", once: true },
       });
-    }, sectionRef);
+    }, section);
     return () => context.revert();
   }, []);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    gsap.fromTo(detailsRef.current?.children ?? [], { y: 8, autoAlpha: 0 }, {
+    const details = detailsRef.current;
+    if (!details?.children.length) return;
+
+    const children = Array.from(details.children);
+    gsap.fromTo(children, { y: 8, autoAlpha: 0 }, {
       y: 0, autoAlpha: 1, duration: 0.35, stagger: 0.04, ease: "power2.out", overwrite: true,
     });
+
+    return () => gsap.killTweensOf(children);
   }, [activeIndex]);
 
   return (

@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Контакты | Transgarant Group",
+    "description": "Свяжитесь с UAB TRANSGARANT GROUP по вопросам перевозок, логистических услуг или сотрудничества. Офис в Вильнюсе."
+  },
+  "hero": {
+    "title": "Свяжитесь с нами",
+    "description": "Есть вопрос о перевозке груза или сотрудничестве? Напишите нам или позвоните.",
+    "breadcrumbHome": "Главная",
+    "breadcrumbCurrent": "Контакты"
+  },
+  "details": {
+    "emailLabel": "Эл. почта",
+    "email": "info@transgarant.lt",
+    "phonesLabel": "Телефоны",
+    "officePhone": "+370 (5) 207 2775",
+    "mobilePhone": "+370 688 18888",
+    "addressLabel": "Адрес",
+    "addressLine1": "Laisvės pr. 78B-238",
+    "addressLine2": "Вильнюс, LT-05263",
+    "hoursLabel": "Время работы",
+    "hours": "Пн–Пт 08:30–17:30",
+    "mapLink": "Открыть в Google Maps",
+    "mapTitle": "Офис TRANSGARANT GROUP в Вильнюсе"
+  },
+  "form": {
+    "eyebrow": "ЕСТЬ ВОПРОС?",
+    "title": "Напишите нам",
+    "description": "Коротко расскажите, чем мы можем помочь. После нажатия «Отправить сообщение» откроется ваша почтовая программа.",
+    "name": "Имя и фамилия",
+    "namePlaceholder": "Ваше имя и фамилия",
+    "email": "Эл. почта",
+    "emailPlaceholder": "name@email.com",
+    "phone": "Номер телефона",
+    "phonePlaceholder": "+370",
+    "message": "Сообщение",
+    "messagePlaceholder": "Чем мы можем помочь?",
+    "submit": "Отправить сообщение",
+    "subject": "Сообщение со страницы контактов"
+  },
+  "company": {
+    "eyebrow": "ДАННЫЕ КОМПАНИИ",
+    "title": "UAB TRANSGARANT GROUP",
+    "companyCodeLabel": "Код компании",
+    "companyCode": "302690097",
+    "vatLabel": "Код НДС",
+    "vat": "LT100006861513",
+    "bankLabel": "Банк",
+    "bank": "AB SEB",
+    "ibanLabel": "IBAN",
+    "iban": "LT47 7044 0600 0774 3247",
+    "swiftLabel": "SWIFT (BIC)",
+    "swift": "CBVILT2XXXX"
+  }
+}

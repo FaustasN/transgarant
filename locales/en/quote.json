@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Freight transport quote request | Transgarant",
+    "description": "Send your cargo route, weight and contact details. TRANSGARANT GROUP will select a suitable transport solution."
+  },
+  "hero": {
+    "title": "Request a transport quote",
+    "description": "Share the essential details about your cargo and route. We will review the request and contact you with the most suitable solution.",
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Request a quote"
+  },
+  "form": {
+    "contactEyebrow": "CONTACT DETAILS",
+    "contactTitle": "How can we reach you?",
+    "company": "Company name",
+    "companyPlaceholder": "Company name",
+    "contactPerson": "Contact person",
+    "contactPersonPlaceholder": "Full name",
+    "phone": "Phone number",
+    "phonePlaceholder": "+370",
+    "email": "Email",
+    "emailPlaceholder": "name@email.com",
+    "routeEyebrow": "ROUTE",
+    "routeTitle": "Where is the cargo travelling from and to?",
+    "loadingLabel": "Loading point",
+    "loadingCountry": "Country",
+    "loadingCountryPlaceholder": "Lithuania",
+    "loadingCity": "City",
+    "loadingCityPlaceholder": "Vilnius",
+    "unloadingLabel": "Delivery point",
+    "unloadingCountry": "Country",
+    "unloadingCountryPlaceholder": "Germany",
+    "unloadingCity": "City",
+    "unloadingCityPlaceholder": "Berlin",
+    "cargoEyebrow": "CARGO",
+    "cargoTitle": "What needs to be transported?",
+    "cargoType": "Cargo type",
+    "cargoTypePlaceholder": "For example, pallets or equipment",
+    "weight": "Weight",
+    "weightPlaceholder": "For example, 1,500 kg",
+    "pickupDate": "Preferred loading date",
+    "additionalInfo": "Additional information",
+    "additionalInfoPlaceholder": "Dimensions, quantity, special conditions or other relevant information",
+    "submit": "Send request",
+    "submitNote": "Your email application will open when you press “Send request”.",
+    "subject": "New transport quote request"
+  }
+}

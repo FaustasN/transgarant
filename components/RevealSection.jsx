@@ -11,10 +11,12 @@ export default function RevealSection({ children, className = "", id, itemStagge
 
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const section = sectionRef.current;
+    if (!section) return;
 
     const context = gsap.context(() => {
-      const revealElements = sectionRef.current.querySelectorAll("[data-reveal]");
-      const revealItems = sectionRef.current.querySelectorAll("[data-reveal-item]");
+      const revealElements = section.querySelectorAll("[data-reveal]");
+      const revealItems = section.querySelectorAll("[data-reveal-item]");
 
       if (revealElements.length) {
         gsap.from(revealElements, {
@@ -24,7 +26,7 @@ export default function RevealSection({ children, className = "", id, itemStagge
           stagger: 0.09,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: sectionRef.current,
+            trigger: section,
             start: "top 82%",
             once: true,
           },
@@ -46,7 +48,7 @@ export default function RevealSection({ children, className = "", id, itemStagge
         });
       }
 
-      sectionRef.current.querySelectorAll("[data-parallax]").forEach((element) => {
+      section.querySelectorAll("[data-parallax]").forEach((element) => {
         gsap.fromTo(element, { yPercent: -4, scale: 1.06 }, {
           yPercent: 4,
           ease: "none",
@@ -58,7 +60,7 @@ export default function RevealSection({ children, className = "", id, itemStagge
           },
         });
       });
-    }, sectionRef);
+    }, section);
 
     return () => context.revert();
   }, [itemStagger]);

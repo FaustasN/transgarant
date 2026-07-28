@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Careers in transport and logistics | Transgarant",
+    "description": "Join the UAB TRANSGARANT GROUP team. Explore open transport management, sales and driving positions."
+  },
+  "hero": {
+    "title": "Join our team",
+    "description": "We grow with people who value responsibility, clear communication and work done well. Explore our open positions and get in touch.",
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Careers",
+    "imageAlt": "Job interview at a transport and logistics company"
+  },
+  "positions": {
+    "eyebrow": "OPEN POSITIONS",
+    "title": "Find your place at TRANSGARANT GROUP",
+    "responsibilitiesLabel": "Responsibilities",
+    "requirementsLabel": "Requirements",
+    "offerLabel": "What we offer",
+    "apply": "Apply",
+    "items": [
+      {
+        "id": "transport-manager",
+        "title": "Transport Manager",
+        "responsibilities": [
+          "Organise, monitor and manage cargo transport across assigned routes.",
+          "Communicate with drivers and maintain relationships with existing clients.",
+          "Work with the company database and administer orders."
+        ],
+        "requirements": [
+          "Experience in transport, logistics or freight forwarding is an advantage.",
+          "Excellent foreign-language knowledge and good computer skills.",
+          "Ability to solve problems, negotiate and work as part of a team.",
+          "Quick thinking, accuracy, independence and responsibility."
+        ],
+        "offer": [
+          "A role in a growing and promising company.",
+          "Room to put your skills and ideas into practice.",
+          "Social guarantees and all tools required for the role.",
+          "Pay reflecting your abilities and results."
+        ]
+      },
+      {
+        "id": "sales-manager",
+        "title": "Transport Services Sales Manager",
+        "responsibilities": [
+          "Active telephone sales of transport services to existing and new partners.",
+          "Negotiations with prospective clients.",
+          "Database work and order administration.",
+          "Service monitoring, client updates and prompt problem solving."
+        ],
+        "requirements": [
+          "Relevant experience is an advantage.",
+          "Excellent foreign-language knowledge and good computer skills.",
+          "Ability to solve problems, negotiate and work as part of a team.",
+          "Motivation to work intensively, improve and achieve results.",
+          "Quick thinking, accuracy, independence and strong communication skills."
+        ],
+        "offer": [
+          "A role in a growing and promising company.",
+          "Room to put your skills and ideas into practice.",
+          "Social guarantees and all tools required for the role.",
+          "Pay reflecting your abilities and results."
+        ]
+      },
+      {
+        "id": "driver-forwarder",
+        "title": "Driver – Forwarder",
+        "responsibilities": [
+          "International road transport across Europe.",
+          "Domestic road transport in Lithuania.",
+          "Driving DAF and Mercedes EURO 5/6 trucks with curtain-sided semi-trailers."
+        ],
+        "requirements": [
+          "CE driving licence.",
+          "CE driving experience is an advantage.",
+          "Code 95 qualification.",
+          "Driver card."
+        ],
+        "offer": [
+          "Stable salary paid on time.",
+          "Full social guarantees.",
+          "A flexible work schedule."
+        ]
+      }
+    ]
+  },
+  "application": {
+    "eyebrow": "APPLY",
+    "title": "Let’s start with a short message",
+    "description": "Choose a position and leave your contact details. Your email application will open when you press “Send CV”.",
+    "roleLegend": "Position",
+    "name": "Full name",
+    "namePlaceholder": "Your full name",
+    "email": "Email",
+    "emailPlaceholder": "name@email.com",
+    "phone": "Phone number",
+    "phonePlaceholder": "+370",
+    "message": "Short message",
+    "messagePlaceholder": "Tell us briefly about yourself",
+    "cv": "Add CV",
+    "cvHint": "PDF or DOC, up to 10 MB",
+    "cvAttachNote": "Attach the selected CV to the email that opens.",
+    "submit": "Send CV",
+    "stickyApply": "Apply"
+  }
+}

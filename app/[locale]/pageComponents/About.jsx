@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { resources } from "@/lib/i18n";
+import { getAboutPath } from "@/lib/routes.mjs";
 import RevealSection from "@/components/RevealSection";
 
 const aboutImage =
@@ -42,11 +43,15 @@ export default function About({ locale = "lt" }) {
               </p>
             ))}
             <Link
-              href={`/${locale}/apie-mus`}
-              className="mt-8 inline-flex min-h-12 w-fit self-center items-center gap-3 rounded-lg border border-[#313152] px-6 py-3 font-bold text-[#313152] transition-colors hover:bg-[#E9E9F0] lg:self-start"
+              href={getAboutPath(locale)}
+              className="group mt-8 inline-flex min-h-12 w-fit self-center items-center gap-3 rounded-lg border border-[#313152] px-6 py-3 font-bold text-[#313152] transition-colors hover:bg-[#E9E9F0] lg:self-start"
             >
               {about.cta}
-              <ArrowRight aria-hidden="true" size={18} className="text-[#AE2422]" />
+              <ArrowRight
+                aria-hidden="true"
+                size={18}
+                className="text-[#AE2422] transition-transform duration-300 group-hover:translate-x-1.5"
+              />
             </Link>
           </div>
         </div>

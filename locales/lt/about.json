@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Apie mus | Transgarant Group",
+    "description": "Susipažinkite su UAB „TRANSGARANT GROUP“ – transporto ir logistikos įmone, teikiančia krovinių gabenimo ir ekspedijavimo paslaugas Lietuvoje bei Europoje."
+  },
+  "hero": {
+    "title": "Logistikos sprendimai ilgalaikei partnerystei",
+    "intro": "UAB „TRANSGARANT GROUP“ – privataus kapitalo transporto ir logistikos įmonė, teikianti kompleksines logistikos paslaugas. Specializuojamės krovinių gabenimo ir ekspedijavimo srityse.",
+    "breadcrumbHome": "Pradžia",
+    "breadcrumbCurrent": "Apie mus",
+    "imageAlt": "Logistikos sandėlyje ruošiami kroviniai"
+  },
+  "overview": {
+    "eyebrow": "MŪSŲ PATIRTIS",
+    "title": "Patirtis, padedanti rasti tinkamą sprendimą",
+    "paragraphs": [
+      "Sukaupta patirtis gabenant krovinius vietiniais ir tarptautiniais maršrutais leidžia pasiūlyti transportavimo sprendimus, pritaikytus individualiems kliento poreikiams. Pervežimus vykdome nuosavomis transporto priemonėmis ir pasitelkdami patikimų partnerių tinklą.",
+      "Specializuojamės smulkių, dalinių ir pilnų krovinių pervežime sausumos transportu. Platus partnerių tinklas visoje Europoje padeda užtikrinti operatyvų, saugų ir laiku įvykdytą produkcijos pristatymą iki gavėjo ar sandėlio.",
+      "Atsakingai vykdoma veikla orientuota į ilgalaikį bendradarbiavimą ir patikimą partnerystę. Tikime, kad kokybiškai teikiamos paslaugos padeda klientams sėkmingai plėtoti savo verslą."
+    ],
+    "highlight": "Mūsų tikslas – ne tik kokybiškai įvykdyti užsakymą, bet ir viršyti kliento lūkesčius."
+  },
+  "trust": {
+    "eyebrow": "ĮVERTINIMAS",
+    "title": "Patikimas darbdavys 2026",
+    "description": "„Creditinfo“ įvertinimu, UAB „TRANSGARANT GROUP“ užtikrina darbuotojų gerovę ir atitinka aukštus skaidrumo bei darbdavio etikos standartus.",
+    "imageAlt": "UAB „TRANSGARANT GROUP“ Patikimo darbdavio 2026 sertifikatas"
+  },
+  "cta": {
+    "title": "Ieškote patikimo logistikos partnerio?",
+    "description": "Aptarkime jūsų krovinį ir raskime tinkamiausią transportavimo sprendimą.",
+    "button": "Aptarti krovinį"
+  }
+}

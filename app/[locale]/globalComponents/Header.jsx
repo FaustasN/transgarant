@@ -5,23 +5,40 @@ import Link from "next/link";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { resources } from "@/lib/i18n";
+import {
+  getAboutPath,
+  getCareersPath,
+  getContactPath,
+  getQuotePath,
+  getServicesPath,
+} from "@/lib/routes.mjs";
 import LanguageDropdown from "./LanguageDropdown";
 import MobileNav from "./MobileNav";
 
 const navDestinations = [
-  { key: "services", path: "/paslaugos" },
+  { key: "services" },
   { key: "destinations", path: "", hash: "kryptys" },
-  { key: "about", path: "/apie-mus" },
-  { key: "careers", path: "/karjera" },
-  { key: "contact", path: "/kontaktai" },
-  { key: "quote", path: "/uzklausa" },
+  { key: "about" },
+  { key: "careers" },
+  { key: "contact" },
+  { key: "quote" },
 ];
 
 export default function Header({ locale = "lt" }) {
   const headerRef = useRef(null);
   const dictionary = resources[locale]?.common ?? resources.lt.common;
   const navItems = navDestinations.map((destination) => ({
-    href: `/${locale}${destination.path}${destination.hash ? `#${destination.hash}` : ""}`,
+    href: destination.key === "services"
+      ? getServicesPath(locale)
+      : destination.key === "about"
+        ? getAboutPath(locale)
+        : destination.key === "careers"
+          ? getCareersPath(locale)
+          : destination.key === "contact"
+            ? getContactPath(locale)
+            : destination.key === "quote"
+              ? getQuotePath(locale)
+        : `/${locale}${destination.path}${destination.hash ? `#${destination.hash}` : ""}`,
     label: dictionary.nav[destination.key],
     hash: destination.hash,
   }));
@@ -53,11 +70,14 @@ export default function Header({ locale = "lt" }) {
 
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const header = headerRef.current;
+    if (!header) return;
+
     const context = gsap.context(() => {
       const timeline = gsap.timeline({ defaults: { ease: "power2.out" } });
 
       timeline
-        .from(headerRef.current, {
+        .from(header, {
           autoAlpha: 0,
           duration: 0.3,
           clearProps: "opacity,visibility",
@@ -67,7 +87,7 @@ export default function Header({ locale = "lt" }) {
           { y: -5, autoAlpha: 0, duration: 0.22, stagger: 0.035 },
           "-=0.2",
         );
-    }, headerRef);
+    }, header);
 
     return () => context.revert();
   }, []);

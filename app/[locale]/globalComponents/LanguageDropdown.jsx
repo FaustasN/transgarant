@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
+import { getLocalizedPath } from "@/lib/routes.mjs";
 
 const languages = [
   { code: "lt", label: "LT", name: "Lietuvių" },
@@ -22,7 +23,10 @@ export default function LanguageDropdown({ locale = "lt" }) {
   const current = locale.toUpperCase();
 
   useLayoutEffect(() => {
-    gsap.set(menuRef.current, {
+    const menu = menuRef.current;
+    if (!menu) return;
+
+    gsap.set(menu, {
       autoAlpha: 0,
       y: -8,
       scale: 0.98,
@@ -32,7 +36,11 @@ export default function LanguageDropdown({ locale = "lt" }) {
   }, []);
 
   useEffect(() => {
-    gsap.to(menuRef.current, {
+    const menu = menuRef.current;
+    const chevron = chevronRef.current;
+    if (!menu || !chevron) return;
+
+    gsap.to(menu, {
       autoAlpha: open ? 1 : 0,
       y: open ? 0 : -8,
       scale: open ? 1 : 0.98,
@@ -41,12 +49,16 @@ export default function LanguageDropdown({ locale = "lt" }) {
       ease: open ? "power2.out" : "power1.in",
       overwrite: true,
     });
-    gsap.to(chevronRef.current, {
+    gsap.to(chevron, {
       rotate: open ? 180 : 0,
       duration: 0.2,
       ease: "power2.out",
       overwrite: true,
     });
+
+    return () => {
+      gsap.killTweensOf([menu, chevron]);
+    };
   }, [open]);
 
   useEffect(() => {
@@ -66,15 +78,7 @@ export default function LanguageDropdown({ locale = "lt" }) {
   }, []);
 
   function localizedPath(language) {
-    const segments = pathname.split("/").filter(Boolean);
-
-    if (languages.some(({ code }) => code === segments[0])) {
-      segments[0] = language;
-    } else {
-      segments.unshift(language);
-    }
-
-    return `/${segments.join("/")}`;
+    return getLocalizedPath(pathname, language);
   }
 
   return (

@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "Transport ładunków i usługi logistyczne | Transgarant",
+    "description": "Transport FTL, LTL i ładunków specjalistycznych na Litwie i w Europie. ADR, transport lotniczy, morski, magazynowanie i obsługa celna."
+  },
+  "hero": {
+    "eyebrow": "ROZWIĄZANIA TRANSPORTOWE I LOGISTYCZNE",
+    "title": "Usługi na każdym etapie transportu",
+    "description": "Od kilku palet po pełny lub specjalistyczny ładunek – dobieramy transport, planujemy trasę i koordynujemy dostawę do odbiorcy.",
+    "primaryCta": "Poproś o wycenę",
+    "secondaryCta": "Zobacz usługi",
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbCurrent": "Usługi"
+  },
+  "explorer": {
+    "eyebrow": "CO MOŻEMY ZROBIĆ",
+    "title": "Wybierz usługę",
+    "intro": "Każdy transport oceniamy indywidualnie. Wybierz usługę i zobacz, jak możemy zaplanować drogę Twojego ładunku.",
+    "navigationLabel": "Usługi transportowe i logistyczne",
+    "suitableLabel": "Usługa obejmuje",
+    "cta": "Omów transport"
+  },
+  "services": [
+    {
+      "key": "road",
+      "title": "Transport drogowy",
+      "kicker": "FTL · LTL · MAŁE ŁADUNKI",
+      "heading": "Transport ładunków całopojazdowych, częściowych i drobnicowych",
+      "intro": "Organizujemy krajowy i międzynarodowy transport drogowy – od jednej palety po cały pojazd.",
+      "paragraphs": [
+        "Dla ładunków całopojazdowych dobieramy pojazd do wymiarów, masy i terminu dostawy. Bezpośrednia trasa ogranicza przeładunki i ułatwia kontrolę dostawy.",
+        "Ładunki częściowe i drobnicowe konsolidujemy, dzięki czemu klient płaci za potrzebną przestrzeń, a nie cały pojazd. Koordynujemy odbiór, dokumenty i dostawę door-to-door."
+      ],
+      "features": [
+        "Ładunki całopojazdowe (FTL)",
+        "Ładunki częściowe (LTL)",
+        "Małe przesyłki i palety",
+        "Trasy krajowe i międzynarodowe"
+      ],
+      "imageAlt": "Samochód ciężarowy przygotowany do transportu międzynarodowego"
+    },
+    {
+      "key": "special",
+      "title": "Ładunki specjalistyczne",
+      "kicker": "ADR · TEMPERATURA · PONADGABARYTOWE",
+      "heading": "Gdy standardowy transport nie wystarcza",
+      "intro": "Dla ładunków ze szczególnymi wymaganiami bezpieczeństwa, temperatury lub wymiarów przygotowujemy indywidualne rozwiązanie.",
+      "paragraphs": [
+        "Transport towarów niebezpiecznych i wrażliwych na temperaturę planujemy zgodnie z klasyfikacją, wymaganym zakresem temperatur, dokumentacją i specyfikacją pojazdu.",
+        "Dla ładunków ponadgabarytowych oceniamy wymiary, masę, ograniczenia trasy, pozwolenia i odpowiedni sprzęt. Każdy przewóz uzgadniamy indywidualnie."
+      ],
+      "features": [
+        "Towary niebezpieczne (ADR)",
+        "Transport w kontrolowanej temperaturze",
+        "Ładunki ponadgabarytowe i ciężkie",
+        "Koordynacja trasy i dokumentów"
+      ],
+      "imageAlt": "Specjalistyczny pojazd do wymagających ładunków"
+    },
+    {
+      "key": "global",
+      "title": "Transport lotniczy i morski",
+      "kicker": "LOTNICZY · MORSKI · MULTIMODALNY",
+      "heading": "Rozwiązania dla pilnych i międzynarodowych ładunków",
+      "intro": "Gdy transport drogowy nie jest najlepszym wyborem, organizujemy przewóz lotniczy, morski lub multimodalny.",
+      "paragraphs": [
+        "Transport lotniczy sprawdza się przy pilnych, wartościowych i mniejszych przesyłkach. Koordynujemy odbiór, trasę lotniczą i dostawę końcową.",
+        "Transport morski jest odpowiedni dla większych wolumenów i międzynarodowych łańcuchów dostaw. Łączymy obsługę portową z transportem lądowym."
+      ],
+      "features": [
+        "Pilne przesyłki lotnicze",
+        "Transport morski i kontenerowy",
+        "Koordynacja importu i eksportu",
+        "Dostawa door-to-door"
+      ],
+      "imageAlt": "Kontenery i transport w terminalu morskim"
+    },
+    {
+      "key": "warehouse",
+      "title": "Magazynowanie i cło",
+      "kicker": "MAGAZYN · PRZEŁADUNEK · FORMALNOŚCI",
+      "heading": "Bezpieczne składowanie i przygotowanie ładunku",
+      "intro": "Organizujemy magazynowanie, załadunek, przeładunek i obsługę celną pomiędzy etapami transportu.",
+      "paragraphs": [
+        "W zależności od rodzaju ładunku dobieramy magazyny standardowe lub chłodnicze. Koordynujemy krótkoterminowe składowanie, konsolidację i przygotowanie do wysyłki.",
+        "Jeśli trasa wymaga formalności celnych, koordynujemy niezbędne usługi i przepływ informacji między zaangażowanymi stronami."
+      ],
+      "features": [
+        "Magazyny standardowe i chłodnicze",
+        "Załadunek i przeładunek",
+        "Konsolidacja ładunków",
+        "Koordynacja obsługi celnej"
+      ],
+      "imageAlt": "Nowoczesny magazyn logistyczny z przygotowanymi ładunkami"
+    },
+    {
+      "key": "moving",
+      "title": "Przeprowadzki międzynarodowe",
+      "kicker": "PLANOWANIE · TRANSPORT · DOSTAWA",
+      "heading": "Przewóz mienia pomiędzy krajami",
+      "intro": "Organizujemy międzynarodowy przewóz mienia firm i klientów prywatnych, koordynując odbiór, transport i dostawę.",
+      "paragraphs": [
+        "Przed transportem oceniamy objętość, potrzeby pakowania, warunki załadunku i adres dostawy, a następnie dobieramy pojazd oraz trasę.",
+        "Jeden koordynator nadzoruje informacje i przebieg przewozu, aby wszystkie etapy były ze sobą właściwie połączone."
+      ],
+      "features": [
+        "Przewóz mienia firmowego i prywatnego",
+        "Planowanie odbioru i dostawy",
+        "Dobór odpowiedniego pojazdu",
+        "Koordynacja trasy międzynarodowej"
+      ],
+      "imageAlt": "Ładunek przygotowany do przeprowadzki międzynarodowej"
+    },
+    {
+      "key": "forwarding",
+      "title": "Spedycja",
+      "kicker": "TRASA · PARTNERZY · KONTROLA",
+      "heading": "Jeden kontakt na całej trasie ładunku",
+      "intro": "Łączymy transport, trasę, dokumenty i komunikację w jeden przejrzyście zarządzany proces.",
+      "paragraphs": [
+        "Na podstawie ładunku, terminu i budżetu dobieramy przewoźników oraz sposób transportu. Sieć sprawdzonych partnerów pozwala elastycznie planować trasy.",
+        "Nadzorujemy zlecenie od zapytania do dostawy, rozwiązujemy kwestie operacyjne i przekazujemy klientowi aktualne informacje."
+      ],
+      "features": [
+        "Dobór przewoźnika i pojazdu",
+        "Kalkulacja ceny i trasy",
+        "Koordynacja dokumentów i etapów",
+        "Doradztwo logistyczne"
+      ],
+      "imageAlt": "Specjalista logistyki koordynujący transport międzynarodowy"
+    }
+  ]
+}

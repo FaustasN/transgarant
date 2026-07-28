@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Karjera transporto ir logistikos srityje | Transgarant",
+    "description": "Prisijunkite prie UAB „TRANSGARANT GROUP“ komandos. Peržiūrėkite atviras transporto vadybos, pardavimo ir vairavimo pozicijas."
+  },
+  "hero": {
+    "title": "Prisijunkite prie mūsų komandos",
+    "description": "Augame kartu su žmonėmis, kurie vertina atsakomybę, aiškų bendravimą ir gerai atliktą darbą. Susipažinkite su atviromis pozicijomis ir parašykite mums.",
+    "breadcrumbHome": "Pradžia",
+    "breadcrumbCurrent": "Karjera",
+    "imageAlt": "Darbo pokalbis transporto ir logistikos įmonėje"
+  },
+  "positions": {
+    "eyebrow": "ATVIROS POZICIJOS",
+    "title": "Raskite savo vietą su TRANSGARANT GROUP",
+    "responsibilitiesLabel": "Darbo pobūdis",
+    "requirementsLabel": "Reikalavimai",
+    "offerLabel": "Mes siūlome",
+    "apply": "Kandidatuoti",
+    "items": [
+      {
+        "id": "transport-manager",
+        "title": "Transporto vadybininkas (-ė)",
+        "responsibilities": [
+          "Krovinių pervežimo organizavimas, kontrolė ir valdymas pagal paskirtas kryptis.",
+          "Bendravimas su vairuotojais ir ryšių palaikymas su esamais klientais.",
+          "Darbas su duomenų baze ir užsakymų administravimas."
+        ],
+        "requirements": [
+          "Patirtis transporto, logistikos ar krovinių ekspedijavimo srityje – privalumas.",
+          "Puikios užsienio kalbų žinios ir geri darbo kompiuteriu įgūdžiai.",
+          "Gebėjimas spręsti problemas, derėtis ir dirbti komandoje.",
+          "Greita orientacija, kruopštumas, savarankiškumas ir atsakingumas."
+        ],
+        "offer": [
+          "Darbą augančioje ir perspektyvioje kompanijoje.",
+          "Galimybę realizuoti savo gebėjimus ir idėjas.",
+          "Socialines garantijas ir visas darbui reikalingas priemones.",
+          "Atlyginimą, atitinkantį gebėjimus ir darbo rezultatus."
+        ]
+      },
+      {
+        "id": "sales-manager",
+        "title": "Transporto paslaugų pardavimo vadybininkas (-ė)",
+        "responsibilities": [
+          "Aktyvūs transporto paslaugų pardavimai telefonu esamiems ir naujiems partneriams.",
+          "Derybos su potencialiais klientais.",
+          "Darbas su duomenų baze ir užsakymų administravimas.",
+          "Paslaugų vykdymo kontrolė, informacijos teikimas klientui ir operatyvus problemų sprendimas."
+        ],
+        "requirements": [
+          "Panašaus darbo patirtis – privalumas.",
+          "Puikios užsienio kalbų žinios ir geri darbo kompiuteriu įgūdžiai.",
+          "Gebėjimas spręsti problemas, derėtis ir dirbti komandoje.",
+          "Noras intensyviai dirbti, tobulėti ir siekti rezultatų.",
+          "Greita orientacija, kruopštumas, savarankiškumas ir komunikabilumas."
+        ],
+        "offer": [
+          "Darbą augančioje ir perspektyvioje kompanijoje.",
+          "Galimybę realizuoti savo gebėjimus ir idėjas.",
+          "Socialines garantijas ir visas darbui reikalingas priemones.",
+          "Atlyginimą, atitinkantį gebėjimus ir darbo rezultatus."
+        ]
+      },
+      {
+        "id": "driver-forwarder",
+        "title": "Vairuotojas – ekspeditorius",
+        "responsibilities": [
+          "Tarptautiniai kelių pervežimai Europoje.",
+          "Vietiniai kelių pervežimai Lietuvoje.",
+          "Darbas DAF ir „Mercedes“ EURO 5/6 vilkikais su tentinėmis puspriekabėmis."
+        ],
+        "requirements": [
+          "CE kategorijos vairuotojo pažymėjimas.",
+          "CE kategorijos vairavimo patirtis – privalumas.",
+          "95 kodas.",
+          "Vairuotojo kortelė."
+        ],
+        "offer": [
+          "Stabilų ir laiku mokamą atlyginimą.",
+          "Visas socialines garantijas.",
+          "Lankstų darbo grafiką."
+        ]
+      }
+    ]
+  },
+  "application": {
+    "eyebrow": "KANDIDATUOTI",
+    "title": "Pradėkime nuo trumpos žinutės",
+    "description": "Pasirinkite poziciją ir palikite savo kontaktus. Paspaudus „Siųsti CV“, atsidarys jūsų el. pašto programa.",
+    "roleLegend": "Pozicija",
+    "name": "Vardas ir pavardė",
+    "namePlaceholder": "Jūsų vardas ir pavardė",
+    "email": "El. paštas",
+    "emailPlaceholder": "vardas@pastas.lt",
+    "phone": "Telefono numeris",
+    "phonePlaceholder": "+370",
+    "message": "Trumpa žinutė",
+    "messagePlaceholder": "Trumpai papasakokite apie save",
+    "cv": "Pridėti CV",
+    "cvHint": "PDF arba DOC, iki 10 MB",
+    "cvAttachNote": "Pasirinktą CV reikės pridėti prie atsidariusio el. laiško.",
+    "submit": "Siųsti CV",
+    "stickyApply": "Kandidatuoti"
+  }
+}

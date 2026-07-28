@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Запрос на перевозку груза | Transgarant",
+    "description": "Укажите маршрут, вес груза и контактные данные. TRANSGARANT GROUP подберёт подходящее транспортное решение."
+  },
+  "hero": {
+    "title": "Запросите предложение на перевозку",
+    "description": "Укажите основные данные о грузе и маршруте. Мы рассмотрим запрос и свяжемся с вами, чтобы предложить подходящее решение.",
+    "breadcrumbHome": "Главная",
+    "breadcrumbCurrent": "Запрос"
+  },
+  "form": {
+    "contactEyebrow": "КОНТАКТНЫЕ ДАННЫЕ",
+    "contactTitle": "Как с вами связаться?",
+    "company": "Название компании",
+    "companyPlaceholder": "Название компании",
+    "contactPerson": "Контактное лицо",
+    "contactPersonPlaceholder": "Имя и фамилия",
+    "phone": "Номер телефона",
+    "phonePlaceholder": "+370",
+    "email": "Эл. почта",
+    "emailPlaceholder": "name@email.com",
+    "routeEyebrow": "МАРШРУТ",
+    "routeTitle": "Откуда и куда нужно доставить груз?",
+    "loadingLabel": "Место погрузки",
+    "loadingCountry": "Страна",
+    "loadingCountryPlaceholder": "Литва",
+    "loadingCity": "Город",
+    "loadingCityPlaceholder": "Вильнюс",
+    "unloadingLabel": "Место доставки",
+    "unloadingCountry": "Страна",
+    "unloadingCountryPlaceholder": "Германия",
+    "unloadingCity": "Город",
+    "unloadingCityPlaceholder": "Берлин",
+    "cargoEyebrow": "ГРУЗ",
+    "cargoTitle": "Что необходимо перевезти?",
+    "cargoType": "Тип груза",
+    "cargoTypePlaceholder": "Например, палеты или оборудование",
+    "weight": "Вес",
+    "weightPlaceholder": "Например, 1 500 кг",
+    "pickupDate": "Желаемая дата погрузки",
+    "additionalInfo": "Дополнительная информация",
+    "additionalInfoPlaceholder": "Размеры, количество, особые условия или другая важная информация",
+    "submit": "Отправить запрос",
+    "submitNote": "После нажатия «Отправить запрос» откроется ваша почтовая программа.",
+    "subject": "Новый запрос на перевозку"
+  }
+}

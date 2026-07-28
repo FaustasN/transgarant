@@ -18,33 +18,34 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getQuotePath } from "@/lib/routes.mjs";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const serviceVisuals = {
   road: {
     icon: Truck,
-    image: "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?auto=format&fit=crop&w=1600&q=85",
+    image: "/1.webp",
   },
   special: {
     icon: Snowflake,
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=85",
+    image: "/2.webp",
   },
   global: {
     icon: Ship,
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=85",
+    image: "/3.webp",
   },
   warehouse: {
     icon: Warehouse,
-    image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1600&q=85",
+    image: "/4.webp",
   },
   moving: {
     icon: PackageOpen,
-    image: "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1600&q=85",
+    image: "/5.webp",
   },
   forwarding: {
     icon: Route,
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=85",
+    image: "/6.webp",
   },
 };
 
@@ -113,11 +114,19 @@ function ServiceDetails({ service, content, visual, locale, mobile = false }) {
       </div>
 
       <Link
-        href={`/${locale}/uzklausa`}
-        className="mt-6 inline-flex min-h-12 items-center gap-3 font-bold text-[#313152] transition-colors hover:text-[#AE2422]"
+          href={getQuotePath(locale)}
+        className={`items-center gap-3 font-bold text-[#313152] transition-colors hover:text-[#AE2422] ${
+          mobile
+            ? "mt-3 flex min-h-10 w-full justify-center text-center"
+            : "group relative mt-6 inline-flex min-h-12 pb-1 after:absolute after:bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[#AE2422] after:transition-transform after:duration-300 hover:after:scale-x-100"
+        }`}
       >
         {content.explorer.cta}
-        <ArrowRight aria-hidden="true" size={18} className="text-[#AE2422]" />
+        <ArrowRight
+          aria-hidden="true"
+          size={18}
+          className={`text-[#AE2422] ${mobile ? "" : "transition-transform duration-300 group-hover:translate-x-1.5"}`}
+        />
       </Link>
     </>
   );
@@ -135,6 +144,11 @@ export default function ServicesExperience({ locale, content }) {
 
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const hero = heroRef.current;
+    const explorer = explorerRef.current;
+    const buttons = buttonsRef.current.filter(Boolean);
+    const firstPanel = panelsRef.current[0];
+    if (!hero || !explorer) return;
 
     const context = gsap.context(() => {
       gsap.from("[data-service-page-reveal]", {
@@ -145,23 +159,27 @@ export default function ServicesExperience({ locale, content }) {
         ease: "power3.out",
       });
 
-      gsap.from(buttonsRef.current.filter(Boolean), {
-        y: 10,
-        autoAlpha: 0,
-        duration: 0.45,
-        stagger: 0.055,
-        ease: "power2.out",
-        scrollTrigger: { trigger: explorerRef.current, start: "top 82%", once: true },
-      });
+      if (buttons.length) {
+        gsap.from(buttons, {
+          y: 10,
+          autoAlpha: 0,
+          duration: 0.45,
+          stagger: 0.055,
+          ease: "power2.out",
+          scrollTrigger: { trigger: explorer, start: "top 82%", once: true },
+        });
+      }
 
-      gsap.from(panelsRef.current[0], {
-        y: 22,
-        autoAlpha: 0,
-        duration: 0.6,
-        ease: "power3.out",
-        scrollTrigger: { trigger: explorerRef.current, start: "top 78%", once: true },
-      });
-    }, heroRef);
+      if (firstPanel) {
+        gsap.from(firstPanel, {
+          y: 22,
+          autoAlpha: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          scrollTrigger: { trigger: explorer, start: "top 78%", once: true },
+        });
+      }
+    }, hero);
 
     return () => context.revert();
   }, []);
@@ -174,9 +192,10 @@ export default function ServicesExperience({ locale, content }) {
     const nextPanel = panelsRef.current[nextIndex];
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (reducedMotion) {
+    if (reducedMotion || !currentPanel || !nextPanel) {
       activeIndexRef.current = nextIndex;
       setActiveIndex(nextIndex);
+      animatingRef.current = false;
       return;
     }
 
@@ -282,7 +301,7 @@ export default function ServicesExperience({ locale, content }) {
                       id={`mobile-service-panel-${service.key}`}
                       role="region"
                       aria-labelledby={`mobile-service-control-${service.key}`}
-                      className="pb-10 pt-3"
+                      className="pb-5 pt-3"
                     >
                       <ServiceDetails
                         service={service}

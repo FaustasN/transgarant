@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Krovinių transportavimo užklausa | Transgarant",
+    "description": "Pateikite krovinio maršrutą, svorį ir kontaktinius duomenis. TRANSGARANT GROUP parinks tinkamą transportavimo sprendimą."
+  },
+  "hero": {
+    "title": "Gaukite transportavimo pasiūlymą",
+    "description": "Pateikite pagrindinę informaciją apie krovinį ir maršrutą. Įvertinsime užklausą ir susisieksime dėl tinkamiausio sprendimo.",
+    "breadcrumbHome": "Pradžia",
+    "breadcrumbCurrent": "Užklausa"
+  },
+  "form": {
+    "contactEyebrow": "KONTAKTINIAI DUOMENYS",
+    "contactTitle": "Kaip galime su jumis susisiekti?",
+    "company": "Įmonės pavadinimas",
+    "companyPlaceholder": "Įmonės pavadinimas",
+    "contactPerson": "Kontaktinis asmuo",
+    "contactPersonPlaceholder": "Vardas ir pavardė",
+    "phone": "Telefono numeris",
+    "phonePlaceholder": "+370",
+    "email": "El. paštas",
+    "emailPlaceholder": "vardas@pastas.lt",
+    "routeEyebrow": "MARŠRUTAS",
+    "routeTitle": "Iš kur ir į kur keliaus krovinys?",
+    "loadingLabel": "Pakrovimo vieta",
+    "loadingCountry": "Valstybė",
+    "loadingCountryPlaceholder": "Lietuva",
+    "loadingCity": "Miestas",
+    "loadingCityPlaceholder": "Vilnius",
+    "unloadingLabel": "Pristatymo vieta",
+    "unloadingCountry": "Valstybė",
+    "unloadingCountryPlaceholder": "Vokietija",
+    "unloadingCity": "Miestas",
+    "unloadingCityPlaceholder": "Berlynas",
+    "cargoEyebrow": "KROVINYS",
+    "cargoTitle": "Ką turėsime pervežti?",
+    "cargoType": "Krovinio tipas",
+    "cargoTypePlaceholder": "Pavyzdžiui, paletės arba įranga",
+    "weight": "Svoris",
+    "weightPlaceholder": "Pavyzdžiui, 1 500 kg",
+    "pickupDate": "Pageidaujama pakrovimo data",
+    "additionalInfo": "Papildoma informacija",
+    "additionalInfoPlaceholder": "Matmenys, kiekis, specialios sąlygos ar kita svarbi informacija",
+    "submit": "Siųsti užklausą",
+    "submitNote": "Paspaudus „Siųsti užklausą“, atsidarys jūsų el. pašto programa.",
+    "subject": "Nauja transportavimo užklausa"
+  }
+}

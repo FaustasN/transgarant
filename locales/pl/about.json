@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "O nas | Transgarant Group",
+    "description": "Poznaj UAB TRANSGARANT GROUP – firmę transportowo-logistyczną świadczącą usługi przewozu i spedycji ładunków na Litwie i w całej Europie."
+  },
+  "hero": {
+    "title": "Rozwiązania logistyczne dla długoterminowej współpracy",
+    "intro": "UAB TRANSGARANT GROUP to prywatna firma transportowo-logistyczna świadcząca kompleksowe usługi logistyczne. Specjalizujemy się w przewozie i spedycji ładunków.",
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbCurrent": "O nas",
+    "imageAlt": "Ładunki przygotowywane w magazynie logistycznym"
+  },
+  "overview": {
+    "eyebrow": "NASZE DOŚWIADCZENIE",
+    "title": "Doświadczenie, które pomaga znaleźć właściwe rozwiązanie",
+    "paragraphs": [
+      "Doświadczenie zdobyte w transporcie krajowym i międzynarodowym pozwala nam oferować rozwiązania dostosowane do indywidualnych potrzeb klienta. Przewozy realizujemy własnymi pojazdami oraz przy wsparciu zaufanej sieci partnerów.",
+      "Specjalizujemy się w drogowym transporcie ładunków drobnicowych, częściowych i całopojazdowych. Rozbudowana sieć partnerów w całej Europie pomaga nam dostarczać towary do odbiorcy lub magazynu bezpiecznie, sprawnie i terminowo.",
+      "Nasze odpowiedzialne podejście jest ukierunkowane na długotrwałą współpracę i wiarygodne partnerstwo. Wierzymy, że wysokiej jakości usługi logistyczne pomagają klientom skutecznie rozwijać ich działalność."
+    ],
+    "highlight": "Naszym celem jest nie tylko rzetelna realizacja każdego zlecenia, ale także przekraczanie oczekiwań klienta."
+  },
+  "trust": {
+    "eyebrow": "WYRÓŻNIENIE",
+    "title": "Wiarygodny Pracodawca 2026",
+    "description": "Według oceny Creditinfo UAB TRANSGARANT GROUP dba o dobrostan pracowników oraz spełnia wysokie standardy przejrzystości i etyki pracodawcy.",
+    "imageAlt": "Certyfikat Wiarygodnego Pracodawcy 2026 dla UAB TRANSGARANT GROUP"
+  },
+  "cta": {
+    "title": "Szukasz godnego zaufania partnera logistycznego?",
+    "description": "Omówmy Twój ładunek i znajdźmy najlepsze rozwiązanie transportowe.",
+    "button": "Omów transport"
+  }
+}

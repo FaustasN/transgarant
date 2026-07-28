@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { resources } from "@/lib/i18n";
+import {
+  getAboutPath,
+  getCareersPath,
+  getContactPath,
+  getServicesPath,
+} from "@/lib/routes.mjs";
 
 export default function Footer({ locale = "lt" }) {
   const footer = (resources[locale] ?? resources.lt).common.footer;
@@ -25,18 +31,18 @@ export default function Footer({ locale = "lt" }) {
           <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-white/58">
             {footer.navigationTitle}
           </h3>
-          <div className="mt-4 grid gap-3 text-sm text-white/76">
-            <Link href={`/${locale}/paslaugos`}>{footer.links.services}</Link>
+          <div className="mt-4 grid gap-3 text-sm text-white/76 [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:text-white [&_a:focus-visible]:text-white">
+            <Link href={getServicesPath(locale)}>{footer.links.services}</Link>
             <Link href={`/${locale}#kryptys`}>{footer.links.destinations}</Link>
-            <Link href={`/${locale}/apie-mus`}>{footer.links.about}</Link>
-            <Link href={`/${locale}/karjera`}>{footer.links.careers}</Link>
-            <Link href={`/${locale}/kontaktai`}>{footer.links.contact}</Link>
+            <Link href={getAboutPath(locale)}>{footer.links.about}</Link>
+            <Link href={getCareersPath(locale)}>{footer.links.careers}</Link>
+            <Link href={getContactPath(locale)}>{footer.links.contact}</Link>
           </div>
         </div>
 
         <div>
           <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-white/58">{footer.contactsTitle}</h3>
-          <div className="mt-4 grid gap-3 text-sm leading-7 text-white/76">
+          <div className="mt-4 grid gap-3 text-sm leading-7 text-white/76 [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:text-white [&_a:focus-visible]:text-white">
             <a href="mailto:info@transgarant.lt">{footer.emailLabel}: info@transgarant.lt</a>
             <span>{footer.hours}</span>
             <a

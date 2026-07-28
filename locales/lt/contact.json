@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Kontaktai | Transgarant Group",
+    "description": "Susisiekite su UAB „TRANSGARANT GROUP“ dėl transporto, logistikos paslaugų ar bendradarbiavimo. Biuras Vilniuje."
+  },
+  "hero": {
+    "title": "Susisiekime",
+    "description": "Turite klausimų apie krovinio transportavimą ar bendradarbiavimą? Parašykite arba paskambinkite.",
+    "breadcrumbHome": "Pradžia",
+    "breadcrumbCurrent": "Kontaktai"
+  },
+  "details": {
+    "emailLabel": "El. paštas",
+    "email": "info@transgarant.lt",
+    "phonesLabel": "Telefonai",
+    "officePhone": "+370 (5) 207 2775",
+    "mobilePhone": "+370 688 18888",
+    "addressLabel": "Adresas",
+    "addressLine1": "Laisvės pr. 78B-238",
+    "addressLine2": "Vilnius, LT-05263",
+    "hoursLabel": "Darbo laikas",
+    "hours": "I–V 08:30–17:30",
+    "mapLink": "Rodyti žemėlapyje",
+    "mapTitle": "TRANSGARANT GROUP biuras Vilniuje"
+  },
+  "form": {
+    "eyebrow": "TURITE KLAUSIMŲ?",
+    "title": "Parašykite mums",
+    "description": "Trumpai aprašykite, kuo galime padėti. Paspaudus „Siųsti žinutę“, atsidarys jūsų el. pašto programa.",
+    "name": "Vardas ir pavardė",
+    "namePlaceholder": "Jūsų vardas ir pavardė",
+    "email": "El. paštas",
+    "emailPlaceholder": "vardas@pastas.lt",
+    "phone": "Telefono numeris",
+    "phonePlaceholder": "+370",
+    "message": "Žinutė",
+    "messagePlaceholder": "Kaip galime jums padėti?",
+    "submit": "Siųsti žinutę",
+    "subject": "Žinutė iš kontaktų puslapio"
+  },
+  "company": {
+    "eyebrow": "ĮMONĖS INFORMACIJA",
+    "title": "UAB „TRANSGARANT GROUP“",
+    "companyCodeLabel": "Įmonės kodas",
+    "companyCode": "302690097",
+    "vatLabel": "PVM kodas",
+    "vat": "LT100006861513",
+    "bankLabel": "Bankas",
+    "bank": "AB SEB",
+    "ibanLabel": "IBAN",
+    "iban": "LT47 7044 0600 0774 3247",
+    "swiftLabel": "SWIFT (BIC)",
+    "swift": "CBVILT2XXXX"
+  }
+}

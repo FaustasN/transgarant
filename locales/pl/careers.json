@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Kariera w transporcie i logistyce | Transgarant",
+    "description": "Dołącz do zespołu UAB TRANSGARANT GROUP. Zobacz otwarte stanowiska w zarządzaniu transportem, sprzedaży i dla kierowców."
+  },
+  "hero": {
+    "title": "Dołącz do naszego zespołu",
+    "description": "Rozwijamy się razem z ludźmi, którzy cenią odpowiedzialność, jasną komunikację i dobrze wykonaną pracę. Poznaj nasze oferty i napisz do nas.",
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbCurrent": "Kariera",
+    "imageAlt": "Rozmowa kwalifikacyjna w firmie transportowo-logistycznej"
+  },
+  "positions": {
+    "eyebrow": "OTWARTE STANOWISKA",
+    "title": "Znajdź swoje miejsce w TRANSGARANT GROUP",
+    "responsibilitiesLabel": "Zakres obowiązków",
+    "requirementsLabel": "Wymagania",
+    "offerLabel": "Oferujemy",
+    "apply": "Aplikuj",
+    "items": [
+      {
+        "id": "transport-manager",
+        "title": "Menedżer transportu",
+        "responsibilities": [
+          "Organizacja, kontrola i zarządzanie przewozami na wyznaczonych kierunkach.",
+          "Kontakt z kierowcami i utrzymywanie relacji z obecnymi klientami.",
+          "Praca z bazą danych i administracja zleceń."
+        ],
+        "requirements": [
+          "Doświadczenie w transporcie, logistyce lub spedycji będzie atutem.",
+          "Bardzo dobra znajomość języków obcych i obsługi komputera.",
+          "Umiejętność rozwiązywania problemów, negocjowania i pracy zespołowej.",
+          "Szybkie myślenie, dokładność, samodzielność i odpowiedzialność."
+        ],
+        "offer": [
+          "Pracę w rozwijającej się firmie.",
+          "Możliwość realizacji własnych pomysłów i wykorzystania umiejętności.",
+          "Świadczenia socjalne i wszystkie potrzebne narzędzia pracy.",
+          "Wynagrodzenie odpowiadające umiejętnościom i wynikom."
+        ]
+      },
+      {
+        "id": "sales-manager",
+        "title": "Menedżer sprzedaży usług transportowych",
+        "responsibilities": [
+          "Aktywna telefoniczna sprzedaż usług transportowych obecnym i nowym partnerom.",
+          "Negocjacje z potencjalnymi klientami.",
+          "Praca z bazą danych i administracja zleceń.",
+          "Kontrola realizacji usług, informowanie klienta i szybkie rozwiązywanie problemów."
+        ],
+        "requirements": [
+          "Doświadczenie na podobnym stanowisku będzie atutem.",
+          "Bardzo dobra znajomość języków obcych i obsługi komputera.",
+          "Umiejętność rozwiązywania problemów, negocjowania i pracy zespołowej.",
+          "Chęć intensywnej pracy, rozwoju i osiągania wyników.",
+          "Szybkie myślenie, dokładność, samodzielność i komunikatywność."
+        ],
+        "offer": [
+          "Pracę w rozwijającej się firmie.",
+          "Możliwość realizacji własnych pomysłów i wykorzystania umiejętności.",
+          "Świadczenia socjalne i wszystkie potrzebne narzędzia pracy.",
+          "Wynagrodzenie odpowiadające umiejętnościom i wynikom."
+        ]
+      },
+      {
+        "id": "driver-forwarder",
+        "title": "Kierowca – spedytor",
+        "responsibilities": [
+          "Międzynarodowy transport drogowy w Europie.",
+          "Krajowy transport drogowy na Litwie.",
+          "Praca pojazdami DAF i Mercedes EURO 5/6 z naczepami kurtynowymi."
+        ],
+        "requirements": [
+          "Prawo jazdy kategorii CE.",
+          "Doświadczenie w kategorii CE będzie atutem.",
+          "Kod 95.",
+          "Karta kierowcy."
+        ],
+        "offer": [
+          "Stabilne i terminowo wypłacane wynagrodzenie.",
+          "Pełne świadczenia socjalne.",
+          "Elastyczny grafik pracy."
+        ]
+      }
+    ]
+  },
+  "application": {
+    "eyebrow": "APLIKUJ",
+    "title": "Zacznijmy od krótkiej wiadomości",
+    "description": "Wybierz stanowisko i podaj dane kontaktowe. Po kliknięciu „Wyślij CV” otworzy się Twój program pocztowy.",
+    "roleLegend": "Stanowisko",
+    "name": "Imię i nazwisko",
+    "namePlaceholder": "Twoje imię i nazwisko",
+    "email": "E-mail",
+    "emailPlaceholder": "imie@email.pl",
+    "phone": "Numer telefonu",
+    "phonePlaceholder": "+370",
+    "message": "Krótka wiadomość",
+    "messagePlaceholder": "Napisz krótko o sobie",
+    "cv": "Dodaj CV",
+    "cvHint": "PDF lub DOC, do 10 MB",
+    "cvAttachNote": "Wybrane CV dołącz do wiadomości e-mail, która się otworzy.",
+    "submit": "Wyślij CV",
+    "stickyApply": "Aplikuj"
+  }
+}

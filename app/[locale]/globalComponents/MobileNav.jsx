@@ -15,25 +15,43 @@ export default function MobileNav({ navItems, labels, locale }) {
   const navRef = useRef(null);
 
   useLayoutEffect(() => {
-    gsap.set(overlayRef.current, { visibility: "hidden", pointerEvents: "none" });
-    gsap.set(backdropRef.current, { autoAlpha: 0 });
-    gsap.set(drawerRef.current, { xPercent: 100 });
+    const overlay = overlayRef.current;
+    const backdrop = backdropRef.current;
+    const drawer = drawerRef.current;
+    if (!overlay || !backdrop || !drawer) return;
+
+    gsap.set(overlay, { visibility: "hidden", pointerEvents: "none" });
+    gsap.set(backdrop, { autoAlpha: 0 });
+    gsap.set(drawer, { xPercent: 100 });
   }, []);
 
   useLayoutEffect(() => {
+    const overlay = overlayRef.current;
+    const backdrop = backdropRef.current;
+    const drawer = drawerRef.current;
+    const navElements = navRef.current ? Array.from(navRef.current.children) : [];
+    if (!overlay || !backdrop || !drawer) return;
+
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const duration = reducedMotion ? 0 : 0.24;
     const timeline = gsap.timeline({ defaults: { overwrite: true } });
     if (open) {
-      timeline.set(overlayRef.current, { visibility: "visible", pointerEvents: "auto" })
-        .to(backdropRef.current, { autoAlpha: 1, duration: duration * 0.45 })
-        .to(drawerRef.current, { xPercent: 0, duration, ease: "power3.out", force3D: true }, 0)
-        .fromTo(navRef.current?.children ?? [], { x: 14, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: duration * 0.7, stagger: 0.025, ease: "power2.out" }, duration * 0.2);
+      timeline.set(overlay, { visibility: "visible", pointerEvents: "auto" })
+        .to(backdrop, { autoAlpha: 1, duration: duration * 0.45 })
+        .to(drawer, { xPercent: 0, duration, ease: "power3.out", force3D: true }, 0);
+      if (navElements.length) {
+        timeline.fromTo(
+          navElements,
+          { x: 14, autoAlpha: 0 },
+          { x: 0, autoAlpha: 1, duration: duration * 0.7, stagger: 0.025, ease: "power2.out" },
+          duration * 0.2,
+        );
+      }
     } else {
-      timeline.set(overlayRef.current, { pointerEvents: "none" })
-        .to(backdropRef.current, { autoAlpha: 0, duration: 0.06 })
-        .to(drawerRef.current, { xPercent: 100, duration: duration * 0.75, ease: "power2.in", force3D: true }, 0)
-        .set(overlayRef.current, { visibility: "hidden" });
+      timeline.set(overlay, { pointerEvents: "none" })
+        .to(backdrop, { autoAlpha: 0, duration: 0.06 })
+        .to(drawer, { xPercent: 100, duration: duration * 0.75, ease: "power2.in", force3D: true }, 0)
+        .set(overlay, { visibility: "hidden" });
     }
     if (!open) return () => timeline.kill();
 

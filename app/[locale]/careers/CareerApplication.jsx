@@ -1,0 +1,301 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, Check, FileText } from "lucide-react";
+
+function DetailList({ label, items, className = "" }) {
+  return (
+    <div className={className}>
+      <h3 className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#AE2422]">
+        {label}
+      </h3>
+      <ul className="mt-5 grid gap-3.5">
+        {items.map((item) => (
+          <li key={item} className="flex gap-3 text-[15px] leading-7 text-[#6F7080]">
+            <Check aria-hidden="true" className="mt-1.5 shrink-0 text-[#313152]" size={15} />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default function CareerApplication({ content }) {
+  const jobs = content.positions.items;
+  const [selectedRole, setSelectedRole] = useState(jobs[0]?.id ?? "");
+  const [activeRole, setActiveRole] = useState("");
+  const [formVisible, setFormVisible] = useState(false);
+  const [fileName, setFileName] = useState("");
+  const formSectionRef = useRef(null);
+
+  useEffect(() => {
+    const jobElements = document.querySelectorAll("[data-career-job]");
+    const jobObserver = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries.find((entry) => entry.isIntersecting);
+        if (visibleEntry) setActiveRole(visibleEntry.target.dataset.careerJob);
+      },
+      { rootMargin: "-24% 0px -58% 0px", threshold: 0 },
+    );
+
+    jobElements.forEach((element) => jobObserver.observe(element));
+
+    const formObserver = new IntersectionObserver(
+      ([entry]) => {
+        const formHasBeenReached =
+          entry.isIntersecting || entry.boundingClientRect.top < 0;
+        setFormVisible(formHasBeenReached);
+      },
+      { threshold: 0.12 },
+    );
+    if (formSectionRef.current) formObserver.observe(formSectionRef.current);
+
+    return () => {
+      jobObserver.disconnect();
+      formObserver.disconnect();
+    };
+  }, []);
+
+  function applyFor(roleId) {
+    setSelectedRole(roleId);
+    formSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const job = jobs.find((item) => item.id === selectedRole);
+    const lines = [
+      `${content.application.roleLegend}: ${job?.title ?? ""}`,
+      `${content.application.name}: ${formData.get("name") ?? ""}`,
+      `${content.application.email}: ${formData.get("email") ?? ""}`,
+      `${content.application.phone}: ${formData.get("phone") ?? ""}`,
+      "",
+      `${content.application.message}:`,
+      `${formData.get("message") ?? ""}`,
+    ];
+
+    if (fileName) {
+      lines.push("", `${content.application.cv}: ${fileName}`, content.application.cvAttachNote);
+    }
+
+    const subject = `${content.application.eyebrow}: ${job?.title ?? ""}`;
+    window.location.href = `mailto:info@transgarant.lt?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+  }
+
+  const activeJob = jobs.find((job) => job.id === activeRole);
+
+  return (
+    <>
+      <section className="px-5 pb-10 sm:px-8 sm:pb-12 lg:px-10 lg:pb-14">
+        <div className="mx-auto max-w-[1200px]">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#AE2422]">
+              {content.positions.eyebrow}
+            </p>
+            <div className="mt-3 border-t border-[#D9D8DE]" />
+            <h2 className="mt-4 hidden max-w-2xl text-[clamp(24px,2.5vw,34px)] font-extrabold leading-[1.12] tracking-[-0.035em] lg:block">
+              {content.positions.title}
+            </h2>
+          </div>
+
+          {jobs.map((job) => (
+            <article
+              key={job.id}
+              id={job.id}
+              data-career-job={job.id}
+              className="scroll-mt-24 border-b border-[#D9D8DE] py-14 sm:py-16 lg:grid lg:grid-cols-[280px_1fr] lg:gap-16 lg:py-20"
+            >
+              <div>
+                <h2 className="max-w-sm text-[clamp(28px,3vw,40px)] font-extrabold leading-[1.08] tracking-[-0.035em] text-balance lg:-mt-1">
+                  {job.title}
+                </h2>
+                <button
+                  type="button"
+                  onClick={() => applyFor(job.id)}
+                  className="group mt-8 inline-flex items-center gap-3 py-2 text-base font-bold text-[#191925]"
+                >
+                  {content.positions.apply}
+                  <ArrowRight
+                    aria-hidden="true"
+                    size={19}
+                    className="transition-transform duration-300 group-hover:translate-x-1.5"
+                  />
+                </button>
+              </div>
+
+              <div className="mt-12 grid gap-12 sm:grid-cols-2 lg:mt-0 lg:grid-cols-3 lg:gap-0">
+                <DetailList
+                  label={content.positions.responsibilitiesLabel}
+                  items={job.responsibilities}
+                  className="lg:pr-9 xl:pr-12"
+                />
+                <DetailList
+                  label={content.positions.requirementsLabel}
+                  items={job.requirements}
+                  className="lg:border-l lg:border-[#D9D8DE] lg:px-9 xl:px-12"
+                />
+                <DetailList
+                  label={content.positions.offerLabel}
+                  items={job.offer}
+                  className="lg:border-l lg:border-[#D9D8DE] lg:pl-9 xl:pl-12"
+                />
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        ref={formSectionRef}
+        id="kandidatuoti"
+        className="scroll-mt-20 border-t border-[#D9D8DE] bg-[#EDECF0] px-5 py-20 text-[#191925] sm:px-8 lg:px-10 lg:py-28"
+      >
+        <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#AE2422]">
+              {content.application.eyebrow}
+            </p>
+            <h2 className="mt-5 max-w-md text-[clamp(34px,4.2vw,54px)] font-extrabold leading-[1.02] tracking-[-0.04em]">
+              {content.application.title}
+            </h2>
+            <p className="mt-6 max-w-md text-base leading-8 text-[#6F7080]">
+              {content.application.description}
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit}>
+            <fieldset>
+              <legend className="text-sm font-bold text-[#191925]">
+                {content.application.roleLegend}
+              </legend>
+              <div className="mt-4 grid gap-2">
+                {jobs.map((job) => (
+                  <label
+                    key={job.id}
+                    className={`flex cursor-pointer items-start gap-4 border px-4 py-4 transition-colors sm:items-center ${
+                      selectedRole === job.id
+                        ? "border-[#313152] bg-[#313152] text-white"
+                        : "border-[#C9C8D0] bg-transparent text-[#313152] hover:border-[#313152]"
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="role"
+                      value={job.id}
+                      checked={selectedRole === job.id}
+                      onChange={() => setSelectedRole(job.id)}
+                      className="sr-only"
+                    />
+                    <span className="font-bold leading-6">{job.title}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              <label className="grid gap-2 text-sm font-bold">
+                {content.application.name}
+                <input
+                  required
+                  name="name"
+                  autoComplete="name"
+                  placeholder={content.application.namePlaceholder}
+                  className="h-14 border border-[#C9C8D0] bg-white/45 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152]"
+                />
+              </label>
+              <label className="grid gap-2 text-sm font-bold">
+                {content.application.email}
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  placeholder={content.application.emailPlaceholder}
+                  className="h-14 border border-[#C9C8D0] bg-white/45 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152]"
+                />
+              </label>
+              <label className="grid gap-2 text-sm font-bold sm:col-span-2">
+                {content.application.phone}
+                <input
+                  required
+                  type="tel"
+                  name="phone"
+                  autoComplete="tel"
+                  placeholder={content.application.phonePlaceholder}
+                  className="h-14 border border-[#C9C8D0] bg-white/45 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152]"
+                />
+              </label>
+              <label className="grid gap-2 text-sm font-bold sm:col-span-2">
+                {content.application.message}
+                <textarea
+                  name="message"
+                  rows={4}
+                  placeholder={content.application.messagePlaceholder}
+                  className="resize-y border border-[#C9C8D0] bg-white/45 px-4 py-4 font-normal leading-7 text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152]"
+                />
+              </label>
+            </div>
+
+            <div className="mt-6 border border-dashed border-[#B9B8C2] bg-white/25 p-4 sm:flex sm:items-center sm:justify-between sm:gap-5">
+              <label className="group flex cursor-pointer items-center gap-3">
+                <FileText aria-hidden="true" size={20} />
+                <span className="font-bold">
+                  {fileName || content.application.cv}
+                </span>
+                <input
+                  type="file"
+                  name="cv"
+                  accept=".pdf,.doc,.docx"
+                  className="sr-only"
+                  onChange={(event) => setFileName(event.target.files?.[0]?.name ?? "")}
+                />
+              </label>
+              <span className="mt-2 block text-xs text-[#6F7080] sm:mt-0">
+                {content.application.cvHint}
+              </span>
+            </div>
+            <p className="mt-3 text-xs leading-5 text-[#6F7080]">
+              {content.application.cvAttachNote}
+            </p>
+
+            <button
+              type="submit"
+              className="group mt-8 flex h-14 w-full items-center justify-center gap-3 bg-[#313152] px-6 font-extrabold text-white transition-colors hover:bg-[#252541] sm:w-auto"
+            >
+              {content.application.submit}
+              <ArrowRight
+                aria-hidden="true"
+                size={19}
+                className="transition-transform duration-300 group-hover:translate-x-1.5"
+              />
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {activeJob && !formVisible ? (
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#E3E2E7] bg-[#F6F5F2]/96 px-5 py-3 shadow-[0_-10px_30px_rgba(25,25,37,0.08)] backdrop-blur sm:px-7 lg:hidden">
+          <button
+            type="button"
+            onClick={() => applyFor(activeJob.id)}
+            className="flex w-full items-center justify-between gap-4 py-1 text-left"
+          >
+            <span className="min-w-0">
+              <span className="block text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#AE2422]">
+                {content.application.stickyApply}
+              </span>
+              <span className="mt-0.5 block truncate text-sm font-bold text-[#191925]">
+                {activeJob.title}
+              </span>
+            </span>
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center">
+              <ArrowRight aria-hidden="true" size={20} />
+            </span>
+          </button>
+        </div>
+      ) : null}
+    </>
+  );
+}

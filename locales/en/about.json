@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "About us | Transgarant Group",
+    "description": "Learn more about UAB TRANSGARANT GROUP, a transport and logistics company providing freight transport and forwarding services in Lithuania and across Europe."
+  },
+  "hero": {
+    "title": "Logistics solutions for long-term partnerships",
+    "intro": "UAB TRANSGARANT GROUP is a privately owned transport and logistics company providing comprehensive logistics services. We specialise in freight transport and forwarding.",
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "About us",
+    "imageAlt": "Cargo being prepared in a logistics warehouse"
+  },
+  "overview": {
+    "eyebrow": "OUR EXPERIENCE",
+    "title": "Experience that helps find the right solution",
+    "paragraphs": [
+      "Our experience transporting cargo on domestic and international routes enables us to offer solutions tailored to each client’s needs. We use our own vehicles and a trusted partner network to organise every shipment.",
+      "We specialise in transporting small, partial and full loads by road. An extensive partner network across Europe helps us deliver cargo to the consignee or warehouse safely, efficiently and on time.",
+      "Our responsible approach is focused on long-term cooperation and dependable partnerships. We believe that quality logistics services help our clients develop their businesses successfully."
+    ],
+    "highlight": "Our goal is not only to complete every order to a high standard, but also to exceed our client’s expectations."
+  },
+  "trust": {
+    "eyebrow": "RECOGNITION",
+    "title": "Trusted Employer 2026",
+    "description": "According to Creditinfo’s assessment, UAB TRANSGARANT GROUP supports employee well-being and meets high standards of transparency and employer ethics.",
+    "imageAlt": "UAB TRANSGARANT GROUP Trusted Employer 2026 certificate"
+  },
+  "cta": {
+    "title": "Looking for a reliable logistics partner?",
+    "description": "Let’s discuss your cargo and find the most suitable transport solution.",
+    "button": "Discuss your shipment"
+  }
+}

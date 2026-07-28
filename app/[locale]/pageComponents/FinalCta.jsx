@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { resources } from "@/lib/i18n";
+import { getQuotePath } from "@/lib/routes.mjs";
 import RevealSection from "@/components/RevealSection";
 
 export default function FinalCta({ locale = "lt" }) {
@@ -19,11 +20,15 @@ export default function FinalCta({ locale = "lt" }) {
           </div>
 
           <Link
-            href={`/${locale}/uzklausa`}
-            className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-[#F6F5F2] px-6 py-3 font-bold !text-[#191925] transition-colors hover:bg-white sm:w-auto"
+            href={getQuotePath(locale)}
+            className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-[#F6F5F2] px-6 py-3 font-bold !text-[#191925] transition-colors hover:bg-white sm:w-auto"
           >
             {cta.button}
-            <ArrowRight aria-hidden="true" size={18} className="text-[#AE2422]" />
+            <ArrowRight
+              aria-hidden="true"
+              size={18}
+              className="text-[#AE2422] transition-transform duration-300 group-hover:translate-x-1.5"
+            />
           </Link>
         </div>
       </div>

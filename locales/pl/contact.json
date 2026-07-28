@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Kontakt | Transgarant Group",
+    "description": "Skontaktuj się z UAB TRANSGARANT GROUP w sprawie transportu, usług logistycznych lub współpracy. Biuro w Wilnie."
+  },
+  "hero": {
+    "title": "Porozmawiajmy",
+    "description": "Masz pytanie dotyczące transportu ładunku lub współpracy? Napisz do nas albo zadzwoń.",
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbCurrent": "Kontakt"
+  },
+  "details": {
+    "emailLabel": "E-mail",
+    "email": "info@transgarant.lt",
+    "phonesLabel": "Telefony",
+    "officePhone": "+370 (5) 207 2775",
+    "mobilePhone": "+370 688 18888",
+    "addressLabel": "Adres",
+    "addressLine1": "Laisvės pr. 78B-238",
+    "addressLine2": "Wilno, LT-05263",
+    "hoursLabel": "Godziny pracy",
+    "hours": "Pon.–Pt. 08:30–17:30",
+    "mapLink": "Otwórz w Google Maps",
+    "mapTitle": "Biuro TRANSGARANT GROUP w Wilnie"
+  },
+  "form": {
+    "eyebrow": "MASZ PYTANIE?",
+    "title": "Napisz do nas",
+    "description": "Krótko opisz, w czym możemy pomóc. Po kliknięciu „Wyślij wiadomość” otworzy się Twój program pocztowy.",
+    "name": "Imię i nazwisko",
+    "namePlaceholder": "Twoje imię i nazwisko",
+    "email": "E-mail",
+    "emailPlaceholder": "imie@email.pl",
+    "phone": "Numer telefonu",
+    "phonePlaceholder": "+370",
+    "message": "Wiadomość",
+    "messagePlaceholder": "Jak możemy pomóc?",
+    "submit": "Wyślij wiadomość",
+    "subject": "Wiadomość ze strony kontaktowej"
+  },
+  "company": {
+    "eyebrow": "DANE FIRMY",
+    "title": "UAB TRANSGARANT GROUP",
+    "companyCodeLabel": "Kod firmy",
+    "companyCode": "302690097",
+    "vatLabel": "NIP",
+    "vat": "LT100006861513",
+    "bankLabel": "Bank",
+    "bank": "AB SEB",
+    "ibanLabel": "IBAN",
+    "iban": "LT47 7044 0600 0774 3247",
+    "swiftLabel": "SWIFT (BIC)",
+    "swift": "CBVILT2XXXX"
+  }
+}
