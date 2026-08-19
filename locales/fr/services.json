@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "Services de transport de fret et de logistique | Transgarant",
+    "description": "Transport FTL, LTL et spécialisé en Lituanie et en Europe, avec solutions ADR, aériennes, maritimes, d’entreposage et de douane."
+  },
+  "hero": {
+    "eyebrow": "SOLUTIONS DE TRANSPORT ET DE LOGISTIQUE",
+    "title": "Des services pour chaque étape de votre envoi",
+    "description": "De quelques palettes à un chargement complet ou spécialisé, nous choisissons le transport, planifions l’itinéraire et coordonnons la livraison au destinataire.",
+    "primaryCta": "Demander un devis",
+    "secondaryCta": "Découvrir les services",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbCurrent": "Services"
+  },
+  "explorer": {
+    "eyebrow": "NOTRE SAVOIR-FAIRE",
+    "title": "Choisissez un service",
+    "intro": "Chaque envoi est évalué individuellement. Sélectionnez un service pour découvrir comment nous pouvons organiser le parcours de votre fret.",
+    "navigationLabel": "Services de transport et de logistique",
+    "suitableLabel": "Le service comprend",
+    "cta": "Parler de votre fret"
+  },
+  "services": [
+    {
+      "key": "road",
+      "title": "Transport routier",
+      "kicker": "FTL · LTL · PETITS ENVOIS",
+      "heading": "Transport routier de chargements complets, partiels et de petits envois",
+      "intro": "Nous organisons le transport routier national et international, d’une palette unique à un véhicule dédié.",
+      "paragraphs": [
+        "Pour les chargements complets, nous choisissons le véhicule selon les dimensions, le poids et le calendrier de livraison du fret. Un itinéraire direct réduit les manutentions inutiles et permet un meilleur suivi de la livraison.",
+        "Pour les lots partiels et les petits envois, nous regroupons le fret afin que vous ne payiez que l’espace nécessaire plutôt qu’un véhicule entier. Nous coordonnons l’enlèvement, les documents et la livraison porte à porte."
+      ],
+      "features": [
+        "Chargements complets (FTL)",
+        "Lots partiels (LTL)",
+        "Petits envois et palettes",
+        "Itinéraires nationaux et internationaux"
+      ],
+      "imageAlt": "Camion préparé pour le transport routier international"
+    },
+    {
+      "key": "special",
+      "title": "Fret spécialisé",
+      "kicker": "ADR · TEMPÉRATURE CONTRÔLÉE · HORS GABARIT",
+      "heading": "Quand le transport standard ne suffit pas",
+      "intro": "Nous préparons une solution de transport sur mesure pour le fret soumis à des exigences particulières de sécurité, de température ou de dimensions.",
+      "paragraphs": [
+        "Le transport des marchandises dangereuses et thermosensibles est planifié selon leur classification, la plage de température requise, la documentation et les caractéristiques du véhicule.",
+        "Pour le fret hors gabarit, nous évaluons les dimensions, le poids, les restrictions d’itinéraire, les autorisations et les équipements adaptés. Chaque envoi est coordonné individuellement."
+      ],
+      "features": [
+        "Marchandises dangereuses (ADR)",
+        "Transport à température contrôlée",
+        "Fret hors gabarit et lourd",
+        "Coordination de l’itinéraire et des documents"
+      ],
+      "imageAlt": "Véhicule spécialisé préparé pour un fret exigeant"
+    },
+    {
+      "key": "global",
+      "title": "Fret aérien et maritime",
+      "kicker": "AÉRIEN · MARITIME · ITINÉRAIRES MULTIMODAUX",
+      "heading": "Des solutions pour les envois urgents et internationaux",
+      "intro": "Lorsque la route n’est pas la meilleure option, nous organisons des itinéraires de fret aérien, maritime ou multimodal.",
+      "paragraphs": [
+        "Le fret aérien convient aux envois urgents, de valeur ou de petite taille pour lesquels le délai est primordial. Nous coordonnons l’enlèvement, le trajet aérien et la livraison finale.",
+        "Le fret maritime convient aux volumes importants et aux chaînes d’approvisionnement internationales. Nous choisissons le format d’expédition adapté et relions la manutention portuaire au transport terrestre."
+      ],
+      "features": [
+        "Fret aérien urgent",
+        "Fret maritime et conteneurisé",
+        "Coordination des importations et exportations",
+        "Livraison porte à porte"
+      ],
+      "imageAlt": "Conteneurs de fret et transport dans un terminal maritime"
+    },
+    {
+      "key": "warehouse",
+      "title": "Entreposage et douane",
+      "kicker": "STOCKAGE · MANUTENTION · FORMALITÉS",
+      "heading": "Stockage du fret et préparation pour l’étape suivante",
+      "intro": "Nous organisons l’entreposage, la manutention, le transbordement et les services douaniers afin que le fret circule sans interruption entre les étapes du transport.",
+      "paragraphs": [
+        "Selon le fret, nous prévoyons des locaux standards ou à température contrôlée. Le stockage temporaire, le regroupement, le transbordement et la préparation à l’expédition peuvent être coordonnés.",
+        "Lorsque des formalités douanières s’appliquent, nous coordonnons les services nécessaires et la circulation des informations entre les parties concernées."
+      ],
+      "features": [
+        "Locaux standards et frigorifiques",
+        "Chargement et transbordement",
+        "Regroupement du fret",
+        "Coordination des services douaniers"
+      ],
+      "imageAlt": "Entrepôt logistique moderne avec du fret préparé"
+    },
+    {
+      "key": "moving",
+      "title": "Déménagement international",
+      "kicker": "PLANIFICATION · TRANSPORT · LIVRAISON",
+      "heading": "Transport de biens et d’effets personnels entre pays",
+      "intro": "Nous organisons le transport des déménagements internationaux pour les entreprises et les particuliers en coordonnant l’enlèvement, le transport et les délais de livraison.",
+      "paragraphs": [
+        "Avant le transport, nous évaluons le volume, les besoins d’emballage, les conditions de chargement et l’adresse de livraison, puis nous sélectionnons le véhicule et l’itinéraire adaptés.",
+        "Un interlocuteur dédié gère les informations et le déroulement de l’envoi afin que chaque étape reste coordonnée et que le client sache où en est son transport."
+      ],
+      "features": [
+        "Transport de biens professionnels et personnels",
+        "Planification de l’enlèvement et de la livraison",
+        "Sélection du véhicule adapté",
+        "Coordination d’itinéraires internationaux"
+      ],
+      "imageAlt": "Fret préparé pour un déménagement international"
+    },
+    {
+      "key": "forwarding",
+      "title": "Expédition de fret",
+      "kicker": "ITINÉRAIRE · PARTENAIRES · SUIVI",
+      "heading": "Un seul interlocuteur tout au long du parcours du fret",
+      "intro": "Nous réunissons le transport, l’itinéraire, les documents et la communication dans un processus d’expédition clairement piloté.",
+      "paragraphs": [
+        "En fonction du fret, du calendrier et du budget, nous sélectionnons les transporteurs et modes de transport adaptés. Un réseau de partenaires fiables permet une planification flexible en Lituanie et à l’étranger.",
+        "Nous suivons la commande de la demande initiale à la livraison, résolvons les questions opérationnelles et transmettons au client les informations utiles sur l’envoi."
+      ],
+      "features": [
+        "Sélection du transporteur et du véhicule",
+        "Calcul du tarif et de l’itinéraire",
+        "Coordination des documents et des étapes",
+        "Conseil logistique"
+      ],
+      "imageAlt": "Spécialiste logistique coordonnant un envoi international"
+    }
+  ]
+}

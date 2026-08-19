@@ -18,7 +18,7 @@
     "intro": "Każdy transport oceniamy indywidualnie. Wybierz usługę i zobacz, jak możemy zaplanować drogę Twojego ładunku.",
     "navigationLabel": "Usługi transportowe i logistyczne",
     "suitableLabel": "Usługa obejmuje",
-    "cta": "Omów transport"
+    "cta": "Omów ładunek"
   },
   "services": [
     {
@@ -60,12 +60,12 @@
     {
       "key": "global",
       "title": "Transport lotniczy i morski",
-      "kicker": "LOTNICZY · MORSKI · MULTIMODALNY",
+      "kicker": "LOTNICZY · MORSKI · TRASY MULTIMODALNE",
       "heading": "Rozwiązania dla pilnych i międzynarodowych ładunków",
       "intro": "Gdy transport drogowy nie jest najlepszym wyborem, organizujemy przewóz lotniczy, morski lub multimodalny.",
       "paragraphs": [
-        "Transport lotniczy sprawdza się przy pilnych, wartościowych i mniejszych przesyłkach. Koordynujemy odbiór, trasę lotniczą i dostawę końcową.",
-        "Transport morski jest odpowiedni dla większych wolumenów i międzynarodowych łańcuchów dostaw. Łączymy obsługę portową z transportem lądowym."
+        "Transport lotniczy sprawdza się przy pilnych, wartościowych i mniejszych przesyłkach, gdy najważniejszy jest czas dostawy. Koordynujemy odbiór, trasę lotniczą i dostawę końcową.",
+        "Transport morski jest odpowiedni dla większych wolumenów i międzynarodowych łańcuchów dostaw. Dobieramy odpowiedni sposób przewozu i łączymy obsługę portową z transportem lądowym."
       ],
       "features": [
         "Pilne przesyłki lotnicze",
@@ -78,11 +78,11 @@
     {
       "key": "warehouse",
       "title": "Magazynowanie i cło",
-      "kicker": "MAGAZYN · PRZEŁADUNEK · FORMALNOŚCI",
-      "heading": "Bezpieczne składowanie i przygotowanie ładunku",
-      "intro": "Organizujemy magazynowanie, załadunek, przeładunek i obsługę celną pomiędzy etapami transportu.",
+      "kicker": "MAGAZYNOWANIE · OBSŁUGA · FORMALNOŚCI",
+      "heading": "Składowanie ładunku i przygotowanie do kolejnego etapu",
+      "intro": "Organizujemy magazynowanie, załadunek, przeładunek i obsługę celną, aby zapewnić płynny przepływ ładunku między etapami transportu.",
       "paragraphs": [
-        "W zależności od rodzaju ładunku dobieramy magazyny standardowe lub chłodnicze. Koordynujemy krótkoterminowe składowanie, konsolidację i przygotowanie do wysyłki.",
+        "W zależności od rodzaju ładunku dobieramy magazyny standardowe lub chłodnicze. Koordynujemy krótkoterminowe składowanie, konsolidację, przeładunek i przygotowanie do wysyłki.",
         "Jeśli trasa wymaga formalności celnych, koordynujemy niezbędne usługi i przepływ informacji między zaangażowanymi stronami."
       ],
       "features": [
@@ -98,10 +98,10 @@
       "title": "Przeprowadzki międzynarodowe",
       "kicker": "PLANOWANIE · TRANSPORT · DOSTAWA",
       "heading": "Przewóz mienia pomiędzy krajami",
-      "intro": "Organizujemy międzynarodowy przewóz mienia firm i klientów prywatnych, koordynując odbiór, transport i dostawę.",
+      "intro": "Organizujemy międzynarodowy przewóz mienia firm i klientów prywatnych, koordynując odbiór, transport i termin dostawy.",
       "paragraphs": [
         "Przed transportem oceniamy objętość, potrzeby pakowania, warunki załadunku i adres dostawy, a następnie dobieramy pojazd oraz trasę.",
-        "Jeden koordynator nadzoruje informacje i przebieg przewozu, aby wszystkie etapy były ze sobą właściwie połączone."
+        "Jeden odpowiedzialny koordynator nadzoruje informacje i przebieg przewozu, aby wszystkie etapy były ze sobą właściwie połączone, a klient wiedział, co się dzieje."
       ],
       "features": [
         "Przewóz mienia firmowego i prywatnego",
@@ -118,8 +118,8 @@
       "heading": "Jeden kontakt na całej trasie ładunku",
       "intro": "Łączymy transport, trasę, dokumenty i komunikację w jeden przejrzyście zarządzany proces.",
       "paragraphs": [
-        "Na podstawie ładunku, terminu i budżetu dobieramy przewoźników oraz sposób transportu. Sieć sprawdzonych partnerów pozwala elastycznie planować trasy.",
-        "Nadzorujemy zlecenie od zapytania do dostawy, rozwiązujemy kwestie operacyjne i przekazujemy klientowi aktualne informacje."
+        "Na podstawie ładunku, terminu i budżetu dobieramy przewoźników oraz sposób transportu. Sieć sprawdzonych partnerów pozwala elastycznie planować trasy na Litwie i za granicą.",
+        "Nadzorujemy zlecenie od zapytania do dostawy, rozwiązujemy kwestie operacyjne i przekazujemy klientowi aktualne informacje o przemieszczaniu się ładunku."
       ],
       "features": [
         "Dobór przewoźnika i pojazdu",

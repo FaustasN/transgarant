@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "Frachttransport und Logistikdienstleistungen | Transgarant",
+    "description": "FTL-, LTL- und Spezialtransporte in Litauen und Europa, einschließlich ADR-, Luft- und Seefracht sowie Lager- und Zolllösungen."
+  },
+  "hero": {
+    "eyebrow": "TRANSPORT- UND LOGISTIKLÖSUNGEN",
+    "title": "Dienstleistungen für jede Phase Ihrer Sendung",
+    "description": "Von wenigen Paletten bis zur Komplett- oder Spezialladung: Wir wählen den Transport, planen die Route und koordinieren die Zustellung zum Empfänger.",
+    "primaryCta": "Angebot anfragen",
+    "secondaryCta": "Dienstleistungen entdecken",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbCurrent": "Dienstleistungen"
+  },
+  "explorer": {
+    "eyebrow": "WAS WIR TUN",
+    "title": "Dienstleistung auswählen",
+    "intro": "Jede Sendung wird individuell bewertet. Wählen Sie eine Dienstleistung, um zu sehen, wie wir den Weg Ihrer Fracht planen können.",
+    "navigationLabel": "Transport- und Logistikdienstleistungen",
+    "suitableLabel": "Die Dienstleistung umfasst",
+    "cta": "Fracht besprechen"
+  },
+  "services": [
+    {
+      "key": "road",
+      "title": "Straßengüterverkehr",
+      "kicker": "FTL · LTL · KLEINSENDUNGEN",
+      "heading": "Straßentransport von Komplett-, Teil- und Kleinladungen",
+      "intro": "Wir organisieren nationale und internationale Straßentransporte – von einer einzelnen Palette bis zum exklusiv eingesetzten Fahrzeug.",
+      "paragraphs": [
+        "Bei Komplettladungen wählen wir das Fahrzeug entsprechend den Abmessungen, dem Gewicht und dem Lieferzeitplan der Fracht. Eine direkte Route reduziert unnötige Umschläge und ermöglicht eine transparentere Lieferkontrolle.",
+        "Bei Teil- und Kleinladungen bündeln wir die Fracht, sodass Sie nur für den benötigten Laderaum statt für ein ganzes Fahrzeug bezahlen. Wir koordinieren Abholung, Dokumente und die Lieferung von Tür zu Tür."
+      ],
+      "features": [
+        "Komplettladungen (FTL)",
+        "Teilladungen (LTL)",
+        "Kleinsendungen und Paletten",
+        "Nationale und internationale Routen"
+      ],
+      "imageAlt": "Für den internationalen Straßengüterverkehr vorbereiteter Lkw"
+    },
+    {
+      "key": "special",
+      "title": "Spezialfracht",
+      "kicker": "ADR · TEMPERATURFÜHRUNG · ÜBERMASS",
+      "heading": "Wenn Standardtransport nicht ausreicht",
+      "intro": "Für Fracht mit besonderen Sicherheits-, Temperatur- oder Maßanforderungen entwickeln wir eine individuelle Transportlösung.",
+      "paragraphs": [
+        "Gefahrgut und temperaturempfindliche Fracht werden entsprechend ihrer Klassifizierung, dem erforderlichen Temperaturbereich, der Dokumentation und der Fahrzeugspezifikation geplant.",
+        "Bei Übermaßfracht prüfen wir Abmessungen, Gewicht, Streckenbeschränkungen, Genehmigungen und geeignete Ausrüstung. Jede dieser Sendungen wird individuell koordiniert."
+      ],
+      "features": [
+        "Gefahrgut (ADR)",
+        "Temperaturgeführter Transport",
+        "Übermaß- und Schwerlastfracht",
+        "Routen- und Dokumentenkoordination"
+      ],
+      "imageAlt": "Für anspruchsvolle Fracht vorbereitetes Spezialfahrzeug"
+    },
+    {
+      "key": "global",
+      "title": "Luft- und Seefracht",
+      "kicker": "LUFT · SEE · MULTIMODALE ROUTEN",
+      "heading": "Lösungen für dringende und internationale Sendungen",
+      "intro": "Wenn der Straßentransport nicht die beste Option ist, organisieren wir Luft-, See- oder multimodale Frachtrouten.",
+      "paragraphs": [
+        "Luftfracht eignet sich für dringende, wertvolle und kleinere Sendungen, bei denen die Laufzeit entscheidend ist. Wir koordinieren Abholung, Flugroute und die abschließende Zustellung.",
+        "Seefracht eignet sich für größere Mengen und internationale Lieferketten. Wir wählen das passende Versandformat und verbinden den Hafenumschlag mit dem Landtransport."
+      ],
+      "features": [
+        "Dringende Luftfracht",
+        "See- und Containerfracht",
+        "Import- und Exportkoordination",
+        "Lieferung von Tür zu Tür"
+      ],
+      "imageAlt": "Frachtcontainer und Transport an einem Seeterminal"
+    },
+    {
+      "key": "warehouse",
+      "title": "Lagerung und Zoll",
+      "kicker": "LAGERUNG · UMSCHLAG · FORMALITÄTEN",
+      "heading": "Lagerung der Fracht und Vorbereitung für die nächste Etappe",
+      "intro": "Wir organisieren Lagerung, Umschlag, Umladung und Zolldienstleistungen, damit die Fracht reibungslos zwischen den Transportetappen weiterläuft.",
+      "paragraphs": [
+        "Je nach Fracht organisieren wir Standard- oder temperaturgeführte Räumlichkeiten. Zwischenlagerung, Konsolidierung, Umladung und Versandvorbereitung können koordiniert werden.",
+        "Wenn Zollformalitäten erforderlich sind, koordinieren wir die notwendigen Dienstleistungen und den Informationsfluss zwischen den beteiligten Parteien."
+      ],
+      "features": [
+        "Standard- und Kühlräume",
+        "Be- und Umladung",
+        "Frachtkonsolidierung",
+        "Koordination von Zolldienstleistungen"
+      ],
+      "imageAlt": "Modernes Logistiklager mit vorbereiteter Fracht"
+    },
+    {
+      "key": "moving",
+      "title": "Internationale Umzüge",
+      "kicker": "PLANUNG · TRANSPORT · ZUSTELLUNG",
+      "heading": "Transport von Eigentum und persönlichen Gegenständen zwischen Ländern",
+      "intro": "Wir organisieren internationale Umzugstransporte für Unternehmen und Privatkunden und koordinieren Abholung, Transport und Lieferzeiten.",
+      "paragraphs": [
+        "Vor dem Transport prüfen wir Volumen, Verpackungsbedarf, Ladebedingungen und Lieferadresse und wählen anschließend das passende Fahrzeug und die Route.",
+        "Eine verantwortliche Ansprechperson steuert den Informations- und Sendungsfluss, damit alle Etappen aufeinander abgestimmt bleiben und der Kunde jederzeit informiert ist."
+      ],
+      "features": [
+        "Transport von Unternehmens- und Privateigentum",
+        "Planung von Abholung und Zustellung",
+        "Auswahl des passenden Fahrzeugs",
+        "Koordination internationaler Routen"
+      ],
+      "imageAlt": "Für einen internationalen Umzug vorbereitete Fracht"
+    },
+    {
+      "key": "forwarding",
+      "title": "Spedition",
+      "kicker": "ROUTE · PARTNER · KONTROLLE",
+      "heading": "Eine Ansprechperson während der gesamten Frachtroute",
+      "intro": "Wir verbinden Transport, Routenplanung, Dokumente und Kommunikation zu einem klar gesteuerten Versandprozess.",
+      "paragraphs": [
+        "Je nach Fracht, Zeitplan und Budget wählen wir geeignete Frachtführer und Transportarten. Ein zuverlässiges Partnernetzwerk ermöglicht flexible Planung in Litauen und im Ausland.",
+        "Wir betreuen den Auftrag von der Anfrage bis zur Zustellung, lösen operative Fragen und versorgen den Kunden mit relevanten Informationen zur Sendung."
+      ],
+      "features": [
+        "Auswahl von Frachtführer und Fahrzeug",
+        "Preis- und Routenberechnung",
+        "Koordination von Dokumenten und Etappen",
+        "Logistikberatung"
+      ],
+      "imageAlt": "Logistikfachkraft koordiniert eine internationale Sendung"
+    }
+  ]
+}

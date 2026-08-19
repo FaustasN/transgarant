@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Kontakt | Transgarant Group",
+    "description": "Kontaktieren Sie UAB TRANSGARANT GROUP zu Transport, Logistikdienstleistungen oder einer Zusammenarbeit. Unser Büro befindet sich in Vilnius."
+  },
+  "hero": {
+    "title": "Nehmen wir Kontakt auf",
+    "description": "Haben Sie Fragen zum Frachttransport oder zu einer Zusammenarbeit? Schreiben Sie uns oder rufen Sie uns an.",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbCurrent": "Kontakt"
+  },
+  "details": {
+    "emailLabel": "E-Mail",
+    "email": "info@transgarant.lt",
+    "phonesLabel": "Telefonnummern",
+    "officePhone": "+370 5 207 2775",
+    "mobilePhone": "+370 622 33388",
+    "addressLabel": "Adresse",
+    "addressLine1": "Laisvės pr. 78B-238",
+    "addressLine2": "Vilnius, LT-05263",
+    "hoursLabel": "Öffnungszeiten",
+    "hours": "Mo–Fr 08:00–17:00",
+    "mapLink": "Auf der Karte anzeigen",
+    "mapTitle": "Büro von TRANSGARANT GROUP in Vilnius"
+  },
+  "form": {
+    "eyebrow": "HABEN SIE EINE FRAGE?",
+    "title": "Senden Sie uns eine Nachricht",
+    "description": "Beschreiben Sie kurz, wie wir Ihnen helfen können. Wenn Sie auf „Nachricht senden“ klicken, öffnet sich Ihr E-Mail-Programm.",
+    "name": "Vor- und Nachname",
+    "namePlaceholder": "Ihr vollständiger Name",
+    "email": "E-Mail",
+    "emailPlaceholder": "name@email.com",
+    "phone": "Telefonnummer",
+    "phonePlaceholder": "+370",
+    "message": "Nachricht",
+    "messagePlaceholder": "Wie können wir Ihnen helfen?",
+    "submit": "Nachricht senden",
+    "subject": "Nachricht von der Kontaktseite"
+  },
+  "company": {
+    "eyebrow": "UNTERNEHMENSINFORMATIONEN",
+    "title": "UAB TRANSGARANT GROUP",
+    "companyCodeLabel": "Unternehmensnummer",
+    "companyCode": "302690097",
+    "vatLabel": "USt-IdNr.",
+    "vat": "LT100006861513",
+    "bankLabel": "Bank",
+    "bank": "AB SEB",
+    "ibanLabel": "IBAN",
+    "iban": "LT47 7044 0600 0774 3247",
+    "swiftLabel": "SWIFT (BIC)",
+    "swift": "CBVILT2XXXX"
+  }
+}

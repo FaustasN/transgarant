@@ -1,0 +1,119 @@
+{
+  "headline": "Pour commencer, modifiez le fichier page.tsx.",
+  "intro": "Vous cherchez un point de départ ou plus d’instructions ? Consultez",
+  "templates": "Modèles",
+  "orThe": "ou le",
+  "learning": "Centre d’apprentissage",
+  "center": ".",
+  "deployNow": "Déployer",
+  "documentation": "Documentation",
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "destinations": "Destinations",
+    "about": "À propos",
+    "careers": "Carrières",
+    "contact": "Contact",
+    "quote": "Demander un devis"
+  },
+  "header": {
+    "homeLabel": "Accueil de TRANSGARANT GROUP",
+    "navigationLabel": "Navigation principale",
+    "mobile": {
+      "open": "Ouvrir le menu",
+      "close": "Fermer le menu",
+      "navigation": "Contenu"
+    }
+  },
+  "hero": {
+    "eyebrow": "TRANSPORT ET LOGISTIQUE",
+    "titlePrimary": "Votre fret.",
+    "titleSecondary": "Notre responsabilité.",
+    "description": "Nous organisons le transport routier, maritime et aérien de chargements complets, partiels et spécialisés.",
+    "primaryCta": "Demander un devis",
+    "secondaryCta": "Nos services",
+    "imageAlt": "Camion de TRANSGARANT GROUP sur un itinéraire international",
+    "highlights": [
+      "Livraison porte à porte",
+      "Europe, pays baltes et Scandinavie",
+      "FTL, lots partiels et fret spécialisé"
+    ]
+  },
+  "services": {
+    "eyebrow": "NOS SERVICES",
+    "title": "Transport de fret et logistique",
+    "intro": "En choisissant les services de TRANSGARANT GROUP, vous avez l’assurance que notre excellente équipe de professionnels prendra soin de vos marchandises selon les normes les plus strictes.",
+    "cta": "En savoir plus",
+    "items": [
+      {
+        "title": "Transport en chargement complet",
+        "description": "Nous livrons des chargements complets porte à porte en Lituanie, en Europe, dans les pays baltes et en Scandinavie.",
+        "tags": ["FTL", "LTL", "ADR", "Température contrôlée"]
+      },
+      {
+        "title": "Transport de lots partiels et de petits envois",
+        "description": "Nous transportons les petits envois par route et par air en choisissant un itinéraire économique jusqu’au destinataire.",
+        "tags": ["Maritime", "Aérien", "Multimodal"]
+      },
+      {
+        "title": "Entreposage et logistique",
+        "description": "Nous proposons des services de stockage, manutention, transbordement et douane dans des installations ambiantes et frigorifiques.",
+        "tags": ["Entreposage", "Transbordement", "Douane"]
+      }
+    ],
+    "capabilitiesTitle": "Quand le fret sort de l’ordinaire",
+    "capabilitiesText": "Nous évaluons chaque envoi et choisissons la solution adaptée pour le transport, la documentation et le suivi.",
+    "capabilities": [
+      "Fret à température contrôlée",
+      "Marchandises dangereuses – ADR",
+      "Fret hors gabarit",
+      "Petits envois et lots partiels"
+    ]
+  },
+  "destinations": {
+    "eyebrow": "DESTINATIONS",
+    "title": "Des itinéraires dans toute l’Europe",
+    "intro": "Depuis Vilnius, nous organisons le transport de fret vers les pays baltes, la Scandinavie ainsi que l’Europe occidentale, centrale et orientale.",
+    "origin": "Vilnius",
+    "mapLabel": "Carte interactive des itinéraires européens de TRANSGARANT GROUP",
+    "selectorLabel": "Sélectionner une région",
+    "countriesLabel": "Principales destinations",
+    "regions": [
+      { "title": "Pays baltes", "countries": ["Lituanie", "Lettonie", "Estonie"] },
+      { "title": "Scandinavie", "countries": ["Danemark", "Suède", "Norvège", "Finlande"] },
+      { "title": "Europe occidentale et centrale", "countries": ["Pologne", "Allemagne", "France", "Benelux", "Suisse", "Autriche", "Hongrie", "Tchéquie", "Slovaquie", "Espagne", "Italie", "Grèce"] },
+      { "title": "Grande-Bretagne", "countries": ["Royaume-Uni"] }
+    ]
+  },
+  "about": {
+    "eyebrow": "À PROPOS",
+    "title": "Un partenariat durable, pas un simple envoi",
+    "paragraphs": [
+      "UAB TRANSGARANT GROUP est une entreprise de transport et de logistique spécialisée dans le transport de fret et l’expédition. Nous organisons des transports nationaux et internationaux avec nos propres véhicules et un réseau de partenaires fiables.",
+      "Notre objectif : une livraison sûre et ponctuelle, une communication réactive et une coopération durable."
+    ],
+    "cta": "En savoir plus sur nous",
+    "imageAlt": "Infrastructure logistique et de transport"
+  },
+  "finalCta": {
+    "title": "Vous devez transporter du fret ?",
+    "description": "Envoyez-nous l’itinéraire et les informations sur le fret ; nous sélectionnerons la solution de transport adaptée.",
+    "button": "Envoyer une demande"
+  },
+  "footer": {
+    "description": "Votre partenaire transport et logistique pour les chargements complets, partiels et spécialisés dans toute l’Europe.",
+    "navigationTitle": "Navigation",
+    "links": {
+      "services": "Services",
+      "destinations": "Destinations",
+      "about": "À propos",
+      "careers": "Carrières",
+      "contact": "Contact"
+    },
+    "contactsTitle": "Contact",
+    "emailLabel": "E-mail",
+    "hours": "Horaires : lun–ven 08:00–17:00",
+    "companyDetails": "Informations sur l’entreprise",
+    "copyright": "UAB TRANSGARANT GROUP. Tous droits réservés."
+  }
+}

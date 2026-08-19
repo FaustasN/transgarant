@@ -81,7 +81,8 @@
     "regions": [
       { "title": "Baltijos šalys", "countries": ["Lietuva", "Latvija", "Estija"] },
       { "title": "Skandinavija", "countries": ["Danija", "Švedija", "Norvegija", "Suomija"] },
-      { "title": "Vakarų ir Centrinė Europa", "countries": ["Lenkija", "Vokietija", "Prancūzija", "Beneliukso šalys", "Didžioji Britanija", "Šveicarija", "Austrija", "Vengrija", "Čekija", "Slovakija", "Ispanija", "Italija", "Graikija"] }
+      { "title": "Vakarų ir Centrinė Europa", "countries": ["Lenkija", "Vokietija", "Prancūzija", "Beneliukso šalys", "Šveicarija", "Austrija", "Vengrija", "Čekija", "Slovakija", "Ispanija", "Italija", "Graikija"] },
+      { "title": "Didžioji Britanija", "countries": ["Jungtinė Karalystė"] }
     ]
   },
   "about": {

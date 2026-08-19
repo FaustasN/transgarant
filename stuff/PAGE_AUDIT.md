@@ -6,13 +6,13 @@ Final URL: https://www.transgarant.lt/lt
 
 ## Rebuild Status
 
-Last updated: 2026-07-28
+Last updated: 2026-07-29
 
 The new multilingual Next.js rebuild is now in progress. The original-site findings below are retained as the baseline audit; this section records the current implementation.
 
 ### Current Architecture
 
-- Next.js App Router with statically generated LT, EN, PL, and RU pages.
+- Next.js App Router with locale-aware static generation for LT, EN, PL, RU, DE, and FR pages.
 - Shared global UI lives under `app/[locale]/globalComponents`.
 - Landing-page sections live under `app/[locale]/pageComponents`.
 - Shared animation and experience components live under `components`.
@@ -24,14 +24,63 @@ The new multilingual Next.js rebuild is now in progress. The original-site findi
 
 ### Current Localized URLs
 
-| Page | Lithuanian | English | Polish | Russian |
-| --- | --- | --- | --- | --- |
-| Home | `/lt` | `/en` | `/pl` | `/ru` |
-| Services | `/lt/paslaugos` | `/en/services` | `/pl/uslugi` | `/ru/uslugi` |
-| About | `/lt/apie-mus` | `/en/about-us` | `/pl/o-nas` | `/ru/o-kompanii` |
-| Careers | `/lt/karjera` | `/en/careers` | `/pl/kariera` | `/ru/karera` |
-| Contact | `/lt/kontaktai` | `/en/contact` | `/pl/kontakt` | `/ru/kontakty` |
-| Quote | `/lt/uzklausa` | `/en/request-a-quote` | `/pl/zapytanie` | `/ru/zapros` |
+| Page | Lithuanian | English | Polish | Russian | German | French |
+| --- | --- | --- | --- | --- | --- | --- |
+| Home | `/lt` | `/en` | `/pl` | `/ru` | `/de` | `/fr` |
+| Services | `/lt/paslaugos` | `/en/services` | `/pl/uslugi` | `/ru/uslugi` | `/de/dienstleistungen` | `/fr/services` |
+| About | `/lt/apie-mus` | `/en/about-us` | `/pl/o-nas` | `/ru/o-kompanii` | `/de/ueber-uns` | `/fr/a-propos` |
+| Careers | `/lt/karjera` | `/en/careers` | `/pl/kariera` | `/ru/karera` | `/de/karriere` | `/fr/carrieres` |
+| Contact | `/lt/kontaktai` | `/en/contact` | `/pl/kontakt` | `/ru/kontakty` | `/de/kontakt` | `/fr/contact` |
+| Quote | `/lt/uzklausa` | `/en/request-a-quote` | `/pl/zapytanie` | `/ru/zapros` | `/de/angebot-anfragen` | `/fr/demande-de-devis` |
+
+### German and French Locale Expansion
+
+Audit date: 2026-07-29
+
+German and French are implemented as first-class locales across the entire project:
+
+- `de` and `fr` are included in the shared `supportedLocales` definition.
+- The language selector exposes Deutsch and Français.
+- All page-level static locale parameters are generated from the shared locale list.
+- Open Graph locale identifiers use `de_DE` and `fr_FR`.
+- German and French have localized canonical slugs for services, about, careers, contact, and quote pages.
+- Language switching resolves the equivalent page in all six languages.
+- Both locales contain complete `common`, `about`, `careers`, `contact`, `quote`, and `services` namespaces.
+- Page metadata, breadcrumbs, forms, accessibility labels, image descriptions, navigation, CTAs, and footer content are translated.
+
+Validation completed without running a production build:
+
+- ESLint passes with no errors.
+- All 36 locale JSON files parse successfully.
+- All six locales have exact translation-schema parity across all six namespaces.
+- 180 cross-language route round trips resolve to the expected canonical paths.
+- `git diff --check` reports no whitespace errors.
+
+### Lithuanian-Source Locale Audit
+
+Audit date: 2026-07-29
+
+Lithuanian is the canonical content source for all other locales. English, Polish, Russian, German, and French were reviewed against the Lithuanian text across every namespace.
+
+Corrections made during the audit:
+
+- Replaced the outdated landing-page services introduction in all five translated locales with translations of the current Lithuanian text.
+- Aligned the generic services CTA with the Lithuanian `Plačiau` label.
+- Changed the About-page trust eyebrow from variants of “recognition” or “award” to translations of `ĮVERTINIMAS`.
+- Aligned cargo discussion CTAs with `Aptarti krovinį` rather than the broader “discuss transport” wording.
+- Aligned contact map-link labels with the Lithuanian `Rodyti žemėlapyje`.
+- Corrected email-program wording where a translation incorrectly referred to an email candidature or application.
+- Restored “promising company” in the Polish careers benefits where `perspektyvioje` had been omitted.
+- Restored omitted Polish and Russian service details covering delivery time, transport-method selection, smooth warehouse flow, reloading, delivery timing, client updates, Lithuanian and international routing, and cargo-movement updates.
+- Preserved all service keys, career IDs, contact data, company registration data, transport abbreviations, qualifications, dates, and certificate year.
+
+Validation completed without running a production build:
+
+- All 36 JSON files match the Lithuanian key structure and array layout.
+- Service keys, career IDs, and invariant business details match the Lithuanian source.
+- No known stale locale phrases remain.
+- ESLint passes with no errors.
+- `git diff --check` reports no whitespace errors.
 
 ### GSAP Target Error Fix
 
@@ -70,9 +119,9 @@ Follow-up correction:
 Validation completed after the GSAP fixes:
 
 - ESLint passes with no errors.
-- The optimized Next.js production build passes.
-- Next.js generates 27 routes, including all localized page variants and framework routes.
-- All 24 localized public URLs listed above return HTTP `200`.
+- The optimized Next.js production build passed for the earlier four-locale implementation.
+- That earlier build generated 27 routes, including the four-locale page variants and framework routes.
+- All 24 localized public URLs in the earlier four-language URL set returned HTTP `200`.
 - Every tested public page contains `data-scroll-behavior="smooth"` on the document-level `<html>` element.
 - Client-side transitions were exercised through services, about, careers, and contact pages to cover repeated `ScrollToTop` mounting and cleanup.
 - The Lithuanian quote page renders its complete form and localized metadata.
@@ -86,6 +135,8 @@ The services page has one canonical public slug per language:
 - English: `/en/services`
 - Polish: `/pl/uslugi`
 - Russian: `/ru/uslugi`
+- German: `/de/dienstleistungen`
+- French: `/fr/services`
 
 Navigation, footer links, landing-page CTAs, language switching, canonical URLs, and language alternates use the localized paths. Permanent redirects cover previous or incorrect services URLs, while internal rewrites keep the filesystem route in English.
 
@@ -111,7 +162,7 @@ Navigation, footer links, landing-page CTAs, language switching, canonical URLs,
 
 - ESLint passes.
 - The production build passes.
-- All four services locale files contain the same six-service data structure.
+- All six services locale files contain the same six-service data structure.
 - Localized services redirects and rewrites are generated from the shared slug map.
 
 ## Summary

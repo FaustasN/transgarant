@@ -8,9 +8,10 @@ import { resources } from "@/lib/i18n";
 gsap.registerPlugin(ScrollTrigger);
 
 const routeGeometry = [
-  { path: "M405 265 C425 258 424 239 405 232", x: 405, y: 232 },
-  { path: "M405 265 C404 231 395 203 385 185", x: 385, y: 185 },
-  { path: "M405 265 C374 269 344 282 320 295", x: 320, y: 295 },
+  { path: "M405 265 C425 258 424 239 405 232", x: 405, y: 232, labelX: 12, labelY: -11, labelAnchor: "start" },
+  { path: "M405 265 C404 231 395 203 385 185", x: 385, y: 185, labelX: 12, labelY: -11, labelAnchor: "start" },
+  { path: "M405 265 C374 269 344 282 320 295", x: 320, y: 295, labelX: 84, labelY: 21, labelAnchor: "end" },
+  { path: "M405 265 C350 242 278 240 224 282", x: 224, y: 282, labelX: -14, labelY: -12, labelAnchor: "end" },
 ];
 
 function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
@@ -103,9 +104,9 @@ function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
         <g fontFamily="Manrope, Arial, sans-serif" fontSize="13" fontWeight="700" fill="#FFFFFF">
           <text x="425" y="265">{origin}</text>
           <text
-            x={routeGeometry[activeIndex].x + (activeIndex === 2 ? 84 : activeIndex === 3 ? -15 : 12)}
-            y={routeGeometry[activeIndex].y + (activeIndex >= 2 ? 21 : -11)}
-            textAnchor={activeIndex >= 2 ? "end" : "start"}
+            x={routeGeometry[activeIndex].x + routeGeometry[activeIndex].labelX}
+            y={routeGeometry[activeIndex].y + routeGeometry[activeIndex].labelY}
+            textAnchor={routeGeometry[activeIndex].labelAnchor}
             fill="#FFFFFF"
             fillOpacity="0.86"
           >

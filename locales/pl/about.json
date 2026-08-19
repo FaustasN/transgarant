@@ -21,14 +21,14 @@
     "highlight": "Naszym celem jest nie tylko rzetelna realizacja każdego zlecenia, ale także przekraczanie oczekiwań klienta."
   },
   "trust": {
-    "eyebrow": "WYRÓŻNIENIE",
+    "eyebrow": "OCENA",
     "title": "Wiarygodny Pracodawca 2026",
     "description": "Według oceny Creditinfo UAB TRANSGARANT GROUP dba o dobrostan pracowników oraz spełnia wysokie standardy przejrzystości i etyki pracodawcy.",
     "imageAlt": "Certyfikat Wiarygodnego Pracodawcy 2026 dla UAB TRANSGARANT GROUP"
   },
   "cta": {
     "title": "Szukasz godnego zaufania partnera logistycznego?",
-    "description": "Omówmy Twój ładunek i znajdźmy najlepsze rozwiązanie transportowe.",
-    "button": "Omów transport"
+    "description": "Omówmy Twój ładunek i znajdźmy najbardziej odpowiednie rozwiązanie transportowe.",
+    "button": "Omów ładunek"
   }
 }

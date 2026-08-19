@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
-
-const supportedLocales = ["lt", "en", "pl", "ru"];
+import { supportedLocales } from "@/lib/routes.mjs";
 
 export default function LocaleProvider({ locale, children }) {
   if (!supportedLocales.includes(locale)) {

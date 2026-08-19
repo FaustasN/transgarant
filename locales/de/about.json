@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Über uns | Transgarant Group",
+    "description": "Erfahren Sie mehr über UAB TRANSGARANT GROUP, ein Transport- und Logistikunternehmen für Frachttransport und Spedition in Litauen und ganz Europa."
+  },
+  "hero": {
+    "title": "Logistiklösungen für langfristige Partnerschaften",
+    "intro": "UAB TRANSGARANT GROUP ist ein privat geführtes Transport- und Logistikunternehmen mit einem umfassenden Angebot an Logistikdienstleistungen. Wir sind auf Frachttransport und Spedition spezialisiert.",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbCurrent": "Über uns",
+    "imageAlt": "Fracht wird in einem Logistiklager vorbereitet"
+  },
+  "overview": {
+    "eyebrow": "UNSERE ERFAHRUNG",
+    "title": "Erfahrung, die zur richtigen Lösung führt",
+    "paragraphs": [
+      "Unsere Erfahrung im Transport von Fracht auf nationalen und internationalen Routen ermöglicht uns, Lösungen anzubieten, die auf die Anforderungen jedes Kunden zugeschnitten sind. Für jede Sendung setzen wir eigene Fahrzeuge und ein zuverlässiges Partnernetzwerk ein.",
+      "Wir sind auf den Straßentransport von Klein-, Teil- und Komplettladungen spezialisiert. Ein weitreichendes Partnernetzwerk in ganz Europa hilft uns, die Fracht sicher, effizient und pünktlich zum Empfänger oder Lager zu bringen.",
+      "Unser verantwortungsbewusstes Handeln ist auf langfristige Zusammenarbeit und verlässliche Partnerschaften ausgerichtet. Wir sind überzeugt, dass hochwertige Logistikdienstleistungen unsere Kunden bei der erfolgreichen Entwicklung ihres Geschäfts unterstützen."
+    ],
+    "highlight": "Unser Ziel ist es, jeden Auftrag nicht nur in hoher Qualität auszuführen, sondern die Erwartungen unserer Kunden zu übertreffen."
+  },
+  "trust": {
+    "eyebrow": "BEWERTUNG",
+    "title": "Vertrauenswürdiger Arbeitgeber 2026",
+    "description": "Laut der Bewertung von Creditinfo fördert UAB TRANSGARANT GROUP das Wohlbefinden der Mitarbeitenden und erfüllt hohe Standards in Bezug auf Transparenz und Arbeitgeberethik.",
+    "imageAlt": "Zertifikat Vertrauenswürdiger Arbeitgeber 2026 von UAB TRANSGARANT GROUP"
+  },
+  "cta": {
+    "title": "Suchen Sie einen zuverlässigen Logistikpartner?",
+    "description": "Lassen Sie uns über Ihre Fracht sprechen und die passende Transportlösung finden.",
+    "button": "Fracht besprechen"
+  }
+}

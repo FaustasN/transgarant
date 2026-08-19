@@ -18,7 +18,7 @@
     "intro": "Every shipment is assessed individually. Select a service to see how we can plan your cargo journey.",
     "navigationLabel": "Transport and logistics services",
     "suitableLabel": "Service includes",
-    "cta": "Discuss your shipment"
+    "cta": "Discuss your cargo"
   },
   "services": [
     {
@@ -79,7 +79,7 @@
       "key": "warehouse",
       "title": "Warehousing and customs",
       "kicker": "STORAGE · HANDLING · FORMALITIES",
-      "heading": "Safe storage and preparation for the next stage",
+      "heading": "Cargo storage and preparation for the next stage",
       "intro": "We organise warehousing, handling, reloading and customs services to keep cargo moving smoothly between transport stages.",
       "paragraphs": [
         "Depending on the cargo, we arrange standard or temperature-controlled premises. Temporary storage, consolidation, reloading and preparation for dispatch can be coordinated.",

@@ -7,22 +7,19 @@ import Footer from "../globalComponents/Footer";
 import ScrollToTop from "../globalComponents/ScrollToTop";
 import RevealSection from "@/components/RevealSection";
 import { resources } from "@/lib/i18n";
-import { getCareersPath } from "@/lib/routes.mjs";
+import {
+  getCareersPath,
+  openGraphLocales,
+  supportedLocales,
+} from "@/lib/routes.mjs";
 import CareerApplication from "./CareerApplication";
 
 const siteUrl = "https://www.transgarant.lt";
-const availableLocales = ["lt", "en", "pl", "ru"];
-const openGraphLocales = {
-  lt: "lt_LT",
-  en: "en_US",
-  pl: "pl_PL",
-  ru: "ru_RU",
-};
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return availableLocales.map((locale) => ({ locale }));
+  return supportedLocales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }) {
@@ -39,7 +36,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical,
       languages: Object.fromEntries(
-        availableLocales.map((language) => [
+        supportedLocales.map((language) => [
           language,
           `${siteUrl}${getCareersPath(language)}`,
         ]),
@@ -152,7 +149,7 @@ export default async function CareersPage({ params }) {
               </div>
 
               <div data-reveal>
-                <h1 className="max-w-3xl text-[clamp(42px,6vw,72px)] font-extrabold leading-[0.98] tracking-[-0.05em] text-balance">
+                <h1 className="max-w-2xl text-[clamp(36px,4.2vw,56px)] font-extrabold leading-[1.02] tracking-[-0.04em] text-balance">
                   {content.hero.title}
                 </h1>
                 <p className="mt-7 max-w-2xl text-base leading-8 text-[#6F7080] sm:text-lg">

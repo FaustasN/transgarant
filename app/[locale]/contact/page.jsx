@@ -6,17 +6,14 @@ import Footer from "../globalComponents/Footer";
 import ScrollToTop from "../globalComponents/ScrollToTop";
 import RevealSection from "@/components/RevealSection";
 import { resources } from "@/lib/i18n";
-import { getContactPath } from "@/lib/routes.mjs";
+import {
+  getContactPath,
+  openGraphLocales,
+  supportedLocales,
+} from "@/lib/routes.mjs";
 import ContactForm from "./ContactForm";
 
 const siteUrl = "https://www.transgarant.lt";
-const availableLocales = ["lt", "en", "pl", "ru"];
-const openGraphLocales = {
-  lt: "lt_LT",
-  en: "en_US",
-  pl: "pl_PL",
-  ru: "ru_RU",
-};
 const mapUrl =
   "https://www.google.com/maps?q=Laisv%C4%97s%20pr.%2078B-238%2C%20Vilnius%2C%20LT-05263&output=embed";
 const mapLink =
@@ -25,7 +22,7 @@ const mapLink =
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return availableLocales.map((locale) => ({ locale }));
+  return supportedLocales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }) {
@@ -42,7 +39,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical,
       languages: Object.fromEntries(
-        availableLocales.map((language) => [
+        supportedLocales.map((language) => [
           language,
           `${siteUrl}${getContactPath(language)}`,
         ]),
@@ -145,7 +142,7 @@ export default async function ContactPage({ params }) {
             </nav>
 
             <div data-reveal className="mt-5 max-w-3xl">
-              <h1 className="text-[clamp(42px,6vw,72px)] font-extrabold leading-[0.98] tracking-[-0.05em]">
+              <h1 className="max-w-2xl text-[clamp(36px,4.2vw,56px)] font-extrabold leading-[1.02] tracking-[-0.04em] text-balance">
                 {content.hero.title}
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-[#6F7080] sm:text-lg">
@@ -195,7 +192,7 @@ export default async function ContactPage({ params }) {
                   <a href="tel:+37052072775" className="transition-colors hover:text-[#AE2422]">
                     {content.details.officePhone}
                   </a>
-                  <a href="tel:+37068818888" className="transition-colors hover:text-[#AE2422]">
+                  <a href="tel:+37062233388" className="transition-colors hover:text-[#AE2422]">
                     {content.details.mobilePhone}
                   </a>
                 </div>

@@ -87,7 +87,7 @@
   "application": {
     "eyebrow": "APPLY",
     "title": "Let’s start with a short message",
-    "description": "Choose a position and leave your contact details. Your email application will open when you press “Send CV”.",
+    "description": "Choose a position and leave your contact details. Your email app will open when you press “Send CV”.",
     "roleLegend": "Position",
     "name": "Full name",
     "namePlaceholder": "Your full name",

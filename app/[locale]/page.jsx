@@ -6,9 +6,50 @@ import Destinations from "./pageComponents/Destinations";
 import About from "./pageComponents/About";
 import FinalCta from "./pageComponents/FinalCta";
 import ScrollToTop from "./globalComponents/ScrollToTop";
+import { resources } from "@/lib/i18n";
+import { openGraphLocales, supportedLocales } from "@/lib/routes.mjs";
+
+const siteUrl = "https://www.transgarant.lt";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return [{ locale: "lt" }, { locale: "en" }, { locale: "pl" }, { locale: "ru" }];
+  return supportedLocales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const content = resources[locale]?.common;
+
+  if (!content) return {};
+
+  const canonical = `${siteUrl}/${locale}`;
+  const title = `${content.hero.titlePrimary} ${content.hero.titleSecondary} | TRANSGARANT GROUP`;
+
+  return {
+    title,
+    description: content.hero.description,
+    alternates: {
+      canonical,
+      languages: Object.fromEntries(
+        supportedLocales.map((language) => [language, `${siteUrl}/${language}`]),
+      ),
+    },
+    openGraph: {
+      title,
+      description: content.hero.description,
+      url: canonical,
+      siteName: "TRANSGARANT GROUP",
+      locale: openGraphLocales[locale],
+      type: "website",
+      images: [
+        {
+          url: `${siteUrl}/heroImage.webp`,
+          alt: content.hero.imageAlt,
+        },
+      ],
+    },
+  };
 }
 
 export default async function Home({ params }) {

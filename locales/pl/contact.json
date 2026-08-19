@@ -4,7 +4,7 @@
     "description": "Skontaktuj się z UAB TRANSGARANT GROUP w sprawie transportu, usług logistycznych lub współpracy. Biuro w Wilnie."
   },
   "hero": {
-    "title": "Porozmawiajmy",
+    "title": "Skontaktujmy się",
     "description": "Masz pytanie dotyczące transportu ładunku lub współpracy? Napisz do nas albo zadzwoń.",
     "breadcrumbHome": "Strona główna",
     "breadcrumbCurrent": "Kontakt"
@@ -13,14 +13,14 @@
     "emailLabel": "E-mail",
     "email": "info@transgarant.lt",
     "phonesLabel": "Telefony",
-    "officePhone": "+370 (5) 207 2775",
-    "mobilePhone": "+370 688 18888",
+    "officePhone": "+370 5 207 2775",
+    "mobilePhone": "+370 622 33388",
     "addressLabel": "Adres",
     "addressLine1": "Laisvės pr. 78B-238",
     "addressLine2": "Wilno, LT-05263",
     "hoursLabel": "Godziny pracy",
-    "hours": "Pon.–Pt. 08:30–17:30",
-    "mapLink": "Otwórz w Google Maps",
+    "hours": "Pon.–Pt. 08:00–17:00",
+    "mapLink": "Pokaż na mapie",
     "mapTitle": "Biuro TRANSGARANT GROUP w Wilnie"
   },
   "form": {

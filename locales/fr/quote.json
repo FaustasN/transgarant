@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Demande de devis pour le transport de fret | Transgarant",
+    "description": "Envoyez l’itinéraire, le poids de votre fret et vos coordonnées. TRANSGARANT GROUP sélectionnera une solution de transport adaptée."
+  },
+  "hero": {
+    "title": "Demander un devis de transport",
+    "description": "Communiquez-nous les informations essentielles sur votre fret et son itinéraire. Nous étudierons votre demande et vous proposerons la solution la plus adaptée.",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbCurrent": "Demande de devis"
+  },
+  "form": {
+    "contactEyebrow": "COORDONNÉES",
+    "contactTitle": "Comment pouvons-nous vous joindre ?",
+    "company": "Nom de l’entreprise",
+    "companyPlaceholder": "Nom de l’entreprise",
+    "contactPerson": "Personne à contacter",
+    "contactPersonPlaceholder": "Nom et prénom",
+    "phone": "Numéro de téléphone",
+    "phonePlaceholder": "+370",
+    "email": "E-mail",
+    "emailPlaceholder": "nom@email.com",
+    "routeEyebrow": "ITINÉRAIRE",
+    "routeTitle": "D’où part le fret et où doit-il être livré ?",
+    "loadingLabel": "Lieu de chargement",
+    "loadingCountry": "Pays",
+    "loadingCountryPlaceholder": "Lituanie",
+    "loadingCity": "Ville",
+    "loadingCityPlaceholder": "Vilnius",
+    "unloadingLabel": "Lieu de livraison",
+    "unloadingCountry": "Pays",
+    "unloadingCountryPlaceholder": "Allemagne",
+    "unloadingCity": "Ville",
+    "unloadingCityPlaceholder": "Berlin",
+    "cargoEyebrow": "FRET",
+    "cargoTitle": "Que faut-il transporter ?",
+    "cargoType": "Type de fret",
+    "cargoTypePlaceholder": "Par exemple, des palettes ou du matériel",
+    "weight": "Poids",
+    "weightPlaceholder": "Par exemple, 1 500 kg",
+    "pickupDate": "Date de chargement souhaitée",
+    "additionalInfo": "Informations complémentaires",
+    "additionalInfoPlaceholder": "Dimensions, quantité, conditions particulières ou toute autre information utile",
+    "submit": "Envoyer la demande",
+    "submitNote": "Votre messagerie s’ouvrira lorsque vous cliquerez sur « Envoyer la demande ».",
+    "subject": "Nouvelle demande de devis de transport"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "headline": "Bearbeiten Sie zunächst die Datei page.tsx.",
+  "intro": "Suchen Sie einen Einstieg oder weitere Anleitungen? Besuchen Sie",
+  "templates": "Vorlagen",
+  "orThe": "oder das",
+  "learning": "Lernzentrum",
+  "center": ".",
+  "deployNow": "Jetzt bereitstellen",
+  "documentation": "Dokumentation",
+  "nav": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "destinations": "Zielregionen",
+    "about": "Über uns",
+    "careers": "Karriere",
+    "contact": "Kontakt",
+    "quote": "Angebot anfragen"
+  },
+  "header": {
+    "homeLabel": "Startseite von TRANSGARANT GROUP",
+    "navigationLabel": "Hauptnavigation",
+    "mobile": {
+      "open": "Menü öffnen",
+      "close": "Menü schließen",
+      "navigation": "Inhalt"
+    }
+  },
+  "hero": {
+    "eyebrow": "TRANSPORT UND LOGISTIK",
+    "titlePrimary": "Ihre Fracht.",
+    "titleSecondary": "Unsere Verantwortung.",
+    "description": "Wir organisieren den Transport von Komplett-, Teil- und Spezialladungen auf dem Land-, See- und Luftweg.",
+    "primaryCta": "Angebot anfragen",
+    "secondaryCta": "Unsere Dienstleistungen",
+    "imageAlt": "Lkw der TRANSGARANT GROUP auf einer internationalen Route",
+    "highlights": [
+      "Lieferung von Tür zu Tür",
+      "Europa, Baltikum und Skandinavien",
+      "FTL, Teil- und Spezialladungen"
+    ]
+  },
+  "services": {
+    "eyebrow": "UNSERE DIENSTLEISTUNGEN",
+    "title": "Frachttransport und Logistik",
+    "intro": "Wenn Sie sich für die Dienstleistungen von TRANSGARANT GROUP entscheiden, können Sie sicher sein, dass unser hervorragendes Expertenteam Ihre Waren nach höchsten Standards betreut.",
+    "cta": "Mehr erfahren",
+    "items": [
+      {
+        "title": "Komplettladungen",
+        "description": "Wir liefern Komplettladungen von Tür zu Tür in Litauen, Europa, dem Baltikum und Skandinavien.",
+        "tags": ["FTL", "LTL", "ADR", "Temperaturgeführt"]
+      },
+      {
+        "title": "Teil- und Kleinladungen",
+        "description": "Wir transportieren kleinere Sendungen auf dem Land- und Luftweg und wählen eine wirtschaftliche Route zum Empfänger.",
+        "tags": ["See", "Luft", "Multimodal"]
+      },
+      {
+        "title": "Lagerung und Logistik",
+        "description": "Wir bieten Lagerung, Umschlag, Umladung und Zolldienstleistungen in normalen und gekühlten Anlagen.",
+        "tags": ["Lagerung", "Umladung", "Zoll"]
+      }
+    ],
+    "capabilitiesTitle": "Wenn die Fracht nicht dem Standard entspricht",
+    "capabilitiesText": "Wir bewerten jede Sendung und wählen die passende Lösung für Transport, Dokumentation und Kontrolle.",
+    "capabilities": [
+      "Temperaturgeführte Fracht",
+      "Gefahrgut – ADR",
+      "Übermaßfracht",
+      "Klein- und Teilladungen"
+    ]
+  },
+  "destinations": {
+    "eyebrow": "ZIELREGIONEN",
+    "title": "Routen in ganz Europa",
+    "intro": "Von Vilnius aus organisieren wir Frachttransporte in das Baltikum, nach Skandinavien sowie nach West-, Mittel- und Osteuropa.",
+    "origin": "Vilnius",
+    "mapLabel": "Interaktive Karte der europäischen Routen von TRANSGARANT GROUP",
+    "selectorLabel": "Region auswählen",
+    "countriesLabel": "Wichtigste Zielorte",
+    "regions": [
+      { "title": "Baltikum", "countries": ["Litauen", "Lettland", "Estland"] },
+      { "title": "Skandinavien", "countries": ["Dänemark", "Schweden", "Norwegen", "Finnland"] },
+      { "title": "West- und Mitteleuropa", "countries": ["Polen", "Deutschland", "Frankreich", "Benelux", "Schweiz", "Österreich", "Ungarn", "Tschechien", "Slowakei", "Spanien", "Italien", "Griechenland"] },
+      { "title": "Großbritannien", "countries": ["Vereinigtes Königreich"] }
+    ]
+  },
+  "about": {
+    "eyebrow": "ÜBER UNS",
+    "title": "Langfristige Partnerschaft statt nur einer Sendung",
+    "paragraphs": [
+      "UAB TRANSGARANT GROUP ist ein Transport- und Logistikunternehmen, das auf Frachttransport und Spedition spezialisiert ist. Wir organisieren internationale und nationale Transporte mit eigenen Fahrzeugen und einem zuverlässigen Partnernetzwerk.",
+      "Unser Ziel sind sichere und pünktliche Lieferungen, eine schnelle Kommunikation und eine langfristige Zusammenarbeit."
+    ],
+    "cta": "Mehr über uns",
+    "imageAlt": "Logistik- und Transportinfrastruktur"
+  },
+  "finalCta": {
+    "title": "Müssen Sie Fracht transportieren?",
+    "description": "Senden Sie uns die Route und Frachtdaten – wir wählen die passende Transportlösung.",
+    "button": "Anfrage senden"
+  },
+  "footer": {
+    "description": "Ihr Transport- und Logistikpartner für Komplett-, Teil- und Spezialladungen in ganz Europa.",
+    "navigationTitle": "Navigation",
+    "links": {
+      "services": "Dienstleistungen",
+      "destinations": "Zielregionen",
+      "about": "Über uns",
+      "careers": "Karriere",
+      "contact": "Kontakt"
+    },
+    "contactsTitle": "Kontakt",
+    "emailLabel": "E-Mail",
+    "hours": "Öffnungszeiten: Mo–Fr 08:00–17:00",
+    "companyDetails": "Unternehmensangaben",
+    "copyright": "UAB TRANSGARANT GROUP. Alle Rechte vorbehalten."
+  }
+}

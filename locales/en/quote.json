@@ -42,7 +42,7 @@
     "additionalInfo": "Additional information",
     "additionalInfoPlaceholder": "Dimensions, quantity, special conditions or other relevant information",
     "submit": "Send request",
-    "submitNote": "Your email application will open when you press “Send request”.",
+    "submitNote": "Your email app will open when you press “Send request”.",
     "subject": "New transport quote request"
   }
 }

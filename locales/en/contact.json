@@ -4,7 +4,7 @@
     "description": "Contact UAB TRANSGARANT GROUP regarding transport, logistics services or cooperation. Office in Vilnius."
   },
   "hero": {
-    "title": "Let’s talk",
+    "title": "Let’s get in touch",
     "description": "Have a question about cargo transport or cooperation? Send us a message or call us.",
     "breadcrumbHome": "Home",
     "breadcrumbCurrent": "Contact"
@@ -13,20 +13,20 @@
     "emailLabel": "Email",
     "email": "info@transgarant.lt",
     "phonesLabel": "Phone numbers",
-    "officePhone": "+370 (5) 207 2775",
-    "mobilePhone": "+370 688 18888",
+    "officePhone": "+370 5 207 2775",
+    "mobilePhone": "+370 622 33388",
     "addressLabel": "Address",
     "addressLine1": "Laisvės pr. 78B-238",
     "addressLine2": "Vilnius, LT-05263",
     "hoursLabel": "Office hours",
-    "hours": "Mon–Fri 08:30–17:30",
-    "mapLink": "Open in Google Maps",
+    "hours": "Mon–Fri 08:00–17:00",
+    "mapLink": "Show on map",
     "mapTitle": "TRANSGARANT GROUP office in Vilnius"
   },
   "form": {
     "eyebrow": "HAVE A QUESTION?",
     "title": "Send us a message",
-    "description": "Briefly tell us how we can help. Your email application will open when you press “Send message”.",
+    "description": "Briefly tell us how we can help. Your email app will open when you press “Send message”.",
     "name": "Full name",
     "namePlaceholder": "Your full name",
     "email": "Email",

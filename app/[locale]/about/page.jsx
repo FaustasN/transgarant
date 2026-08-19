@@ -8,21 +8,19 @@ import ScrollToTop from "../globalComponents/ScrollToTop";
 import AboutExperienceSection from "@/components/AboutExperienceSection";
 import RevealSection from "@/components/RevealSection";
 import { resources } from "@/lib/i18n";
-import { getAboutPath, getQuotePath } from "@/lib/routes.mjs";
+import {
+  getAboutPath,
+  getQuotePath,
+  openGraphLocales,
+  supportedLocales,
+} from "@/lib/routes.mjs";
 
 const siteUrl = "https://www.transgarant.lt";
-const availableLocales = ["lt", "en", "pl", "ru"];
-const openGraphLocales = {
-  lt: "lt_LT",
-  en: "en_US",
-  pl: "pl_PL",
-  ru: "ru_RU",
-};
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return availableLocales.map((locale) => ({ locale }));
+  return supportedLocales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }) {
@@ -39,7 +37,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical,
       languages: Object.fromEntries(
-        availableLocales.map((language) => [
+        supportedLocales.map((language) => [
           language,
           `${siteUrl}${getAboutPath(language)}`,
         ]),

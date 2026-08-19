@@ -21,7 +21,7 @@
     "highlight": "Our goal is not only to complete every order to a high standard, but also to exceed our client’s expectations."
   },
   "trust": {
-    "eyebrow": "RECOGNITION",
+    "eyebrow": "ASSESSMENT",
     "title": "Trusted Employer 2026",
     "description": "According to Creditinfo’s assessment, UAB TRANSGARANT GROUP supports employee well-being and meets high standards of transparency and employer ethics.",
     "imageAlt": "UAB TRANSGARANT GROUP Trusted Employer 2026 certificate"
@@ -29,6 +29,6 @@
   "cta": {
     "title": "Looking for a reliable logistics partner?",
     "description": "Let’s discuss your cargo and find the most suitable transport solution.",
-    "button": "Discuss your shipment"
+    "button": "Discuss your cargo"
   }
 }

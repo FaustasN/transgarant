@@ -3,13 +3,18 @@ import Footer from "../globalComponents/Footer";
 import ScrollToTop from "../globalComponents/ScrollToTop";
 import ServicesExperience from "@/components/ServicesExperience";
 import { resources } from "@/lib/i18n";
-import { getServicesPath } from "@/lib/routes.mjs";
+import {
+  getServicesPath,
+  openGraphLocales,
+  supportedLocales,
+} from "@/lib/routes.mjs";
 
 const siteUrl = "https://www.transgarant.lt";
-const locales = ["lt", "en", "pl", "ru"];
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return supportedLocales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }) {
@@ -22,14 +27,14 @@ export async function generateMetadata({ params }) {
     description: content.meta.description,
     alternates: {
       canonical,
-      languages: Object.fromEntries(locales.map((language) => [language, `${siteUrl}${getServicesPath(language)}`])),
+      languages: Object.fromEntries(supportedLocales.map((language) => [language, `${siteUrl}${getServicesPath(language)}`])),
     },
     openGraph: {
       title: content.meta.title,
       description: content.meta.description,
       url: canonical,
       siteName: "TRANSGARANT GROUP",
-      locale,
+      locale: openGraphLocales[locale],
       type: "website",
       images: [{ url: `${siteUrl}/heroImage.webp`, width: 1600, height: 900, alt: content.hero.title }],
     },

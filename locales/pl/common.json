@@ -42,8 +42,8 @@
   "services": {
     "eyebrow": "NASZE USŁUGI",
     "title": "Transport ładunków i logistyka",
-    "intro": "Dbamy o Twój ładunek od odbioru aż po dostawę.",
-    "cta": "Więcej o usługach",
+    "intro": "Wybierając usługi TRANSGARANT GROUP, możesz mieć pewność, że nasz znakomity zespół profesjonalistów zadba o Twoje towary zgodnie z najwyższymi standardami.",
+    "cta": "Więcej",
     "items": [
       {
         "title": "Transport całopojazdowy",
@@ -81,7 +81,8 @@
     "regions": [
       { "title": "Kraje bałtyckie", "countries": ["Litwa", "Łotwa", "Estonia"] },
       { "title": "Skandynawia", "countries": ["Dania", "Szwecja", "Norwegia", "Finlandia"] },
-      { "title": "Europa Zachodnia i Środkowa", "countries": ["Polska", "Niemcy", "Francja", "Beneluks", "Wielka Brytania", "Szwajcaria", "Austria", "Węgry", "Czechy", "Słowacja", "Hiszpania", "Włochy", "Grecja"] }
+      { "title": "Europa Zachodnia i Środkowa", "countries": ["Polska", "Niemcy", "Francja", "Beneluks", "Szwajcaria", "Austria", "Węgry", "Czechy", "Słowacja", "Hiszpania", "Włochy", "Grecja"] },
+      { "title": "Wielka Brytania", "countries": ["Zjednoczone Królestwo"] }
     ]
   },
   "about": {

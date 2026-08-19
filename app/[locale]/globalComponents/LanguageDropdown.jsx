@@ -12,6 +12,8 @@ const languages = [
   { code: "en", label: "EN", name: "English" },
   { code: "pl", label: "PL", name: "Polski" },
   { code: "ru", label: "RU", name: "Русский" },
+  { code: "de", label: "DE", name: "Deutsch" },
+  { code: "fr", label: "FR", name: "Français" },
 ];
 
 export default function LanguageDropdown({ locale = "lt" }) {

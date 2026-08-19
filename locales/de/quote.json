@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Angebot für Frachttransport anfragen | Transgarant",
+    "description": "Senden Sie uns Route, Gewicht und Kontaktdaten Ihrer Fracht. TRANSGARANT GROUP wählt eine passende Transportlösung."
+  },
+  "hero": {
+    "title": "Transportangebot anfragen",
+    "description": "Teilen Sie uns die wichtigsten Angaben zu Ihrer Fracht und Route mit. Wir prüfen Ihre Anfrage und melden uns mit der passenden Lösung.",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbCurrent": "Angebot anfragen"
+  },
+  "form": {
+    "contactEyebrow": "KONTAKTDATEN",
+    "contactTitle": "Wie können wir Sie erreichen?",
+    "company": "Unternehmensname",
+    "companyPlaceholder": "Unternehmensname",
+    "contactPerson": "Ansprechperson",
+    "contactPersonPlaceholder": "Vor- und Nachname",
+    "phone": "Telefonnummer",
+    "phonePlaceholder": "+370",
+    "email": "E-Mail",
+    "emailPlaceholder": "name@email.com",
+    "routeEyebrow": "ROUTE",
+    "routeTitle": "Von wo nach wo soll die Fracht transportiert werden?",
+    "loadingLabel": "Ladestelle",
+    "loadingCountry": "Land",
+    "loadingCountryPlaceholder": "Litauen",
+    "loadingCity": "Ort",
+    "loadingCityPlaceholder": "Vilnius",
+    "unloadingLabel": "Zielort",
+    "unloadingCountry": "Land",
+    "unloadingCountryPlaceholder": "Deutschland",
+    "unloadingCity": "Ort",
+    "unloadingCityPlaceholder": "Berlin",
+    "cargoEyebrow": "FRACHT",
+    "cargoTitle": "Was soll transportiert werden?",
+    "cargoType": "Art der Fracht",
+    "cargoTypePlaceholder": "Zum Beispiel Paletten oder Ausrüstung",
+    "weight": "Gewicht",
+    "weightPlaceholder": "Zum Beispiel 1.500 kg",
+    "pickupDate": "Gewünschtes Ladedatum",
+    "additionalInfo": "Zusätzliche Informationen",
+    "additionalInfoPlaceholder": "Abmessungen, Menge, besondere Bedingungen oder andere relevante Angaben",
+    "submit": "Anfrage senden",
+    "submitNote": "Wenn Sie auf „Anfrage senden“ klicken, öffnet sich Ihr E-Mail-Programm.",
+    "subject": "Neue Anfrage für ein Transportangebot"
+  }
+}

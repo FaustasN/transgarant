@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Karriere in Transport und Logistik | Transgarant",
+    "description": "Werden Sie Teil des Teams von UAB TRANSGARANT GROUP. Entdecken Sie offene Stellen in Transportmanagement, Vertrieb und Fahrdienst."
+  },
+  "hero": {
+    "title": "Werden Sie Teil unseres Teams",
+    "description": "Wir wachsen gemeinsam mit Menschen, die Verantwortung, klare Kommunikation und sorgfältige Arbeit schätzen. Entdecken Sie unsere offenen Stellen und nehmen Sie Kontakt mit uns auf.",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbCurrent": "Karriere",
+    "imageAlt": "Vorstellungsgespräch bei einem Transport- und Logistikunternehmen"
+  },
+  "positions": {
+    "eyebrow": "OFFENE STELLEN",
+    "title": "Finden Sie Ihren Platz bei TRANSGARANT GROUP",
+    "responsibilitiesLabel": "Aufgaben",
+    "requirementsLabel": "Anforderungen",
+    "offerLabel": "Was wir bieten",
+    "apply": "Bewerben",
+    "items": [
+      {
+        "id": "transport-manager",
+        "title": "Transportmanager/in",
+        "responsibilities": [
+          "Frachttransporte auf den zugewiesenen Routen organisieren, überwachen und steuern.",
+          "Mit Fahrern kommunizieren und Beziehungen zu bestehenden Kunden pflegen.",
+          "Mit der Unternehmensdatenbank arbeiten und Aufträge verwalten."
+        ],
+        "requirements": [
+          "Erfahrung in Transport, Logistik oder Spedition ist von Vorteil.",
+          "Sehr gute Fremdsprachenkenntnisse und sichere Computerkenntnisse.",
+          "Fähigkeit, Probleme zu lösen, zu verhandeln und im Team zu arbeiten.",
+          "Schnelle Auffassungsgabe, Genauigkeit, Selbstständigkeit und Verantwortungsbewusstsein."
+        ],
+        "offer": [
+          "Eine Position in einem wachsenden und zukunftsorientierten Unternehmen.",
+          "Freiraum, eigene Fähigkeiten und Ideen einzubringen.",
+          "Soziale Absicherung und alle für die Tätigkeit benötigten Arbeitsmittel.",
+          "Eine Vergütung, die Ihren Fähigkeiten und Ergebnissen entspricht."
+        ]
+      },
+      {
+        "id": "sales-manager",
+        "title": "Vertriebsmanager/in für Transportdienstleistungen",
+        "responsibilities": [
+          "Aktiver telefonischer Vertrieb von Transportdienstleistungen an bestehende und neue Partner.",
+          "Verhandlungen mit potenziellen Kunden.",
+          "Arbeit mit der Datenbank und Auftragsverwaltung.",
+          "Überwachung der Dienstleistungen, Kundeninformation und schnelle Problemlösung."
+        ],
+        "requirements": [
+          "Einschlägige Erfahrung ist von Vorteil.",
+          "Sehr gute Fremdsprachenkenntnisse und sichere Computerkenntnisse.",
+          "Fähigkeit, Probleme zu lösen, zu verhandeln und im Team zu arbeiten.",
+          "Motivation, engagiert zu arbeiten, sich weiterzuentwickeln und Ergebnisse zu erzielen.",
+          "Schnelle Auffassungsgabe, Genauigkeit, Selbstständigkeit und ausgeprägte Kommunikationsfähigkeit."
+        ],
+        "offer": [
+          "Eine Position in einem wachsenden und zukunftsorientierten Unternehmen.",
+          "Freiraum, eigene Fähigkeiten und Ideen einzubringen.",
+          "Soziale Absicherung und alle für die Tätigkeit benötigten Arbeitsmittel.",
+          "Eine Vergütung, die Ihren Fähigkeiten und Ergebnissen entspricht."
+        ]
+      },
+      {
+        "id": "driver-forwarder",
+        "title": "Berufskraftfahrer/in – Spedition",
+        "responsibilities": [
+          "Internationaler Straßengüterverkehr in Europa.",
+          "Nationaler Straßengüterverkehr in Litauen.",
+          "Fahren von DAF- und Mercedes-Lkw der Abgasnorm EURO 5/6 mit Planenaufliegern."
+        ],
+        "requirements": [
+          "Führerschein der Klasse CE.",
+          "Fahrpraxis der Klasse CE ist von Vorteil.",
+          "Berufskraftfahrerqualifikation Code 95.",
+          "Fahrerkarte."
+        ],
+        "offer": [
+          "Stabiles und pünktlich gezahltes Gehalt.",
+          "Volle soziale Absicherung.",
+          "Flexible Arbeitszeiten."
+        ]
+      }
+    ]
+  },
+  "application": {
+    "eyebrow": "BEWERBEN",
+    "title": "Beginnen wir mit einer kurzen Nachricht",
+    "description": "Wählen Sie eine Stelle und hinterlassen Sie Ihre Kontaktdaten. Wenn Sie auf „Lebenslauf senden“ klicken, öffnet sich Ihr E-Mail-Programm.",
+    "roleLegend": "Stelle",
+    "name": "Vor- und Nachname",
+    "namePlaceholder": "Ihr vollständiger Name",
+    "email": "E-Mail",
+    "emailPlaceholder": "name@email.com",
+    "phone": "Telefonnummer",
+    "phonePlaceholder": "+370",
+    "message": "Kurze Nachricht",
+    "messagePlaceholder": "Erzählen Sie uns kurz etwas über sich",
+    "cv": "Lebenslauf hinzufügen",
+    "cvHint": "PDF oder DOC, bis zu 10 MB",
+    "cvAttachNote": "Fügen Sie den ausgewählten Lebenslauf der geöffneten E-Mail hinzu.",
+    "submit": "Lebenslauf senden",
+    "stickyApply": "Bewerben"
+  }
+}

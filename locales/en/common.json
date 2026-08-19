@@ -42,8 +42,8 @@
   "services": {
     "eyebrow": "OUR SERVICES",
     "title": "Cargo transport and logistics",
-    "intro": "We take care of your cargo from collection to final delivery.",
-    "cta": "More about our services",
+    "intro": "When you choose TRANSGARANT GROUP services, you can be confident that our excellent team of professionals will take care of your goods to the highest standards.",
+    "cta": "Learn more",
     "items": [
       {
         "title": "Full-load transport",
@@ -81,7 +81,8 @@
     "regions": [
       { "title": "Baltic states", "countries": ["Lithuania", "Latvia", "Estonia"] },
       { "title": "Scandinavia", "countries": ["Denmark", "Sweden", "Norway", "Finland"] },
-      { "title": "Western and Central Europe", "countries": ["Poland", "Germany", "France", "Benelux", "United Kingdom", "Switzerland", "Austria", "Hungary", "Czechia", "Slovakia", "Spain", "Italy", "Greece"] }
+      { "title": "Western and Central Europe", "countries": ["Poland", "Germany", "France", "Benelux", "Switzerland", "Austria", "Hungary", "Czechia", "Slovakia", "Spain", "Italy", "Greece"] },
+      { "title": "Great Britain", "countries": ["United Kingdom"] }
     ]
   },
   "about": {
