@@ -11,16 +11,33 @@ const routeGeometry = [
   { path: "M405 265 C425 258 424 239 405 232", x: 405, y: 232, labelX: 12, labelY: -11, labelAnchor: "start" },
   { path: "M405 265 C404 231 395 203 385 185", x: 385, y: 185, labelX: 12, labelY: -11, labelAnchor: "start" },
   { path: "M405 265 C374 269 344 282 320 295", x: 320, y: 295, labelX: 84, labelY: 21, labelAnchor: "end" },
-  { path: "M405 265 C350 242 278 240 224 282", x: 224, y: 282, labelX: -14, labelY: -12, labelAnchor: "end" },
+  { path: "M405 265 C350 242 278 240 224 282", x: 224, y: 282, labelX: 14, labelY: 34, labelAnchor: "start" },
 ];
 
+const desktopMapViewBox = "20 100 580 300";
+const mobileMapViewBox = "80 40 500 420";
+
 function EuropeMap({ activeIndex, regions, origin, mapLabel }) {
+  const [viewBox, setViewBox] = useState(desktopMapViewBox);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 639px)");
+    const updateViewBox = () => {
+      setViewBox(mobileQuery.matches ? mobileMapViewBox : desktopMapViewBox);
+    };
+
+    updateViewBox();
+    mobileQuery.addEventListener("change", updateViewBox);
+
+    return () => mobileQuery.removeEventListener("change", updateViewBox);
+  }, []);
+
   return (
     <div className="relative h-[340px] overflow-hidden bg-[#282843] sm:aspect-[29/15] sm:h-auto">
       <svg
         role="img"
         aria-label={mapLabel}
-        viewBox="100 100 580 300"
+        viewBox={viewBox}
         preserveAspectRatio="xMidYMid slice"
         className="absolute inset-0 h-full w-full"
       >

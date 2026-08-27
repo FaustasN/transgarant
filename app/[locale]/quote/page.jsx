@@ -132,7 +132,7 @@ export default async function QuotePage({ params }) {
 
         <RevealSection className="border-t border-[#D9D8DE] bg-[#EDECF0] px-5 pb-4 sm:px-8 lg:px-10">
           <div data-reveal className="mx-auto max-w-[1200px]">
-            <QuoteForm content={content.form} />
+            <QuoteForm content={content.form} locale={locale} />
           </div>
         </RevealSection>
       </main>

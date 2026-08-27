@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowDown, ArrowRight } from "lucide-react";
+import DatePicker from "../globalComponents/DatePicker";
 
 const inputClass =
   "h-14 w-full border border-[#C9C8D0] bg-white/55 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152]";
@@ -44,7 +45,7 @@ function FormSection({ eyebrow, title, children, className = "" }) {
   );
 }
 
-export default function QuoteForm({ content }) {
+export default function QuoteForm({ content, locale }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -163,11 +164,11 @@ export default function QuoteForm({ content }) {
             name="weight"
             placeholder={content.weightPlaceholder}
           />
-          <Field
+          <DatePicker
             label={content.pickupDate}
             name="pickupDate"
-            type="date"
             required={false}
+            locale={locale}
           />
           <label className="grid gap-2 text-sm font-bold text-[#191925] sm:col-span-2">
             {content.additionalInfo}
