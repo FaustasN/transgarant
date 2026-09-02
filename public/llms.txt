@@ -1,0 +1,29 @@
+# TRANSGARANT GROUP
+
+> UAB TRANSGARANT GROUP is a transport and logistics company based in Vilnius, Lithuania. It provides domestic and international freight transport and forwarding using its own vehicles and a partner network.
+
+Services include full and partial road freight, small shipments, specialised cargo, air and sea freight, warehousing and customs coordination, international moving, and freight forwarding. Routes cover Lithuania, the Baltic states, Scandinavia, and other European destinations.
+
+The website is available in Lithuanian, English, Polish, Russian, German, and French. Lithuanian is the default language. The links below lead to public website pages; use the contact or quote page for shipment-specific enquiries.
+
+## Main pages
+
+- [Home](https://www.transgarant.lt/en): Company overview, transport services, and destinations.
+- [Services](https://www.transgarant.lt/en/services): Freight options, specialised transport, storage, moving, and forwarding.
+- [About us](https://www.transgarant.lt/en/about-us): Company background, experience, and approach to logistics.
+- [Contact](https://www.transgarant.lt/en/contact): Contact details, office location, opening hours, and enquiry form.
+- [Request a quote](https://www.transgarant.lt/en/request-a-quote): Provide contact, route, and cargo details for a transport enquiry.
+
+## Languages
+
+- [Lietuvių](https://www.transgarant.lt/lt): Lithuanian homepage.
+- [English](https://www.transgarant.lt/en): English homepage.
+- [Polski](https://www.transgarant.lt/pl): Polish homepage.
+- [Русский](https://www.transgarant.lt/ru): Russian homepage.
+- [Deutsch](https://www.transgarant.lt/de): German homepage.
+- [Français](https://www.transgarant.lt/fr): French homepage.
+
+## Optional
+
+- [Careers](https://www.transgarant.lt/en/careers): Current positions, role requirements, and CV application form.
+- [Sitemap](https://www.transgarant.lt/sitemap.xml): All canonical public pages and their language alternatives.
