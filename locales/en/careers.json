@@ -87,7 +87,7 @@
   "application": {
     "eyebrow": "APPLY",
     "title": "Let’s start with a short message",
-    "description": "Choose a position and leave your contact details. Your email app will open when you press “Send CV”.",
+    "description": "Choose a position, enter your contact details and attach your CV. We will review your application and contact you.",
     "roleLegend": "Position",
     "name": "Full name",
     "namePlaceholder": "Your full name",
@@ -98,9 +98,26 @@
     "message": "Short message",
     "messagePlaceholder": "Tell us briefly about yourself",
     "cv": "Add CV",
-    "cvHint": "PDF or DOC, up to 10 MB",
-    "cvAttachNote": "Attach the selected CV to the email that opens.",
+    "cvHint": "PDF, up to 5 MB",
+    "cvAttachNote": "Your CV will be attached to the application automatically.",
     "submit": "Send CV",
-    "stickyApply": "Apply"
+    "submitting": "Sending...",
+    "success": "Your application has been sent successfully.",
+    "error": "We couldn't send your application. Please try again.",
+    "stickyApply": "Apply",
+    "validation": {
+      "required": "This field is required.",
+      "role": "Select a valid position.",
+      "email": "Enter a valid email address.",
+      "nameMin": "Name must contain at least 3 letters.",
+      "nameFormat": "Use letters and spaces only.",
+      "phone": "Enter a phone number containing 9 to 10 digits.",
+      "tooLong": "Use no more than {max} characters.",
+      "messageMin": "The message must contain at least 10 characters when provided.",
+      "invalidText": "This text contains unsupported characters.",
+      "cvRequired": "Attach your CV in PDF format.",
+      "cvType": "The CV must be a PDF file.",
+      "cvSize": "The CV must be 5 MB or smaller."
+    }
   }
 }

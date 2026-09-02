@@ -42,7 +42,26 @@
     "additionalInfo": "Dodatkowe informacje",
     "additionalInfoPlaceholder": "Wymiary, ilość, specjalne warunki lub inne ważne informacje",
     "submit": "Wyślij zapytanie",
-    "submitNote": "Po kliknięciu „Wyślij zapytanie” otworzy się Twój program pocztowy.",
-    "subject": "Nowe zapytanie transportowe"
+    "submitting": "Wysyłanie...",
+    "success": "Twoje zapytanie ofertowe zostało wysłane.",
+    "error": "Nie udało się wysłać zapytania. Spróbuj ponownie.",
+    "submitNote": "Przeanalizujemy zapytanie i skontaktujemy się w sprawie odpowiedniego rozwiązania.",
+    "subject": "Nowe zapytanie transportowe",
+    "validation": {
+      "required": "To pole jest wymagane.",
+      "email": "Wpisz prawidłowy adres e-mail.",
+      "nameMin": "Imię i nazwisko musi zawierać co najmniej 3 litery.",
+      "nameFormat": "Używaj wyłącznie liter i spacji.",
+      "phone": "Wpisz numer telefonu zawierający od 9 do 10 cyfr.",
+      "companyMin": "Nazwa firmy musi zawierać co najmniej 2 znaki.",
+      "companyFormat": "Nazwa firmy zawiera niedozwolone znaki.",
+      "locationMin": "Nazwa miejsca musi zawierać co najmniej 2 litery.",
+      "locationFormat": "Używaj wyłącznie liter, spacji, apostrofów i łączników.",
+      "cargoMin": "Rodzaj ładunku musi zawierać co najmniej 2 znaki.",
+      "weight": "Wpisz dodatnią wagę z opcjonalną jednostką kg lub t.",
+      "pastDate": "Data załadunku nie może być datą przeszłą.",
+      "invalidText": "Tekst zawiera niedozwolone znaki.",
+      "tooLong": "Użyj maksymalnie {max} znaków."
+    }
   }
 }

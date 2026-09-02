@@ -42,7 +42,26 @@
     "additionalInfo": "Zusätzliche Informationen",
     "additionalInfoPlaceholder": "Abmessungen, Menge, besondere Bedingungen oder andere relevante Angaben",
     "submit": "Anfrage senden",
-    "submitNote": "Wenn Sie auf „Anfrage senden“ klicken, öffnet sich Ihr E-Mail-Programm.",
-    "subject": "Neue Anfrage für ein Transportangebot"
+    "submitting": "Wird gesendet...",
+    "success": "Ihre Angebotsanfrage wurde erfolgreich gesendet.",
+    "error": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+    "submitNote": "Wir prüfen Ihre Anfrage und melden uns mit einer passenden Lösung.",
+    "subject": "Neue Anfrage für ein Transportangebot",
+    "validation": {
+      "required": "Dieses Feld ist erforderlich.",
+      "email": "Geben Sie eine gültige E-Mail-Adresse ein.",
+      "nameMin": "Der Name muss mindestens 3 Buchstaben enthalten.",
+      "nameFormat": "Verwenden Sie nur Buchstaben und Leerzeichen.",
+      "phone": "Geben Sie eine Telefonnummer mit 9 bis 10 Ziffern ein.",
+      "companyMin": "Der Firmenname muss mindestens 2 Zeichen enthalten.",
+      "companyFormat": "Der Firmenname enthält nicht unterstützte Zeichen.",
+      "locationMin": "Der Ort muss mindestens 2 Buchstaben enthalten.",
+      "locationFormat": "Verwenden Sie nur Buchstaben, Leerzeichen, Apostrophe und Bindestriche.",
+      "cargoMin": "Die Frachtart muss mindestens 2 Zeichen enthalten.",
+      "weight": "Geben Sie ein positives Gewicht mit optionaler Einheit kg oder t ein.",
+      "pastDate": "Das Ladedatum darf nicht in der Vergangenheit liegen.",
+      "invalidText": "Dieser Text enthält nicht unterstützte Zeichen.",
+      "tooLong": "Verwenden Sie höchstens {max} Zeichen."
+    }
   }
 }

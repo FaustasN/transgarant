@@ -87,7 +87,7 @@
   "application": {
     "eyebrow": "APLIKUJ",
     "title": "Zacznijmy od krótkiej wiadomości",
-    "description": "Wybierz stanowisko i podaj dane kontaktowe. Po kliknięciu „Wyślij CV” otworzy się Twój program pocztowy.",
+    "description": "Wybierz stanowisko, podaj dane kontaktowe i dodaj CV. Przeanalizujemy aplikację i skontaktujemy się z Tobą.",
     "roleLegend": "Stanowisko",
     "name": "Imię i nazwisko",
     "namePlaceholder": "Twoje imię i nazwisko",
@@ -98,9 +98,26 @@
     "message": "Krótka wiadomość",
     "messagePlaceholder": "Napisz krótko o sobie",
     "cv": "Dodaj CV",
-    "cvHint": "PDF lub DOC, do 10 MB",
-    "cvAttachNote": "Wybrane CV dołącz do wiadomości e-mail, która się otworzy.",
+    "cvHint": "PDF, do 5 MB",
+    "cvAttachNote": "CV zostanie automatycznie dołączone do aplikacji.",
     "submit": "Wyślij CV",
-    "stickyApply": "Aplikuj"
+    "submitting": "Wysyłanie...",
+    "success": "Twoja aplikacja została wysłana.",
+    "error": "Nie udało się wysłać aplikacji. Spróbuj ponownie.",
+    "stickyApply": "Aplikuj",
+    "validation": {
+      "required": "To pole jest wymagane.",
+      "role": "Wybierz prawidłowe stanowisko.",
+      "email": "Wpisz prawidłowy adres e-mail.",
+      "nameMin": "Imię i nazwisko musi zawierać co najmniej 3 litery.",
+      "nameFormat": "Używaj wyłącznie liter i spacji.",
+      "phone": "Wpisz numer telefonu zawierający od 9 do 10 cyfr.",
+      "tooLong": "Użyj maksymalnie {max} znaków.",
+      "messageMin": "Jeśli wpisujesz wiadomość, musi ona zawierać co najmniej 10 znaków.",
+      "invalidText": "Tekst zawiera niedozwolone znaki.",
+      "cvRequired": "Dodaj CV w formacie PDF.",
+      "cvType": "CV musi być plikiem PDF.",
+      "cvSize": "CV nie może być większe niż 5 MB."
+    }
   }
 }

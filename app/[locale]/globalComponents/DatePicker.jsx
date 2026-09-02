@@ -24,7 +24,12 @@ export default function DatePicker({
   name,
   required = false,
   locale = "lt",
+  error,
+  onChange,
 }) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const currentMonth = new Date(today.getFullYear(), today.getMonth(), 1);
   const pickerRef = useRef(null);
   const triggerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -85,17 +90,26 @@ export default function DatePicker({
   ];
   const selectedValue = selectedDate ? toDateValue(selectedDate) : "";
   const displayValue = selectedDate ? dateFormatter.format(selectedDate) : labels.placeholder;
+  const previousMonthDisabled = visibleMonth <= currentMonth;
+  const errorId = `${name}-date-error`;
 
   function changeMonth(offset) {
-    setVisibleMonth(
-      (current) => new Date(current.getFullYear(), current.getMonth() + offset, 1),
-    );
+    setVisibleMonth((current) => {
+      const nextMonth = new Date(current.getFullYear(), current.getMonth() + offset, 1);
+      return nextMonth < currentMonth ? currentMonth : nextMonth;
+    });
   }
 
   function selectDay(day) {
     const date = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth(), day);
+
+    if (date < today) {
+      return;
+    }
+
     setSelectedDate(date);
     setIsOpen(false);
+    onChange?.(toDateValue(date));
     triggerRef.current?.focus();
   }
 
@@ -118,14 +132,20 @@ export default function DatePicker({
         aria-label={`${label}: ${displayValue}`}
         aria-haspopup="dialog"
         aria-expanded={isOpen}
+        aria-describedby={error ? errorId : undefined}
         onClick={() => setIsOpen((current) => !current)}
-        className="flex h-14 w-full items-center justify-between border border-[#C9C8D0] bg-white/55 px-4 text-left font-normal outline-none transition-colors hover:border-[#8B8B98] focus:border-[#313152]"
+        className={`flex h-14 w-full items-center justify-between border bg-white/55 px-4 text-left font-normal outline-none transition-colors hover:border-[#8B8B98] focus:border-[#313152] ${error ? "border-red-600" : "border-[#C9C8D0]"}`}
       >
         <span className={selectedDate ? "text-[#191925]" : "text-[#8B8B98]"}>
           {displayValue}
         </span>
         <CalendarDays aria-hidden="true" size={20} className="shrink-0 text-[#6F7080]" />
       </button>
+      {error && (
+        <span id={errorId} role="alert" className="font-normal text-red-700">
+          {error}
+        </span>
+      )}
 
       {isOpen && (
         <div
@@ -137,8 +157,9 @@ export default function DatePicker({
             <button
               type="button"
               aria-label={labels.previous}
+              disabled={previousMonthDisabled}
               onClick={() => changeMonth(-1)}
-              className="flex h-9 w-9 items-center justify-center text-[#313152] transition-colors hover:bg-[#EDECF0]"
+              className="flex h-9 w-9 items-center justify-center text-[#313152] transition-colors hover:bg-[#EDECF0] disabled:cursor-not-allowed disabled:opacity-35"
             >
               <ChevronLeft aria-hidden="true" size={18} />
             </button>
@@ -173,15 +194,19 @@ export default function DatePicker({
                 day,
               );
               const isSelected = selectedDate && toDateValue(value) === selectedValue;
+              const isPast = value < today;
 
               return (
                 <button
                   key={day}
                   type="button"
+                  disabled={isPast}
                   aria-pressed={Boolean(isSelected)}
                   onClick={() => selectDay(day)}
                   className={`aspect-square text-sm transition-colors ${
-                    isSelected
+                    isPast
+                      ? "cursor-not-allowed text-[#B9B8C2]"
+                      : isSelected
                       ? "bg-[#AE2422] font-bold text-white"
                       : "text-[#313152] hover:bg-[#EDECF0]"
                   }`}

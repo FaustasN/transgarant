@@ -42,7 +42,26 @@
     "additionalInfo": "Informations complémentaires",
     "additionalInfoPlaceholder": "Dimensions, quantité, conditions particulières ou toute autre information utile",
     "submit": "Envoyer la demande",
-    "submitNote": "Votre messagerie s’ouvrira lorsque vous cliquerez sur « Envoyer la demande ».",
-    "subject": "Nouvelle demande de devis de transport"
+    "submitting": "Envoi en cours...",
+    "success": "Votre demande de devis a bien été envoyée.",
+    "error": "Votre demande n’a pas pu être envoyée. Veuillez réessayer.",
+    "submitNote": "Nous étudierons votre demande et vous contacterons avec une solution adaptée.",
+    "subject": "Nouvelle demande de devis de transport",
+    "validation": {
+      "required": "Ce champ est obligatoire.",
+      "email": "Saisissez une adresse e-mail valide.",
+      "nameMin": "Le nom doit comporter au moins 3 lettres.",
+      "nameFormat": "Utilisez uniquement des lettres et des espaces.",
+      "phone": "Saisissez un numéro de téléphone comportant 9 à 10 chiffres.",
+      "companyMin": "Le nom de l’entreprise doit comporter au moins 2 caractères.",
+      "companyFormat": "Le nom de l’entreprise contient des caractères non pris en charge.",
+      "locationMin": "Le lieu doit comporter au moins 2 lettres.",
+      "locationFormat": "Utilisez uniquement des lettres, espaces, apostrophes et traits d’union.",
+      "cargoMin": "Le type de fret doit comporter au moins 2 caractères.",
+      "weight": "Saisissez un poids positif avec l’unité facultative kg ou t.",
+      "pastDate": "La date de chargement ne peut pas être antérieure à aujourd’hui.",
+      "invalidText": "Ce texte contient des caractères non pris en charge.",
+      "tooLong": "Utilisez au maximum {max} caractères."
+    }
   }
 }

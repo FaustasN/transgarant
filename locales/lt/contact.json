@@ -26,7 +26,7 @@
   "form": {
     "eyebrow": "TURITE KLAUSIMŲ?",
     "title": "Parašykite mums",
-    "description": "Trumpai aprašykite, kuo galime padėti. Paspaudus „Siųsti žinutę“, atsidarys jūsų el. pašto programa.",
+    "description": "Trumpai aprašykite, kuo galime padėti, ir mūsų komanda su jumis susisieks.",
     "name": "Vardas ir pavardė",
     "namePlaceholder": "Jūsų vardas ir pavardė",
     "email": "El. paštas",
@@ -36,7 +36,20 @@
     "message": "Žinutė",
     "messagePlaceholder": "Kaip galime jums padėti?",
     "submit": "Siųsti žinutę",
-    "subject": "Žinutė iš kontaktų puslapio"
+    "submitting": "Siunčiama...",
+    "success": "Jūsų žinutė sėkmingai išsiųsta.",
+    "error": "Žinutės išsiųsti nepavyko. Bandykite dar kartą.",
+    "subject": "Žinutė iš kontaktų puslapio",
+    "validation": {
+      "required": "Šį lauką būtina užpildyti.",
+      "email": "Įveskite galiojantį el. pašto adresą.",
+      "nameMin": "Vardą turi sudaryti bent 3 raidės.",
+      "nameFormat": "Naudokite tik raides ir tarpus.",
+      "phone": "Įveskite telefono numerį, kurį sudaro 9–10 skaitmenų.",
+      "messageMin": "Žinutę turi sudaryti bent 10 simbolių.",
+      "invalidText": "Tekste yra neleistinų simbolių.",
+      "tooLong": "Naudokite ne daugiau kaip {max} simbolių."
+    }
   },
   "company": {
     "eyebrow": "ĮMONĖS INFORMACIJA",

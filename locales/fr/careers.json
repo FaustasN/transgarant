@@ -87,7 +87,7 @@
   "application": {
     "eyebrow": "POSTULER",
     "title": "Commençons par un court message",
-    "description": "Choisissez un poste et indiquez vos coordonnées. Votre messagerie s’ouvrira lorsque vous cliquerez sur « Envoyer le CV ».",
+    "description": "Choisissez un poste, renseignez vos coordonnées et ajoutez votre CV. Nous étudierons votre candidature et vous contacterons.",
     "roleLegend": "Poste",
     "name": "Nom et prénom",
     "namePlaceholder": "Votre nom complet",
@@ -98,9 +98,26 @@
     "message": "Court message",
     "messagePlaceholder": "Présentez-vous en quelques mots",
     "cv": "Ajouter un CV",
-    "cvHint": "PDF ou DOC, jusqu’à 10 Mo",
-    "cvAttachNote": "Joignez le CV sélectionné à l’e-mail qui s’ouvre.",
+    "cvHint": "PDF, jusqu’à 5 Mo",
+    "cvAttachNote": "Votre CV sera automatiquement joint à la candidature.",
     "submit": "Envoyer le CV",
-    "stickyApply": "Postuler"
+    "submitting": "Envoi en cours...",
+    "success": "Votre candidature a bien été envoyée.",
+    "error": "Votre candidature n’a pas pu être envoyée. Veuillez réessayer.",
+    "stickyApply": "Postuler",
+    "validation": {
+      "required": "Ce champ est obligatoire.",
+      "role": "Sélectionnez un poste valide.",
+      "email": "Saisissez une adresse e-mail valide.",
+      "nameMin": "Le nom doit comporter au moins 3 lettres.",
+      "nameFormat": "Utilisez uniquement des lettres et des espaces.",
+      "phone": "Saisissez un numéro de téléphone comportant 9 à 10 chiffres.",
+      "tooLong": "Utilisez au maximum {max} caractères.",
+      "messageMin": "Le message doit comporter au moins 10 caractères s’il est renseigné.",
+      "invalidText": "Ce texte contient des caractères non pris en charge.",
+      "cvRequired": "Ajoutez votre CV au format PDF.",
+      "cvType": "Le CV doit être un fichier PDF.",
+      "cvSize": "Le CV ne doit pas dépasser 5 Mo."
+    }
   }
 }

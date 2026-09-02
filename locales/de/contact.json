@@ -26,7 +26,7 @@
   "form": {
     "eyebrow": "HABEN SIE EINE FRAGE?",
     "title": "Senden Sie uns eine Nachricht",
-    "description": "Beschreiben Sie kurz, wie wir Ihnen helfen können. Wenn Sie auf „Nachricht senden“ klicken, öffnet sich Ihr E-Mail-Programm.",
+    "description": "Beschreiben Sie kurz, wie wir Ihnen helfen können. Unser Team wird sich bei Ihnen melden.",
     "name": "Vor- und Nachname",
     "namePlaceholder": "Ihr vollständiger Name",
     "email": "E-Mail",
@@ -36,7 +36,20 @@
     "message": "Nachricht",
     "messagePlaceholder": "Wie können wir Ihnen helfen?",
     "submit": "Nachricht senden",
-    "subject": "Nachricht von der Kontaktseite"
+    "submitting": "Wird gesendet...",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet.",
+    "error": "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+    "subject": "Nachricht von der Kontaktseite",
+    "validation": {
+      "required": "Dieses Feld ist erforderlich.",
+      "email": "Geben Sie eine gültige E-Mail-Adresse ein.",
+      "nameMin": "Der Name muss mindestens 3 Buchstaben enthalten.",
+      "nameFormat": "Verwenden Sie nur Buchstaben und Leerzeichen.",
+      "phone": "Geben Sie eine Telefonnummer mit 9 bis 10 Ziffern ein.",
+      "messageMin": "Die Nachricht muss mindestens 10 Zeichen enthalten.",
+      "invalidText": "Dieser Text enthält nicht unterstützte Zeichen.",
+      "tooLong": "Verwenden Sie höchstens {max} Zeichen."
+    }
   },
   "company": {
     "eyebrow": "UNTERNEHMENSINFORMATIONEN",

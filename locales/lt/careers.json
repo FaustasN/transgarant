@@ -87,7 +87,7 @@
   "application": {
     "eyebrow": "KANDIDATUOTI",
     "title": "Pradėkime nuo trumpos žinutės",
-    "description": "Pasirinkite poziciją ir palikite savo kontaktus. Paspaudus „Siųsti CV“, atsidarys jūsų el. pašto programa.",
+    "description": "Pasirinkite poziciją, įveskite kontaktinius duomenis ir pridėkite CV. Peržiūrėsime kandidatūrą ir su jumis susisieksime.",
     "roleLegend": "Pozicija",
     "name": "Vardas ir pavardė",
     "namePlaceholder": "Jūsų vardas ir pavardė",
@@ -98,9 +98,26 @@
     "message": "Trumpa žinutė",
     "messagePlaceholder": "Trumpai papasakokite apie save",
     "cv": "Pridėti CV",
-    "cvHint": "PDF arba DOC, iki 10 MB",
-    "cvAttachNote": "Pasirinktą CV reikės pridėti prie atsidariusio el. laiško.",
+    "cvHint": "PDF, iki 5 MB",
+    "cvAttachNote": "Jūsų CV bus automatiškai pridėtas prie kandidatūros.",
     "submit": "Siųsti CV",
-    "stickyApply": "Kandidatuoti"
+    "submitting": "Siunčiama...",
+    "success": "Jūsų kandidatūra sėkmingai išsiųsta.",
+    "error": "Kandidatūros išsiųsti nepavyko. Bandykite dar kartą.",
+    "stickyApply": "Kandidatuoti",
+    "validation": {
+      "required": "Šį lauką būtina užpildyti.",
+      "role": "Pasirinkite galiojančią poziciją.",
+      "email": "Įveskite galiojantį el. pašto adresą.",
+      "nameMin": "Vardą turi sudaryti bent 3 raidės.",
+      "nameFormat": "Naudokite tik raides ir tarpus.",
+      "phone": "Įveskite telefono numerį, kurį sudaro 9–10 skaitmenų.",
+      "tooLong": "Naudokite ne daugiau kaip {max} simbolių.",
+      "messageMin": "Įvestą žinutę turi sudaryti bent 10 simbolių.",
+      "invalidText": "Tekste yra neleistinų simbolių.",
+      "cvRequired": "Pridėkite CV PDF formatu.",
+      "cvType": "CV turi būti PDF failas.",
+      "cvSize": "CV turi būti ne didesnis nei 5 MB."
+    }
   }
 }

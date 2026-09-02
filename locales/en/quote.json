@@ -42,7 +42,26 @@
     "additionalInfo": "Additional information",
     "additionalInfoPlaceholder": "Dimensions, quantity, special conditions or other relevant information",
     "submit": "Send request",
-    "submitNote": "Your email app will open when you press “Send request”.",
-    "subject": "New transport quote request"
+    "submitting": "Sending...",
+    "success": "Your quote request has been sent successfully.",
+    "error": "We couldn't send your request. Please try again.",
+    "submitNote": "We will review your request and contact you with a suitable solution.",
+    "subject": "New transport quote request",
+    "validation": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "nameMin": "Name must contain at least 3 letters.",
+      "nameFormat": "Use letters and spaces only.",
+      "phone": "Enter a phone number containing 9 to 10 digits.",
+      "companyMin": "Company name must contain at least 2 characters.",
+      "companyFormat": "Company name contains unsupported characters.",
+      "locationMin": "Location must contain at least 2 letters.",
+      "locationFormat": "Use letters, spaces, apostrophes and hyphens only.",
+      "cargoMin": "Cargo type must contain at least 2 characters.",
+      "weight": "Enter a positive weight with an optional kg or t unit.",
+      "pastDate": "Pickup date cannot be in the past.",
+      "invalidText": "This text contains unsupported characters.",
+      "tooLong": "Use no more than {max} characters."
+    }
   }
 }

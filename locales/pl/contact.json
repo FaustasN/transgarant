@@ -26,7 +26,7 @@
   "form": {
     "eyebrow": "MASZ PYTANIE?",
     "title": "Napisz do nas",
-    "description": "Krótko opisz, w czym możemy pomóc. Po kliknięciu „Wyślij wiadomość” otworzy się Twój program pocztowy.",
+    "description": "Krótko opisz, w czym możemy pomóc, a nasz zespół skontaktuje się z Tobą.",
     "name": "Imię i nazwisko",
     "namePlaceholder": "Twoje imię i nazwisko",
     "email": "E-mail",
@@ -36,7 +36,20 @@
     "message": "Wiadomość",
     "messagePlaceholder": "Jak możemy pomóc?",
     "submit": "Wyślij wiadomość",
-    "subject": "Wiadomość ze strony kontaktowej"
+    "submitting": "Wysyłanie...",
+    "success": "Twoja wiadomość została wysłana.",
+    "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
+    "subject": "Wiadomość ze strony kontaktowej",
+    "validation": {
+      "required": "To pole jest wymagane.",
+      "email": "Wpisz prawidłowy adres e-mail.",
+      "nameMin": "Imię i nazwisko musi zawierać co najmniej 3 litery.",
+      "nameFormat": "Używaj wyłącznie liter i spacji.",
+      "phone": "Wpisz numer telefonu zawierający od 9 do 10 cyfr.",
+      "messageMin": "Wiadomość musi zawierać co najmniej 10 znaków.",
+      "invalidText": "Tekst zawiera niedozwolone znaki.",
+      "tooLong": "Użyj maksymalnie {max} znaków."
+    }
   },
   "company": {
     "eyebrow": "DANE FIRMY",

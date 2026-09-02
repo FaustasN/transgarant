@@ -87,7 +87,7 @@
   "application": {
     "eyebrow": "BEWERBEN",
     "title": "Beginnen wir mit einer kurzen Nachricht",
-    "description": "Wählen Sie eine Stelle und hinterlassen Sie Ihre Kontaktdaten. Wenn Sie auf „Lebenslauf senden“ klicken, öffnet sich Ihr E-Mail-Programm.",
+    "description": "Wählen Sie eine Stelle, geben Sie Ihre Kontaktdaten ein und fügen Sie Ihren Lebenslauf hinzu. Wir prüfen Ihre Bewerbung und melden uns bei Ihnen.",
     "roleLegend": "Stelle",
     "name": "Vor- und Nachname",
     "namePlaceholder": "Ihr vollständiger Name",
@@ -98,9 +98,26 @@
     "message": "Kurze Nachricht",
     "messagePlaceholder": "Erzählen Sie uns kurz etwas über sich",
     "cv": "Lebenslauf hinzufügen",
-    "cvHint": "PDF oder DOC, bis zu 10 MB",
-    "cvAttachNote": "Fügen Sie den ausgewählten Lebenslauf der geöffneten E-Mail hinzu.",
+    "cvHint": "PDF, bis zu 5 MB",
+    "cvAttachNote": "Ihr Lebenslauf wird automatisch an die Bewerbung angehängt.",
     "submit": "Lebenslauf senden",
-    "stickyApply": "Bewerben"
+    "submitting": "Wird gesendet...",
+    "success": "Ihre Bewerbung wurde erfolgreich gesendet.",
+    "error": "Ihre Bewerbung konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+    "stickyApply": "Bewerben",
+    "validation": {
+      "required": "Dieses Feld ist erforderlich.",
+      "role": "Wählen Sie eine gültige Stelle aus.",
+      "email": "Geben Sie eine gültige E-Mail-Adresse ein.",
+      "nameMin": "Der Name muss mindestens 3 Buchstaben enthalten.",
+      "nameFormat": "Verwenden Sie nur Buchstaben und Leerzeichen.",
+      "phone": "Geben Sie eine Telefonnummer mit 9 bis 10 Ziffern ein.",
+      "tooLong": "Verwenden Sie höchstens {max} Zeichen.",
+      "messageMin": "Die Nachricht muss mindestens 10 Zeichen enthalten, wenn sie ausgefüllt wird.",
+      "invalidText": "Dieser Text enthält nicht unterstützte Zeichen.",
+      "cvRequired": "Fügen Sie Ihren Lebenslauf im PDF-Format hinzu.",
+      "cvType": "Der Lebenslauf muss eine PDF-Datei sein.",
+      "cvSize": "Der Lebenslauf darf höchstens 5 MB groß sein."
+    }
   }
 }

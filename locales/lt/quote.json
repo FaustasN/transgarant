@@ -42,7 +42,26 @@
     "additionalInfo": "Papildoma informacija",
     "additionalInfoPlaceholder": "Matmenys, kiekis, specialios sąlygos ar kita svarbi informacija",
     "submit": "Siųsti užklausą",
-    "submitNote": "Paspaudus „Siųsti užklausą“, atsidarys jūsų el. pašto programa.",
-    "subject": "Nauja transportavimo užklausa"
+    "submitting": "Siunčiama...",
+    "success": "Jūsų transportavimo užklausa sėkmingai išsiųsta.",
+    "error": "Užklausos išsiųsti nepavyko. Bandykite dar kartą.",
+    "submitNote": "Įvertinsime jūsų užklausą ir susisieksime dėl tinkamo sprendimo.",
+    "subject": "Nauja transportavimo užklausa",
+    "validation": {
+      "required": "Šį lauką būtina užpildyti.",
+      "email": "Įveskite galiojantį el. pašto adresą.",
+      "nameMin": "Vardą turi sudaryti bent 3 raidės.",
+      "nameFormat": "Naudokite tik raides ir tarpus.",
+      "phone": "Įveskite telefono numerį, kurį sudaro 9–10 skaitmenų.",
+      "companyMin": "Įmonės pavadinimą turi sudaryti bent 2 simboliai.",
+      "companyFormat": "Įmonės pavadinime yra neleistinų simbolių.",
+      "locationMin": "Vietovę turi sudaryti bent 2 raidės.",
+      "locationFormat": "Naudokite tik raides, tarpus, apostrofus ir brūkšnelius.",
+      "cargoMin": "Krovinio tipą turi sudaryti bent 2 simboliai.",
+      "weight": "Įveskite teigiamą svorį ir pasirinktinai nurodykite kg arba t.",
+      "pastDate": "Pakrovimo data negali būti praėjusi.",
+      "invalidText": "Tekste yra neleistinų simbolių.",
+      "tooLong": "Naudokite ne daugiau kaip {max} simbolių."
+    }
   }
 }
