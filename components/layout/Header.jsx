@@ -28,6 +28,7 @@ export default function Header({ locale = "lt" }) {
   const headerRef = useRef(null);
   const dictionary = resources[locale]?.common ?? resources.lt.common;
   const navItems = navDestinations.map((destination) => ({
+    key: destination.key,
     href: destination.key === "services"
       ? getServicesPath(locale)
       : destination.key === "about"
@@ -115,6 +116,10 @@ export default function Header({ locale = "lt" }) {
           {navItems.map((item) => (
             <Link
               data-header-nav-item
+              data-analytics-event={item.key === "quote" ? "cta_click" : undefined}
+              data-analytics-cta-id={item.key === "quote" ? "header_quote" : undefined}
+              data-analytics-placement={item.key === "quote" ? "desktop_header" : undefined}
+              data-analytics-destination={item.key === "quote" ? item.href : undefined}
               key={item.href}
               href={item.href}
               onClick={(event) => handleAnchorClick(event, item)}

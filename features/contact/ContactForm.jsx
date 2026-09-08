@@ -3,12 +3,13 @@
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import ValidationMessage from "@/components/ui/ValidationMessage";
+import { trackAnalyticsEvent } from "@/lib/analytics/client";
 import {
   fieldLimits,
   validateContactForm as getFieldErrors,
 } from "@/lib/validation/contact";
 
-export default function ContactForm({ content }) {
+export default function ContactForm({ content, locale }) {
   const [status, setStatus] = useState("idle");
   const [fieldErrors, setFieldErrors] = useState({});
   const [messageLength, setMessageLength] = useState(0);
@@ -75,6 +76,7 @@ export default function ContactForm({ content }) {
       form.reset();
       setMessageLength(0);
       setStatus("success");
+      trackAnalyticsEvent("generate_lead", { form_name: "contact", locale });
     } catch {
       setStatus("error");
     }

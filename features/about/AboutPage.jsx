@@ -92,6 +92,10 @@ export default function AboutPage({ locale, content }) {
             </a>
 
             <Link
+              data-analytics-event="cta_click"
+              data-analytics-cta-id="about_quote"
+              data-analytics-placement="about_page"
+              data-analytics-destination={getQuotePath(locale)}
               href={getQuotePath(locale)}
               className="group flex max-w-xl items-center gap-5 border-y border-[#D9D8DE] py-6 lg:col-start-1 lg:row-start-2 lg:self-end"
             >

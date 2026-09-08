@@ -100,6 +100,13 @@
     "description": "Prześlij trasę i informacje o ładunku, a my dobierzemy odpowiednie rozwiązanie transportowe.",
     "button": "Wyślij zapytanie"
   },
+  "analyticsConsent": {
+    "title": "Analityczne pliki cookie",
+    "description": "Korzystamy z Google Analytics, aby zrozumieć, jak odwiedzający używają strony, i móc ją ulepszać. Analityka jest włączana wyłącznie za Twoją zgodą.",
+    "accept": "Zezwól na analitykę",
+    "decline": "Odrzuć",
+    "settings": "Ustawienia analityki"
+  },
   "footer": {
     "description": "Partner transportowo-logistyczny dla ładunków całopojazdowych, częściowych i specjalistycznych w Europie.",
     "navigationTitle": "Nawigacja",

@@ -100,6 +100,13 @@
     "description": "Pateikite maršrutą ir krovinio informaciją, o mes parinksime tinkamą transportavimo sprendimą.",
     "button": "Pateikti užklausą"
   },
+  "analyticsConsent": {
+    "title": "Analitiniai slapukai",
+    "description": "Naudojame „Google Analytics“, kad suprastume, kaip lankytojai naudojasi svetaine, ir galėtume ją tobulinti. Analitika įjungiama tik gavus jūsų sutikimą.",
+    "accept": "Leisti analitiką",
+    "decline": "Neleisti",
+    "settings": "Analitikos nustatymai"
+  },
   "footer": {
     "description": "Transporto ir logistikos partneris pilniems, daliniams ir specializuotiems kroviniams Europoje.",
     "navigationTitle": "Navigacija",

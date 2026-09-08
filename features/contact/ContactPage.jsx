@@ -83,6 +83,10 @@ export default function ContactPage({ locale, content }) {
               >
                 <a
                   href={`mailto:${content.details.email}`}
+                  data-analytics-event="contact_click"
+                  data-analytics-contact-id="general_email"
+                  data-analytics-method="email"
+                  data-analytics-placement="contact_page"
                   className="transition-colors hover:text-[#AE2422]"
                 >
                   {content.details.email}
@@ -94,10 +98,24 @@ export default function ContactPage({ locale, content }) {
                 className="border-b border-[#D9D8DE] md:px-8 lg:px-10"
               >
                 <div className="grid">
-                  <a href="tel:+37052072775" className="transition-colors hover:text-[#AE2422]">
+                  <a
+                    href="tel:+37052072775"
+                    data-analytics-event="contact_click"
+                    data-analytics-contact-id="office_phone"
+                    data-analytics-method="phone"
+                    data-analytics-placement="contact_page"
+                    className="transition-colors hover:text-[#AE2422]"
+                  >
                     {content.details.officePhone}
                   </a>
-                  <a href="tel:+37062233388" className="transition-colors hover:text-[#AE2422]">
+                  <a
+                    href="tel:+37062233388"
+                    data-analytics-event="contact_click"
+                    data-analytics-contact-id="mobile_phone"
+                    data-analytics-method="phone"
+                    data-analytics-placement="contact_page"
+                    className="transition-colors hover:text-[#AE2422]"
+                  >
                     {content.details.mobilePhone}
                   </a>
                 </div>
@@ -120,6 +138,10 @@ export default function ContactPage({ locale, content }) {
                 <p>{content.details.hours}</p>
                 <a
                   href={mapLink}
+                  data-analytics-event="contact_click"
+                  data-analytics-contact-id="office_map"
+                  data-analytics-method="map"
+                  data-analytics-placement="contact_page"
                   target="_blank"
                   rel="noreferrer"
                   className="group mt-3 inline-flex items-center gap-2 text-sm text-[#6F7080] transition-colors hover:text-[#AE2422]"
@@ -150,7 +172,7 @@ export default function ContactPage({ locale, content }) {
               </p>
             </div>
             <div data-reveal>
-              <ContactForm content={content.form} />
+              <ContactForm content={content.form} locale={locale} />
             </div>
           </div>
         </RevealSection>

@@ -3,6 +3,7 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import DatePicker from "@/components/ui/DatePicker";
+import { trackAnalyticsEvent } from "@/lib/analytics/client";
 import {
   fieldLimits,
   validateQuoteForm as getFieldErrors,
@@ -104,6 +105,7 @@ export default function QuoteForm({ content, locale }) {
       setAdditionalInfoLength(0);
       setFieldErrors({});
       setStatus("success");
+      trackAnalyticsEvent("generate_lead", { form_name: "quote", locale });
     } catch {
       setStatus("error");
     }

@@ -43,6 +43,10 @@ export default function About({ locale = "lt" }) {
               </p>
             ))}
             <Link
+              data-analytics-event="cta_click"
+              data-analytics-cta-id="about_overview"
+              data-analytics-placement="home_about"
+              data-analytics-destination={getAboutPath(locale)}
               href={getAboutPath(locale)}
               className="group mt-8 inline-flex min-h-12 w-fit self-center items-center gap-3 rounded-lg border border-[#313152] px-6 py-3 font-bold text-[#313152] transition-colors hover:bg-[#E9E9F0] lg:self-start"
             >

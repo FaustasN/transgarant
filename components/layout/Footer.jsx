@@ -7,9 +7,13 @@ import {
   getContactPath,
   getServicesPath,
 } from "@/lib/routing/paths.mjs";
+import { AnalyticsPreferencesButton } from "@/components/analytics/Analytics";
+import { normalizeMeasurementId } from "@/lib/analytics/core.mjs";
 
 export default function Footer({ locale = "lt" }) {
-  const footer = (resources[locale] ?? resources.lt).common.footer;
+  const common = (resources[locale] ?? resources.lt).common;
+  const footer = common.footer;
+  const analyticsEnabled = Boolean(normalizeMeasurementId(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID));
 
   return (
     <footer className="bg-[#313152] px-5 py-7 text-white sm:px-8 sm:py-8 lg:px-10">
@@ -43,7 +47,15 @@ export default function Footer({ locale = "lt" }) {
         <div>
           <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-white/58">{footer.contactsTitle}</h3>
           <div className="mt-4 grid gap-3 text-sm leading-7 text-white/76 [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:text-white [&_a:focus-visible]:text-white">
-            <a href="mailto:info@transgarant.lt">{footer.emailLabel}: info@transgarant.lt</a>
+            <a
+              href="mailto:info@transgarant.lt"
+              data-analytics-event="contact_click"
+              data-analytics-contact-id="general_email"
+              data-analytics-method="email"
+              data-analytics-placement="footer"
+            >
+              {footer.emailLabel}: info@transgarant.lt
+            </a>
             <span>{footer.hours}</span>
             <a
               href="https://rekvizitai.vz.lt/imone/uab_transgarant_group/"
@@ -56,8 +68,13 @@ export default function Footer({ locale = "lt" }) {
         </div>
       </div>
 
-      <div className="mx-auto mt-5 flex max-w-[1200px] justify-center border-t border-white/14 pt-4 text-center text-sm text-white/58">
+      <div className="relative mx-auto mt-5 flex max-w-[1200px] flex-col items-center gap-3 border-t border-white/14 pt-4 text-center text-sm text-white/58 sm:block">
         <p>© {new Date().getFullYear()} {footer.copyright}</p>
+        <AnalyticsPreferencesButton
+          enabled={analyticsEnabled}
+          label={common.analyticsConsent.settings}
+          className="underline decoration-white/30 underline-offset-4 transition-colors hover:text-white focus-visible:text-white sm:absolute sm:right-0 sm:top-4"
+        />
       </div>
     </footer>
   );
