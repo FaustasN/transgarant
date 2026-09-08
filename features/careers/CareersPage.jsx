@@ -55,7 +55,7 @@ export default function CareersPage({ locale, content }) {
           </div>
         </RevealSection>
 
-        <CareerApplication content={content} />
+        <CareerApplication content={content} locale={locale} />
       </main>
     </PageShell>
   );

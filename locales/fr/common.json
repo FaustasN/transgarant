@@ -100,6 +100,13 @@
     "description": "Envoyez-nous l’itinéraire et les informations sur le fret ; nous sélectionnerons la solution de transport adaptée.",
     "button": "Envoyer une demande"
   },
+  "analyticsConsent": {
+    "title": "Cookies d’analyse",
+    "description": "Nous utilisons Google Analytics pour comprendre comment les visiteurs utilisent le site et l’améliorer. L’analyse est activée uniquement avec votre consentement.",
+    "accept": "Autoriser l’analyse",
+    "decline": "Refuser",
+    "settings": "Paramètres d’analyse"
+  },
   "footer": {
     "description": "Votre partenaire transport et logistique pour les chargements complets, partiels et spécialisés dans toute l’Europe.",
     "navigationTitle": "Navigation",

@@ -100,6 +100,13 @@
     "description": "Send us the route and cargo details and we will select the right transport solution.",
     "button": "Submit an inquiry"
   },
+  "analyticsConsent": {
+    "title": "Analytics cookies",
+    "description": "We use Google Analytics to understand how visitors use the website and improve it. Analytics is enabled only with your consent.",
+    "accept": "Allow analytics",
+    "decline": "Decline",
+    "settings": "Analytics settings"
+  },
   "footer": {
     "description": "A transport and logistics partner for full, partial and specialized cargo across Europe.",
     "navigationTitle": "Navigation",
