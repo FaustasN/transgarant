@@ -102,7 +102,7 @@
   },
   "analyticsConsent": {
     "title": "Analyse-Cookies",
-    "description": "Wir verwenden Google Analytics, um zu verstehen, wie Besucher die Website nutzen, und sie zu verbessern. Die Analyse wird nur mit Ihrer Einwilligung aktiviert.",
+    "description": "Google Analytics hilft uns, die Website zu verbessern. Es wird nur mit Ihrer Einwilligung aktiviert.",
     "accept": "Analyse erlauben",
     "decline": "Ablehnen",
     "settings": "Analyseeinstellungen"

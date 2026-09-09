@@ -102,7 +102,7 @@
   },
   "analyticsConsent": {
     "title": "Analitiniai slapukai",
-    "description": "Naudojame „Google Analytics“, kad suprastume, kaip lankytojai naudojasi svetaine, ir galėtume ją tobulinti. Analitika įjungiama tik gavus jūsų sutikimą.",
+    "description": "„Google Analytics“ padeda tobulinti svetainę. Ji įjungiama tik jums sutikus.",
     "accept": "Leisti analitiką",
     "decline": "Neleisti",
     "settings": "Analitikos nustatymai"

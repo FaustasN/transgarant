@@ -102,7 +102,7 @@
   },
   "analyticsConsent": {
     "title": "Analytics cookies",
-    "description": "We use Google Analytics to understand how visitors use the website and improve it. Analytics is enabled only with your consent.",
+    "description": "Google Analytics helps us improve the website. It runs only with your consent.",
     "accept": "Allow analytics",
     "decline": "Decline",
     "settings": "Analytics settings"

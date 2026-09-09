@@ -102,7 +102,7 @@
   },
   "analyticsConsent": {
     "title": "Cookies d’analyse",
-    "description": "Nous utilisons Google Analytics pour comprendre comment les visiteurs utilisent le site et l’améliorer. L’analyse est activée uniquement avec votre consentement.",
+    "description": "Google Analytics nous aide à améliorer le site. Il est activé uniquement avec votre consentement.",
     "accept": "Autoriser l’analyse",
     "decline": "Refuser",
     "settings": "Paramètres d’analyse"
