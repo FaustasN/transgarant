@@ -7,13 +7,10 @@ import {
   getContactPath,
   getServicesPath,
 } from "@/lib/routing/paths.mjs";
-import { AnalyticsPreferencesButton } from "@/components/analytics/Analytics";
-import { normalizeMeasurementId } from "@/lib/analytics/core.mjs";
 
 export default function Footer({ locale = "lt" }) {
   const common = (resources[locale] ?? resources.lt).common;
   const footer = common.footer;
-  const analyticsEnabled = Boolean(normalizeMeasurementId(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID));
 
   return (
     <footer className="bg-[#313152] px-5 py-7 text-white sm:px-8 sm:py-8 lg:px-10">
@@ -68,13 +65,8 @@ export default function Footer({ locale = "lt" }) {
         </div>
       </div>
 
-      <div className="relative mx-auto mt-5 flex max-w-[1200px] flex-col items-center gap-3 border-t border-white/14 pt-4 text-center text-sm text-white/58 sm:block">
+      <div className="mx-auto mt-5 max-w-[1200px] border-t border-white/14 pt-4 text-center text-sm text-white/58">
         <p>© {new Date().getFullYear()} {footer.copyright}</p>
-        <AnalyticsPreferencesButton
-          enabled={analyticsEnabled}
-          label={common.analyticsConsent.settings}
-          className="underline decoration-white/30 underline-offset-4 transition-colors hover:text-white focus-visible:text-white sm:absolute sm:right-0 sm:top-4"
-        />
       </div>
     </footer>
   );
