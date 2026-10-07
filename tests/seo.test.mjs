@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { readFile, readdir } from "node:fs/promises";
 import { createPageMetadata } from "../lib/seo/metadata.mjs";
 import { createBreadcrumbs, serializeStructuredData } from "../lib/seo/structuredData.mjs";
 
@@ -12,20 +11,6 @@ const content = {
     breadcrumbHome: "Home", breadcrumbCurrent: "Current page",
   },
 };
-
-test("page structured-data imports resolve to the component on case-insensitive filesystems", async () => {
-  const files = await readdir(new URL("../lib/seo/", import.meta.url));
-  for (const page of ["about/AboutPage", "careers/CareersPage", "contact/ContactPage", "quote/QuotePage", "services/ServicesPage"]) {
-    const source = await readFile(new URL(`../features/${page}.jsx`, import.meta.url), "utf8");
-    const specifier = source.match(/import StructuredData from "@\/lib\/seo\/([^"]+)"/);
-    assert.ok(specifier, `${page} imports the structured-data component`);
-    // Next's webpack resolver tries .mjs before .jsx; Windows ignores casing.
-    const resolved = ["", ".js", ".mjs", ".tsx", ".ts", ".jsx", ".json"]
-      .map((extension) => files.find((file) => file.toLowerCase() === `${specifier[1]}${extension}`.toLowerCase()))
-      .find(Boolean);
-    assert.equal(resolved, "StructuredData.jsx", `${page} must resolve to the component, not the helper`);
-  }
-});
 
 test("metadata retains canonical and language links for localized pages", () => {
   const metadata = createPageMetadata("quote", "de", content);

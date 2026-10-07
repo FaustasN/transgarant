@@ -5,14 +5,10 @@ import AboutExperienceSection from "@/features/about/AboutExperienceSection";
 import RevealSection from "@/components/motion/RevealSection";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import PageShell from "@/components/layout/PageShell";
-import StructuredData from "@/lib/seo/StructuredData.jsx";
-import { getStructuredData } from "./structuredData.mjs";
 
 export default function AboutPage({ locale, content }) {
-  const structuredData = getStructuredData(locale, content);
-
   return (
-    <PageShell locale={locale} lang={locale} structuredData={<StructuredData data={structuredData} />}>
+    <PageShell locale={locale} lang={locale} page="about" content={content}>
       <main>
         <RevealSection className="px-5 pb-10 pt-12 sm:px-8 sm:pt-14 lg:px-10 lg:pb-14 lg:pt-16">
           <div className="mx-auto max-w-[1200px]">

@@ -4,14 +4,10 @@ import { ChevronRight } from "lucide-react";
 import RevealSection from "@/components/motion/RevealSection";
 import CareerApplication from "./CareerApplication";
 import PageShell from "@/components/layout/PageShell";
-import StructuredData from "@/lib/seo/StructuredData.jsx";
-import { getStructuredData } from "./structuredData.mjs";
 
 export default function CareersPage({ locale, content }) {
-  const structuredData = getStructuredData(locale, content);
-
   return (
-    <PageShell locale={locale} lang={locale} avoidMobileBottomBar structuredData={<StructuredData data={structuredData} />}>
+    <PageShell locale={locale} lang={locale} avoidMobileBottomBar page="careers" content={content}>
       <main>
         <RevealSection className="px-5 pb-10 pt-12 sm:px-8 sm:pb-12 sm:pt-14 lg:px-10 lg:pb-14 lg:pt-16">
           <div className="mx-auto max-w-[1200px]">
