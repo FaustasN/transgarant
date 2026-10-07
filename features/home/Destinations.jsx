@@ -3,14 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { resources } from "@/lib/i18n/resources";
 
 import EuropeMap from "./EuropeMap";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Destinations({ locale = "lt" }) {
-  const destinations = (resources[locale] ?? resources.lt).common.destinations;
+export default function Destinations({ locale, content: destinations }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
   const headingRef = useRef(null);

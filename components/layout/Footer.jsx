@@ -1,12 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { resources } from "@/lib/i18n/resources";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 
-export default function Footer({ locale = "lt" }) {
-  const common = (resources[locale] ?? resources.lt).common;
-  const footer = common.footer;
-
+export default function Footer({ locale, content: footer }) {
   return (
     <footer className="bg-[#313152] px-5 py-7 text-white sm:px-8 sm:py-8 lg:px-10">
       <div className="mx-auto grid max-w-[1200px] gap-7 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr]">

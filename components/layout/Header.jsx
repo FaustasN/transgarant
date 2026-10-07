@@ -4,23 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import { resources } from "@/lib/i18n/resources";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import LanguageDropdown from "@/components/layout/LanguageDropdown";
 import MobileNav from "@/components/layout/MobileNav";
 
 const navKeys = ["services", "destinations", "about", "careers", "contact", "quote"];
 
-export default function Header({ locale = "lt" }) {
+export default function Header({ locale, nav, labels }) {
   const headerRef = useRef(null);
-  const dictionary = resources[locale]?.common ?? resources.lt.common;
   const navItems = navKeys.map((key) => {
     const hash = key === "destinations" ? "kryptys" : undefined;
 
     return {
       key,
       href: hash ? `/${locale}#${hash}` : getPagePath(key, locale),
-      label: dictionary.nav[key],
+      label: nav[key],
       hash,
     };
   });
@@ -80,7 +78,7 @@ export default function Header({ locale = "lt" }) {
         <Link
           href={`/${locale}`}
           onClick={handleLogoClick}
-          aria-label={dictionary.header.homeLabel}
+          aria-label={labels.homeLabel}
           className="flex shrink-0 items-center"
         >
           <Image
@@ -93,7 +91,7 @@ export default function Header({ locale = "lt" }) {
           />
         </Link>
 
-        <nav aria-label={dictionary.header.navigationLabel} className="hidden items-center gap-7 lg:flex">
+        <nav aria-label={labels.navigationLabel} className="hidden items-center gap-7 lg:flex">
           {navItems.map((item) => (
             <Link
               data-header-nav-item
@@ -116,7 +114,7 @@ export default function Header({ locale = "lt" }) {
             <LanguageDropdown locale={locale} />
           </div>
           <div>
-            <MobileNav navItems={navItems} labels={dictionary.header.mobile} locale={locale} />
+            <MobileNav navItems={navItems} labels={labels.mobile} locale={locale} />
           </div>
         </div>
       </div>

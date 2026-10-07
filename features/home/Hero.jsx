@@ -5,12 +5,10 @@ import Link from "next/link";
 import { useLayoutEffect, useRef } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import gsap from "gsap";
-import { resources } from "@/lib/i18n/resources";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 
-export default function Hero({ locale = "lt" }) {
+export default function Hero({ locale, content: hero }) {
   const sectionRef = useRef(null);
-  const hero = (resources[locale] ?? resources.lt).common.hero;
 
   function handleServicesClick(event) {
     const servicesSection = document.getElementById("paslaugos");

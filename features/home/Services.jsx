@@ -5,7 +5,6 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { ArrowRight, Boxes, ChevronDown, Truck, Warehouse } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { resources } from "@/lib/i18n/resources";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import RevealSection from "@/components/motion/RevealSection";
 
@@ -13,8 +12,7 @@ const serviceIcons = [Truck, Boxes, Warehouse];
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Services({ locale = "lt" }) {
-  const services = (resources[locale] ?? resources.lt).common.services;
+export default function Services({ locale, content: services }) {
   const [openService, setOpenService] = useState(null);
   const cardsRef = useRef(null);
 

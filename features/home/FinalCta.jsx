@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { resources } from "@/lib/i18n/resources";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import RevealSection from "@/components/motion/RevealSection";
 
-export default function FinalCta({ locale = "lt" }) {
-  const cta = (resources[locale] ?? resources.lt).common.finalCta;
+export default function FinalCta({ locale, content: cta }) {
 
   return (
     <RevealSection className="px-5 pb-20 sm:px-8 lg:px-10 lg:pb-28">

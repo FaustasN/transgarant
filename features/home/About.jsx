@@ -1,15 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { resources } from "@/lib/i18n/resources";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import RevealSection from "@/components/motion/RevealSection";
 
 const aboutImage =
   "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?auto=format&fit=crop&w=1400&q=85";
 
-export default function About({ locale = "lt" }) {
-  const about = (resources[locale] ?? resources.lt).common.about;
+export default function About({ locale, content: about }) {
 
   return (
     <RevealSection className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28">

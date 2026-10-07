@@ -4,23 +4,24 @@ import Destinations from "@/features/home/Destinations";
 import About from "@/features/home/About";
 import FinalCta from "@/features/home/FinalCta";
 import PageShell from "@/components/layout/PageShell";
+import { resources } from "@/lib/i18n/resources";
 
 export default function HomePage({ locale }) {
+  const common = resources[locale].common;
+
   return (
     <PageShell locale={locale}>
-
       <main>
-        <Hero locale={locale} />
+        <Hero locale={locale} content={common.hero} />
 
-        <Services locale={locale} />
+        <Services locale={locale} content={common.services} />
 
-        <Destinations locale={locale} />
+        <Destinations locale={locale} content={common.destinations} />
 
-        <About locale={locale} />
+        <About locale={locale} content={common.about} />
 
-        <FinalCta locale={locale} />
+        <FinalCta locale={locale} content={common.finalCta} />
       </main>
-
     </PageShell>
   );
 }
