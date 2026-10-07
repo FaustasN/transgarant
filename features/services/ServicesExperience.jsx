@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { ChevronRight, Container } from "lucide-react";
 import { gsap, prefersReducedMotion, useGsapScope } from "@/lib/motion";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import ServiceDetails from "./ServiceDetails";
 import { serviceVisuals } from "./serviceVisuals";
 
@@ -115,11 +115,7 @@ export default function ServicesExperience({ locale, content }) {
     <main ref={heroRef}>
       <section ref={explorerRef} id="paslaugu-sarasas" className="scroll-mt-20 bg-[#F6F5F2] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22">
         <div className="mx-auto max-w-[1200px]">
-          <nav data-service-page-reveal aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[#6F7080]">
-            <Link href={`/${locale}`} className="transition-colors hover:text-[#AE2422]">{content.hero.breadcrumbHome}</Link>
-            <ChevronRight aria-hidden="true" size={14} />
-            <span aria-current="page" className="font-semibold text-[#313152]">{content.hero.breadcrumbCurrent}</span>
-          </nav>
+          <Breadcrumb data-service-page-reveal locale={locale} hero={content.hero} />
           <div className="max-w-3xl">
             <h1 className="mt-4 text-[clamp(36px,4.5vw,56px)] font-extrabold leading-none tracking-[-0.04em]">{content.explorer.title}</h1>
             <p className="mt-5 text-base leading-8 text-[#6F7080] sm:text-lg">{content.explorer.intro}</p>

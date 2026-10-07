@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import AboutExperienceSection from "@/features/about/AboutExperienceSection";
 import RevealSection from "@/components/motion/RevealSection";
 import { getPagePath } from "@/lib/routing/paths.mjs";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import PageShell from "@/components/layout/PageShell";
 import { ctaProps } from "@/lib/analytics/core.mjs";
 
@@ -13,19 +14,7 @@ export default function AboutPage({ locale, content }) {
       <main>
         <RevealSection className="px-5 pb-10 pt-12 sm:px-8 sm:pt-14 lg:px-10 lg:pb-14 lg:pt-16">
           <div className="mx-auto max-w-[1200px]">
-            <nav
-              data-reveal
-              aria-label="Breadcrumb"
-              className="flex items-center gap-2 text-sm text-[#6F7080]"
-            >
-              <Link href={`/${locale}`} className="transition-colors hover:text-[#AE2422]">
-                {content.hero.breadcrumbHome}
-              </Link>
-              <ChevronRight aria-hidden="true" size={14} />
-              <span aria-current="page" className="font-semibold text-[#313152]">
-                {content.hero.breadcrumbCurrent}
-              </span>
-            </nav>
+            <Breadcrumb data-reveal locale={locale} hero={content.hero} />
 
             <div className="mt-4 grid items-stretch gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
               <div data-reveal>
