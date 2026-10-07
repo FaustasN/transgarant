@@ -5,44 +5,25 @@ import Link from "next/link";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { resources } from "@/lib/i18n/resources";
-import {
-  getAboutPath,
-  getCareersPath,
-  getContactPath,
-  getQuotePath,
-  getServicesPath,
-} from "@/lib/routing/paths.mjs";
+import { getPagePath } from "@/lib/routing/paths.mjs";
 import LanguageDropdown from "@/components/layout/LanguageDropdown";
 import MobileNav from "@/components/layout/MobileNav";
 
-const navDestinations = [
-  { key: "services" },
-  { key: "destinations", path: "", hash: "kryptys" },
-  { key: "about" },
-  { key: "careers" },
-  { key: "contact" },
-  { key: "quote" },
-];
+const navKeys = ["services", "destinations", "about", "careers", "contact", "quote"];
 
 export default function Header({ locale = "lt" }) {
   const headerRef = useRef(null);
   const dictionary = resources[locale]?.common ?? resources.lt.common;
-  const navItems = navDestinations.map((destination) => ({
-    key: destination.key,
-    href: destination.key === "services"
-      ? getServicesPath(locale)
-      : destination.key === "about"
-        ? getAboutPath(locale)
-        : destination.key === "careers"
-          ? getCareersPath(locale)
-          : destination.key === "contact"
-            ? getContactPath(locale)
-            : destination.key === "quote"
-              ? getQuotePath(locale)
-        : `/${locale}${destination.path}${destination.hash ? `#${destination.hash}` : ""}`,
-    label: dictionary.nav[destination.key],
-    hash: destination.hash,
-  }));
+  const navItems = navKeys.map((key) => {
+    const hash = key === "destinations" ? "kryptys" : undefined;
+
+    return {
+      key,
+      href: hash ? `/${locale}#${hash}` : getPagePath(key, locale),
+      label: dictionary.nav[key],
+      hash,
+    };
+  });
 
   function handleAnchorClick(event, item) {
     if (!item.hash) return;

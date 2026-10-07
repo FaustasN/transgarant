@@ -1,12 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { resources } from "@/lib/i18n/resources";
-import {
-  getAboutPath,
-  getCareersPath,
-  getContactPath,
-  getServicesPath,
-} from "@/lib/routing/paths.mjs";
+import { getPagePath } from "@/lib/routing/paths.mjs";
 
 export default function Footer({ locale = "lt" }) {
   const common = (resources[locale] ?? resources.lt).common;
@@ -33,11 +28,11 @@ export default function Footer({ locale = "lt" }) {
             {footer.navigationTitle}
           </h3>
           <div className="mt-4 grid gap-3 text-sm text-white/76 [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:text-white [&_a:focus-visible]:text-white">
-            <Link href={getServicesPath(locale)}>{footer.links.services}</Link>
+            <Link href={getPagePath("services", locale)}>{footer.links.services}</Link>
             <Link href={`/${locale}#kryptys`}>{footer.links.destinations}</Link>
-            <Link href={getAboutPath(locale)}>{footer.links.about}</Link>
-            <Link href={getCareersPath(locale)}>{footer.links.careers}</Link>
-            <Link href={getContactPath(locale)}>{footer.links.contact}</Link>
+            <Link href={getPagePath("about", locale)}>{footer.links.about}</Link>
+            <Link href={getPagePath("careers", locale)}>{footer.links.careers}</Link>
+            <Link href={getPagePath("contact", locale)}>{footer.links.contact}</Link>
           </div>
         </div>
 

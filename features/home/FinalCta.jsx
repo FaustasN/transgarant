@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { resources } from "@/lib/i18n/resources";
-import { getQuotePath } from "@/lib/routing/paths.mjs";
+import { getPagePath } from "@/lib/routing/paths.mjs";
 import RevealSection from "@/components/motion/RevealSection";
 
 export default function FinalCta({ locale = "lt" }) {
@@ -23,8 +23,8 @@ export default function FinalCta({ locale = "lt" }) {
             data-analytics-event="cta_click"
             data-analytics-cta-id="final_quote"
             data-analytics-placement="home_final_cta"
-            data-analytics-destination={getQuotePath(locale)}
-            href={getQuotePath(locale)}
+            data-analytics-destination={getPagePath("quote", locale)}
+            href={getPagePath("quote", locale)}
             className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-[#F6F5F2] px-6 py-3 font-bold !text-[#191925] transition-colors hover:bg-white sm:w-auto"
           >
             {cta.button}

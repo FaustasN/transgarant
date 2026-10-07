@@ -6,7 +6,7 @@ import { ArrowRight, Boxes, ChevronDown, Truck, Warehouse } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { resources } from "@/lib/i18n/resources";
-import { getServicesPath } from "@/lib/routing/paths.mjs";
+import { getPagePath } from "@/lib/routing/paths.mjs";
 import RevealSection from "@/components/motion/RevealSection";
 
 const serviceIcons = [Truck, Boxes, Warehouse];
@@ -107,8 +107,8 @@ export default function Services({ locale = "lt" }) {
             data-analytics-event="cta_click"
             data-analytics-cta-id="services_overview"
             data-analytics-placement="home_services"
-            data-analytics-destination={getServicesPath(locale)}
-            href={getServicesPath(locale)}
+            data-analytics-destination={getPagePath("services", locale)}
+            href={getPagePath("services", locale)}
             className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#AE2422] px-6 py-3 font-bold !text-white transition-colors hover:bg-[#92201E]"
           >
             {services.cta}

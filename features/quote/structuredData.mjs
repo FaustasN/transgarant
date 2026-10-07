@@ -1,9 +1,9 @@
-import { getQuotePath } from "../../lib/routing/paths.mjs";
+import { getPagePath } from "../../lib/routing/paths.mjs";
 import { siteUrl } from "../../lib/seo/site.mjs";
 import { createBreadcrumbs } from "../../lib/seo/structuredData.mjs";
 
 export function getStructuredData(locale, content) {
-  const pageUrl = `${siteUrl}${getQuotePath(locale)}`;
+  const pageUrl = `${siteUrl}${getPagePath("quote", locale)}`;
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [

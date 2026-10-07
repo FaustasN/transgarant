@@ -1,6 +1,6 @@
 import ServicesPage from "@/features/services/ServicesPage";
 import { resources } from "@/lib/i18n/resources";
-import { getLocaleParams } from "@/lib/routing/locales.mjs";
+import { getLocaleParams } from "@/lib/routing/paths.mjs";
 import { createPageMetadata } from "@/lib/seo/metadata.mjs";
 
 export const dynamicParams = false;
