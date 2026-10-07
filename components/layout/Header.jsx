@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
+import { gsap, scrollBehavior, scrollToSection, useGsapScope } from "@/lib/motion";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import LanguageDropdown from "@/components/layout/LanguageDropdown";
 import MobileNav from "@/components/layout/MobileNav";
@@ -24,16 +24,7 @@ export default function Header({ locale, nav, labels }) {
   });
 
   function handleAnchorClick(event, item) {
-    if (!item.hash) return;
-    const section = document.getElementById(item.hash);
-    if (!section) return;
-
-    event.preventDefault();
-    section.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-      block: "start",
-    });
-    window.history.replaceState(null, "", `/${locale}#${item.hash}`);
+    if (item.hash && scrollToSection(item.hash, locale)) event.preventDefault();
   }
 
   function handleLogoClick(event) {
@@ -42,35 +33,23 @@ export default function Header({ locale, nav, labels }) {
 
     event.preventDefault();
     window.history.replaceState(null, "", homePath);
-    window.scrollTo({
-      top: 0,
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: scrollBehavior() });
   }
 
-  useLayoutEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const header = headerRef.current;
-    if (!header) return;
-
-    const context = gsap.context(() => {
-      const timeline = gsap.timeline({ defaults: { ease: "power2.out" } });
-
-      timeline
-        .from(header, {
-          autoAlpha: 0,
-          duration: 0.3,
-          clearProps: "opacity,visibility",
-        })
-        .from(
-          "[data-header-nav-item], [data-header-action]",
-          { y: -5, autoAlpha: 0, duration: 0.22, stagger: 0.035 },
-          "-=0.2",
-        );
-    }, header);
-
-    return () => context.revert();
-  }, []);
+  useGsapScope(headerRef, (header) => {
+    gsap
+      .timeline({ defaults: { ease: "power2.out" } })
+      .from(header, {
+        autoAlpha: 0,
+        duration: 0.3,
+        clearProps: "opacity,visibility",
+      })
+      .from(
+        "[data-header-nav-item], [data-header-action]",
+        { y: -5, autoAlpha: 0, duration: 0.22, stagger: 0.035 },
+        "-=0.2",
+      );
+  });
 
   return (
     <header ref={headerRef} className="sticky top-0 z-50 border-b border-[#E3E2E7] bg-white">

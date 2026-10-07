@@ -1,15 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { ChevronRight, Container } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, prefersReducedMotion, useGsapScope } from "@/lib/motion";
 import ServiceDetails from "./ServiceDetails";
 import { serviceVisuals } from "./serviceVisuals";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesExperience({ locale, content }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -21,47 +18,41 @@ export default function ServicesExperience({ locale, content }) {
   const panelsRef = useRef([]);
   const buttonsRef = useRef([]);
 
-  useLayoutEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const hero = heroRef.current;
+  useGsapScope(heroRef, () => {
     const explorer = explorerRef.current;
     const buttons = buttonsRef.current.filter(Boolean);
     const firstPanel = panelsRef.current[0];
-    if (!hero || !explorer) return;
+    if (!explorer) return;
 
-    const context = gsap.context(() => {
-      gsap.from("[data-service-page-reveal]", {
-        y: 20,
+    gsap.from("[data-service-page-reveal]", {
+      y: 20,
+      autoAlpha: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    });
+
+    if (buttons.length) {
+      gsap.from(buttons, {
+        y: 10,
         autoAlpha: 0,
-        duration: 0.55,
-        stagger: 0.08,
-        ease: "power3.out",
+        duration: 0.45,
+        stagger: 0.055,
+        ease: "power2.out",
+        scrollTrigger: { trigger: explorer, start: "top 82%", once: true },
       });
+    }
 
-      if (buttons.length) {
-        gsap.from(buttons, {
-          y: 10,
-          autoAlpha: 0,
-          duration: 0.45,
-          stagger: 0.055,
-          ease: "power2.out",
-          scrollTrigger: { trigger: explorer, start: "top 82%", once: true },
-        });
-      }
-
-      if (firstPanel) {
-        gsap.from(firstPanel, {
-          y: 22,
-          autoAlpha: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          scrollTrigger: { trigger: explorer, start: "top 78%", once: true },
-        });
-      }
-    }, hero);
-
-    return () => context.revert();
-  }, []);
+    if (firstPanel) {
+      gsap.from(firstPanel, {
+        y: 22,
+        autoAlpha: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: { trigger: explorer, start: "top 78%", once: true },
+      });
+    }
+  });
 
   function selectService(nextIndex) {
     const currentIndex = activeIndexRef.current;
@@ -69,9 +60,8 @@ export default function ServicesExperience({ locale, content }) {
 
     const currentPanel = panelsRef.current[currentIndex];
     const nextPanel = panelsRef.current[nextIndex];
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (reducedMotion || !currentPanel || !nextPanel) {
+    if (prefersReducedMotion() || !currentPanel || !nextPanel) {
       activeIndexRef.current = nextIndex;
       setActiveIndex(nextIndex);
       animatingRef.current = false;

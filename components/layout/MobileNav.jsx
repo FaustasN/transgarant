@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
 import { ArrowRight, Menu } from "lucide-react";
-import gsap from "gsap";
+import { gsap, prefersReducedMotion, scrollBehavior } from "@/lib/motion";
 import LanguageDropdown from "@/components/layout/LanguageDropdown";
 
 export default function MobileNav({ navItems, labels, locale }) {
@@ -32,8 +32,7 @@ export default function MobileNav({ navItems, labels, locale }) {
     const navElements = navRef.current ? Array.from(navRef.current.children) : [];
     if (!overlay || !backdrop || !drawer) return;
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const duration = reducedMotion ? 0 : 0.24;
+    const duration = prefersReducedMotion() ? 0 : 0.24;
     const timeline = gsap.timeline({ defaults: { overwrite: true } });
     if (open) {
       timeline.set(overlay, { visibility: "visible", pointerEvents: "auto" })
@@ -81,7 +80,7 @@ export default function MobileNav({ navItems, labels, locale }) {
     window.history.replaceState(null, "", `/${locale}#${item.hash}`);
     window.requestAnimationFrame(() => {
       section.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        behavior: scrollBehavior(),
         block: "start",
       });
     });

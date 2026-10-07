@@ -2,50 +2,31 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { ArrowRight, Check } from "lucide-react";
-import gsap from "gsap";
+import { gsap, scrollToSection, useGsapScope } from "@/lib/motion";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 
 export default function Hero({ locale, content: hero }) {
   const sectionRef = useRef(null);
 
   function handleServicesClick(event) {
-    const servicesSection = document.getElementById("paslaugos");
-    if (!servicesSection) return;
-
-    event.preventDefault();
-    servicesSection.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "auto"
-        : "smooth",
-      block: "start",
-    });
-    window.history.replaceState(null, "", `/${locale}#paslaugos`);
+    if (scrollToSection("paslaugos", locale)) event.preventDefault();
   }
 
-  useLayoutEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const context = gsap.context(() => {
-      const timeline = gsap.timeline({ defaults: { ease: "power2.out" } });
-
-      timeline
-        .from("[data-hero-title-primary]", { y: 22, autoAlpha: 0, duration: 0.45 })
-        .from("[data-hero-title-secondary]", { y: 18, autoAlpha: 0, duration: 0.4 }, "-=0.34")
-        .from("[data-hero-description]", { y: 16, autoAlpha: 0, duration: 0.36 }, "-=0.27")
-        .from("[data-hero-button]", { y: 12, autoAlpha: 0, duration: 0.3 }, "-=0.23")
-        .from(
-          "[data-hero-highlight]",
-          { y: 10, autoAlpha: 0, duration: 0.3, stagger: 0.06 },
-          "-=0.15",
-        );
-    }, section);
-
-    return () => context.revert();
-  }, []);
+  useGsapScope(sectionRef, () => {
+    gsap
+      .timeline({ defaults: { ease: "power2.out" } })
+      .from("[data-hero-title-primary]", { y: 22, autoAlpha: 0, duration: 0.45 })
+      .from("[data-hero-title-secondary]", { y: 18, autoAlpha: 0, duration: 0.4 }, "-=0.34")
+      .from("[data-hero-description]", { y: 16, autoAlpha: 0, duration: 0.36 }, "-=0.27")
+      .from("[data-hero-button]", { y: 12, autoAlpha: 0, duration: 0.3 }, "-=0.23")
+      .from(
+        "[data-hero-highlight]",
+        { y: 10, autoAlpha: 0, duration: 0.3, stagger: 0.06 },
+        "-=0.15",
+      );
+  });
 
   return (
     <section ref={sectionRef} className="relative isolate overflow-hidden bg-[#191925] text-white">
