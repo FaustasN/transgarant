@@ -48,25 +48,10 @@ function initializeGoogleAnalytics(measurementId) {
   }
 }
 
-export function AnalyticsPreferencesButton({ enabled, label, className = "" }) {
-  if (!enabled) return null;
-
-  return (
-    <button
-      type="button"
-      data-analytics-preferences
-      className={className}
-    >
-      {label}
-    </button>
-  );
-}
-
 export default function Analytics({ measurementId, locale, content }) {
   const pathname = usePathname();
   const hydrated = useSyncExternalStore(subscribeToHydration, () => true, () => false);
   const consent = useSyncExternalStore(subscribeToConsent, readBrowserConsent, () => null);
-  const [preferencesOpen, setPreferencesOpen] = useState(false);
   const [tagReady, setTagReady] = useState(false);
   const lastPagePath = useRef(null);
 
@@ -93,11 +78,6 @@ export default function Analytics({ measurementId, locale, content }) {
   useEffect(() => {
     function handleDocumentClick(event) {
       const target = event.target instanceof Element ? event.target : null;
-      const preferencesButton = target?.closest("[data-analytics-preferences]");
-      if (preferencesButton) {
-        setPreferencesOpen(true);
-        return;
-      }
 
       if (consent !== "granted") return;
       const analyticsTarget = target?.closest("[data-analytics-event]");
@@ -147,7 +127,6 @@ export default function Analytics({ measurementId, locale, content }) {
     storeConsent("granted");
     initializeGoogleAnalytics(measurementId);
     notifyConsentSubscribers();
-    setPreferencesOpen(false);
   }
 
   function declineAnalytics() {
@@ -155,7 +134,6 @@ export default function Analytics({ measurementId, locale, content }) {
     storeConsent("denied");
     setAnalyticsEnabled(false);
     notifyConsentSubscribers();
-    setPreferencesOpen(false);
 
     if (wasGranted) {
       for (const cookie of getGaCookieDeletionStrings(document.cookie, {
@@ -170,7 +148,7 @@ export default function Analytics({ measurementId, locale, content }) {
 
   if (!measurementId) return null;
 
-  const showPreferences = hydrated && (consent === null || preferencesOpen);
+  const showPreferences = hydrated && consent === null;
 
   return (
     <>
