@@ -1,6 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -64,7 +65,7 @@ export default function AboutExperienceSection({ content }) {
       className="bg-white px-5 py-14 sm:px-8 lg:px-10 lg:py-20"
     >
       <div className="mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 xl:gap-32">
-        <div>
+        <div className="lg:flex lg:flex-col">
           <p
             ref={eyebrowRef}
             className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#AE2422]"
@@ -77,6 +78,16 @@ export default function AboutExperienceSection({ content }) {
           >
             {content.title}
           </h2>
+          <div className="hidden lg:mt-auto lg:block lg:pt-12">
+            <Image
+              src="/certificates/certificate.jpg"
+              alt={content.badgeAlt}
+              width={788}
+              height={227}
+              sizes="440px"
+              className="h-auto w-full max-w-[440px] rounded-lg"
+            />
+          </div>
         </div>
 
         <div ref={detailsRef}>

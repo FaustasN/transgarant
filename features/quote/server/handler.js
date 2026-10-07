@@ -27,7 +27,7 @@ export async function handlePost(request) {
   const fields = Object.fromEntries(
     Object.keys(fieldLimits).map((field) => [
       field,
-      readField(payload?.[field], { multiline: field === "additionalInfo" }),
+      readField(payload?.[field]),
     ]),
   );
   const fieldErrors = validateQuoteForm(fields);

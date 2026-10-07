@@ -26,7 +26,6 @@ export async function handlePost(request) {
   const fields = {
     name: readField(payload?.name),
     email: readField(payload?.email),
-    phone: readField(payload?.phone),
     message: readField(payload?.message, { multiline: true }),
   };
   const fieldErrors = validateContactForm(fields);

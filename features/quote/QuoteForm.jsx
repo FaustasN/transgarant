@@ -1,27 +1,75 @@
 "use client";
 
-import { ArrowDown, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import DatePicker from "@/components/ui/DatePicker";
 import { trackAnalyticsEvent } from "@/lib/analytics/client";
 import {
   fieldLimits,
+  requiredFields,
   validateQuoteForm as getFieldErrors,
 } from "@/lib/validation/quote";
 import Field from "./Field";
-import FormSection from "./FormSection";
+import FormSection, { RailNode } from "./FormSection";
+
+const sectionFields = [
+  ["contactPerson", "phone"],
+  ["loadingAddress", "unloadingAddress"],
+  ["cargoType", "weight"],
+];
 
 export default function QuoteForm({ content, locale }) {
   const [status, setStatus] = useState("idle");
   const [fieldErrors, setFieldErrors] = useState({});
-  const [additionalInfoLength, setAdditionalInfoLength] = useState(0);
   const [datePickerKey, setDatePickerKey] = useState(0);
+  const [filled, setFilled] = useState([]);
+  const [started, setStarted] = useState(false);
+  const [formInView, setFormInView] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+  const formRef = useRef(null);
+  const total = requiredFields.length;
+  const completed = filled.length;
+  const progressVisible = started && formInView;
+  const sectionProgress = sectionFields.map(
+    (names) => names.filter((name) => filled.includes(name)).length / names.length,
+  );
+  const sectionsDone = sectionProgress.filter((value) => value === 1).length;
+  const currentSection = Math.min(sectionsDone, sectionFields.length - 1);
+  const sectionLabels = [
+    content.contactEyebrow,
+    content.routeEyebrow,
+    content.cargoEyebrow,
+  ];
+
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form) return undefined;
+
+    const observer = new IntersectionObserver(([entry]) =>
+      setFormInView(entry.isIntersecting),
+    );
+    observer.observe(form);
+
+    return () => observer.disconnect();
+  }, []);
+
+  function getFilledFields(form) {
+    return requiredFields.filter((name) =>
+      String(form.elements.namedItem(name)?.value ?? "").trim(),
+    );
+  }
 
   function handleFieldChange(event) {
-    const { name, value } = event.currentTarget;
+    const { name, form } = event.currentTarget;
 
-    if (name === "additionalInfo") {
-      setAdditionalInfoLength(value.length);
+    if (form) {
+      setFilled(getFilledFields(form));
+      setStarted(true);
     }
 
     if (fieldErrors[name]) {
@@ -64,15 +112,10 @@ export default function QuoteForm({ content, locale }) {
     const fields = Object.fromEntries(
       Object.keys(fieldLimits).map((field) => [
         field,
-        field === "additionalInfo"
-          ? String(formData.get(field) ?? "")
-              .normalize("NFKC")
-              .replace(/\r\n?/g, "\n")
-              .trim()
-          : String(formData.get(field) ?? "")
-              .normalize("NFKC")
-              .trim()
-              .replace(/\s+/g, " "),
+        String(formData.get(field) ?? "")
+          .normalize("NFKC")
+          .trim()
+          .replace(/\s+/g, " "),
       ]),
     );
     const validationErrors = getFieldErrors(fields, content.validation);
@@ -102,7 +145,8 @@ export default function QuoteForm({ content, locale }) {
 
       form.reset();
       setDatePickerKey((currentKey) => currentKey + 1);
-      setAdditionalInfoLength(0);
+      setFilled([]);
+      setStarted(false);
       setFieldErrors({});
       setStatus("success");
       trackAnalyticsEvent("generate_lead", { form_name: "quote", locale });
@@ -112,17 +156,16 @@ export default function QuoteForm({ content, locale }) {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit}>
-      <FormSection eyebrow={content.contactEyebrow} title={content.contactTitle}>
+    <>
+    <form ref={formRef} noValidate onSubmit={handleSubmit}>
+      <FormSection
+        eyebrow={content.contactEyebrow}
+        title={content.contactTitle}
+        progress={sectionProgress[0]}
+        startDone
+        first
+      >
         <div className="grid gap-6 sm:grid-cols-2">
-          <Field
-            label={content.company}
-            name="company"
-            placeholder={content.companyPlaceholder}
-            autoComplete="organization"
-            autoCapitalize="words"
-            {...getValidationProps("company")}
-          />
           <Field
             label={content.contactPerson}
             name="contactPerson"
@@ -141,48 +184,30 @@ export default function QuoteForm({ content, locale }) {
             pattern="\+?[0-9]{9,10}"
             {...getValidationProps("phone")}
           />
-          <Field
-            label={content.email}
-            name="email"
-            type="email"
-            placeholder={content.emailPlaceholder}
-            autoComplete="email"
-            inputMode="email"
-            {...getValidationProps("email")}
-          />
         </div>
       </FormSection>
 
-      <FormSection eyebrow={content.routeEyebrow} title={content.routeTitle}>
-        <div className="grid items-center gap-8 md:grid-cols-[1fr_auto_1fr] md:gap-6">
+      <FormSection
+        eyebrow={content.routeEyebrow}
+        title={content.routeTitle}
+        progress={sectionProgress[1]}
+        startDone={sectionProgress[0] === 1}
+      >
+        <div className="grid items-start gap-8 md:grid-cols-2 md:gap-10">
           <fieldset>
             <legend className="mb-5 text-lg font-extrabold text-[#313152]">
               {content.loadingLabel}
             </legend>
             <div className="grid gap-5">
               <Field
-                label={content.loadingCountry}
-                name="loadingCountry"
-                placeholder={content.loadingCountryPlaceholder}
-                autoComplete="country-name"
-                autoCapitalize="words"
-                {...getValidationProps("loadingCountry")}
-              />
-              <Field
-                label={content.loadingCity}
-                name="loadingCity"
-                placeholder={content.loadingCityPlaceholder}
-                autoComplete="address-level2"
-                autoCapitalize="words"
-                {...getValidationProps("loadingCity")}
+                label={content.loadingAddress}
+                name="loadingAddress"
+                placeholder={content.loadingAddressPlaceholder}
+                autoComplete="street-address"
+                {...getValidationProps("loadingAddress")}
               />
             </div>
           </fieldset>
-
-          <div className="flex h-10 w-10 items-center justify-center text-[#AE2422]">
-            <ArrowDown aria-hidden="true" size={22} className="md:hidden" />
-            <ArrowRight aria-hidden="true" size={22} className="hidden md:block" />
-          </div>
 
           <fieldset>
             <legend className="mb-5 text-lg font-extrabold text-[#313152]">
@@ -190,27 +215,24 @@ export default function QuoteForm({ content, locale }) {
             </legend>
             <div className="grid gap-5">
               <Field
-                label={content.unloadingCountry}
-                name="unloadingCountry"
-                placeholder={content.unloadingCountryPlaceholder}
-                autoComplete="country-name"
-                autoCapitalize="words"
-                {...getValidationProps("unloadingCountry")}
-              />
-              <Field
-                label={content.unloadingCity}
-                name="unloadingCity"
-                placeholder={content.unloadingCityPlaceholder}
-                autoComplete="address-level2"
-                autoCapitalize="words"
-                {...getValidationProps("unloadingCity")}
+                label={content.unloadingAddress}
+                name="unloadingAddress"
+                placeholder={content.unloadingAddressPlaceholder}
+                autoComplete="street-address"
+                {...getValidationProps("unloadingAddress")}
               />
             </div>
           </fieldset>
         </div>
       </FormSection>
 
-      <FormSection eyebrow={content.cargoEyebrow} title={content.cargoTitle}>
+      <FormSection
+        eyebrow={content.cargoEyebrow}
+        title={content.cargoTitle}
+        progress={sectionProgress[2]}
+        startDone={sectionProgress[1] === 1}
+        className="pb-6 lg:pb-8"
+      >
         <div className="grid gap-6 sm:grid-cols-2">
           <Field
             label={content.cargoType}
@@ -226,6 +248,13 @@ export default function QuoteForm({ content, locale }) {
             pattern="[0-9]+([.,][0-9]{1,3})? *(kg|t)?"
             {...getValidationProps("weight")}
           />
+          <Field
+            label={`${content.quantity} (${content.optional})`}
+            name="quantity"
+            required={false}
+            placeholder={content.quantityPlaceholder}
+            {...getValidationProps("quantity")}
+          />
           <DatePicker
             key={datePickerKey}
             label={content.pickupDate}
@@ -235,66 +264,89 @@ export default function QuoteForm({ content, locale }) {
             error={fieldErrors.pickupDate}
             onChange={handleDateChange}
           />
-          <label className="grid gap-2 text-sm font-bold text-[#191925] sm:col-span-2">
-            {content.additionalInfo}
-            <textarea
-              name="additionalInfo"
-              rows={5}
-              maxLength={fieldLimits.additionalInfo}
-              placeholder={content.additionalInfoPlaceholder}
-              aria-invalid={Boolean(fieldErrors.additionalInfo)}
-              aria-describedby={`quote-additionalInfo-count${fieldErrors.additionalInfo ? " quote-additionalInfo-error" : ""}`}
-              onChange={handleFieldChange}
-              className={`resize-y border bg-white/55 px-4 py-4 font-normal leading-7 text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.additionalInfo ? "border-red-600" : "border-[#C9C8D0]"}`}
-            />
-            <span className="flex items-start justify-between gap-4">
-              {fieldErrors.additionalInfo && (
-                <span
-                  id="quote-additionalInfo-error"
-                  role="alert"
-                  className="font-normal text-red-700"
-                >
-                  {fieldErrors.additionalInfo}
-                </span>
-              )}
-              <span
-                id="quote-additionalInfo-count"
-                className="ml-auto font-normal text-[#6B6B78]"
-              >
-                {additionalInfoLength} / {fieldLimits.additionalInfo}
-              </span>
-            </span>
-          </label>
-        </div>
-
-        <div className="mt-8 flex flex-col gap-3 sm:items-start">
-          <button
-            type="submit"
-            disabled={status === "submitting"}
-            className="group flex h-14 w-full items-center justify-center gap-3 bg-[#313152] px-6 font-extrabold text-white transition-colors hover:bg-[#252541] disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
-          >
-            {status === "submitting" ? content.submitting : content.submit}
-            <ArrowRight
-              aria-hidden="true"
-              size={19}
-              className="transition-transform duration-300 group-hover:translate-x-1.5"
-            />
-          </button>
-          <p className="text-xs leading-5 text-[#6F7080]">{content.submitNote}</p>
-          <div aria-live="polite">
-            {status === "success" && (
-              <p className="text-sm font-semibold text-green-700">
-                {content.success}
-              </p>
-            )}
-            {status === "error" && (
-              <p className="text-sm font-semibold text-red-700">
-                {content.error}
-              </p>
-            )}
-          </div>
         </div>
       </FormSection>
+
+      <div className="relative pb-12 lg:grid lg:grid-cols-[280px_1fr] lg:gap-16 lg:pb-16">
+        <span
+          aria-hidden="true"
+          className={`absolute left-[312px] top-0 hidden h-7 w-px -translate-x-1/2 transition-colors duration-500 lg:block ${sectionsDone === sectionFields.length ? "bg-[#AE2422]" : "bg-[#D9D8DE]"}`}
+        />
+        <RailNode
+          done={sectionsDone === sectionFields.length}
+          position="top-7 -translate-y-1/2"
+        />
+    <div className="flex flex-col gap-3 sm:items-start lg:col-start-2">
+      <button
+        type="submit"
+        disabled={status === "submitting"}
+        className="group flex h-14 w-full items-center justify-center gap-3 bg-[#313152] px-6 font-extrabold text-white transition-colors hover:bg-[#252541] disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
+      >
+        {status === "submitting" ? content.submitting : content.submit}
+        <ArrowRight
+          aria-hidden="true"
+          size={19}
+          className="transition-transform duration-300 group-hover:translate-x-1.5"
+        />
+      </button>
+      <p className="text-xs leading-5 text-[#6F7080]">{content.submitNote}</p>
+      <div aria-live="polite">
+        {status === "success" && (
+          <p className="text-sm font-semibold text-green-700">
+            {content.success}
+          </p>
+        )}
+        {status === "error" && (
+          <p className="text-sm font-semibold text-red-700">
+            {content.error}
+          </p>
+        )}
+      </div>
+    </div>
+      </div>
     </form>
+    {mounted &&
+      createPortal(
+        <div
+          aria-hidden={!progressVisible}
+          inert={!progressVisible}
+          className={`pointer-events-none fixed inset-x-0 bottom-0 z-40 transition-transform duration-300 ease-out lg:hidden ${progressVisible ? "translate-y-0" : "translate-y-full"}`}
+        >
+          <div className="pointer-events-auto border-t border-[#E3E2E7] bg-white/92 px-5 pb-3 pt-2.5 backdrop-blur sm:px-7">
+            <div
+              role="progressbar"
+              aria-label={content.progress}
+              aria-valuemin={0}
+              aria-valuemax={total}
+              aria-valuenow={completed}
+              className="flex gap-1.5"
+            >
+              {sectionProgress.map((value, index) => (
+                <span key={index} className="h-1 flex-1 overflow-hidden bg-[#E3E2E7]">
+                  <span
+                    className={`block h-full transition-[width] duration-300 ease-out ${sectionsDone === sectionFields.length ? "bg-green-600" : "bg-[#AE2422]"}`}
+                    style={{ width: `${value * 100}%` }}
+                  />
+                </span>
+              ))}
+            </div>
+            <p
+              role="status"
+              className="mt-2 flex items-baseline justify-between gap-3 text-[11px] font-semibold tabular-nums text-[#6F7080]"
+            >
+              <span className="truncate uppercase tracking-[0.12em]">
+                {sectionsDone === sectionFields.length
+                  ? content.progressDone
+                  : sectionLabels[currentSection]}
+              </span>
+              <span>
+                {completed} / {total}
+              </span>
+            </p>
+          </div>
+        </div>,
+        document.body,
+      )}
+    </>
   );
 }

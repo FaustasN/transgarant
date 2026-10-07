@@ -11,20 +11,19 @@ const messages = {
   required: "required", tooLong: "maximum {max}", email: "email", nameMin: "name minimum",
   nameFormat: "name format", phone: "phone", messageMin: "message minimum", invalidText: "invalid text",
   role: "role", cvRequired: "CV required", cvSize: "CV size", cvType: "CV type",
-  companyMin: "company minimum", companyFormat: "company format", locationMin: "location minimum",
-  locationFormat: "location format", cargoMin: "cargo minimum", weight: "weight", pastDate: "past date", date: "invalid date",
+  addressMin: "address minimum", cargoMin: "cargo minimum", weight: "weight", pastDate: "past date", date: "invalid date",
 };
-const contact = { name: "Živilė Jonaitė", email: "zivile@example.test", phone: "123456789", message: "Ten letters or more" };
+const contact = { name: "Živilė Jonaitė", email: "zivile@example.test", message: "Ten letters or more" };
 const quote = {
-  company: "UAB Name", contactPerson: contact.name, email: contact.email, phone: contact.phone,
-  loadingCountry: "Lietuva", loadingCity: "Vilnius", unloadingCountry: "France", unloadingCity: "Paris",
-  cargoType: "Pallets", weight: "1,25 t", pickupDate: "", additionalInfo: "",
+  contactPerson: contact.name, phone: "123456789",
+  loadingAddress: "Gedimino pr. 1, Vilnius", unloadingAddress: "Rue de Rivoli 5, Paris",
+  cargoType: "Pallets", weight: "1,25 t", pickupDate: "",
 };
 
 test("contact shares Unicode, length and email rules while using supplied messages", () => {
   assert.deepEqual(validateContactForm(contact, messages), {});
-  assert.deepEqual(validateContactForm({ ...contact, name: "Jo", email: "a..b@example.test", phone: "12345678", message: "small" }, messages), {
-    name: "name minimum", email: "email", phone: "phone", message: "message minimum",
+  assert.deepEqual(validateContactForm({ ...contact, name: "Jo", email: "a..b@example.test", message: "small" }, messages), {
+    name: "name minimum", email: "email", message: "message minimum",
   });
   assert.equal(validateContactForm({ ...contact, message: "a".repeat(501) }, messages).message, "maximum 500");
   assert.equal(validateContactForm({ ...contact, message: "hello world\u0000" }, messages).message, "invalid text");
@@ -37,13 +36,13 @@ test("quote keeps browser dates permissive and allows stricter server date valid
   assert.deepEqual(validateQuoteForm({ ...quote, pickupDate: "2026-09-01" }, messages, { today: "2026-09-02" }), { pickupDate: "past date" });
 });
 
-test("quote validates company, locations and positive weight without widening accepted formats", () => {
+test("quote validates addresses, cargo and positive weight without widening accepted formats", () => {
   assert.deepEqual(validateQuoteForm(quote, messages), {});
   for (const weight of ["0", "0 kg", "-1 t", "1.1234 kg", "2 pounds", "1e3"]) {
     assert.equal(validateQuoteForm({ ...quote, weight }, messages).weight, "weight");
   }
-  assert.deepEqual(validateQuoteForm({ ...quote, company: "Company<script>", loadingCity: "A1", cargoType: "x" }, messages), {
-    company: "company format", loadingCity: "location format", cargoType: "cargo minimum",
+  assert.deepEqual(validateQuoteForm({ ...quote, loadingAddress: "A1", unloadingAddress: "Paris\u0000", cargoType: "x" }, messages), {
+    loadingAddress: "address minimum", unloadingAddress: "invalid text", cargoType: "cargo minimum",
   });
 });
 

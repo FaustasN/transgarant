@@ -315,27 +315,6 @@ export default function CareerApplication({ content, locale }) {
                 />
               </label>
               <label className="grid gap-2 text-sm font-bold sm:col-span-2">
-                {content.application.phone}
-                <input
-                  required
-                  type="tel"
-                  name="phone"
-                  inputMode="tel"
-                  pattern="\+?[0-9]{9,10}"
-                  autoComplete="tel"
-                  maxLength={fieldLimits.phone}
-                  placeholder={content.application.phonePlaceholder}
-                  aria-invalid={Boolean(fieldErrors.phone)}
-                  aria-describedby={fieldErrors.phone ? "career-phone-error" : undefined}
-                  onChange={handleFieldChange}
-                  className={`h-14 border bg-white/45 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.phone ? "border-red-600" : "border-[#C9C8D0]"}`}
-                />
-                <ValidationMessage
-                  id="career-phone-error"
-                  message={fieldErrors.phone}
-                />
-              </label>
-              <label className="grid gap-2 text-sm font-bold sm:col-span-2">
                 {content.application.message}
                 <textarea
                   name="message"

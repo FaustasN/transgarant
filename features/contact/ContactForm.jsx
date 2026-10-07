@@ -43,7 +43,6 @@ export default function ContactForm({ content, locale }) {
         .trim()
         .replace(/\s+/g, " "),
       email: String(formData.get("email") ?? "").normalize("NFKC").trim(),
-      phone: String(formData.get("phone") ?? "").normalize("NFKC").trim(),
       message: String(formData.get("message") ?? "")
         .normalize("NFKC")
         .replace(/\r\n?/g, "\n")
@@ -117,24 +116,6 @@ export default function ContactForm({ content, locale }) {
             className={`h-14 border bg-white/55 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.email ? "border-red-600" : "border-[#C9C8D0]"}`}
           />
           <ValidationMessage id="contact-email-error" message={fieldErrors.email} />
-        </label>
-        <label className="grid gap-2 text-sm font-bold text-[#191925] sm:col-span-2">
-          {content.phone}
-          <input
-            required
-            type="tel"
-            name="phone"
-            inputMode="tel"
-            pattern="\+?[0-9]{9,10}"
-            autoComplete="tel"
-            maxLength={fieldLimits.phone}
-            placeholder={content.phonePlaceholder}
-            aria-invalid={Boolean(fieldErrors.phone)}
-            aria-describedby={fieldErrors.phone ? "contact-phone-error" : undefined}
-            onChange={handleFieldChange}
-            className={`h-14 border bg-white/55 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.phone ? "border-red-600" : "border-[#C9C8D0]"}`}
-          />
-          <ValidationMessage id="contact-phone-error" message={fieldErrors.phone} />
         </label>
         <label className="grid gap-2 text-sm font-bold text-[#191925] sm:col-span-2">
           {content.message}

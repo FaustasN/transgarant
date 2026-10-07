@@ -17,7 +17,6 @@ export function composeCareerApplicationEmail(fields, cv, cvBuffer) {
     `Pozicija: ${role}`,
     `Vardas ir pavardė: ${fields.name}`,
     `El. paštas: ${fields.email}`,
-    `Telefono numeris: ${fields.phone}`,
     "",
     "Žinutė:",
     message,
@@ -30,7 +29,6 @@ export function composeCareerApplicationEmail(fields, cv, cvBuffer) {
     <p><strong>Pozicija:</strong> ${escapeHtml(role)}</p>
     <p><strong>Vardas ir pavardė:</strong> ${escapeHtml(fields.name)}</p>
     <p><strong>El. paštas:</strong> ${escapeHtml(fields.email)}</p>
-    <p><strong>Telefono numeris:</strong> ${escapeHtml(fields.phone)}</p>
     <p><strong>Žinutė:</strong><br>${messageHtml}</p>
     <p><strong>CV:</strong> ${escapeHtml(cv.name)}</p>
   `;

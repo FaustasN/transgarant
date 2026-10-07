@@ -9,14 +9,13 @@ const { POST: careers } = await import("../app/api/careers/route.js");
 beforeEach(resetState);
 
 const contactFields = {
-  name: "Jonas Jonaitis", email: "jonas@example.test", phone: "+3706123456",
+  name: "Jonas Jonaitis", email: "jonas@example.test",
   message: "Please contact me about transport.",
 };
 const quoteFields = {
-  company: "UAB Transport", contactPerson: "Jonas Jonaitis", phone: "+3706123456",
-  email: "jonas@example.test", loadingCountry: "Lietuva", loadingCity: "Vilnius",
-  unloadingCountry: "France", unloadingCity: "Paris", cargoType: "Pallets",
-  weight: "1,5 t", pickupDate: "", additionalInfo: "",
+  contactPerson: "Jonas Jonaitis", phone: "+3706123456", quantity: "6 pallets",
+  loadingAddress: "Gedimino pr. 1, Vilnius, Lietuva", unloadingAddress: "Rue de Rivoli 5, Paris, France", cargoType: "Pallets",
+  weight: "1,5 t", pickupDate: "",
 };
 const careerFields = { role: "transport-manager", ...contactFields, message: "" };
 
@@ -74,18 +73,18 @@ test("contact normalizes text and escapes HTML without altering plain text", asy
 });
 
 test("contact rejects unsafe and mistyped fields with the existing error contract", async () => {
-  const response = await contact(jsonRequest({ name: "Jo", email: "a..b@example.test", phone: "12345", message: "Hello there\u0000" }));
+  const response = await contact(jsonRequest({ name: "Jo", email: "a..b@example.test", message: "Hello there\u0000" }));
   assert.equal(response.status, 400);
   assert.deepEqual(await response.json(), {
     error: "Invalid contact form data.", fieldErrors: {
       name: "Name must contain at least 3 letters.", email: "Enter a valid email address.",
-      phone: "Enter a phone number containing 9 to 10 digits.", message: "Message contains unsupported characters.",
+      message: "Message contains unsupported characters.",
     },
   });
   const missing = await contact(jsonRequest(null));
   assert.deepEqual((await missing.json()).fieldErrors, {
     name: "This field is required.", email: "This field is required.",
-    phone: "This field is required.", message: "This field is required.",
+    message: "This field is required.",
   });
   assert.equal(mail.messages.length, 0);
 });
@@ -98,7 +97,19 @@ test("quote accepts positive decimal weights and keeps optional placeholders in 
   assert.equal(message.subject, "Nauja transportavimo užklausa iš „Transgarant“ svetainės");
   assert.match(message.text, /Svoris: 1,5 t/);
   assert.match(message.text, /Pageidaujama pakrovimo data: Nenurodyta/);
-  assert.match(message.text, /Papildoma informacija:\nNenurodyta/);
+});
+
+test("quote needs only name, phone, addresses, cargo type and weight", async () => {
+  const { quantity, ...required } = quoteFields;
+  const response = await quote(jsonRequest(required));
+  assert.equal(response.status, 200);
+  const message = mail.messages[0];
+  assert.match(message.text, /Pakrovimo vieta: Gedimino pr\. 1, Vilnius, Lietuva/);
+  assert.match(message.text, /Kiekis \/ matmenys: Nenurodyta/);
+
+  const missing = await quote(jsonRequest({ ...required, contactPerson: "", phone: "" }));
+  assert.equal(missing.status, 400);
+  assert.deepEqual(Object.keys((await missing.json()).fieldErrors).sort(), ["contactPerson", "phone"]);
 });
 
 test("quote rejects impossible dates, past dates and zero weights", async () => {
