@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, FileText } from "lucide-react";
-import ValidationMessage from "@/components/ui/ValidationMessage";
-import { jobApplyProps, trackAnalyticsEvent } from "@/lib/analytics/core.mjs";
-import {
-  fieldLimits,
-  validateCareerForm as getFieldErrors,
-} from "@/lib/validation/careers";
+import { ArrowRight } from "lucide-react";
+import { jobApplyProps } from "@/lib/analytics/core.mjs";
+import { useFormSubmit } from "@/lib/useFormSubmit";
+import { fieldLimits, validateCareerForm } from "@/lib/validation/careers";
+import ApplicationForm from "./ApplicationForm";
 import DetailList from "./DetailList";
 
 export default function CareerApplication({ content, locale }) {
@@ -15,11 +13,24 @@ export default function CareerApplication({ content, locale }) {
   const [selectedRole, setSelectedRole] = useState(jobs[0]?.id ?? "");
   const [activeRole, setActiveRole] = useState("");
   const [formVisible, setFormVisible] = useState(false);
-  const [fileName, setFileName] = useState("");
-  const [status, setStatus] = useState("idle");
-  const [fieldErrors, setFieldErrors] = useState({});
-  const [messageLength, setMessageLength] = useState(0);
   const formSectionRef = useRef(null);
+  const form = useFormSubmit({
+    endpoint: "/api/careers",
+    formName: "career",
+    locale,
+    fieldLimits,
+    multiline: ["message"],
+    json: false,
+    focusFirstError: true,
+    validate: (fields, formData) =>
+      validateCareerForm(
+        fields,
+        formData.get("cv"),
+        new Set(jobs.map((job) => job.id)),
+        content.application.validation,
+      ),
+    trackParams: (fields) => ({ job_id: fields.role }),
+  });
 
   useEffect(() => {
     const jobElements = document.querySelectorAll("[data-career-job]");
@@ -49,106 +60,14 @@ export default function CareerApplication({ content, locale }) {
     };
   }, []);
 
-  function applyFor(roleId) {
+  function selectRole(roleId) {
     setSelectedRole(roleId);
-    setFieldErrors((currentErrors) => ({
-      ...currentErrors,
-      role: undefined,
-    }));
+    form.clearError("role");
+  }
+
+  function applyFor(roleId) {
+    selectRole(roleId);
     formSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  function handleFieldChange(event) {
-    const { name, value } = event.currentTarget;
-
-    if (name === "message") {
-      setMessageLength(value.length);
-    }
-
-    if (fieldErrors[name]) {
-      setFieldErrors((currentErrors) => ({
-        ...currentErrors,
-        [name]: undefined,
-      }));
-    }
-
-    if (status === "success" || status === "error") {
-      setStatus("idle");
-    }
-  }
-
-  function handleFileChange(event) {
-    const file = event.currentTarget.files?.[0];
-
-    setFileName(file?.name ?? "");
-    setFieldErrors((currentErrors) => ({
-      ...currentErrors,
-      cv: undefined,
-    }));
-
-    if (status === "success" || status === "error") {
-      setStatus("idle");
-    }
-  }
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const fields = Object.fromEntries(
-      Object.keys(fieldLimits).map((field) => [
-        field,
-        field === "message"
-          ? String(formData.get(field) ?? "")
-              .normalize("NFKC")
-              .replace(/\r\n?/g, "\n")
-              .trim()
-          : String(formData.get(field) ?? "")
-              .normalize("NFKC")
-              .trim()
-              .replace(/\s+/g, " "),
-      ]),
-    );
-    const validationErrors = getFieldErrors(
-      fields,
-      formData.get("cv"),
-      new Set(jobs.map((job) => job.id)),
-      content.application.validation,
-    );
-
-    setFieldErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length > 0) {
-      setStatus("idle");
-      form.elements.namedItem(Object.keys(validationErrors)[0])?.focus();
-      return;
-    }
-
-    setStatus("submitting");
-
-    try {
-      const response = await fetch("/api/careers", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error("Career application failed.");
-      }
-
-      form.reset();
-      setFileName("");
-      setMessageLength(0);
-      setFieldErrors({});
-      setStatus("success");
-      trackAnalyticsEvent("generate_lead", {
-        form_name: "career",
-        locale,
-        job_id: fields.role,
-      });
-    } catch {
-      setStatus("error");
-    }
   }
 
   const activeJob = jobs.find((job) => job.id === activeRole);
@@ -215,190 +134,14 @@ export default function CareerApplication({ content, locale }) {
         </div>
       </section>
 
-      <section
-        ref={formSectionRef}
-        id="kandidatuoti"
-        className="scroll-mt-20 border-t border-[#D9D8DE] bg-[#EDECF0] px-5 py-20 text-[#191925] sm:px-8 lg:px-10 lg:py-28"
-      >
-        <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#AE2422]">
-              {content.application.eyebrow}
-            </p>
-            <h2 className="mt-5 max-w-md text-[clamp(34px,4.2vw,54px)] font-extrabold leading-[1.02] tracking-[-0.04em]">
-              {content.application.title}
-            </h2>
-            <p className="mt-6 max-w-md text-base leading-8 text-[#6F7080]">
-              {content.application.description}
-            </p>
-          </div>
-
-          <form noValidate onSubmit={handleSubmit}>
-            <fieldset>
-              <legend className="text-sm font-bold text-[#191925]">
-                {content.application.roleLegend}
-              </legend>
-              <div className="mt-4 grid gap-2">
-                {jobs.map((job) => (
-                  <label
-                    key={job.id}
-                    className={`flex cursor-pointer items-start gap-4 border px-4 py-4 transition-colors sm:items-center ${
-                      selectedRole === job.id
-                        ? "border-[#313152] bg-[#313152] text-white"
-                        : "border-[#C9C8D0] bg-transparent text-[#313152] hover:border-[#313152]"
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="role"
-                      value={job.id}
-                      checked={selectedRole === job.id}
-                      onChange={() => {
-                        setSelectedRole(job.id);
-                        setFieldErrors((currentErrors) => ({
-                          ...currentErrors,
-                          role: undefined,
-                        }));
-                      }}
-                      className="sr-only"
-                    />
-                    <span className="font-bold leading-6">{job.title}</span>
-                  </label>
-                ))}
-              </div>
-              <ValidationMessage
-                id="career-role-error"
-                message={fieldErrors.role}
-              />
-            </fieldset>
-
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              <label className="grid gap-2 text-sm font-bold">
-                {content.application.name}
-                <input
-                  required
-                  name="name"
-                  autoComplete="name"
-                  autoCapitalize="words"
-                  maxLength={fieldLimits.name}
-                  placeholder={content.application.namePlaceholder}
-                  aria-invalid={Boolean(fieldErrors.name)}
-                  aria-describedby={fieldErrors.name ? "career-name-error" : undefined}
-                  onChange={handleFieldChange}
-                  className={`h-14 border bg-white/45 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.name ? "border-red-600" : "border-[#C9C8D0]"}`}
-                />
-                <ValidationMessage
-                  id="career-name-error"
-                  message={fieldErrors.name}
-                />
-              </label>
-              <label className="grid gap-2 text-sm font-bold">
-                {content.application.email}
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  inputMode="email"
-                  autoComplete="email"
-                  maxLength={fieldLimits.email}
-                  placeholder={content.application.emailPlaceholder}
-                  aria-invalid={Boolean(fieldErrors.email)}
-                  aria-describedby={fieldErrors.email ? "career-email-error" : undefined}
-                  onChange={handleFieldChange}
-                  className={`h-14 border bg-white/45 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.email ? "border-red-600" : "border-[#C9C8D0]"}`}
-                />
-                <ValidationMessage
-                  id="career-email-error"
-                  message={fieldErrors.email}
-                />
-              </label>
-              <label className="grid gap-2 text-sm font-bold sm:col-span-2">
-                {content.application.message}
-                <textarea
-                  name="message"
-                  rows={4}
-                  maxLength={fieldLimits.message}
-                  placeholder={content.application.messagePlaceholder}
-                  aria-invalid={Boolean(fieldErrors.message)}
-                  aria-describedby={`career-message-count${fieldErrors.message ? " career-message-error" : ""}`}
-                  onChange={handleFieldChange}
-                  className={`resize-y border bg-white/45 px-4 py-4 font-normal leading-7 text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.message ? "border-red-600" : "border-[#C9C8D0]"}`}
-                />
-                <span className="flex items-start justify-between gap-4">
-                  <ValidationMessage
-                    id="career-message-error"
-                    message={fieldErrors.message}
-                  />
-                  <span
-                    id="career-message-count"
-                    className="ml-auto font-normal text-[#6B6B78]"
-                  >
-                    {messageLength} / {fieldLimits.message}
-                  </span>
-                </span>
-              </label>
-            </div>
-
-            <div
-              className={`mt-6 border border-dashed bg-white/25 p-4 sm:flex sm:items-center sm:justify-between sm:gap-5 ${fieldErrors.cv ? "border-red-600" : "border-[#B9B8C2]"}`}
-            >
-              <label className="group flex cursor-pointer items-center gap-3">
-                <FileText aria-hidden="true" size={20} />
-                <span className="font-bold">
-                  {fileName || content.application.cv}
-                </span>
-                <input
-                  required
-                  type="file"
-                  name="cv"
-                  accept="application/pdf,.pdf"
-                  aria-invalid={Boolean(fieldErrors.cv)}
-                  aria-describedby={`career-cv-hint${fieldErrors.cv ? " career-cv-error" : ""}`}
-                  className="sr-only"
-                  onChange={handleFileChange}
-                />
-              </label>
-              <span
-                id="career-cv-hint"
-                className="mt-2 block text-xs text-[#6F7080] sm:mt-0"
-              >
-                {content.application.cvHint}
-              </span>
-            </div>
-            <ValidationMessage id="career-cv-error" message={fieldErrors.cv} />
-            <p className="mt-3 text-xs leading-5 text-[#6F7080]">
-              {content.application.cvAttachNote}
-            </p>
-
-            <button
-              type="submit"
-              disabled={status === "submitting"}
-              className="group mt-8 flex h-14 w-full items-center justify-center gap-3 bg-[#313152] px-6 font-extrabold text-white transition-colors hover:bg-[#252541] disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
-            >
-              {status === "submitting"
-                ? content.application.submitting
-                : content.application.submit}
-              <ArrowRight
-                aria-hidden="true"
-                size={19}
-                className="transition-transform duration-300 group-hover:translate-x-1.5"
-              />
-            </button>
-            <div aria-live="polite">
-              {status === "success" && (
-                <p className="mt-4 text-sm font-semibold text-green-700">
-                  {content.application.success}
-                </p>
-              )}
-              {status === "error" && (
-                <p className="mt-4 text-sm font-semibold text-red-700">
-                  {content.application.error}
-                </p>
-              )}
-            </div>
-          </form>
-        </div>
-      </section>
+      <ApplicationForm
+        content={content.application}
+        jobs={jobs}
+        selectedRole={selectedRole}
+        onSelectRole={selectRole}
+        form={form}
+        sectionRef={formSectionRef}
+      />
 
       {activeJob && !formVisible ? (
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#E3E2E7] bg-[#F6F5F2]/96 px-5 py-3 shadow-[0_-10px_30px_rgba(25,25,37,0.08)] backdrop-blur sm:px-7 lg:hidden">
