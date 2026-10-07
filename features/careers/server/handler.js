@@ -6,7 +6,7 @@ import { sendMail } from "@/lib/server/mailer";
 import { checkRateLimit, createRateLimitResponse } from "@/lib/server/rateLimit";
 import { readField, readRequest } from "@/lib/server/request";
 import { fieldLimits, maxCvSize } from "@/lib/validation/careers";
-import { validateApplication, validateCv } from "./validation.js";
+import { validateApplication } from "./validation.js";
 import { composeCareerApplicationEmail } from "./email.js";
 
 const maxRequestSize = maxCvSize + 128 * 1024;
@@ -36,12 +36,7 @@ export async function handlePost(request) {
     ]),
   );
   const cv = formData.get("cv");
-  const fieldErrors = validateApplication(fields);
-  const cvError = validateCv(cv);
-
-  if (cvError) {
-    fieldErrors.cv = cvError;
-  }
+  const fieldErrors = validateApplication(fields, cv);
 
   if (Object.keys(fieldErrors).length > 0) {
     return Response.json(

@@ -1,5 +1,5 @@
 import { validateQuoteForm as validateFields } from "@/lib/validation/quote";
-import { getTodayInVilnius, isValidDate } from "@/lib/validation/dates";
+import { getTodayInVilnius, isValidDate } from "@/lib/validation/rules";
 import { commonValidationMessages } from "@/lib/server/validationMessages";
 
 const messages = {
