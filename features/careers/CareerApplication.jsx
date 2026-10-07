@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, FileText } from "lucide-react";
 import ValidationMessage from "@/components/ui/ValidationMessage";
-import { trackAnalyticsEvent } from "@/lib/analytics/client";
+import { jobApplyProps, trackAnalyticsEvent } from "@/lib/analytics/core.mjs";
 import {
   fieldLimits,
   validateCareerForm as getFieldErrors,
@@ -180,9 +180,7 @@ export default function CareerApplication({ content, locale }) {
                 </h2>
                 <button
                   type="button"
-                  data-analytics-event="job_apply_click"
-                  data-analytics-job-id={job.id}
-                  data-analytics-placement="career_listing"
+                  {...jobApplyProps(job.id, "career_listing")}
                   onClick={() => applyFor(job.id)}
                   className="group mt-8 inline-flex items-center gap-3 py-2 text-base font-bold text-[#191925]"
                 >
@@ -406,9 +404,7 @@ export default function CareerApplication({ content, locale }) {
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#E3E2E7] bg-[#F6F5F2]/96 px-5 py-3 shadow-[0_-10px_30px_rgba(25,25,37,0.08)] backdrop-blur sm:px-7 lg:hidden">
           <button
             type="button"
-            data-analytics-event="job_apply_click"
-            data-analytics-job-id={activeJob.id}
-            data-analytics-placement="career_sticky"
+            {...jobApplyProps(activeJob.id, "career_sticky")}
             onClick={() => applyFor(activeJob.id)}
             className="flex w-full items-center justify-between gap-4 py-1 text-left"
           >

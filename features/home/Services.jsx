@@ -6,6 +6,7 @@ import { ArrowRight, Boxes, ChevronDown, Truck, Warehouse } from "lucide-react";
 import { gsap, useGsapScope } from "@/lib/motion";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import RevealSection from "@/components/motion/RevealSection";
+import { ctaProps } from "@/lib/analytics/core.mjs";
 
 const serviceIcons = [Truck, Boxes, Warehouse];
 
@@ -93,10 +94,7 @@ export default function Services({ locale, content: services }) {
 
         <div data-reveal className="mt-14 flex justify-center lg:mt-16">
           <Link
-            data-analytics-event="cta_click"
-            data-analytics-cta-id="services_overview"
-            data-analytics-placement="home_services"
-            data-analytics-destination={getPagePath("services", locale)}
+            {...ctaProps("services_overview", "home_services", getPagePath("services", locale))}
             href={getPagePath("services", locale)}
             className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#AE2422] px-6 py-3 font-bold !text-white transition-colors hover:bg-[#92201E]"
           >

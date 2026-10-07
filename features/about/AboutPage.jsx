@@ -5,6 +5,7 @@ import AboutExperienceSection from "@/features/about/AboutExperienceSection";
 import RevealSection from "@/components/motion/RevealSection";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import PageShell from "@/components/layout/PageShell";
+import { ctaProps } from "@/lib/analytics/core.mjs";
 
 export default function AboutPage({ locale, content }) {
   return (
@@ -88,10 +89,7 @@ export default function AboutPage({ locale, content }) {
             </a>
 
             <Link
-              data-analytics-event="cta_click"
-              data-analytics-cta-id="about_quote"
-              data-analytics-placement="about_page"
-              data-analytics-destination={getPagePath("quote", locale)}
+              {...ctaProps("about_quote", "about_page", getPagePath("quote", locale))}
               href={getPagePath("quote", locale)}
               className="group flex max-w-xl items-center gap-5 border-y border-[#D9D8DE] py-6 lg:col-start-1 lg:row-start-2 lg:self-end"
             >

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { ctaProps } from "@/lib/analytics/core.mjs";
 import { gsap, scrollBehavior, scrollToSection, useGsapScope } from "@/lib/motion";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import LanguageDropdown from "@/components/layout/LanguageDropdown";
@@ -74,10 +75,7 @@ export default function Header({ locale, nav, labels }) {
           {navItems.map((item) => (
             <Link
               data-header-nav-item
-              data-analytics-event={item.key === "quote" ? "cta_click" : undefined}
-              data-analytics-cta-id={item.key === "quote" ? "header_quote" : undefined}
-              data-analytics-placement={item.key === "quote" ? "desktop_header" : undefined}
-              data-analytics-destination={item.key === "quote" ? item.href : undefined}
+              {...(item.key === "quote" ? ctaProps("header_quote", "desktop_header", item.href) : {})}
               key={item.href}
               href={item.href}
               onClick={(event) => handleAnchorClick(event, item)}

@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { gsap, scrollToSection, useGsapScope } from "@/lib/motion";
 import { getPagePath } from "@/lib/routing/paths.mjs";
+import { ctaProps } from "@/lib/analytics/core.mjs";
 
 export default function Hero({ locale, content: hero }) {
   const sectionRef = useRef(null);
@@ -64,10 +65,7 @@ export default function Hero({ locale, content: hero }) {
           <div className="mt-9 flex flex-row items-center gap-2.5 sm:gap-3">
             <Link
               data-hero-button
-              data-analytics-event="cta_click"
-              data-analytics-cta-id="hero_quote"
-              data-analytics-placement="home_hero"
-              data-analytics-destination={getPagePath("quote", locale)}
+              {...ctaProps("hero_quote", "home_hero", getPagePath("quote", locale))}
               href={getPagePath("quote", locale)}
               className="inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-[#AE2422] px-3.5 py-3 text-sm font-bold text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#92201E] hover:shadow-lg active:translate-y-0 sm:min-h-13 sm:gap-3 sm:px-7 sm:py-3.5 sm:text-base"
             >
@@ -76,10 +74,7 @@ export default function Hero({ locale, content: hero }) {
             </Link>
             <Link
               data-hero-button
-              data-analytics-event="cta_click"
-              data-analytics-cta-id="hero_services"
-              data-analytics-placement="home_hero"
-              data-analytics-destination={`/${locale}#paslaugos`}
+              {...ctaProps("hero_services", "home_hero", `/${locale}#paslaugos`)}
               href={`/${locale}#paslaugos`}
               onClick={handleServicesClick}
               className="inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-lg border border-white/38 bg-white/[0.06] px-3.5 py-3 text-sm font-bold text-white backdrop-blur-sm transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-white/15 hover:shadow-lg active:translate-y-0 sm:min-h-13 sm:px-7 sm:py-3.5 sm:text-base"

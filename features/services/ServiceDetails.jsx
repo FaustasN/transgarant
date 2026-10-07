@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { getPagePath } from "@/lib/routing/paths.mjs";
+import { ctaProps } from "@/lib/analytics/core.mjs";
 
 export default function ServiceDetails({ service, content, visual, locale, mobile = false }) {
   return (
@@ -68,10 +69,7 @@ export default function ServiceDetails({ service, content, visual, locale, mobil
       </div>
 
       <Link
-        data-analytics-event="cta_click"
-        data-analytics-cta-id={`service_quote_${service.key}`}
-        data-analytics-placement={mobile ? "services_mobile_panel" : "services_desktop_panel"}
-        data-analytics-destination={getPagePath("quote", locale)}
+        {...ctaProps(`service_quote_${service.key}`, mobile ? "services_mobile_panel" : "services_desktop_panel", getPagePath("quote", locale))}
         href={getPagePath("quote", locale)}
         className={`items-center gap-3 font-bold text-[#313152] transition-colors hover:text-[#AE2422] ${
           mobile

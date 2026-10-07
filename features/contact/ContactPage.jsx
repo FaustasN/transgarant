@@ -3,6 +3,7 @@ import { ArrowUpRight, ChevronRight } from "lucide-react";
 import RevealSection from "@/components/motion/RevealSection";
 import ContactForm from "./ContactForm";
 import PageShell from "@/components/layout/PageShell";
+import { contactProps } from "@/lib/analytics/core.mjs";
 
 const mapUrl =
   "https://www.google.com/maps?q=Laisv%C4%97s%20pr.%2078B-238%2C%20Vilnius%2C%20LT-05263&output=embed";
@@ -79,10 +80,7 @@ export default function ContactPage({ locale, content }) {
               >
                 <a
                   href={`mailto:${content.details.email}`}
-                  data-analytics-event="contact_click"
-                  data-analytics-contact-id="general_email"
-                  data-analytics-method="email"
-                  data-analytics-placement="contact_page"
+                  {...contactProps("general_email", "email", "contact_page")}
                   className="transition-colors hover:text-[#AE2422]"
                 >
                   {content.details.email}
@@ -96,20 +94,14 @@ export default function ContactPage({ locale, content }) {
                 <div className="grid">
                   <a
                     href="tel:+37052072775"
-                    data-analytics-event="contact_click"
-                    data-analytics-contact-id="office_phone"
-                    data-analytics-method="phone"
-                    data-analytics-placement="contact_page"
+                    {...contactProps("office_phone", "phone", "contact_page")}
                     className="transition-colors hover:text-[#AE2422]"
                   >
                     {content.details.officePhone}
                   </a>
                   <a
                     href="tel:+37062233388"
-                    data-analytics-event="contact_click"
-                    data-analytics-contact-id="mobile_phone"
-                    data-analytics-method="phone"
-                    data-analytics-placement="contact_page"
+                    {...contactProps("mobile_phone", "phone", "contact_page")}
                     className="transition-colors hover:text-[#AE2422]"
                   >
                     {content.details.mobilePhone}
@@ -134,10 +126,7 @@ export default function ContactPage({ locale, content }) {
                 <p>{content.details.hours}</p>
                 <a
                   href={mapLink}
-                  data-analytics-event="contact_click"
-                  data-analytics-contact-id="office_map"
-                  data-analytics-method="map"
-                  data-analytics-placement="contact_page"
+                  {...contactProps("office_map", "map", "contact_page")}
                   target="_blank"
                   rel="noreferrer"
                   className="group mt-3 inline-flex items-center gap-2 text-sm text-[#6F7080] transition-colors hover:text-[#AE2422]"

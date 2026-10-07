@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
 import { ArrowRight, Menu } from "lucide-react";
+import { ctaProps } from "@/lib/analytics/core.mjs";
 import { gsap, prefersReducedMotion, scrollBehavior } from "@/lib/motion";
 import LanguageDropdown from "@/components/layout/LanguageDropdown";
 
@@ -147,10 +148,7 @@ export default function MobileNav({ navItems, labels, locale }) {
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                data-analytics-event={item.key === "quote" ? "cta_click" : undefined}
-                data-analytics-cta-id={item.key === "quote" ? "header_quote" : undefined}
-                data-analytics-placement={item.key === "quote" ? "mobile_navigation" : undefined}
-                data-analytics-destination={item.key === "quote" ? item.href : undefined}
+                {...(item.key === "quote" ? ctaProps("header_quote", "mobile_navigation", item.href) : {})}
                 href={item.href}
                 tabIndex={open ? 0 : -1}
                 onClick={(event) => handleNavClick(event, item)}

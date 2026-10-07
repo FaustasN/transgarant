@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getPagePath } from "@/lib/routing/paths.mjs";
+import { contactProps } from "@/lib/analytics/core.mjs";
 
 export default function Footer({ locale, content: footer }) {
   return (
@@ -37,10 +38,7 @@ export default function Footer({ locale, content: footer }) {
           <div className="mt-4 grid gap-3 text-sm leading-7 text-white/76 [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:text-white [&_a:focus-visible]:text-white">
             <a
               href="mailto:info@transgarant.lt"
-              data-analytics-event="contact_click"
-              data-analytics-contact-id="general_email"
-              data-analytics-method="email"
-              data-analytics-placement="footer"
+              {...contactProps("general_email", "email", "footer")}
             >
               {footer.emailLabel}: info@transgarant.lt
             </a>

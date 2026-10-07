@@ -3,7 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import ValidationMessage from "@/components/ui/ValidationMessage";
-import { trackAnalyticsEvent } from "@/lib/analytics/client";
+import { trackAnalyticsEvent } from "@/lib/analytics/core.mjs";
 import {
   fieldLimits,
   validateContactForm as getFieldErrors,

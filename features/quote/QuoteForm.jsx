@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import DatePicker from "@/components/ui/DatePicker";
-import { trackAnalyticsEvent } from "@/lib/analytics/client";
+import { trackAnalyticsEvent } from "@/lib/analytics/core.mjs";
 import {
   fieldLimits,
   requiredFields,

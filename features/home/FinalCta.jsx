@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getPagePath } from "@/lib/routing/paths.mjs";
 import RevealSection from "@/components/motion/RevealSection";
+import { ctaProps } from "@/lib/analytics/core.mjs";
 
 export default function FinalCta({ locale, content: cta }) {
 
@@ -18,10 +19,7 @@ export default function FinalCta({ locale, content: cta }) {
           </div>
 
           <Link
-            data-analytics-event="cta_click"
-            data-analytics-cta-id="final_quote"
-            data-analytics-placement="home_final_cta"
-            data-analytics-destination={getPagePath("quote", locale)}
+            {...ctaProps("final_quote", "home_final_cta", getPagePath("quote", locale))}
             href={getPagePath("quote", locale)}
             className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-[#F6F5F2] px-6 py-3 font-bold !text-[#191925] transition-colors hover:bg-white sm:w-auto"
           >
