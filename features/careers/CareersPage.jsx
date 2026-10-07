@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 import RevealSection from "@/components/motion/RevealSection";
 import CareerApplication from "./CareerApplication";
 import PageShell from "@/components/layout/PageShell";
-import StructuredData from "@/lib/seo/StructuredData";
+import StructuredData from "@/lib/seo/StructuredData.jsx";
 import { getStructuredData } from "./structuredData.mjs";
 
 export default function CareersPage({ locale, content }) {

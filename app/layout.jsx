@@ -8,9 +8,9 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "TRANSGARANT GROUP | Tarptautinis kroviniu transportas",
+  title: "TRANSGARANT GROUP | Tarptautinis krovinių transportas",
   description:
-    "UAB TRANSGARANT GROUP organizuoja keliu, juru ir oro kroviniu transporta Europoje, Baltijos, Skandinavijos ir NVS salyse.",
+    "UAB „TRANSGARANT GROUP“ organizuoja krovinių gabenimą kelių, jūrų ir oro transportu Lietuvoje ir visoje Europoje.",
 };
 
 export default function RootLayout({ children }) {

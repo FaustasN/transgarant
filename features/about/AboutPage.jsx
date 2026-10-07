@@ -5,7 +5,7 @@ import AboutExperienceSection from "@/features/about/AboutExperienceSection";
 import RevealSection from "@/components/motion/RevealSection";
 import { getQuotePath } from "@/lib/routing/paths.mjs";
 import PageShell from "@/components/layout/PageShell";
-import StructuredData from "@/lib/seo/StructuredData";
+import StructuredData from "@/lib/seo/StructuredData.jsx";
 import { getStructuredData } from "./structuredData.mjs";
 
 export default function AboutPage({ locale, content }) {

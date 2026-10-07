@@ -29,30 +29,30 @@
     "eyebrow": "TRANSPORTAS IR LOGISTIKA",
     "titlePrimary": "Jūsų krovinys.",
     "titleSecondary": "Mūsų atsakomybė.",
-    "description": "Organizuojame pilnų, dalinių ir specializuotų krovinių gabenimą keliais, jūra ir oro maršrutais.",
+    "description": "Organizuojame pilnų, dalinių ir specializuotų krovinių gabenimą kelių, jūrų ir oro transportu.",
     "primaryCta": "Gauti pasiūlymą",
     "secondaryCta": "Mūsų paslaugos",
     "imageAlt": "TRANSGARANT GROUP sunkvežimis tarptautiniame maršrute",
     "highlights": [
       "Pristatymas nuo durų iki durų",
-      "Europa, Baltija ir Skandinavija",
+      "Maršrutai visoje Europoje",
       "FTL, daliniai ir specializuoti kroviniai"
     ]
   },
   "services": {
     "eyebrow": "MŪSŲ PASLAUGOS",
     "title": "Krovinių gabenimas ir logistika",
-    "intro": "Pasirinkę TRANSGARANT GROUP paslaugas galite būti tikri, kad puiki mūsų profesionalų komanda pasirūpins Jūsų prekėmis pagal aukščiausius standartus.",
+    "intro": "TRANSGARANT GROUP komanda pasirūpins visu transportavimo procesu – nuo tinkamo sprendimo parinkimo iki krovinio pristatymo gavėjui.",
     "cta": "Plačiau",
     "items": [
       {
         "title": "Pilnų krovinių gabenimas",
-        "description": "Pilnus krovinius pristatome nuo durų iki durų Lietuvoje, Europoje, Baltijos ir Skandinavijos šalyse.",
+        "description": "Pilnus krovinius pristatome nuo durų iki durų Lietuvoje ir visoje Europoje.",
         "tags": ["FTL", "LTL", "ADR", "Temperatūriniai"]
       },
       {
         "title": "Dalinių ir smulkių krovinių gabenimas",
-        "description": "Gabename mažesnes siuntas sausumos ir oro transportu, parinkdami ekonomišką maršrutą iki gavėjo.",
+        "description": "Gabename dalinius ir smulkius krovinius kelių bei oro transportu, parinkdami optimalų maršrutą iki gavėjo.",
         "tags": ["Jūra", "Oras", "Multimodalinis"]
       },
       {
@@ -89,7 +89,7 @@
     "eyebrow": "APIE MUS",
     "title": "Ilgalaikė partnerystė, o ne vienas pervežimas",
     "paragraphs": [
-      "UAB „TRANSGARANT GROUP“ – transporto ir logistikos kompanija, besispecializuojanti krovinių gabenimo ir ekspedijavimo srityse. Tarptautinius ir vietinius pervežimus organizuojame nuosavomis bei patikimų partnerių transporto priemonėmis.",
+      "UAB „TRANSGARANT GROUP“ – transporto ir logistikos įmonė, besispecializuojanti krovinių gabenimo ir ekspedijavimo srityse. Tarptautinius ir vietinius pervežimus organizuojame nuosavomis bei patikimų partnerių transporto priemonėmis.",
       "Mūsų tikslas – saugus, laiku įvykdytas pristatymas, operatyvi komunikacija ir ilgalaikis bendradarbiavimas."
     ],
     "cta": "Daugiau apie mus",
