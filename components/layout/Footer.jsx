@@ -5,6 +5,7 @@ import {
   getAboutPath,
   getCareersPath,
   getContactPath,
+  getPrivacyPath,
   getServicesPath,
 } from "@/lib/routing/paths.mjs";
 
@@ -67,6 +68,12 @@ export default function Footer({ locale = "lt" }) {
 
       <div className="mx-auto mt-5 max-w-[1200px] border-t border-white/14 pt-4 text-center text-sm text-white/58">
         <p>© {new Date().getFullYear()} {footer.copyright}</p>
+        <Link
+          href={getPrivacyPath(locale)}
+          className="mt-2 inline-block transition-colors duration-200 hover:text-white focus-visible:text-white"
+        >
+          {footer.links.privacy}
+        </Link>
       </div>
     </footer>
   );

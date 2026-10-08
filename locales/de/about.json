@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Logistiklösungen für langfristige Partnerschaften",
-    "intro": "UAB TRANSGARANT GROUP ist ein privat geführtes Transport- und Logistikunternehmen mit einem umfassenden Angebot an Logistikdienstleistungen. Wir sind auf Frachttransport und Spedition spezialisiert.",
+    "intro": "UAB TRANSGARANT GROUP ist ein Transport- und Logistikunternehmen, das nationale und internationale Frachttransporte in ganz Europa organisiert. Wir sind auf Frachttransport und Spedition spezialisiert.",
     "breadcrumbHome": "Startseite",
     "breadcrumbCurrent": "Über uns",
     "imageAlt": "Fracht wird in einem Logistiklager vorbereitet"
@@ -13,12 +13,13 @@
   "overview": {
     "eyebrow": "UNSERE ERFAHRUNG",
     "title": "Erfahrung, die zur richtigen Lösung führt",
+    "badgeAlt": "Creditinfo-Auszeichnung „Stärkste in Litauen 2020–2026“ – UAB „TRANSGARANT GROUP“",
     "paragraphs": [
       "Unsere Erfahrung im Transport von Fracht auf nationalen und internationalen Routen ermöglicht uns, Lösungen anzubieten, die auf die Anforderungen jedes Kunden zugeschnitten sind. Für jede Sendung setzen wir eigene Fahrzeuge und ein zuverlässiges Partnernetzwerk ein.",
-      "Wir sind auf den Straßentransport von Klein-, Teil- und Komplettladungen spezialisiert. Ein weitreichendes Partnernetzwerk in ganz Europa hilft uns, die Fracht sicher, effizient und pünktlich zum Empfänger oder Lager zu bringen.",
-      "Unser verantwortungsbewusstes Handeln ist auf langfristige Zusammenarbeit und verlässliche Partnerschaften ausgerichtet. Wir sind überzeugt, dass hochwertige Logistikdienstleistungen unsere Kunden bei der erfolgreichen Entwicklung ihres Geschäfts unterstützen."
+      "Wir sind auf den Straßentransport von Klein-, Teil- und Komplettladungen spezialisiert. Ein weitreichendes Partnernetzwerk in ganz Europa ermöglicht uns eine flexible Routenplanung und die sichere, pünktliche Zustellung der Fracht an den Empfänger.",
+      "Unser verantwortungsbewusstes Handeln ist auf langfristige Zusammenarbeit und verlässliche Partnerschaften ausgerichtet. Wir sind überzeugt, dass hochwertige Dienstleistungen unsere Kunden bei der erfolgreichen Entwicklung ihres Geschäfts unterstützen."
     ],
-    "highlight": "Unser Ziel ist es, jeden Auftrag nicht nur in hoher Qualität auszuführen, sondern die Erwartungen unserer Kunden zu übertreffen."
+    "highlight": "Unser Ziel sind eine sichere und pünktliche Frachtlieferung, klare Kommunikation und langfristige Zusammenarbeit."
   },
   "trust": {
     "eyebrow": "BEWERTUNG",

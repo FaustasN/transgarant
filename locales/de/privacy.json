@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Datenschutzerklärung | Transgarant Group",
+    "description": "Datenschutzerklärung der UAB TRANSGARANT GROUP: welche personenbezogenen Daten wir erheben, warum, wie lange wir sie speichern und welche Rechte Sie haben."
+  },
+  "hero": {
+    "title": "Datenschutzerklärung",
+    "intro": "Hier erklären wir, wie die UAB TRANSGARANT GROUP die über diese Website erhaltenen personenbezogenen Daten verarbeitet.",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbCurrent": "Datenschutzerklärung"
+  },
+  "updated": "Zuletzt aktualisiert: 8. Oktober 2026",
+  "cookieSettings": "Analyse-Einstellungen",
+  "sections": [
+    {
+      "id": "controller",
+      "title": "Verantwortlicher",
+      "paragraphs": [
+        "Verantwortlich für die Datenverarbeitung ist die UAB TRANSGARANT GROUP, Unternehmensnummer 302690097, USt-IdNr. LT100006861513, Anschrift: Laisvės pr. 78B-238, Vilnius, LT-05263.",
+        "Bei Fragen zum Datenschutz erreichen Sie uns unter info@transgarant.lt."
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Welche Daten wir erheben",
+      "paragraphs": [
+        "Wir erheben nur die Daten, die Sie selbst angeben, sowie minimale technische Informationen:"
+      ],
+      "items": [
+        "Kontaktformular: Name, E-Mail-Adresse und Nachricht.",
+        "Angebotsanfrage: Kontaktdaten und Angaben zur Fracht (Abhol- und Lieferadresse, Art der Ware, Gewicht, Datum).",
+        "Karriereformular: Kontaktdaten, gewählte Stelle, Nachricht und Ihr Lebenslauf als PDF.",
+        "Analysedaten (nur mit Ihrer Einwilligung): besuchte Seiten, Geräte- und Browserinformationen, ungefährer Standort."
+      ]
+    },
+    {
+      "id": "purposes",
+      "title": "Zwecke und Rechtsgrundlagen",
+      "paragraphs": [
+        "Wir verarbeiten Ihre Daten zu folgenden Zwecken:"
+      ],
+      "items": [
+        "Beantwortung Ihrer Anfragen und Erstellung eines Angebots – vorvertragliche Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO) und berechtigtes Interesse (lit. f);",
+        "Prüfung Ihrer Bewerbung und Kontakt zum Auswahlverfahren – vorvertragliche Maßnahmen und Ihre Einwilligung (lit. a) für freiwillig angegebene Informationen;",
+        "Verbesserung der Website mit Google Analytics – Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit widerrufen können;",
+        "Schutz der Website vor Missbrauch und Spam – berechtigtes Interesse."
+      ]
+    },
+    {
+      "id": "recipients",
+      "title": "Empfänger",
+      "paragraphs": [
+        "Wir verkaufen Ihre Daten nicht. Zugriff haben nur Dienstleister, die uns beim Betrieb unterstützen, etwa Hosting- und E-Mail-Anbieter und, falls Sie der Analyse zustimmen, Google Ireland Limited (Google Analytics). Bei Übermittlungen außerhalb des Europäischen Wirtschaftsraums gelten die von der DSGVO vorgesehenen Garantien."
+      ]
+    },
+    {
+      "id": "retention",
+      "title": "Speicherdauer",
+      "paragraphs": [
+        "Wir speichern Daten nur so lange, wie es für die genannten Zwecke erforderlich ist:"
+      ],
+      "items": [
+        "Anfragen und Korrespondenz – bis zu 3 Jahre nach dem letzten Kontakt, bei Vertragsschluss gemäß den gesetzlichen Vorgaben;",
+        "Bewerbungen und Lebensläufe – bis zu 6 Monate nach Abschluss des Auswahlverfahrens, sofern Sie keiner längeren Speicherung zustimmen;",
+        "Analysedaten – gemäß der in Google Analytics eingestellten Dauer;",
+        "Einwilligungs-Cookie – 180 Tage."
+      ]
+    },
+    {
+      "id": "cookies",
+      "title": "Cookies und Analyse",
+      "paragraphs": [
+        "Die Website verwendet das notwendige Cookie „analytics_consent“, das Ihre Entscheidung zur Analyse speichert. Google Analytics wird nur mit Ihrer Einwilligung aktiviert; bei Ablehnung werden keine Analysedaten erhoben. Sie können Ihre Entscheidung jederzeit ändern."
+      ]
+    },
+    {
+      "id": "rights",
+      "title": "Ihre Rechte",
+      "paragraphs": [
+        "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch und Datenübertragbarkeit sowie das Recht, eine Einwilligung jederzeit zu widerrufen. Schreiben Sie dazu an info@transgarant.lt.",
+        "Wenn Sie der Ansicht sind, dass Ihre Rechte verletzt wurden, können Sie bei der Staatlichen Datenschutzinspektion (vdai.lrv.lt) Beschwerde einlegen."
+      ]
+    },
+    {
+      "id": "changes",
+      "title": "Änderungen dieser Erklärung",
+      "paragraphs": [
+        "Wir können diese Erklärung aktualisieren. Die aktuelle Fassung ist stets auf dieser Seite veröffentlicht, das Datum der Aktualisierung steht oben."
+      ]
+    }
+  ]
+}

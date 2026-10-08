@@ -15,12 +15,12 @@ const { default: sitemap } = await import("../app/sitemap.js");
 
 const origin = "https://www.transgarant.lt";
 const localizedSlugs = {
-  lt: ["", "paslaugos", "apie-mus", "karjera", "kontaktai", "uzklausa"],
-  en: ["", "services", "about-us", "careers", "contact", "request-a-quote"],
-  pl: ["", "uslugi", "o-nas", "kariera", "kontakt", "zapytanie"],
-  ru: ["", "uslugi", "o-kompanii", "karera", "kontakty", "zapros"],
-  de: ["", "dienstleistungen", "ueber-uns", "karriere", "kontakt", "angebot-anfragen"],
-  fr: ["", "services", "a-propos", "carrieres", "contact", "demande-de-devis"],
+  lt: ["", "paslaugos", "apie-mus", "karjera", "kontaktai", "uzklausa", "privatumo-politika"],
+  en: ["", "services", "about-us", "careers", "contact", "request-a-quote", "privacy-policy"],
+  pl: ["", "uslugi", "o-nas", "kariera", "kontakt", "zapytanie", "polityka-prywatnosci"],
+  ru: ["", "uslugi", "o-kompanii", "karera", "kontakty", "zapros", "politika-konfidencialnosti"],
+  de: ["", "dienstleistungen", "ueber-uns", "karriere", "kontakt", "angebot-anfragen", "datenschutz"],
+  fr: ["", "services", "a-propos", "carrieres", "contact", "demande-de-devis", "politique-de-confidentialite"],
 };
 
 test("sitemap lists each canonical public page once, without redirect aliases or APIs", () => {
@@ -28,8 +28,8 @@ test("sitemap lists each canonical public page once, without redirect aliases or
   const expected = Object.entries(localizedSlugs).flatMap(([locale, slugs]) =>
     slugs.map((slug) => `${origin}/${locale}${slug ? `/${slug}` : ""}`),
   );
-  assert.equal(urls.length, 36);
-  assert.equal(new Set(urls).size, 36);
+  assert.equal(urls.length, 42);
+  assert.equal(new Set(urls).size, 42);
   assert.deepEqual(urls.sort(), expected.sort());
 });
 

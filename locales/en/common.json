@@ -35,24 +35,24 @@
     "imageAlt": "TRANSGARANT GROUP truck on an international route",
     "highlights": [
       "Door-to-door delivery",
-      "Europe, the Baltics and Scandinavia",
+      "Routes across Europe",
       "FTL, partial and specialized cargo"
     ]
   },
   "services": {
     "eyebrow": "OUR SERVICES",
     "title": "Cargo transport and logistics",
-    "intro": "When you choose TRANSGARANT GROUP services, you can be confident that our excellent team of professionals will take care of your goods to the highest standards.",
+    "intro": "The TRANSGARANT GROUP team will take care of the entire transport process, from choosing the right solution to delivering the cargo to the recipient.",
     "cta": "Learn more",
     "items": [
       {
         "title": "Full-load transport",
-        "description": "We deliver full loads door to door across Lithuania, Europe, the Baltic states and Scandinavia.",
+        "description": "We deliver full loads door to door across Lithuania and Europe.",
         "tags": ["FTL", "LTL", "ADR", "Temperature controlled"]
       },
       {
         "title": "Partial and small-load transport",
-        "description": "We transport smaller shipments by road and air, selecting an economical route to the recipient.",
+        "description": "We transport partial and small loads by road and air, choosing the optimal route to the recipient.",
         "tags": ["Sea", "Air", "Multimodal"]
       },
       {
@@ -115,7 +115,8 @@
       "destinations": "Destinations",
       "about": "About us",
       "careers": "Careers",
-      "contact": "Contacts"
+      "contact": "Contacts",
+      "privacy": "Privacy policy"
     },
     "contactsTitle": "Contacts",
     "emailLabel": "Email",

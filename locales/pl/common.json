@@ -35,24 +35,24 @@
     "imageAlt": "Ciężarówka TRANSGARANT GROUP na trasie międzynarodowej",
     "highlights": [
       "Dostawa od drzwi do drzwi",
-      "Europa, kraje bałtyckie i Skandynawia",
+      "Trasy w całej Europie",
       "FTL, ładunki częściowe i specjalistyczne"
     ]
   },
   "services": {
     "eyebrow": "NASZE USŁUGI",
     "title": "Transport ładunków i logistyka",
-    "intro": "Wybierając usługi TRANSGARANT GROUP, możesz mieć pewność, że nasz znakomity zespół profesjonalistów zadba o Twoje towary zgodnie z najwyższymi standardami.",
+    "intro": "Zespół TRANSGARANT GROUP zadba o cały proces transportu – od wyboru odpowiedniego rozwiązania po dostarczenie ładunku do odbiorcy.",
     "cta": "Więcej",
     "items": [
       {
         "title": "Transport całopojazdowy",
-        "description": "Dostarczamy pełne ładunki od drzwi do drzwi na Litwie, w Europie, krajach bałtyckich i Skandynawii.",
+        "description": "Dostarczamy pełne ładunki od drzwi do drzwi na Litwie i w całej Europie.",
         "tags": ["FTL", "LTL", "ADR", "Kontrola temperatury"]
       },
       {
         "title": "Transport ładunków częściowych i drobnych",
-        "description": "Przewozimy mniejsze przesyłki transportem drogowym i lotniczym, wybierając ekonomiczną trasę do odbiorcy.",
+        "description": "Przewozimy ładunki częściowe i drobnicowe transportem drogowym i lotniczym, wybierając optymalną trasę do odbiorcy.",
         "tags": ["Morze", "Powietrze", "Multimodalny"]
       },
       {
@@ -115,7 +115,8 @@
       "destinations": "Kierunki",
       "about": "O nas",
       "careers": "Kariera",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "privacy": "Polityka prywatności"
     },
     "contactsTitle": "Kontakt",
     "emailLabel": "E-mail",

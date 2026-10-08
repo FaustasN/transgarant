@@ -35,24 +35,24 @@
     "imageAlt": "Camion de TRANSGARANT GROUP sur un itinéraire international",
     "highlights": [
       "Livraison porte à porte",
-      "Europe, pays baltes et Scandinavie",
+      "Itinéraires dans toute l’Europe",
       "FTL, lots partiels et fret spécialisé"
     ]
   },
   "services": {
     "eyebrow": "NOS SERVICES",
     "title": "Transport de fret et logistique",
-    "intro": "En choisissant les services de TRANSGARANT GROUP, vous avez l’assurance que notre excellente équipe de professionnels prendra soin de vos marchandises selon les normes les plus strictes.",
+    "intro": "L’équipe de TRANSGARANT GROUP prend en charge l’ensemble du processus de transport, du choix de la solution adaptée à la livraison du fret au destinataire.",
     "cta": "En savoir plus",
     "items": [
       {
         "title": "Transport en chargement complet",
-        "description": "Nous livrons des chargements complets porte à porte en Lituanie, en Europe, dans les pays baltes et en Scandinavie.",
+        "description": "Nous livrons les chargements complets porte à porte en Lituanie et dans toute l’Europe.",
         "tags": ["FTL", "LTL", "ADR", "Température contrôlée"]
       },
       {
         "title": "Transport de lots partiels et de petits envois",
-        "description": "Nous transportons les petits envois par route et par air en choisissant un itinéraire économique jusqu’au destinataire.",
+        "description": "Nous transportons les lots partiels et les petits envois par route et par air, en choisissant l’itinéraire optimal jusqu’au destinataire.",
         "tags": ["Maritime", "Aérien", "Multimodal"]
       },
       {
@@ -115,7 +115,8 @@
       "destinations": "Destinations",
       "about": "À propos",
       "careers": "Carrières",
-      "contact": "Contact"
+      "contact": "Contact",
+      "privacy": "Politique de confidentialité"
     },
     "contactsTitle": "Contact",
     "emailLabel": "E-mail",

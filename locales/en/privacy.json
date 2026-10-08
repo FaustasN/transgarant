@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Privacy Policy | Transgarant Group",
+    "description": "Privacy policy of UAB TRANSGARANT GROUP: what personal data we collect, why, how long we keep it and what rights you have."
+  },
+  "hero": {
+    "title": "Privacy policy",
+    "intro": "This page explains how UAB TRANSGARANT GROUP handles the personal data we receive through this website.",
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Privacy policy"
+  },
+  "updated": "Last updated: 8 October 2026",
+  "cookieSettings": "Analytics settings",
+  "sections": [
+    {
+      "id": "controller",
+      "title": "Data controller",
+      "paragraphs": [
+        "The data controller is UAB TRANSGARANT GROUP, company code 302690097, VAT code LT100006861513, address Laisvės pr. 78B-238, Vilnius, LT-05263.",
+        "For any questions about personal data, contact us at info@transgarant.lt."
+      ]
+    },
+    {
+      "id": "data",
+      "title": "What data we collect",
+      "paragraphs": [
+        "We collect only the data you provide yourself and minimal technical information:"
+      ],
+      "items": [
+        "Contact form: your name, email address and message.",
+        "Quote request: contact details and cargo information (pickup and delivery addresses, cargo type, weight, date).",
+        "Careers form: contact details, selected position, message and your CV in PDF format.",
+        "Analytics data (only with your consent): pages visited, device and browser information, approximate location."
+      ]
+    },
+    {
+      "id": "purposes",
+      "title": "Purposes and legal basis",
+      "paragraphs": [
+        "We process your data for the following purposes:"
+      ],
+      "items": [
+        "to reply to your enquiries and prepare a quote – steps prior to entering into a contract (GDPR Art. 6(1)(b)) and our legitimate interest (point f);",
+        "to review your job application and contact you about selection – steps prior to entering into a contract and your consent (point a) for information you provide voluntarily;",
+        "to improve the website using Google Analytics – your consent (GDPR Art. 6(1)(a)), which you can withdraw at any time;",
+        "to protect the website against abuse and spam – our legitimate interest."
+      ]
+    },
+    {
+      "id": "recipients",
+      "title": "Recipients",
+      "paragraphs": [
+        "We do not sell your data. It may be accessed only by service providers that help us operate, such as website hosting and email providers and, if you accept analytics, Google Ireland Limited (Google Analytics). Where data is transferred outside the European Economic Area, the safeguards required by the GDPR apply."
+      ]
+    },
+    {
+      "id": "retention",
+      "title": "Retention",
+      "paragraphs": [
+        "We keep data only as long as needed for the purposes above:"
+      ],
+      "items": [
+        "enquiries and correspondence – up to 3 years after the last contact, or as required by law if a contract is concluded;",
+        "job applications and CVs – up to 6 months after the selection ends, unless you agree to a longer period;",
+        "analytics data – according to the period configured in Google Analytics;",
+        "consent cookie – 180 days."
+      ]
+    },
+    {
+      "id": "cookies",
+      "title": "Cookies and analytics",
+      "paragraphs": [
+        "The website uses a necessary cookie, “analytics_consent”, that stores your analytics choice. Google Analytics is enabled only if you consent; if you decline, no analytics data is collected. You can change your choice at any time."
+      ]
+    },
+    {
+      "id": "rights",
+      "title": "Your rights",
+      "paragraphs": [
+        "You have the right to access, rectify or erase your data, restrict or object to processing, request data portability and withdraw consent at any time. To exercise your rights, write to info@transgarant.lt.",
+        "If you believe your rights have been violated, you may lodge a complaint with the State Data Protection Inspectorate (vdai.lrv.lt)."
+      ]
+    },
+    {
+      "id": "changes",
+      "title": "Changes to this policy",
+      "paragraphs": [
+        "We may update this policy. The current version is always published on this page, with the update date shown at the top."
+      ]
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import {
   getCareersPath,
   getContactPath,
   getLocalizedPath,
+  getPrivacyPath,
   getQuotePath,
   getServicesPath,
 } from "../lib/routing/paths.mjs";
@@ -16,6 +17,7 @@ const routes = [
   ["careers", getCareersPath, ["karjera", "careers", "kariera", "karera", "karriere", "carrieres"]],
   ["contact", getContactPath, ["kontaktai", "contact", "kontakt", "kontakty", "kontakt", "contact"]],
   ["quote", getQuotePath, ["uzklausa", "request-a-quote", "zapytanie", "zapros", "angebot-anfragen", "demande-de-devis"]],
+  ["privacy", getPrivacyPath, ["privatumo-politika", "privacy-policy", "polityka-prywatnosci", "politika-konfidencialnosti", "datenschutz", "politique-de-confidentialite"]],
 ];
 const locales = ["lt", "en", "pl", "ru", "de", "fr"];
 

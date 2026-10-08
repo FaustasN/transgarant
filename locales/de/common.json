@@ -35,24 +35,24 @@
     "imageAlt": "Lkw der TRANSGARANT GROUP auf einer internationalen Route",
     "highlights": [
       "Lieferung von Tür zu Tür",
-      "Europa, Baltikum und Skandinavien",
+      "Routen in ganz Europa",
       "FTL, Teil- und Spezialladungen"
     ]
   },
   "services": {
     "eyebrow": "UNSERE DIENSTLEISTUNGEN",
     "title": "Frachttransport und Logistik",
-    "intro": "Wenn Sie sich für die Dienstleistungen von TRANSGARANT GROUP entscheiden, können Sie sicher sein, dass unser hervorragendes Expertenteam Ihre Waren nach höchsten Standards betreut.",
+    "intro": "Das Team von TRANSGARANT GROUP kümmert sich um den gesamten Transportprozess – von der Wahl der passenden Lösung bis zur Zustellung der Fracht an den Empfänger.",
     "cta": "Mehr erfahren",
     "items": [
       {
         "title": "Komplettladungen",
-        "description": "Wir liefern Komplettladungen von Tür zu Tür in Litauen, Europa, dem Baltikum und Skandinavien.",
+        "description": "Wir liefern Komplettladungen von Tür zu Tür in Litauen und ganz Europa.",
         "tags": ["FTL", "LTL", "ADR", "Temperaturgeführt"]
       },
       {
         "title": "Teil- und Kleinladungen",
-        "description": "Wir transportieren kleinere Sendungen auf dem Land- und Luftweg und wählen eine wirtschaftliche Route zum Empfänger.",
+        "description": "Wir transportieren Teil- und Kleinladungen auf dem Land- und Luftweg und wählen die optimale Route zum Empfänger.",
         "tags": ["See", "Luft", "Multimodal"]
       },
       {
@@ -115,7 +115,8 @@
       "destinations": "Zielregionen",
       "about": "Über uns",
       "careers": "Karriere",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "privacy": "Datenschutzerklärung"
     },
     "contactsTitle": "Kontakt",
     "emailLabel": "E-Mail",

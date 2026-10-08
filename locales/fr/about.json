@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Des solutions logistiques pour des partenariats durables",
-    "intro": "UAB TRANSGARANT GROUP est une entreprise privée de transport et de logistique proposant une gamme complète de services logistiques. Nous sommes spécialisés dans le transport de fret et l’expédition.",
+    "intro": "UAB TRANSGARANT GROUP est une entreprise de transport et de logistique qui organise des transports de fret nationaux et internationaux dans toute l’Europe. Nous sommes spécialisés dans le transport de fret et l’expédition.",
     "breadcrumbHome": "Accueil",
     "breadcrumbCurrent": "À propos",
     "imageAlt": "Fret en cours de préparation dans un entrepôt logistique"
@@ -13,12 +13,13 @@
   "overview": {
     "eyebrow": "NOTRE EXPÉRIENCE",
     "title": "L’expérience qui permet de trouver la bonne solution",
+    "badgeAlt": "Distinction Creditinfo « Les plus solides de Lituanie 2020–2026 » – UAB « TRANSGARANT GROUP »",
     "paragraphs": [
       "Notre expérience du transport de fret sur des itinéraires nationaux et internationaux nous permet de proposer des solutions adaptées aux besoins de chaque client. Nous organisons chaque envoi avec nos propres véhicules et un réseau de partenaires fiables.",
-      "Nous sommes spécialisés dans le transport routier de petits envois, de lots partiels et de chargements complets. Un vaste réseau de partenaires dans toute l’Europe nous aide à livrer le fret au destinataire ou à l’entrepôt de manière sûre, efficace et ponctuelle.",
-      "Notre démarche responsable privilégie la coopération à long terme et des partenariats fiables. Nous sommes convaincus que des services logistiques de qualité contribuent au développement réussi de l’activité de nos clients."
+      "Nous sommes spécialisés dans le transport routier de petits envois, de lots partiels et de chargements complets. Un vaste réseau de partenaires dans toute l’Europe nous permet de planifier les itinéraires avec souplesse et d’assurer une livraison sûre et ponctuelle du fret au destinataire.",
+      "Notre démarche responsable privilégie la coopération à long terme et des partenariats fiables. Nous sommes convaincus que des services de qualité contribuent au développement réussi de l’activité de nos clients."
     ],
-    "highlight": "Notre objectif n’est pas seulement d’exécuter chaque commande selon des normes élevées, mais aussi de dépasser les attentes de nos clients."
+    "highlight": "Notre objectif : une livraison du fret sûre et ponctuelle, une communication claire et une coopération à long terme."
   },
   "trust": {
     "eyebrow": "ÉVALUATION",

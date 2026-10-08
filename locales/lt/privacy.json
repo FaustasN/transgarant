@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Privatumo politika | Transgarant Group",
+    "description": "UAB „TRANSGARANT GROUP“ privatumo politika: kokius asmens duomenis renkame, kodėl, kaip ilgai saugome ir kokias teises turite."
+  },
+  "hero": {
+    "title": "Privatumo politika",
+    "intro": "Čia paaiškiname, kaip UAB „TRANSGARANT GROUP“ tvarko asmens duomenis, kuriuos gauname per šią svetainę.",
+    "breadcrumbHome": "Pradžia",
+    "breadcrumbCurrent": "Privatumo politika"
+  },
+  "updated": "Atnaujinta: 2026 m. spalio 8 d.",
+  "cookieSettings": "Analitikos nustatymai",
+  "sections": [
+    {
+      "id": "controller",
+      "title": "Duomenų valdytojas",
+      "paragraphs": [
+        "Asmens duomenų valdytojas – UAB „TRANSGARANT GROUP“, įmonės kodas 302690097, PVM kodas LT100006861513, adresas Laisvės pr. 78B-238, Vilnius, LT-05263.",
+        "Su klausimais dėl asmens duomenų kreipkitės el. paštu info@transgarant.lt."
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Kokius duomenis renkame",
+      "paragraphs": [
+        "Renkame tik tuos duomenis, kuriuos pateikiate patys, ir minimalią techninę informaciją:"
+      ],
+      "items": [
+        "Kontaktų forma: vardas, pavardė, el. pašto adresas ir žinutės turinys.",
+        "Pasiūlymo užklausa: kontaktiniai duomenys bei informacija apie krovinį (paėmimo ir pristatymo adresai, krovinio rūšis, svoris, data).",
+        "Karjeros forma: kontaktiniai duomenys, pasirinkta pozicija, žinutė ir PDF formato gyvenimo aprašymas (CV).",
+        "Analitikos duomenys (tik gavus jūsų sutikimą): aplankyti puslapiai, įrenginio ir naršyklės informacija, apytikslė vieta."
+      ]
+    },
+    {
+      "id": "purposes",
+      "title": "Tikslai ir teisinis pagrindas",
+      "paragraphs": [
+        "Jūsų duomenis tvarkome šiais tikslais:"
+      ],
+      "items": [
+        "atsakyti į jūsų užklausas ir paruošti pasiūlymą – veiksmai prieš sudarant sutartį (BDAR 6 str. 1 d. b p.) ir teisėtas interesas (f p.);",
+        "išnagrinėti jūsų paraišką dėl darbo ir susisiekti dėl atrankos – veiksmai prieš sudarant sutartį ir jūsų sutikimas (a p.), kai pateikiate savanoriškai teikiamą informaciją;",
+        "tobulinti svetainę naudojant „Google Analytics“ – jūsų sutikimas (BDAR 6 str. 1 d. a p.), kurį galite bet kada atšaukti;",
+        "apsaugoti svetainę nuo piktnaudžiavimo ir spamo – teisėtas interesas."
+      ]
+    },
+    {
+      "id": "recipients",
+      "title": "Duomenų gavėjai",
+      "paragraphs": [
+        "Jūsų duomenų neparduodame. Duomenis gali gauti tik paslaugų teikėjai, kurie padeda mums veikti: svetainės talpinimo ir el. pašto paslaugų teikėjai, o sutikus dėl analitikos – „Google Ireland Limited“ („Google Analytics“). Jei duomenys perduodami už Europos Ekonominės Erdvės ribų, taikomos BDAR numatytos apsaugos priemonės."
+      ]
+    },
+    {
+      "id": "retention",
+      "title": "Saugojimo laikotarpis",
+      "paragraphs": [
+        "Duomenis saugome tik tiek, kiek reikia nurodytiems tikslams pasiekti:"
+      ],
+      "items": [
+        "užklausos ir susirašinėjimas – iki 3 metų nuo paskutinio kontakto, o sudarius sutartį – pagal teisės aktų reikalavimus;",
+        "kandidatų paraiškos ir CV – iki 6 mėnesių nuo atrankos pabaigos, nebent sutiksite, kad saugotume ilgiau;",
+        "analitikos duomenys – pagal „Google Analytics“ nustatytą laikotarpį;",
+        "sutikimo slapukas – 180 dienų."
+      ]
+    },
+    {
+      "id": "cookies",
+      "title": "Slapukai ir analitika",
+      "paragraphs": [
+        "Svetainė naudoja būtinąjį slapuką „analytics_consent“, kuriame saugomas jūsų pasirinkimas dėl analitikos. „Google Analytics“ įjungiama tik jums sutikus, o nesutikus jokie analitikos duomenys nerenkami. Savo pasirinkimą galite pakeisti bet kada."
+      ]
+    },
+    {
+      "id": "rights",
+      "title": "Jūsų teisės",
+      "paragraphs": [
+        "Turite teisę susipažinti su savo duomenimis, juos ištaisyti, ištrinti, apriboti tvarkymą, nesutikti su tvarkymu, reikalauti duomenų perkeliamumo bei bet kada atšaukti sutikimą. Norėdami pasinaudoti teisėmis, rašykite info@transgarant.lt.",
+        "Jei manote, kad jūsų teisės pažeistos, galite pateikti skundą Valstybinei duomenų apsaugos inspekcijai (vdai.lrv.lt)."
+      ]
+    },
+    {
+      "id": "changes",
+      "title": "Politikos pakeitimai",
+      "paragraphs": [
+        "Šią politiką galime atnaujinti. Aktuali redakcija visada skelbiama šiame puslapyje, o atnaujinimo data nurodyta viršuje."
+      ]
+    }
+  ]
+}

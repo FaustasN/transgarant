@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Rozwiązania logistyczne dla długoterminowej współpracy",
-    "intro": "UAB TRANSGARANT GROUP to prywatna firma transportowo-logistyczna świadcząca kompleksowe usługi logistyczne. Specjalizujemy się w przewozie i spedycji ładunków.",
+    "intro": "UAB TRANSGARANT GROUP to firma transportowo-logistyczna organizująca krajowe i międzynarodowe przewozy ładunków w całej Europie. Specjalizujemy się w przewozie i spedycji ładunków.",
     "breadcrumbHome": "Strona główna",
     "breadcrumbCurrent": "O nas",
     "imageAlt": "Ładunki przygotowywane w magazynie logistycznym"
@@ -13,12 +13,13 @@
   "overview": {
     "eyebrow": "NASZE DOŚWIADCZENIE",
     "title": "Doświadczenie, które pomaga znaleźć właściwe rozwiązanie",
+    "badgeAlt": "Wyróżnienie Creditinfo „Najsilniejsi na Litwie 2020–2026” – UAB „TRANSGARANT GROUP”",
     "paragraphs": [
       "Doświadczenie zdobyte w transporcie krajowym i międzynarodowym pozwala nam oferować rozwiązania dostosowane do indywidualnych potrzeb klienta. Przewozy realizujemy własnymi pojazdami oraz przy wsparciu zaufanej sieci partnerów.",
-      "Specjalizujemy się w drogowym transporcie ładunków drobnicowych, częściowych i całopojazdowych. Rozbudowana sieć partnerów w całej Europie pomaga nam dostarczać towary do odbiorcy lub magazynu bezpiecznie, sprawnie i terminowo.",
-      "Nasze odpowiedzialne podejście jest ukierunkowane na długotrwałą współpracę i wiarygodne partnerstwo. Wierzymy, że wysokiej jakości usługi logistyczne pomagają klientom skutecznie rozwijać ich działalność."
+      "Specjalizujemy się w drogowym transporcie ładunków drobnicowych, częściowych i całopojazdowych. Rozbudowana sieć partnerów w całej Europie pozwala elastycznie planować trasy oraz zapewniać bezpieczną i terminową dostawę ładunków do odbiorcy.",
+      "Nasze odpowiedzialne podejście jest ukierunkowane na długotrwałą współpracę i wiarygodne partnerstwo. Wierzymy, że wysokiej jakości usługi pomagają klientom skutecznie rozwijać ich działalność."
     ],
-    "highlight": "Naszym celem jest nie tylko rzetelna realizacja każdego zlecenia, ale także przekraczanie oczekiwań klienta."
+    "highlight": "Naszym celem jest bezpieczna i terminowa dostawa ładunku, jasna komunikacja oraz długotrwała współpraca."
   },
   "trust": {
     "eyebrow": "OCENA",

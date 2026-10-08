@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Politique de confidentialité | Transgarant Group",
+    "description": "Politique de confidentialité d’UAB TRANSGARANT GROUP : données personnelles collectées, finalités, durées de conservation et vos droits."
+  },
+  "hero": {
+    "title": "Politique de confidentialité",
+    "intro": "Cette page explique comment UAB TRANSGARANT GROUP traite les données personnelles reçues via ce site.",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbCurrent": "Politique de confidentialité"
+  },
+  "updated": "Dernière mise à jour : 8 octobre 2026",
+  "cookieSettings": "Paramètres d’analyse",
+  "sections": [
+    {
+      "id": "controller",
+      "title": "Responsable du traitement",
+      "paragraphs": [
+        "Le responsable du traitement est UAB TRANSGARANT GROUP, numéro d’entreprise 302690097, numéro de TVA LT100006861513, adresse : Laisvės pr. 78B-238, Vilnius, LT-05263.",
+        "Pour toute question relative aux données personnelles, écrivez-nous à info@transgarant.lt."
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Données collectées",
+      "paragraphs": [
+        "Nous ne collectons que les données que vous fournissez et un minimum d’informations techniques :"
+      ],
+      "items": [
+        "Formulaire de contact : nom, adresse e-mail et message.",
+        "Demande de devis : coordonnées et informations sur la marchandise (adresses d’enlèvement et de livraison, nature, poids, date).",
+        "Formulaire carrière : coordonnées, poste choisi, message et CV au format PDF.",
+        "Données d’analyse (uniquement avec votre consentement) : pages consultées, informations sur l’appareil et le navigateur, localisation approximative."
+      ]
+    },
+    {
+      "id": "purposes",
+      "title": "Finalités et bases juridiques",
+      "paragraphs": [
+        "Nous traitons vos données pour les finalités suivantes :"
+      ],
+      "items": [
+        "répondre à vos demandes et établir un devis – mesures précontractuelles (art. 6, § 1, b) du RGPD) et intérêt légitime (point f) ;",
+        "examiner votre candidature et vous contacter au sujet de la sélection – mesures précontractuelles et votre consentement (point a) pour les informations fournies volontairement ;",
+        "améliorer le site avec Google Analytics – votre consentement (art. 6, § 1, a) du RGPD), que vous pouvez retirer à tout moment ;",
+        "protéger le site contre les abus et le spam – intérêt légitime."
+      ]
+    },
+    {
+      "id": "recipients",
+      "title": "Destinataires",
+      "paragraphs": [
+        "Nous ne vendons pas vos données. Seuls les prestataires qui nous aident à fonctionner y ont accès, tels que les hébergeurs et services de messagerie et, si vous acceptez l’analyse, Google Ireland Limited (Google Analytics). En cas de transfert hors de l’Espace économique européen, les garanties prévues par le RGPD s’appliquent."
+      ]
+    },
+    {
+      "id": "retention",
+      "title": "Durée de conservation",
+      "paragraphs": [
+        "Nous conservons les données uniquement le temps nécessaire aux finalités indiquées :"
+      ],
+      "items": [
+        "demandes et correspondance – jusqu’à 3 ans après le dernier contact, ou selon les obligations légales en cas de contrat ;",
+        "candidatures et CV – jusqu’à 6 mois après la fin de la sélection, sauf si vous acceptez une durée plus longue ;",
+        "données d’analyse – selon la durée configurée dans Google Analytics ;",
+        "cookie de consentement – 180 jours."
+      ]
+    },
+    {
+      "id": "cookies",
+      "title": "Cookies et analyse",
+      "paragraphs": [
+        "Le site utilise un cookie nécessaire, « analytics_consent », qui mémorise votre choix concernant l’analyse. Google Analytics n’est activé qu’avec votre consentement ; en cas de refus, aucune donnée d’analyse n’est collectée. Vous pouvez modifier votre choix à tout moment."
+      ]
+    },
+    {
+      "id": "rights",
+      "title": "Vos droits",
+      "paragraphs": [
+        "Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité, ainsi que du droit de retirer votre consentement à tout moment. Pour exercer vos droits, écrivez à info@transgarant.lt.",
+        "Si vous estimez que vos droits ont été violés, vous pouvez déposer une réclamation auprès de l’Inspection nationale de la protection des données (vdai.lrv.lt)."
+      ]
+    },
+    {
+      "id": "changes",
+      "title": "Modifications de la politique",
+      "paragraphs": [
+        "Nous pouvons mettre à jour cette politique. La version en vigueur est toujours publiée sur cette page, avec la date de mise à jour en haut."
+      ]
+    }
+  ]
+}

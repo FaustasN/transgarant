@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Polityka prywatności | Transgarant Group",
+    "description": "Polityka prywatności UAB TRANSGARANT GROUP: jakie dane osobowe zbieramy, w jakim celu, jak długo je przechowujemy i jakie prawa Państwu przysługują."
+  },
+  "hero": {
+    "title": "Polityka prywatności",
+    "intro": "Wyjaśniamy, w jaki sposób UAB TRANSGARANT GROUP przetwarza dane osobowe otrzymywane za pośrednictwem tej strony.",
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbCurrent": "Polityka prywatności"
+  },
+  "updated": "Ostatnia aktualizacja: 8 października 2026 r.",
+  "cookieSettings": "Ustawienia analityki",
+  "sections": [
+    {
+      "id": "controller",
+      "title": "Administrator danych",
+      "paragraphs": [
+        "Administratorem danych osobowych jest UAB TRANSGARANT GROUP, kod firmy 302690097, numer VAT LT100006861513, adres: Laisvės pr. 78B-238, Wilno, LT-05263.",
+        "W sprawach dotyczących danych osobowych prosimy o kontakt: info@transgarant.lt."
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Jakie dane zbieramy",
+      "paragraphs": [
+        "Zbieramy wyłącznie dane podane przez Państwa oraz minimalne informacje techniczne:"
+      ],
+      "items": [
+        "Formularz kontaktowy: imię i nazwisko, adres e-mail oraz treść wiadomości.",
+        "Zapytanie o wycenę: dane kontaktowe i informacje o ładunku (adresy odbioru i dostawy, rodzaj ładunku, waga, data).",
+        "Formularz kariery: dane kontaktowe, wybrane stanowisko, wiadomość oraz CV w formacie PDF.",
+        "Dane analityczne (tylko za Państwa zgodą): odwiedzone strony, informacje o urządzeniu i przeglądarce, przybliżona lokalizacja."
+      ]
+    },
+    {
+      "id": "purposes",
+      "title": "Cele i podstawa prawna",
+      "paragraphs": [
+        "Państwa dane przetwarzamy w następujących celach:"
+      ],
+      "items": [
+        "odpowiedź na zapytania i przygotowanie wyceny – działania przed zawarciem umowy (art. 6 ust. 1 lit. b RODO) oraz prawnie uzasadniony interes (lit. f);",
+        "rozpatrzenie zgłoszenia o pracę i kontakt w sprawie rekrutacji – działania przed zawarciem umowy oraz zgoda (lit. a) w odniesieniu do informacji podanych dobrowolnie;",
+        "ulepszanie strony za pomocą Google Analytics – Państwa zgoda (art. 6 ust. 1 lit. a RODO), którą można w każdej chwili cofnąć;",
+        "ochrona strony przed nadużyciami i spamem – prawnie uzasadniony interes."
+      ]
+    },
+    {
+      "id": "recipients",
+      "title": "Odbiorcy danych",
+      "paragraphs": [
+        "Nie sprzedajemy Państwa danych. Dostęp do nich mogą mieć wyłącznie dostawcy usług wspierający nasze działanie, tacy jak dostawcy hostingu i poczty e-mail oraz, po wyrażeniu zgody na analitykę, Google Ireland Limited (Google Analytics). W razie przekazania danych poza Europejski Obszar Gospodarczy stosowane są zabezpieczenia wymagane przez RODO."
+      ]
+    },
+    {
+      "id": "retention",
+      "title": "Okres przechowywania",
+      "paragraphs": [
+        "Dane przechowujemy tylko tak długo, jak jest to potrzebne do wskazanych celów:"
+      ],
+      "items": [
+        "zapytania i korespondencja – do 3 lat od ostatniego kontaktu, a w razie zawarcia umowy – zgodnie z przepisami prawa;",
+        "zgłoszenia i CV kandydatów – do 6 miesięcy od zakończenia rekrutacji, chyba że wyrażą Państwo zgodę na dłuższy okres;",
+        "dane analityczne – zgodnie z okresem ustawionym w Google Analytics;",
+        "plik cookie ze zgodą – 180 dni."
+      ]
+    },
+    {
+      "id": "cookies",
+      "title": "Pliki cookie i analityka",
+      "paragraphs": [
+        "Strona wykorzystuje niezbędny plik cookie „analytics_consent”, w którym zapisywany jest Państwa wybór dotyczący analityki. Google Analytics włącza się wyłącznie po wyrażeniu zgody; w przypadku odmowy dane analityczne nie są zbierane. Wybór można zmienić w każdej chwili."
+      ]
+    },
+    {
+      "id": "rights",
+      "title": "Państwa prawa",
+      "paragraphs": [
+        "Mają Państwo prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, sprzeciwu, przenoszenia danych oraz cofnięcia zgody w dowolnym momencie. Aby skorzystać z praw, prosimy napisać na adres info@transgarant.lt.",
+        "Jeśli uważają Państwo, że Państwa prawa zostały naruszone, mogą Państwo złożyć skargę do Państwowego Inspektoratu Ochrony Danych (vdai.lrv.lt)."
+      ]
+    },
+    {
+      "id": "changes",
+      "title": "Zmiany polityki",
+      "paragraphs": [
+        "Możemy aktualizować niniejszą politykę. Aktualna wersja jest zawsze dostępna na tej stronie, a data aktualizacji widnieje na górze."
+      ]
+    }
+  ]
+}
