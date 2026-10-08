@@ -1,19 +1,16 @@
 "use client";
 
-import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { ChevronRight, Container } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, prefersReducedMotion, useGsapScope } from "@/lib/motion";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import ServiceDetails from "./ServiceDetails";
+import ServicesAccordion from "./ServicesAccordion";
 import { serviceVisuals } from "./serviceVisuals";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesExperience({ locale, content }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
   const activeIndexRef = useRef(0);
   const animatingRef = useRef(false);
   const heroRef = useRef(null);
@@ -21,47 +18,41 @@ export default function ServicesExperience({ locale, content }) {
   const panelsRef = useRef([]);
   const buttonsRef = useRef([]);
 
-  useLayoutEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const hero = heroRef.current;
+  useGsapScope(heroRef, () => {
     const explorer = explorerRef.current;
     const buttons = buttonsRef.current.filter(Boolean);
     const firstPanel = panelsRef.current[0];
-    if (!hero || !explorer) return;
+    if (!explorer) return;
 
-    const context = gsap.context(() => {
-      gsap.from("[data-service-page-reveal]", {
-        y: 20,
+    gsap.from("[data-service-page-reveal]", {
+      y: 20,
+      autoAlpha: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    });
+
+    if (buttons.length) {
+      gsap.from(buttons, {
+        y: 10,
         autoAlpha: 0,
-        duration: 0.55,
-        stagger: 0.08,
-        ease: "power3.out",
+        duration: 0.45,
+        stagger: 0.055,
+        ease: "power2.out",
+        scrollTrigger: { trigger: explorer, start: "top 82%", once: true },
       });
+    }
 
-      if (buttons.length) {
-        gsap.from(buttons, {
-          y: 10,
-          autoAlpha: 0,
-          duration: 0.45,
-          stagger: 0.055,
-          ease: "power2.out",
-          scrollTrigger: { trigger: explorer, start: "top 82%", once: true },
-        });
-      }
-
-      if (firstPanel) {
-        gsap.from(firstPanel, {
-          y: 22,
-          autoAlpha: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          scrollTrigger: { trigger: explorer, start: "top 78%", once: true },
-        });
-      }
-    }, hero);
-
-    return () => context.revert();
-  }, []);
+    if (firstPanel) {
+      gsap.from(firstPanel, {
+        y: 22,
+        autoAlpha: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: { trigger: explorer, start: "top 78%", once: true },
+      });
+    }
+  });
 
   function selectService(nextIndex) {
     const currentIndex = activeIndexRef.current;
@@ -69,9 +60,8 @@ export default function ServicesExperience({ locale, content }) {
 
     const currentPanel = panelsRef.current[currentIndex];
     const nextPanel = panelsRef.current[nextIndex];
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (reducedMotion || !currentPanel || !nextPanel) {
+    if (prefersReducedMotion() || !currentPanel || !nextPanel) {
       activeIndexRef.current = nextIndex;
       setActiveIndex(nextIndex);
       animatingRef.current = false;
@@ -125,77 +115,13 @@ export default function ServicesExperience({ locale, content }) {
     <main ref={heroRef}>
       <section ref={explorerRef} id="paslaugu-sarasas" className="scroll-mt-20 bg-[#F6F5F2] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22">
         <div className="mx-auto max-w-[1200px]">
-          <nav data-service-page-reveal aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[#6F7080]">
-            <Link href={`/${locale}`} className="transition-colors hover:text-[#AE2422]">{content.hero.breadcrumbHome}</Link>
-            <ChevronRight aria-hidden="true" size={14} />
-            <span aria-current="page" className="font-semibold text-[#313152]">{content.hero.breadcrumbCurrent}</span>
-          </nav>
+          <Breadcrumb data-service-page-reveal locale={locale} hero={content.hero} />
           <div className="max-w-3xl">
             <h1 className="mt-4 text-[clamp(36px,4.5vw,56px)] font-extrabold leading-none tracking-[-0.04em]">{content.explorer.title}</h1>
             <p className="mt-5 text-base leading-8 text-[#6F7080] sm:text-lg">{content.explorer.intro}</p>
           </div>
 
-          <div className="mt-12 border-t border-[#D9D8DE] lg:hidden">
-            {content.services.map((service, index) => {
-              const Icon = serviceVisuals[service.key]?.icon ?? Container;
-              const visual = serviceVisuals[service.key] ?? serviceVisuals.road;
-              const active = mobileActiveIndex === index;
-              return (
-                <div key={service.key} className="border-b border-[#D9D8DE]">
-                  <button
-                    id={`mobile-service-control-${service.key}`}
-                    type="button"
-                    aria-expanded={active}
-                    aria-controls={`mobile-service-panel-${service.key}`}
-                    onClick={() => setMobileActiveIndex((current) => current === index ? null : index)}
-                    className={`flex min-h-16 w-full items-center gap-3 py-4 text-left transition-colors ${
-                      active ? "text-[#AE2422]" : "text-[#313152]"
-                    }`}
-                  >
-                    <span className={`w-6 shrink-0 text-xs font-extrabold tabular-nums ${
-                      active ? "text-[#AE2422]" : "text-[#9A9AA7]"
-                    }`}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <Icon aria-hidden="true" size={21} strokeWidth={1.8} className="shrink-0" />
-                    <span className="min-w-0 flex-1 font-bold">{service.title}</span>
-                    <ChevronRight
-                      aria-hidden="true"
-                      size={18}
-                      className={`shrink-0 transition-transform duration-300 ${active ? "rotate-90" : ""}`}
-                    />
-                  </button>
-
-                  <div
-                    className={`grid transition-[grid-template-rows,opacity] duration-500 ease-in-out motion-reduce:transition-none ${
-                      active
-                        ? "grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
-                    aria-hidden={!active}
-                    inert={!active}
-                  >
-                    <div className="min-h-0 overflow-hidden">
-                    <section
-                      id={`mobile-service-panel-${service.key}`}
-                      role="region"
-                      aria-labelledby={`mobile-service-control-${service.key}`}
-                      className="pb-5 pt-3"
-                    >
-                      <ServiceDetails
-                        service={service}
-                        content={content}
-                        visual={visual}
-                        locale={locale}
-                        mobile
-                      />
-                    </section>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <ServicesAccordion locale={locale} content={content} />
 
           <div className="mt-14 hidden gap-16 lg:grid lg:grid-cols-[310px_minmax(0,1fr)]">
             <div className="relative">
