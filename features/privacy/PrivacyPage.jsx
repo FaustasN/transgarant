@@ -1,34 +1,18 @@
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import RevealSection from "@/components/motion/RevealSection";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import PageShell from "@/components/layout/PageShell";
 import { AnalyticsPreferencesButton } from "@/components/analytics/Analytics";
 import { normalizeMeasurementId } from "@/lib/analytics/core.mjs";
-import StructuredData from "@/lib/seo/StructuredData.jsx";
-import { getStructuredData } from "./structuredData.mjs";
 
 export default function PrivacyPage({ locale, content }) {
-  const structuredData = getStructuredData(locale, content);
   const analyticsEnabled = Boolean(normalizeMeasurementId(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID));
 
   return (
-    <PageShell locale={locale} lang={locale} structuredData={<StructuredData data={structuredData} />}>
+    <PageShell locale={locale} lang={locale} page="privacy" content={content}>
       <main>
         <RevealSection className="px-5 pb-20 pt-12 sm:px-8 sm:pt-14 lg:px-10 lg:pb-28 lg:pt-16">
           <div className="mx-auto max-w-[900px]">
-            <nav
-              data-reveal
-              aria-label="Breadcrumb"
-              className="flex items-center gap-2 text-sm text-[#6F7080]"
-            >
-              <Link href={`/${locale}`} className="transition-colors hover:text-[#AE2422]">
-                {content.hero.breadcrumbHome}
-              </Link>
-              <ChevronRight aria-hidden="true" size={14} />
-              <span aria-current="page" className="font-semibold text-[#313152]">
-                {content.hero.breadcrumbCurrent}
-              </span>
-            </nav>
+            <Breadcrumb data-reveal locale={locale} hero={content.hero} />
 
             <div data-reveal className="mt-4">
               <h1 className="text-[clamp(36px,4.2vw,56px)] font-extrabold leading-[1.02] tracking-[-0.04em] text-balance">

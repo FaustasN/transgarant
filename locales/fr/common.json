@@ -104,8 +104,7 @@
     "title": "Cookies d’analyse",
     "description": "Google Analytics nous aide à améliorer le site. Il est activé uniquement avec votre consentement.",
     "accept": "Autoriser l’analyse",
-    "decline": "Refuser",
-    "settings": "Paramètres d’analyse"
+    "decline": "Refuser"
   },
   "footer": {
     "description": "Votre partenaire transport et logistique pour les chargements complets, partiels et spécialisés dans toute l’Europe.",
