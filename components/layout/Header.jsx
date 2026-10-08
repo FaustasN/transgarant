@@ -2,59 +2,30 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { resources } from "@/lib/i18n/resources";
-import {
-  getAboutPath,
-  getCareersPath,
-  getContactPath,
-  getQuotePath,
-  getServicesPath,
-} from "@/lib/routing/paths.mjs";
+import { useRef } from "react";
+import { ctaProps } from "@/lib/analytics/core.mjs";
+import { gsap, scrollBehavior, scrollToSection, useGsapScope } from "@/lib/motion";
+import { getPagePath } from "@/lib/routing/paths.mjs";
 import LanguageDropdown from "@/components/layout/LanguageDropdown";
 import MobileNav from "@/components/layout/MobileNav";
 
-const navDestinations = [
-  { key: "services" },
-  { key: "destinations", path: "", hash: "kryptys" },
-  { key: "about" },
-  { key: "careers" },
-  { key: "contact" },
-  { key: "quote" },
-];
+const navKeys = ["services", "destinations", "about", "careers", "contact", "quote"];
 
-export default function Header({ locale = "lt" }) {
+export default function Header({ locale, nav, labels }) {
   const headerRef = useRef(null);
-  const dictionary = resources[locale]?.common ?? resources.lt.common;
-  const navItems = navDestinations.map((destination) => ({
-    key: destination.key,
-    href: destination.key === "services"
-      ? getServicesPath(locale)
-      : destination.key === "about"
-        ? getAboutPath(locale)
-        : destination.key === "careers"
-          ? getCareersPath(locale)
-          : destination.key === "contact"
-            ? getContactPath(locale)
-            : destination.key === "quote"
-              ? getQuotePath(locale)
-        : `/${locale}${destination.path}${destination.hash ? `#${destination.hash}` : ""}`,
-    label: dictionary.nav[destination.key],
-    hash: destination.hash,
-  }));
+  const navItems = navKeys.map((key) => {
+    const hash = key === "destinations" ? "kryptys" : undefined;
+
+    return {
+      key,
+      href: hash ? `/${locale}#${hash}` : getPagePath(key, locale),
+      label: nav[key],
+      hash,
+    };
+  });
 
   function handleAnchorClick(event, item) {
-    if (!item.hash) return;
-    const section = document.getElementById(item.hash);
-    if (!section) return;
-
-    event.preventDefault();
-    section.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-      block: "start",
-    });
-    window.history.replaceState(null, "", `/${locale}#${item.hash}`);
+    if (item.hash && scrollToSection(item.hash, locale)) event.preventDefault();
   }
 
   function handleLogoClick(event) {
@@ -63,35 +34,23 @@ export default function Header({ locale = "lt" }) {
 
     event.preventDefault();
     window.history.replaceState(null, "", homePath);
-    window.scrollTo({
-      top: 0,
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: scrollBehavior() });
   }
 
-  useLayoutEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const header = headerRef.current;
-    if (!header) return;
-
-    const context = gsap.context(() => {
-      const timeline = gsap.timeline({ defaults: { ease: "power2.out" } });
-
-      timeline
-        .from(header, {
-          autoAlpha: 0,
-          duration: 0.3,
-          clearProps: "opacity,visibility",
-        })
-        .from(
-          "[data-header-nav-item], [data-header-action]",
-          { y: -5, autoAlpha: 0, duration: 0.22, stagger: 0.035 },
-          "-=0.2",
-        );
-    }, header);
-
-    return () => context.revert();
-  }, []);
+  useGsapScope(headerRef, (header) => {
+    gsap
+      .timeline({ defaults: { ease: "power2.out" } })
+      .from(header, {
+        autoAlpha: 0,
+        duration: 0.3,
+        clearProps: "opacity,visibility",
+      })
+      .from(
+        "[data-header-nav-item], [data-header-action]",
+        { y: -5, autoAlpha: 0, duration: 0.22, stagger: 0.035 },
+        "-=0.2",
+      );
+  });
 
   return (
     <header ref={headerRef} className="sticky top-0 z-50 border-b border-[#E3E2E7] bg-white">
@@ -99,7 +58,7 @@ export default function Header({ locale = "lt" }) {
         <Link
           href={`/${locale}`}
           onClick={handleLogoClick}
-          aria-label={dictionary.header.homeLabel}
+          aria-label={labels.homeLabel}
           className="flex shrink-0 items-center"
         >
           <Image
@@ -112,14 +71,11 @@ export default function Header({ locale = "lt" }) {
           />
         </Link>
 
-        <nav aria-label={dictionary.header.navigationLabel} className="hidden items-center gap-7 lg:flex">
+        <nav aria-label={labels.navigationLabel} className="hidden items-center gap-7 lg:flex">
           {navItems.map((item) => (
             <Link
               data-header-nav-item
-              data-analytics-event={item.key === "quote" ? "cta_click" : undefined}
-              data-analytics-cta-id={item.key === "quote" ? "header_quote" : undefined}
-              data-analytics-placement={item.key === "quote" ? "desktop_header" : undefined}
-              data-analytics-destination={item.key === "quote" ? item.href : undefined}
+              {...(item.key === "quote" ? ctaProps("header_quote", "desktop_header", item.href) : {})}
               key={item.href}
               href={item.href}
               onClick={(event) => handleAnchorClick(event, item)}
@@ -135,7 +91,7 @@ export default function Header({ locale = "lt" }) {
             <LanguageDropdown locale={locale} />
           </div>
           <div>
-            <MobileNav navItems={navItems} labels={dictionary.header.mobile} locale={locale} />
+            <MobileNav navItems={navItems} labels={labels.mobile} locale={locale} />
           </div>
         </div>
       </div>

@@ -104,8 +104,7 @@
     "title": "Analytics cookies",
     "description": "Google Analytics helps us improve the website. It runs only with your consent.",
     "accept": "Allow analytics",
-    "decline": "Decline",
-    "settings": "Analytics settings"
+    "decline": "Decline"
   },
   "footer": {
     "description": "A transport and logistics partner for full, partial and specialized cargo across Europe.",

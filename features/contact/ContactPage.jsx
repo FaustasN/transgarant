@@ -1,10 +1,9 @@
-import Link from "next/link";
-import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import RevealSection from "@/components/motion/RevealSection";
 import ContactForm from "./ContactForm";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import PageShell from "@/components/layout/PageShell";
-import StructuredData from "@/lib/seo/StructuredData.jsx";
-import { getStructuredData } from "./structuredData.mjs";
+import { contactProps } from "@/lib/analytics/core.mjs";
 
 const mapUrl =
   "https://www.google.com/maps?q=Laisv%C4%97s%20pr.%2078B-238%2C%20Vilnius%2C%20LT-05263&output=embed";
@@ -25,26 +24,12 @@ function ContactValue({ label, children, className = "" }) {
 }
 
 export default function ContactPage({ locale, content }) {
-  const structuredData = getStructuredData(locale, content);
-
   return (
-    <PageShell locale={locale} lang={locale} structuredData={<StructuredData data={structuredData} />}>
+    <PageShell locale={locale} lang={locale} page="contact" content={content}>
       <main>
         <RevealSection className="px-5 pb-12 pt-12 sm:px-8 sm:pb-14 sm:pt-14 lg:px-10 lg:pb-16 lg:pt-16">
           <div className="mx-auto max-w-[1200px]">
-            <nav
-              data-reveal
-              aria-label="Breadcrumb"
-              className="flex items-center gap-2 text-sm text-[#6F7080]"
-            >
-              <Link href={`/${locale}`} className="transition-colors hover:text-[#AE2422]">
-                {content.hero.breadcrumbHome}
-              </Link>
-              <ChevronRight aria-hidden="true" size={14} />
-              <span aria-current="page" className="font-semibold text-[#313152]">
-                {content.hero.breadcrumbCurrent}
-              </span>
-            </nav>
+            <Breadcrumb data-reveal locale={locale} hero={content.hero} />
 
             <div data-reveal className="mt-5 max-w-3xl">
               <h1 className="max-w-2xl text-[clamp(36px,4.2vw,56px)] font-extrabold leading-[1.02] tracking-[-0.04em] text-balance">
@@ -83,10 +68,7 @@ export default function ContactPage({ locale, content }) {
               >
                 <a
                   href={`mailto:${content.details.email}`}
-                  data-analytics-event="contact_click"
-                  data-analytics-contact-id="general_email"
-                  data-analytics-method="email"
-                  data-analytics-placement="contact_page"
+                  {...contactProps("general_email", "email", "contact_page")}
                   className="transition-colors hover:text-[#AE2422]"
                 >
                   {content.details.email}
@@ -100,20 +82,14 @@ export default function ContactPage({ locale, content }) {
                 <div className="grid">
                   <a
                     href="tel:+37052072775"
-                    data-analytics-event="contact_click"
-                    data-analytics-contact-id="office_phone"
-                    data-analytics-method="phone"
-                    data-analytics-placement="contact_page"
+                    {...contactProps("office_phone", "phone", "contact_page")}
                     className="transition-colors hover:text-[#AE2422]"
                   >
                     {content.details.officePhone}
                   </a>
                   <a
                     href="tel:+37062233388"
-                    data-analytics-event="contact_click"
-                    data-analytics-contact-id="mobile_phone"
-                    data-analytics-method="phone"
-                    data-analytics-placement="contact_page"
+                    {...contactProps("mobile_phone", "phone", "contact_page")}
                     className="transition-colors hover:text-[#AE2422]"
                   >
                     {content.details.mobilePhone}
@@ -138,10 +114,7 @@ export default function ContactPage({ locale, content }) {
                 <p>{content.details.hours}</p>
                 <a
                   href={mapLink}
-                  data-analytics-event="contact_click"
-                  data-analytics-contact-id="office_map"
-                  data-analytics-method="map"
-                  data-analytics-placement="contact_page"
+                  {...contactProps("office_map", "map", "contact_page")}
                   target="_blank"
                   rel="noreferrer"
                   className="group mt-3 inline-flex items-center gap-2 text-sm text-[#6F7080] transition-colors hover:text-[#AE2422]"

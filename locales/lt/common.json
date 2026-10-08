@@ -104,8 +104,7 @@
     "title": "Analitiniai slapukai",
     "description": "„Google Analytics“ padeda tobulinti svetainę. Ji įjungiama tik jums sutikus.",
     "accept": "Leisti analitiką",
-    "decline": "Neleisti",
-    "settings": "Analitikos nustatymai"
+    "decline": "Neleisti"
   },
   "footer": {
     "description": "Transporto ir logistikos partneris pilniems, daliniams ir specializuotiems kroviniams Europoje.",
