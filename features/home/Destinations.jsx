@@ -1,11 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { gsap, prefersReducedMotion } from "@/lib/motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { resources } from "@/lib/i18n/resources";
 
 import EuropeMap from "./EuropeMap";
 
-export default function Destinations({ locale, content: destinations }) {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Destinations({ locale = "lt" }) {
+  const destinations = (resources[locale] ?? resources.lt).common.destinations;
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
@@ -24,7 +29,7 @@ export default function Destinations({ locale, content: destinations }) {
   }, [activeIndex, destinations.regions.length]);
 
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const section = sectionRef.current;
     const heading = headingRef.current;
     const map = mapRef.current;
@@ -47,7 +52,7 @@ export default function Destinations({ locale, content: destinations }) {
   }, []);
 
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const details = detailsRef.current;
     if (!details?.children.length) return;
 

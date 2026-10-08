@@ -1,20 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import AboutExperienceSection from "@/features/about/AboutExperienceSection";
 import RevealSection from "@/components/motion/RevealSection";
-import { getPagePath } from "@/lib/routing/paths.mjs";
-import Breadcrumb from "@/components/ui/Breadcrumb";
+import { getQuotePath } from "@/lib/routing/paths.mjs";
 import PageShell from "@/components/layout/PageShell";
-import { ctaProps } from "@/lib/analytics/core.mjs";
+import StructuredData from "@/lib/seo/StructuredData.jsx";
+import { getStructuredData } from "./structuredData.mjs";
 
 export default function AboutPage({ locale, content }) {
+  const structuredData = getStructuredData(locale, content);
+
   return (
-    <PageShell locale={locale} lang={locale} page="about" content={content}>
+    <PageShell locale={locale} lang={locale} structuredData={<StructuredData data={structuredData} />}>
       <main>
         <RevealSection className="px-5 pb-10 pt-12 sm:px-8 sm:pt-14 lg:px-10 lg:pb-14 lg:pt-16">
           <div className="mx-auto max-w-[1200px]">
-            <Breadcrumb data-reveal locale={locale} hero={content.hero} />
+            <nav
+              data-reveal
+              aria-label="Breadcrumb"
+              className="flex items-center gap-2 text-sm text-[#6F7080]"
+            >
+              <Link href={`/${locale}`} className="transition-colors hover:text-[#AE2422]">
+                {content.hero.breadcrumbHome}
+              </Link>
+              <ChevronRight aria-hidden="true" size={14} />
+              <span aria-current="page" className="font-semibold text-[#313152]">
+                {content.hero.breadcrumbCurrent}
+              </span>
+            </nav>
 
             <div className="mt-4 grid items-stretch gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
               <div data-reveal>
@@ -78,8 +92,11 @@ export default function AboutPage({ locale, content }) {
             </a>
 
             <Link
-              {...ctaProps("about_quote", "about_page", getPagePath("quote", locale))}
-              href={getPagePath("quote", locale)}
+              data-analytics-event="cta_click"
+              data-analytics-cta-id="about_quote"
+              data-analytics-placement="about_page"
+              data-analytics-destination={getQuotePath(locale)}
+              href={getQuotePath(locale)}
               className="group flex max-w-xl items-center gap-5 border-y border-[#D9D8DE] py-6 lg:col-start-1 lg:row-start-2 lg:self-end"
             >
               <span className="min-w-0 flex-1">

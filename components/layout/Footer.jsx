@@ -1,9 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getPagePath } from "@/lib/routing/paths.mjs";
-import { contactProps } from "@/lib/analytics/core.mjs";
+import { resources } from "@/lib/i18n/resources";
+import {
+  getAboutPath,
+  getCareersPath,
+  getContactPath,
+  getPrivacyPath,
+  getServicesPath,
+} from "@/lib/routing/paths.mjs";
 
-export default function Footer({ locale, content: footer }) {
+export default function Footer({ locale = "lt" }) {
+  const common = (resources[locale] ?? resources.lt).common;
+  const footer = common.footer;
+
   return (
     <footer className="bg-[#313152] px-5 py-7 text-white sm:px-8 sm:py-8 lg:px-10">
       <div className="mx-auto grid max-w-[1200px] gap-7 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr]">
@@ -25,11 +34,11 @@ export default function Footer({ locale, content: footer }) {
             {footer.navigationTitle}
           </h3>
           <div className="mt-4 grid gap-3 text-sm text-white/76 [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:text-white [&_a:focus-visible]:text-white">
-            <Link href={getPagePath("services", locale)}>{footer.links.services}</Link>
+            <Link href={getServicesPath(locale)}>{footer.links.services}</Link>
             <Link href={`/${locale}#kryptys`}>{footer.links.destinations}</Link>
-            <Link href={getPagePath("about", locale)}>{footer.links.about}</Link>
-            <Link href={getPagePath("careers", locale)}>{footer.links.careers}</Link>
-            <Link href={getPagePath("contact", locale)}>{footer.links.contact}</Link>
+            <Link href={getAboutPath(locale)}>{footer.links.about}</Link>
+            <Link href={getCareersPath(locale)}>{footer.links.careers}</Link>
+            <Link href={getContactPath(locale)}>{footer.links.contact}</Link>
           </div>
         </div>
 
@@ -38,7 +47,10 @@ export default function Footer({ locale, content: footer }) {
           <div className="mt-4 grid gap-3 text-sm leading-7 text-white/76 [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:text-white [&_a:focus-visible]:text-white">
             <a
               href="mailto:info@transgarant.lt"
-              {...contactProps("general_email", "email", "footer")}
+              data-analytics-event="contact_click"
+              data-analytics-contact-id="general_email"
+              data-analytics-method="email"
+              data-analytics-placement="footer"
             >
               {footer.emailLabel}: info@transgarant.lt
             </a>

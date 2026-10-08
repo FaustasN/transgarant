@@ -2,32 +2,52 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { ArrowRight, Check } from "lucide-react";
-import { gsap, scrollToSection, useGsapScope } from "@/lib/motion";
-import { getPagePath } from "@/lib/routing/paths.mjs";
-import { ctaProps } from "@/lib/analytics/core.mjs";
+import gsap from "gsap";
+import { resources } from "@/lib/i18n/resources";
+import { getQuotePath } from "@/lib/routing/paths.mjs";
 
-export default function Hero({ locale, content: hero }) {
+export default function Hero({ locale = "lt" }) {
   const sectionRef = useRef(null);
+  const hero = (resources[locale] ?? resources.lt).common.hero;
 
   function handleServicesClick(event) {
-    if (scrollToSection("paslaugos", locale)) event.preventDefault();
+    const servicesSection = document.getElementById("paslaugos");
+    if (!servicesSection) return;
+
+    event.preventDefault();
+    servicesSection.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+      block: "start",
+    });
+    window.history.replaceState(null, "", `/${locale}#paslaugos`);
   }
 
-  useGsapScope(sectionRef, () => {
-    gsap
-      .timeline({ defaults: { ease: "power2.out" } })
-      .from("[data-hero-title-primary]", { y: 22, autoAlpha: 0, duration: 0.45 })
-      .from("[data-hero-title-secondary]", { y: 18, autoAlpha: 0, duration: 0.4 }, "-=0.34")
-      .from("[data-hero-description]", { y: 16, autoAlpha: 0, duration: 0.36 }, "-=0.27")
-      .from("[data-hero-button]", { y: 12, autoAlpha: 0, duration: 0.3 }, "-=0.23")
-      .from(
-        "[data-hero-highlight]",
-        { y: 10, autoAlpha: 0, duration: 0.3, stagger: 0.06 },
-        "-=0.15",
-      );
-  });
+  useLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const context = gsap.context(() => {
+      const timeline = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+      timeline
+        .from("[data-hero-title-primary]", { y: 22, autoAlpha: 0, duration: 0.45 })
+        .from("[data-hero-title-secondary]", { y: 18, autoAlpha: 0, duration: 0.4 }, "-=0.34")
+        .from("[data-hero-description]", { y: 16, autoAlpha: 0, duration: 0.36 }, "-=0.27")
+        .from("[data-hero-button]", { y: 12, autoAlpha: 0, duration: 0.3 }, "-=0.23")
+        .from(
+          "[data-hero-highlight]",
+          { y: 10, autoAlpha: 0, duration: 0.3, stagger: 0.06 },
+          "-=0.15",
+        );
+    }, section);
+
+    return () => context.revert();
+  }, []);
 
   return (
     <section ref={sectionRef} className="relative isolate overflow-hidden bg-[#191925] text-white">
@@ -65,8 +85,11 @@ export default function Hero({ locale, content: hero }) {
           <div className="mt-9 flex flex-row items-center gap-2.5 sm:gap-3">
             <Link
               data-hero-button
-              {...ctaProps("hero_quote", "home_hero", getPagePath("quote", locale))}
-              href={getPagePath("quote", locale)}
+              data-analytics-event="cta_click"
+              data-analytics-cta-id="hero_quote"
+              data-analytics-placement="home_hero"
+              data-analytics-destination={getQuotePath(locale)}
+              href={getQuotePath(locale)}
               className="inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-[#AE2422] px-3.5 py-3 text-sm font-bold text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#92201E] hover:shadow-lg active:translate-y-0 sm:min-h-13 sm:gap-3 sm:px-7 sm:py-3.5 sm:text-base"
             >
               {hero.primaryCta}
@@ -74,7 +97,10 @@ export default function Hero({ locale, content: hero }) {
             </Link>
             <Link
               data-hero-button
-              {...ctaProps("hero_services", "home_hero", `/${locale}#paslaugos`)}
+              data-analytics-event="cta_click"
+              data-analytics-cta-id="hero_services"
+              data-analytics-placement="home_hero"
+              data-analytics-destination={`/${locale}#paslaugos`}
               href={`/${locale}#paslaugos`}
               onClick={handleServicesClick}
               className="inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-lg border border-white/38 bg-white/[0.06] px-3.5 py-3 text-sm font-bold text-white backdrop-blur-sm transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-white/15 hover:shadow-lg active:translate-y-0 sm:min-h-13 sm:px-7 sm:py-3.5 sm:text-base"

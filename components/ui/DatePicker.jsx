@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
-import { toDateValue } from "@/lib/validation/rules";
+import { toDateValue } from "@/lib/validation/dates";
 
 const copy = {
   lt: { placeholder: "Pasirinkite datą", previous: "Ankstesnis mėnuo", next: "Kitas mėnuo" },

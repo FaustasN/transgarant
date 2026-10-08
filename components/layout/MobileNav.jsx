@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
 import { ArrowRight, Menu } from "lucide-react";
-import { ctaProps } from "@/lib/analytics/core.mjs";
-import { gsap, prefersReducedMotion, scrollBehavior } from "@/lib/motion";
+import gsap from "gsap";
 import LanguageDropdown from "@/components/layout/LanguageDropdown";
 
 export default function MobileNav({ navItems, labels, locale }) {
@@ -33,7 +32,8 @@ export default function MobileNav({ navItems, labels, locale }) {
     const navElements = navRef.current ? Array.from(navRef.current.children) : [];
     if (!overlay || !backdrop || !drawer) return;
 
-    const duration = prefersReducedMotion() ? 0 : 0.24;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const duration = reducedMotion ? 0 : 0.24;
     const timeline = gsap.timeline({ defaults: { overwrite: true } });
     if (open) {
       timeline.set(overlay, { visibility: "visible", pointerEvents: "auto" })
@@ -81,7 +81,7 @@ export default function MobileNav({ navItems, labels, locale }) {
     window.history.replaceState(null, "", `/${locale}#${item.hash}`);
     window.requestAnimationFrame(() => {
       section.scrollIntoView({
-        behavior: scrollBehavior(),
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
         block: "start",
       });
     });
@@ -148,7 +148,10 @@ export default function MobileNav({ navItems, labels, locale }) {
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                {...(item.key === "quote" ? ctaProps("header_quote", "mobile_navigation", item.href) : {})}
+                data-analytics-event={item.key === "quote" ? "cta_click" : undefined}
+                data-analytics-cta-id={item.key === "quote" ? "header_quote" : undefined}
+                data-analytics-placement={item.key === "quote" ? "mobile_navigation" : undefined}
+                data-analytics-destination={item.key === "quote" ? item.href : undefined}
                 href={item.href}
                 tabIndex={open ? 0 : -1}
                 onClick={(event) => handleNavClick(event, item)}

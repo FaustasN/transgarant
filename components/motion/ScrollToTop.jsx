@@ -2,7 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { ArrowUp } from "lucide-react";
-import { gsap, prefersReducedMotion, scrollBehavior } from "@/lib/motion";
+import gsap from "gsap";
 
 export default function ScrollToTop({ avoidMobileBottomBar = false }) {
   const buttonRef = useRef(null);
@@ -34,7 +34,7 @@ export default function ScrollToTop({ avoidMobileBottomBar = false }) {
         autoAlpha: visible ? 1 : 0,
         y: visible ? 0 : 12,
         pointerEvents: visible ? "auto" : "none",
-        duration: prefersReducedMotion() ? 0 : 0.25,
+        duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 0.25,
         ease: "power2.out",
         overwrite: true,
       });
@@ -52,7 +52,7 @@ export default function ScrollToTop({ avoidMobileBottomBar = false }) {
     window.history.replaceState(null, "", window.location.pathname);
     window.scrollTo({
       top: 0,
-      behavior: scrollBehavior(),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     });
   }
 

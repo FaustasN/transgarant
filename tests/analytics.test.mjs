@@ -163,7 +163,7 @@ test("every supported locale provides the complete analytics consent interface",
   for (const locale of ["lt", "en", "pl", "ru", "de", "fr"]) {
     const source = await readFile(new URL(`../locales/${locale}/common.json`, import.meta.url), "utf8");
     const consent = JSON.parse(source).analyticsConsent;
-    assert.deepEqual(Object.keys(consent).sort(), ["accept", "decline", "description", "title"]);
+    assert.deepEqual(Object.keys(consent).sort(), ["accept", "decline", "description", "settings", "title"]);
     for (const value of Object.values(consent)) {
       assert.equal(typeof value, "string");
       assert.ok(value.trim().length > 0);

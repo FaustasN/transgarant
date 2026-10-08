@@ -1,20 +1,27 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import config from "../next.config.mjs";
-import { getLocalizedPath, getPagePath } from "../lib/routing/paths.mjs";
+import {
+  getAboutPath,
+  getCareersPath,
+  getContactPath,
+  getLocalizedPath,
+  getPrivacyPath,
+  getQuotePath,
+  getServicesPath,
+} from "../lib/routing/paths.mjs";
 
 const routes = [
-  ["services", ["paslaugos", "services", "uslugi", "uslugi", "dienstleistungen", "services"]],
-  ["about", ["apie-mus", "about-us", "o-nas", "o-kompanii", "ueber-uns", "a-propos"]],
-  ["careers", ["karjera", "careers", "kariera", "karera", "karriere", "carrieres"]],
-  ["contact", ["kontaktai", "contact", "kontakt", "kontakty", "kontakt", "contact"]],
-  ["quote", ["uzklausa", "request-a-quote", "zapytanie", "zapros", "angebot-anfragen", "demande-de-devis"]],
+  ["services", getServicesPath, ["paslaugos", "services", "uslugi", "uslugi", "dienstleistungen", "services"]],
+  ["about", getAboutPath, ["apie-mus", "about-us", "o-nas", "o-kompanii", "ueber-uns", "a-propos"]],
+  ["careers", getCareersPath, ["karjera", "careers", "kariera", "karera", "karriere", "carrieres"]],
+  ["contact", getContactPath, ["kontaktai", "contact", "kontakt", "kontakty", "kontakt", "contact"]],
+  ["quote", getQuotePath, ["uzklausa", "request-a-quote", "zapytanie", "zapros", "angebot-anfragen", "demande-de-devis"]],
+  ["privacy", getPrivacyPath, ["privatumo-politika", "privacy-policy", "polityka-prywatnosci", "politika-konfidencialnosti", "datenschutz", "politique-de-confidentialite"]],
 ];
 const locales = ["lt", "en", "pl", "ru", "de", "fr"];
 
-for (const [internal, slugs] of routes) {
-  const getPath = (locale) => getPagePath(internal, locale);
-
+for (const [internal, getPath, slugs] of routes) {
   test(`${internal} keeps its public URLs, aliases and internal rewrite targets`, async () => {
     const redirects = await config.redirects();
     const rewrites = await config.rewrites();
