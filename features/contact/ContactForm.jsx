@@ -1,175 +1,61 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-import { useState } from "react";
-import ValidationMessage from "@/components/ui/ValidationMessage";
-import { trackAnalyticsEvent } from "@/lib/analytics/client";
-import {
-  fieldLimits,
-  validateContactForm as getFieldErrors,
-} from "@/lib/validation/contact";
+import { FormStatus, SubmitButton, TextAreaField, TextField } from "@/components/ui/FormFields";
+import { useFormSubmit } from "@/lib/useFormSubmit";
+import { fieldLimits, validateContactForm } from "@/lib/validation/contact";
 
 export default function ContactForm({ content, locale }) {
-  const [status, setStatus] = useState("idle");
-  const [fieldErrors, setFieldErrors] = useState({});
-  const [messageLength, setMessageLength] = useState(0);
-
-  function handleFieldChange(event) {
-    const { name, value } = event.currentTarget;
-
-    if (name === "message") {
-      setMessageLength(value.length);
-    }
-
-    if (fieldErrors[name]) {
-      setFieldErrors((currentErrors) => ({
-        ...currentErrors,
-        [name]: undefined,
-      }));
-    }
-
-    if (status === "success" || status === "error") {
-      setStatus("idle");
-    }
-  }
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const fields = {
-      name: String(formData.get("name") ?? "")
-        .normalize("NFKC")
-        .trim()
-        .replace(/\s+/g, " "),
-      email: String(formData.get("email") ?? "").normalize("NFKC").trim(),
-      message: String(formData.get("message") ?? "")
-        .normalize("NFKC")
-        .replace(/\r\n?/g, "\n")
-        .trim(),
-    };
-    const validationErrors = getFieldErrors(fields, content.validation);
-
-    setFieldErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length > 0) {
-      setStatus("idle");
-      return;
-    }
-
-    setStatus("submitting");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(fields),
-      });
-
-      if (!response.ok) {
-        throw new Error("Contact request failed.");
-      }
-
-      form.reset();
-      setMessageLength(0);
-      setStatus("success");
-      trackAnalyticsEvent("generate_lead", { form_name: "contact", locale });
-    } catch {
-      setStatus("error");
-    }
-  }
+  const { status, fieldErrors, handleChange, handleSubmit } = useFormSubmit({
+    endpoint: "/api/contact",
+    formName: "contact",
+    locale,
+    fieldLimits,
+    multiline: ["message"],
+    validate: (fields) => validateContactForm(fields, content.validation),
+  });
+  const fieldProps = (name) => ({
+    idPrefix: "contact",
+    name,
+    error: fieldErrors[name],
+    maxLength: fieldLimits[name],
+    onChange: handleChange,
+  });
 
   return (
     <form noValidate onSubmit={handleSubmit}>
       <div className="grid gap-6 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-bold text-[#191925]">
-          {content.name}
-          <input
-            required
-            name="name"
-            autoComplete="name"
-            autoCapitalize="words"
-            maxLength={fieldLimits.name}
-            placeholder={content.namePlaceholder}
-            aria-invalid={Boolean(fieldErrors.name)}
-            aria-describedby={fieldErrors.name ? "contact-name-error" : undefined}
-            onChange={handleFieldChange}
-            className={`h-14 border bg-white/55 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.name ? "border-red-600" : "border-[#C9C8D0]"}`}
-          />
-          <ValidationMessage id="contact-name-error" message={fieldErrors.name} />
-        </label>
-        <label className="grid gap-2 text-sm font-bold text-[#191925]">
-          {content.email}
-          <input
-            required
-            type="email"
-            name="email"
-            inputMode="email"
-            autoComplete="email"
-            maxLength={fieldLimits.email}
-            placeholder={content.emailPlaceholder}
-            aria-invalid={Boolean(fieldErrors.email)}
-            aria-describedby={fieldErrors.email ? "contact-email-error" : undefined}
-            onChange={handleFieldChange}
-            className={`h-14 border bg-white/55 px-4 font-normal text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.email ? "border-red-600" : "border-[#C9C8D0]"}`}
-          />
-          <ValidationMessage id="contact-email-error" message={fieldErrors.email} />
-        </label>
-        <label className="grid gap-2 text-sm font-bold text-[#191925] sm:col-span-2">
-          {content.message}
-          <textarea
-            required
-            name="message"
-            rows={5}
-            maxLength={fieldLimits.message}
-            placeholder={content.messagePlaceholder}
-            aria-invalid={Boolean(fieldErrors.message)}
-            aria-describedby={`contact-message-count${fieldErrors.message ? " contact-message-error" : ""}`}
-            onChange={handleFieldChange}
-            className={`resize-y border bg-white/55 px-4 py-4 font-normal leading-7 text-[#191925] outline-none placeholder:text-[#8B8B98] focus:border-[#313152] ${fieldErrors.message ? "border-red-600" : "border-[#C9C8D0]"}`}
-          />
-          <span className="flex items-start justify-between gap-4">
-            <ValidationMessage
-              id="contact-message-error"
-              message={fieldErrors.message}
-            />
-            <span
-              id="contact-message-count"
-              className="ml-auto font-normal text-[#6B6B78]"
-            >
-              {messageLength} / {fieldLimits.message}
-            </span>
-          </span>
-        </label>
-      </div>
-
-      <button
-        type="submit"
-        disabled={status === "submitting"}
-        className="group mt-8 flex h-14 w-full items-center justify-center gap-3 bg-[#313152] px-6 font-extrabold text-white transition-colors hover:bg-[#252541] disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
-      >
-        {status === "submitting" ? content.submitting : content.submit}
-        <ArrowRight
-          aria-hidden="true"
-          size={19}
-          className="transition-transform duration-300 group-hover:translate-x-1.5"
+        <TextField
+          label={content.name}
+          placeholder={content.namePlaceholder}
+          autoComplete="name"
+          autoCapitalize="words"
+          {...fieldProps("name")}
         />
-      </button>
-
-      <div aria-live="polite">
-        {status === "success" && (
-          <p className="mt-4 text-sm font-semibold text-green-700">
-            {content.success}
-          </p>
-        )}
-        {status === "error" && (
-          <p className="mt-4 text-sm font-semibold text-red-700">
-            {content.error}
-          </p>
-        )}
+        <TextField
+          label={content.email}
+          type="email"
+          placeholder={content.emailPlaceholder}
+          inputMode="email"
+          autoComplete="email"
+          {...fieldProps("email")}
+        />
+        <TextAreaField
+          label={content.message}
+          required
+          rows={5}
+          className="sm:col-span-2"
+          placeholder={content.messagePlaceholder}
+          {...fieldProps("message")}
+        />
       </div>
+
+      <SubmitButton
+        className="mt-8"
+        submitting={status === "submitting"}
+        label={content.submit}
+        submittingLabel={content.submitting}
+      />
+      <FormStatus status={status} success={content.success} error={content.error} className="mt-4" />
     </form>
   );
 }

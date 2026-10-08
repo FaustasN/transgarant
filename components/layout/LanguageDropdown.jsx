@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import gsap from "gsap";
+import { gsap } from "@/lib/motion";
 import { getLocalizedPath } from "@/lib/routing/paths.mjs";
 
 const languages = [

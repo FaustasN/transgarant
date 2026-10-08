@@ -2,10 +2,7 @@
 
 import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap } from "@/lib/motion";
 
 export default function AboutExperienceSection({ content }) {
   const sectionRef = useRef(null);

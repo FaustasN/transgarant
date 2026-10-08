@@ -1,5 +1,4 @@
-import { supportedLocales } from "../lib/routing/locales.mjs";
-import { getPagePath, pageSlugs } from "../lib/routing/paths.mjs";
+import { getPagePath, pageSlugs, supportedLocales } from "../lib/routing/paths.mjs";
 import { siteUrl } from "../lib/seo/site.mjs";
 
 export default function sitemap() {

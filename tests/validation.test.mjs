@@ -5,7 +5,7 @@ import "./api-support.mjs";
 const { validateContactForm } = await import("../lib/validation/contact.js");
 const { validateQuoteForm } = await import("../lib/validation/quote.js");
 const { validateCareerForm } = await import("../lib/validation/careers.js");
-const { isValidDate, getTodayInVilnius } = await import("../lib/validation/dates.js");
+const { getTodayInVilnius, isValidDate, normalizeField } = await import("../lib/validation/rules.js");
 
 const messages = {
   required: "required", tooLong: "maximum {max}", email: "email", nameMin: "name minimum",
@@ -55,6 +55,12 @@ test("career browser validation keeps optional message and File checks", () => {
   assert.equal(validateCareerForm(fields, new File(["x"], "cv.pdf", { type: "text/plain" }), roles, messages).cv, "CV type");
   assert.equal(validateCareerForm(fields, new File([new Uint8Array(5 * 1024 * 1024 + 1)], "cv.pdf", { type: "application/pdf" }), roles, messages).cv, "CV size");
   assert.deepEqual(validateCareerForm({ ...fields, role: "unknown", message: "short" }, cv, roles, messages), { role: "role", message: "message minimum" });
+});
+
+test("normalizeField applies NFKC, trims and only keeps line breaks in multiline text", () => {
+  assert.equal(normalizeField("  Ｊonas \t\r\n Jonaitis  "), "Jonas Jonaitis");
+  assert.equal(normalizeField("  a  b\r\nc\rd  ", { multiline: true }), "a  b\nc\nd");
+  assert.equal(normalizeField(undefined), "");
 });
 
 test("server dates reject rollover dates and use Vilnius calendar boundaries", (t) => {

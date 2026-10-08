@@ -1,15 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { resources } from "@/lib/i18n/resources";
-import { getAboutPath } from "@/lib/routing/paths.mjs";
+import { getPagePath } from "@/lib/routing/paths.mjs";
 import RevealSection from "@/components/motion/RevealSection";
+import { ctaProps } from "@/lib/analytics/core.mjs";
 
 const aboutImage =
   "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?auto=format&fit=crop&w=1400&q=85";
 
-export default function About({ locale = "lt" }) {
-  const about = (resources[locale] ?? resources.lt).common.about;
+export default function About({ locale, content: about }) {
 
   return (
     <RevealSection className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
@@ -43,11 +42,8 @@ export default function About({ locale = "lt" }) {
               </p>
             ))}
             <Link
-              data-analytics-event="cta_click"
-              data-analytics-cta-id="about_overview"
-              data-analytics-placement="home_about"
-              data-analytics-destination={getAboutPath(locale)}
-              href={getAboutPath(locale)}
+              {...ctaProps("about_overview", "home_about", getPagePath("about", locale))}
+              href={getPagePath("about", locale)}
               className="group mt-8 inline-flex min-h-12 w-fit self-center items-center gap-3 rounded-lg border border-[#313152] px-6 py-3 font-bold text-[#313152] transition-colors hover:bg-[#E9E9F0] lg:self-start"
             >
               {about.cta}

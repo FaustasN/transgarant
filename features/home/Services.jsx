@@ -1,46 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowRight, Boxes, ChevronDown, Truck, Warehouse } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { resources } from "@/lib/i18n/resources";
-import { getServicesPath } from "@/lib/routing/paths.mjs";
+import { gsap, useGsapScope } from "@/lib/motion";
+import { getPagePath } from "@/lib/routing/paths.mjs";
 import RevealSection from "@/components/motion/RevealSection";
+import { ctaProps } from "@/lib/analytics/core.mjs";
 
 const serviceIcons = [Truck, Boxes, Warehouse];
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function Services({ locale = "lt" }) {
-  const services = (resources[locale] ?? resources.lt).common.services;
+export default function Services({ locale, content: services }) {
   const [openService, setOpenService] = useState(null);
   const cardsRef = useRef(null);
 
-  useLayoutEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  useGsapScope(cardsRef, (cardsElement) => {
+    const cards = gsap.utils.toArray("[data-service-card]");
+    if (!cards.length) return;
 
-    const context = gsap.context(() => {
-      const cards = gsap.utils.toArray("[data-service-card]");
-      if (!cards.length) return;
-
-      gsap.from(cards, {
-        y: 14,
-        autoAlpha: 0,
-        duration: 0.45,
-        stagger: 0.07,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: cardsRef.current,
-          start: "top 86%",
-          once: true,
-        },
-      });
-    }, cardsRef);
-
-    return () => context.revert();
-  }, []);
+    gsap.from(cards, {
+      y: 14,
+      autoAlpha: 0,
+      duration: 0.45,
+      stagger: 0.07,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: cardsElement,
+        start: "top 86%",
+        once: true,
+      },
+    });
+  });
 
   return (
     <RevealSection id="paslaugos" className="bg-[#F6F5F2] px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
@@ -104,11 +94,8 @@ export default function Services({ locale = "lt" }) {
 
         <div data-reveal className="mt-14 flex justify-center lg:mt-16">
           <Link
-            data-analytics-event="cta_click"
-            data-analytics-cta-id="services_overview"
-            data-analytics-placement="home_services"
-            data-analytics-destination={getServicesPath(locale)}
-            href={getServicesPath(locale)}
+            {...ctaProps("services_overview", "home_services", getPagePath("services", locale))}
+            href={getPagePath("services", locale)}
             className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#AE2422] px-6 py-3 font-bold !text-white transition-colors hover:bg-[#92201E]"
           >
             {services.cta}
