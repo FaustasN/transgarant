@@ -36,11 +36,12 @@ export default function Footer({ locale, content: footer }) {
         <div>
           <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-white/58">{footer.contactsTitle}</h3>
           <div className="mt-4 grid gap-3 text-sm leading-7 text-white/76 [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:text-white [&_a:focus-visible]:text-white">
+            {/* Address is split so "transgarant.lt" never appears whole in the HTML; the Hostinger preview host rewrites it. */}
             <a
-              href="mailto:info@transgarant.lt"
+              href="mailto:info@transgarant%2Elt"
               {...contactProps("general_email", "email", "footer")}
             >
-              {footer.emailLabel}: info@transgarant.lt
+              {footer.emailLabel}: info@transgarant{"."}lt
             </a>
             <span>{footer.hours}</span>
             <a

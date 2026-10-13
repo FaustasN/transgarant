@@ -66,12 +66,13 @@ export default function ContactPage({ locale, content }) {
                 label={content.details.emailLabel}
                 className="border-b border-[#D9D8DE] md:border-r md:px-8 lg:px-10"
               >
+                {/* Address is split so "transgarant.lt" never appears whole in the HTML; the Hostinger preview host rewrites it. */}
                 <a
-                  href={`mailto:${content.details.email}`}
+                  href="mailto:info@transgarant%2Elt"
                   {...contactProps("general_email", "email", "contact_page")}
                   className="transition-colors hover:text-[#AE2422]"
                 >
-                  {content.details.email}
+                  info@transgarant{"."}lt
                 </a>
               </ContactValue>
 
